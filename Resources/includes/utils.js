@@ -18,7 +18,7 @@ function getNavColor() {
 function getHeaderFooterView(text, height) {
 	var label = Ti.UI.createLabel({
 		text:text,
-		color:'white',
+		color:'#F8F8F8',
 		font: {
 			fontSize:15,
 			fontWeight:'bold'
