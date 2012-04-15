@@ -344,5 +344,5 @@ function retractInfoPanels() {
 }
 
 function updateSkinCount() {
-	tableView.setFooterTitle(getSkinCount() + ' skins');
+	tableView.setFooterView(getHeaderFooterView(getSkinCount() + ' skins', 18));
 }
