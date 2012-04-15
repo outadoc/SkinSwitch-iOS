@@ -24,32 +24,6 @@ function getTextFieldRow(text, hint, isPassword) {
 	return row;
 }
 
-function getHeaderFooterView(text, height) {
-	var label = Ti.UI.createLabel({
-		text:text,
-		color:'white',
-		font: {
-			fontSize:15,
-			fontWeight:'bold'
-		},
-		shadowColor:'black',
-		shadowOffset: {
-			x:0,
-			y:1
-		},
-		top:10,
-		left:15,
-		width:295
-	});
-	
-	var view = Ti.UI.createView({
-		height:height
-	});
-	
-	view.add(label);
-	return view;
-}
-
 var b_close = Ti.UI.createButton({
 	systemButton:Ti.UI.iPhone.SystemButton.DONE
 });
