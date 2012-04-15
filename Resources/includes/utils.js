@@ -28,7 +28,7 @@ function getHeaderFooterView(text, height) {
 			x:0,
 			y:1
 		},
-		top:10,
+		top:5,
 		left:15,
 		width:295
 	});
