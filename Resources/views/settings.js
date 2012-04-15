@@ -1,4 +1,5 @@
 var win = Ti.UI.currentWindow;
+Ti.include('/includes/utils.js');
 
 function getTextFieldRow(text, hint, isPassword) {
 	var row = Ti.UI.createTableViewRow({
@@ -42,7 +43,7 @@ var tableView = Ti.UI.createTableView({
 
 win.add(tableView);
 
-tableView.setHeaderView(getHeaderFooterView('Minecraft.net Account ID', 25));
+tableView.setHeaderView(getHeaderFooterView('Minecraft.net Account ID', 20));
 tableView.setFooterView(getHeaderFooterView('If your account has been migrated to a Mojang account, you have to use your email address instead of your Minecraft username.\n\nNote: we will NEVER store or use any of your informations for anything else than switching your Minecraft skins. Your account info is stored securely in the iOS keychain.', 200));
 
 win.addEventListener('blur', function() {
