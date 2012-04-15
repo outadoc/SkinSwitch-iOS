@@ -24,6 +24,32 @@ function getTextFieldRow(text, hint, isPassword) {
 	return row;
 }
 
+function getHeaderFooterView(text, height) {
+	var label = Ti.UI.createLabel({
+		text:text,
+		color:'white',
+		font: {
+			fontSize:15,
+			fontWeight:'bold'
+		},
+		shadowColor:'black',
+		shadowOffset: {
+			x:0,
+			y:1
+		},
+		top:10,
+		left:15,
+		width:295
+	});
+	
+	var view = Ti.UI.createView({
+		height:height
+	});
+	
+	view.add(label);
+	return view;
+}
+
 var b_close = Ti.UI.createButton({
 	systemButton:Ti.UI.iPhone.SystemButton.DONE
 });
@@ -42,27 +68,8 @@ var tableView = Ti.UI.createTableView({
 
 win.add(tableView);
 
-var lbl_header = Ti.UI.createLabel({
-	text:'Minecraft.net ID',
-	color:'white',
-	font: {
-		fontSize:15,
-		fontWeight:'bold'
-	},
-	shadowColor:'black',
-	shadowOffset: {
-		x:0,
-		y:1
-	},
-	top:10,
-	left:15
-});
-
-var headerView = Ti.UI.createView({
-	height:25
-});
-headerView.add(lbl_header);
-tableView.setHeaderView(headerView);
+tableView.setHeaderView(getHeaderFooterView('Minecraft.net Account ID', 25));
+tableView.setFooterView(getHeaderFooterView('If your account has been migrated to a Mojang account, you have to use your email address instead of your Minecraft username.\n\nNote: we will NEVER store or use any of your informations for anything else than switching your Minecraft skins. Your account info is stored securely in the iOS keychain.', 200));
 
 win.addEventListener('blur', function() {
 	var keychain = require('clearlyinnovative.keychain');
