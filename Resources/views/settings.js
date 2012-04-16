@@ -5,8 +5,7 @@ Ti.include('/includes/lib/json.i18n.js');
 function getTextFieldRow(text, hint, isPassword) {
 	var row = Ti.UI.createTableViewRow({
 		title:text,
-		selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
-		backgroundColor:'white'
+		selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
 	});
 
 	var textfield = Ti.UI.createTextField({
@@ -39,7 +38,7 @@ win.setLeftNavButton(b_close);
 var tableView = Ti.UI.createTableView({
 	data:[getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●●', true)],
 	style:Ti.UI.iPhone.TableViewStyle.GROUPED,
-	backgroundColor:'transparent',
+	backgroundImage:null,
 	scrollable:false
 });
 
