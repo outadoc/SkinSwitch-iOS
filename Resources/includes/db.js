@@ -18,7 +18,6 @@ function getSkins() {
 
 			removePanel: function() {
 				this.remove(this.children[0]);
-				this.children[0] = null;
 				this.isExpanded = false;
 				this.setHasChild(true);
 			}

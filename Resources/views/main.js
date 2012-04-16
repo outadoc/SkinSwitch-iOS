@@ -259,7 +259,7 @@ tableView.addEventListener('click', function(e) {
 				title:I('main.wear'),
 				height:30,
 				width:70,
-				right:10,
+				right:10
 			});
 
 			e.row.setHasChild(false);
@@ -270,7 +270,7 @@ tableView.addEventListener('click', function(e) {
 				tableView.scrollToIndex(e.index + 1);
 			}
 		} else {
-			if(e.source == e.row.children[0]) {
+			if(e.row.children != null && e.source == e.row.children[0]) {
 				Ti.API.debug('clicked wear button for id ' + e.rowData.skinID);
 				var xhr_login = Ti.Network.createHTTPClient({
 					onload: function() {
