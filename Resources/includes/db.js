@@ -1,5 +1,4 @@
-function getSkins()
-{
+function getSkins() {
 	var rows = [];
 	var db = Ti.Database.open('skins');
 	var skinList = db.execute('SELECT * FROM skins');
@@ -16,14 +15,12 @@ function getSkins()
 			isPlaceHolder:false,
 			hasChild:true,
 
-			removePanel: function()
-			{
+			removePanel: function() {
 				this.setHasChild(true);
 				this.remove(this.children[0]);
 				this.children[0] = null;
 				this.isExpanded = false;
 			}
-
 		});
 
 		rows.push(row);
@@ -41,12 +38,10 @@ function getSkins()
 		rows.push(row);
 	}
 
-	function sortRows(ob1, ob2)
-	{
+	function sortRows(ob1, ob2) {
 		if(ob1.title > ob2.title) {
 			return 1;
-		}
-		else if(ob1.title < ob2.title) {
+		} else if(ob1.title < ob2.title) {
 			return -1;
 		}
 		return 0;
@@ -58,8 +53,7 @@ function getSkins()
 	return rows;
 }
 
-function getSkinCount()
-{
+function getSkinCount() {
 	var rows = [];
 	var db = Ti.Database.open('skins');
 	var rowCount = db.execute('SELECT * FROM skins').getRowCount();
