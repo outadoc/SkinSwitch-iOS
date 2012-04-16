@@ -1,13 +1,14 @@
 Ti.include('/includes/db.js');
 Ti.include('/includes/utils.js');
+Ti.include('/includes/lib/json.i18n.js');
 var win = Ti.UI.currentWindow;
 
 var searchBar = Ti.UI.createSearchBar({
-	hintText:'Find a skin...',
+	hintText:I('main.searchHint'),
 	barColor:'#888888'
 });
 
-searchBar.addEventListener('focus', retractInfoPanels);
+searchBar.addEventListener('focus', retractAllInfoPanels);
 
 var tableView = Ti.UI.createTableView({
 	style:Ti.UI.iPhone.TableViewStyle.GROUPED,
@@ -34,7 +35,7 @@ b_add.addEventListener('click', function(e) {
 
 	var info_win = Ti.UI.createWindow({
 		url:'add_process/info.js',
-		title:'Skin Information',
+		title:I('addProcess.skinInfo.title'),
 		backgroundImage:getBGImage(),
 		backgroundRepeat:true,
 		container:container,
@@ -57,7 +58,7 @@ var b_settings = Ti.UI.createButton({
 
 b_settings.addEventListener('click', function() {
 	var win_settings = Ti.UI.createWindow({
-		title:'Settings',
+		title:I('settings.title'),
 		barColor:getNavColor(),
 		backgroundImage:getBGImage(),
 		backgroundRepeat:true,
@@ -81,11 +82,11 @@ b_done.addEventListener('click', function(e) {
 	win.setLeftNavButton(b_settings);
 });
 var b_edit = Ti.UI.createButton({
-	title:'Edit'
+	systemButton:Ti.UI.iPhone.SystemButton.EDIT
 });
 
 b_edit.addEventListener('click', function(e) {
-	retractInfoPanels();
+	retractAllInfoPanels();
 	tableView.setEditing(true);
 	win.setRightNavButton(b_done);
 	win.setLeftNavButton(b_add);
@@ -137,7 +138,7 @@ tableView.addEventListener('click', function(e) {
 			infoPanel.add(panelView);
 
 			var lbl_skin_desc_title = Ti.UI.createLabel({
-				text:'Description:',
+				text:I('main.skin.description'),
 				top:20,
 				left:140,
 				color:'darkGray',
@@ -145,7 +146,7 @@ tableView.addEventListener('click', function(e) {
 					fontWeight:'bold'
 				},
 				height:20,
-				width:100
+				width:150
 			});
 
 			panelView.add(lbl_skin_desc_title);
@@ -177,7 +178,7 @@ tableView.addEventListener('click', function(e) {
 			scrollView_desc.add(lbl_skin_desc);
 
 			var lbl_skin_time_title = Ti.UI.createLabel({
-				text:'Creation date:',
+				text:I('main.skin.creation'),
 				top:125,
 				left:140,
 				color:'darkGray',
@@ -185,7 +186,7 @@ tableView.addEventListener('click', function(e) {
 					fontWeight:'bold'
 				},
 				height:20,
-				width:100
+				width:150
 			});
 
 			panelView.add(lbl_skin_time_title);
@@ -333,7 +334,7 @@ tableView.addEventListener('click', function(e) {
 		}
 	}
 });
-function retractInfoPanels() {
+function retractAllInfoPanels() {
 	for(var i = 0; i < tableView.data[0].rowCount; i++) {
 		if(tableView.data[0].rows[i].isInfoPanel) {
 			tableView.setData(tableView.data);
@@ -344,5 +345,5 @@ function retractInfoPanels() {
 }
 
 function updateSkinCount() {
-	tableView.setFooterView(getHeaderFooterView(getSkinCount() + ' skins', 18));
+	tableView.setFooterView(getHeaderFooterView(I('main.skins', String(getSkinCount())), 18));
 }

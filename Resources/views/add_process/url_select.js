@@ -1,5 +1,6 @@
 var win = Ti.UI.currentWindow;
 Ti.include('/includes/utils.js');
+Ti.include('/includes/lib/json.i18n.js');
 
 var view = Ti.UI.createView({
 	height:420,
@@ -25,9 +26,9 @@ var lbl_url = Ti.UI.createLabel({
 });
 
 if(win.from == 'url') {
-	lbl_url.setText('Paste or type the skin URL here (must be a PNG file):');
+	lbl_url.setText(I('addProcess.urlSelect.urlTitle'));
 } else if(win.from == 'pseudo') {
-	lbl_url.setText('Type the Minecraft pseudo here (case-sensitive):');
+	lbl_url.setText(I('addProcess.urlSelect.pseudoTitle'));
 }
 
 view.add(lbl_url);
@@ -69,14 +70,14 @@ txtfield_url.addEventListener('blur', function() {
 view.add(txtfield_url);
 
 var b_next = Ti.UI.createButton({
-	title:'Next'
+	title:I('addProcess.next')
 });
 
 b_next.addEventListener('click', function(e) {
 	var url = txtfield_url.getValue();
 
 	if(url == '' || url == 'http://') {
-		alert('This field cannot be blank.');
+		alert(I('addProcess.urlSelect.blankField'));
 	} else {
 		if(win.from == 'url') {
 			if(url.substring(0, 7) != 'http://') {
@@ -88,7 +89,7 @@ b_next.addEventListener('click', function(e) {
 
 		if(url != null && url.split('.').pop().toLowerCase() == 'png') {
 			var win_process = Ti.UI.createWindow({
-				title:'Processing...',
+				title:I('addProcess.process.title'),
 				url:'processing.js',
 				backgroundImage:getBGImage(),
 				backgroundRepeat:true,
@@ -104,7 +105,7 @@ b_next.addEventListener('click', function(e) {
 
 			win.navGroup.open(win_process);
 		} else {
-			alert('This URL is invalid.');
+			alert(I('addProcess.urlSelect.invalidUrl'));
 		}
 	}
 });

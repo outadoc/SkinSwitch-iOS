@@ -1,4 +1,5 @@
 Ti.include('/includes/utils.js');
+Ti.include('/includes/lib/json.i18n.js');
 var win = Ti.UI.currentWindow;
 var skinID = getRandomID();
 
@@ -7,7 +8,7 @@ var progBar = Ti.UI.createProgressBar({
 	max:100,
 	value:0,
 	width:240,
-	message:'Reticulating Splines...',
+	message:I('addProcess.process.progress.initial'),
 	style:Ti.UI.iPhone.ProgressBarStyle.BAR,
 	color:'white'
 });
@@ -34,9 +35,9 @@ function downloadSkin(url) {
 		},
 		onerror: function(e) {
 			Ti.Filesystem.getFile(getSkinsDir() + skinID).deleteDirectory();
-			alert('Error while downloading the skin. Aborting.');
+			alert(I('addProcess.process.error.skin'));
 			progBar.setValue(0);
-			progBar.setMessage('Fail :(');
+			progBar.setMessage(I('addProcess.process.progress.fail'));
 			win.setRightNavButton(b_done);
 		}
 	});
@@ -44,7 +45,7 @@ function downloadSkin(url) {
 	xhr.open('GET', url);
 	xhr.setFile(Ti.Filesystem.getFile(getSkinsDir() + skinID + '/skin.png'));
 	
-	progBar.setMessage('Downloading Skin...');
+	progBar.setMessage(I('addProcess.process.progress.skin'));
 	progBar.setValue(10);
 	xhr.send();
 }
@@ -62,9 +63,9 @@ function downloadPreview(side) {
 		},
 		onerror: function() {
 			var dialog_continue = Ti.UI.createAlertDialog({
-				title:'Network Error',
-				message:'Error while downloading the preview. There will be no preview for this skin. Continue anyway?',
-				buttonNames:['Cancel', 'Okay'],
+				title:I('addProcess.process.progress.error.preview.title'),
+				message:I('addProcess.process.progress.error.preview.message'),
+				buttonNames:[I('addProcess.process.progress.error.preview.cancel'), I('addProcess.process.progress.error.preview.ok')],
 				cancel:0
 			});
 
@@ -73,7 +74,7 @@ function downloadPreview(side) {
 					registerSkinToDatabase();
 				} else {
 					progBar.setValue(0);
-					progBar.setMessage('Fail :(');
+					progBar.setMessage(I('addProcess.process.progress.fail'));
 					Ti.Filesystem.getFile(getSkinsDir() + skinID).deleteDirectory();
 					win.setRightNavButton(b_done);
 				}
@@ -82,7 +83,7 @@ function downloadPreview(side) {
 			dialog_continue.show();
 		},
 		ondatastream: function(e) {
-			progBar.setMessage('Downloading skin preview...');
+			progBar.setMessage(I('addProcess.process.progress.preview'));
 		}
 	});
 
@@ -90,11 +91,11 @@ function downloadPreview(side) {
 	xhr.open('GET', 'http://dev.outadoc.fr/skinswitch/skinpreview.php?side=' + side + '&url=' + win.skinUrl);
 	xhr.setFile(output);
 	xhr.send();
-	progBar.setMessage('Downloading skin previews...');
+	progBar.setMessage(I('addProcess.process.progress.preview'));
 }
 
 function registerSkinToDatabase() {
-	progBar.setMessage('Registering skin to database...');
+	progBar.setMessage(I('addProcess.process.progress.database'));
 	progBar.setValue(90);
 
 	var db = Ti.Database.open('skins');
@@ -102,7 +103,7 @@ function registerSkinToDatabase() {
 	db.execute('INSERT INTO skins (id, name, description, timestamp) VALUES (?, ?, ?, ?)', skinID, win.skinName, win.skinDesc, String(new Date().getTime()));
 	db.close();
 
-	progBar.setMessage('Successfuly added the skin! :)');
+	progBar.setMessage(I('addProcess.process.progress.success'));
 	progBar.setValue(100);
 	win.setRightNavButton(b_done);
 }
