@@ -8,7 +8,7 @@ function getSkinsDir() {
 }
 
 function getBGImage() {
-	return '/img/stonebrick.png';
+	return '/img/bg.png';
 }
 
 function getNavColor() {

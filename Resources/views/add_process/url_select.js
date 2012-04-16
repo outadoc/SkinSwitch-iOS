@@ -92,7 +92,6 @@ b_next.addEventListener('click', function(e) {
 				title:I('addProcess.process.title'),
 				url:'processing.js',
 				backgroundImage:getBGImage(),
-				backgroundRepeat:true,
 				barColor:getNavColor(),
 
 				skinUrl:url,

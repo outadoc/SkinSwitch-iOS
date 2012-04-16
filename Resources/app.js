@@ -8,7 +8,6 @@ db.close();
 
 var mainWin = Ti.UI.createWindow({
 	backgroundImage:getBGImage(),
-	backgroundRepeat:true,
 	url:'views/main.js',
 	tabBarHidden:true,
 	title:Ti.App.getName(),

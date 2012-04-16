@@ -83,7 +83,6 @@ b_next.addEventListener('click', function(e) {
 				backButtonTitle:I('addProcess.skinInfo.shortTitle'),
 				backgroundImage:getBGImage(),
 				barColor:getNavColor(),
-				backgroundRepeat:true,
 				navGroup:win.navGroup,
 				container:win.container
 			});

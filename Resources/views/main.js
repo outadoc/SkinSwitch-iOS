@@ -37,7 +37,6 @@ b_add.addEventListener('click', function(e) {
 		url:'add_process/info.js',
 		title:I('addProcess.skinInfo.title'),
 		backgroundImage:getBGImage(),
-		backgroundRepeat:true,
 		container:container,
 		barColor:getNavColor()
 	});
@@ -61,7 +60,6 @@ b_settings.addEventListener('click', function() {
 		title:I('settings.title'),
 		barColor:getNavColor(),
 		backgroundImage:getBGImage(),
-		backgroundRepeat:true,
 		url:'settings.js'
 	});
 
