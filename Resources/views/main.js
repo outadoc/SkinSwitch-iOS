@@ -256,7 +256,7 @@ tableView.addEventListener('click', function(e) {
 			});
 
 			var b_wear = Ti.UI.createButton({
-				title:'Wear',
+				title:I('main.wear'),
 				height:30,
 				width:70,
 				right:10,

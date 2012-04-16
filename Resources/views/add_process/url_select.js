@@ -111,3 +111,4 @@ b_next.addEventListener('click', function(e) {
 });
 
 win.setRightNavButton(b_next);
+txtfield_url.focus();

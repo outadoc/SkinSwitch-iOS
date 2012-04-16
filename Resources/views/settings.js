@@ -14,7 +14,7 @@ function getTextFieldRow(text, hint, isPassword) {
 		height:35,
 		top:4,
 		right:25,
-		width:165,
+		width:150,
 		borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
 		returnKeyType:Ti.UI.RETURNKEY_NEXT,
 		hintText:hint,
@@ -39,13 +39,14 @@ win.setLeftNavButton(b_close);
 var tableView = Ti.UI.createTableView({
 	data:[getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●●', true)],
 	style:Ti.UI.iPhone.TableViewStyle.GROUPED,
-	backgroundColor:'transparent'
+	backgroundColor:'transparent',
+	scrollable:false
 });
 
 win.add(tableView);
 
 tableView.setHeaderView(getHeaderFooterView(I('settings.header'), 30));
-tableView.setFooterView(getHeaderFooterView(I('settings.footer.migratedAccount') + '\n\n' + I('settings.footer.privacy'), 200));
+tableView.setFooterView(getHeaderFooterView(I('settings.footer.migratedAccount') + '\n\n' + I('settings.footer.privacy'), I('settings.footer.height')));
 
 win.addEventListener('blur', function() {
 	var keychain = require('clearlyinnovative.keychain');

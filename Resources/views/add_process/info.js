@@ -2,7 +2,7 @@ var win = Ti.UI.currentWindow;
 Ti.include('/includes/utils.js');
 Ti.include('/includes/lib/json.i18n.js');
 
-function getTextFieldRow(text, hint) {
+function getTextFieldRow(text) {
 	var row = Ti.UI.createTableViewRow({
 		title:text,
 		selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
@@ -13,10 +13,9 @@ function getTextFieldRow(text, hint) {
 		height:35,
 		top:4,
 		right:25,
-		width:165,
+		width:I('addProcess.skinInfo.fieldWidth'),
 		borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
-		returnKeyType:Ti.UI.RETURNKEY_NEXT,
-		hintText:hint
+		returnKeyType:Ti.UI.RETURNKEY_NEXT
 	});
 
 	textfield.addEventListener('focus', function() {
@@ -45,7 +44,7 @@ var view = Ti.UI.createView({
 win.add(view);
 
 var tableView = Ti.UI.createTableView({
-	data:[getTextFieldRow(I('addProcess.skinInfo.name.title'), I('addProcess.skinInfo.name.hint')), getTextFieldRow(I('addProcess.skinInfo.description.title'), I('addProcess.skinInfo.description.hint'))],
+	data:[getTextFieldRow(I('addProcess.skinInfo.name')), getTextFieldRow(I('addProcess.skinInfo.description'))],
 	style:Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundImage:null,
 	scrollable:false,
@@ -119,3 +118,4 @@ b_close.addEventListener('click', function(e) {
 });
 
 win.setLeftNavButton(b_close);
+tableView.data[0].rows[0].children[0].focus();

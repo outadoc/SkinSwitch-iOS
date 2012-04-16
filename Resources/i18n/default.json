@@ -5,7 +5,8 @@
 			"description": "Description",
 			"creation": "Date of creation"
 		},
-		"skins": "%s skins"
+		"skins": "%s skins",
+		"wear": "Wear"
 	},
 	"settings": {
 		"title": "Settings",
@@ -14,21 +15,17 @@
 		"header": "Minecraft.net Account ID",
 		"footer": {
 			"migratedAccount": "If your account has been migrated to a Mojang account, you have to use your email address instead of your Minecraft username.",
-			"privacy": "Note: we will NEVER store or use any of your informations for anything else than switching your Minecraft skins. Your account info is stored securely in the iOS keychain."
+			"privacy": "Note: we will NEVER store or use any of your informations for anything else than switching your Minecraft skins. Your account info is stored securely in the iOS keychain.",
+			"height": "200"
 		}
 	},
 	"addProcess": {
 		"skinInfo": {
 			"title": "Skin Information",
 			"shortTitle": "Skin Info",
-			"name": {
-				"title": "Skin Name",
-				"hint": "Name of your skin"
-			},
-			"description": {
-				"title": "Description",
-				"hint": "Description of your skin"
-			},
+			"name": "Skin Name",
+			"description": "Description",
+			"fieldWidth": "165",
 			"error": {
 				"nameDescription": "You must specify a name and a description for this skin.",
 				"name": "You must specify a name for this skin.",
@@ -37,7 +34,7 @@
 			},
 			"method": {
 				"title": "Add the skin...",
-				"pseudo": "From a pseudo",
+				"pseudo": "From an existing pseudo",
 				"url": "From an URL",
 				"cancel": "Cancel"
 			}
@@ -46,7 +43,7 @@
 			"urlTitle": "Paste or type the skin URL here (must be a PNG file):",
 			"pseudoTitle": "Type the Minecraft pseudo here (case-sensitive):",
 			"blankField": "This field cannot be blank.",
-			"invalidUrl": "This URL is invalid (MUST be a PNG file.)"
+			"invalidUrl": "This URL is invalid (MUST be a PNG file)."
 		},
 		"process": {
 			"title": "Processing...",
@@ -64,7 +61,7 @@
 					"title": "Network Error",
 					"message": "Error while downloading the preview. There will be no preview for this skin. Continue anyway?",
 					"cancel": "Cancel",
-					"ok": "Okay"
+					"ok": "Continue"
 				}
 			}
 		},
