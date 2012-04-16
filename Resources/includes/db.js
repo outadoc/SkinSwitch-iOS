@@ -14,12 +14,13 @@ function getSkins() {
 			isExpanded:false,
 			isPlaceHolder:false,
 			hasChild:true,
+			selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.GRAY,
 
 			removePanel: function() {
-				this.setHasChild(true);
 				this.remove(this.children[0]);
 				this.children[0] = null;
 				this.isExpanded = false;
+				this.setHasChild(true);
 			}
 		});
 
