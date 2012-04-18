@@ -38,7 +38,6 @@ var txtfield_url = Ti.UI.createTextField({
 	top:lbl_url.getTop() + lbl_url.getHeight() + 10,
 	left:20,
 	width:280,
-
 	autocorrect:false,
 	keyboardType:Ti.UI.KEYBOARD_URL,
 	returnKeyType:Ti.UI.RETURNKEY_DONE,
@@ -55,14 +54,14 @@ if(win.from == 'url') {
 
 txtfield_url.addEventListener('focus', function() {
 	view.animate({
-		bottom:155,
+		top:-95,
 		duration:300
 	});
 });
 
 txtfield_url.addEventListener('blur', function() {
 	view.animate({
-		bottom:0,
+		top:0,
 		duration:300
 	});
 });

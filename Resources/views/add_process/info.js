@@ -48,7 +48,8 @@ var tableView = Ti.UI.createTableView({
 	style:Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundImage:null,
 	scrollable:false,
-	height:160
+	height:160,
+	rowHeight:45
 });
 
 view.add(tableView);

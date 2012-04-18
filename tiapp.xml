@@ -7,14 +7,14 @@
         <target device="android">false</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>1.8.2</sdk-version>
+    <sdk-version>2.0.1.GA2</sdk-version>
     <id>fr.outadev.skinswitch</id>
     <name>SkinSwitch</name>
     <version>1.0</version>
-    <publisher>outa[dev]</publisher>
+    <publisher>Baptiste Candellier</publisher>
     <url>http://dev.outadoc.fr</url>
     <description>Manage all your Minecraft skins, with one touch.</description>
-    <copyright>2012 outa[dev]</copyright>
+    <copyright>2012 Baptiste Candellier</copyright>
     <icon>icon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>

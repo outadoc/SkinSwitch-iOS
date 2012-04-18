@@ -15,7 +15,8 @@ var tableView = Ti.UI.createTableView({
 	search:searchBar,
 	filterAttribute:'title',
 	backgroundImage:null,
-	top:0
+	top:0,
+	minRowHeight:45
 });
 
 win.add(tableView);

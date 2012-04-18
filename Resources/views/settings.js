@@ -14,6 +14,7 @@ function getTextFieldRow(text, hint, isPassword) {
 		top:4,
 		right:25,
 		width:150,
+		autocorrect:false,
 		borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
 		returnKeyType:Ti.UI.RETURNKEY_NEXT,
 		hintText:hint,
@@ -39,7 +40,8 @@ var tableView = Ti.UI.createTableView({
 	data:[getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●●', true)],
 	style:Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundImage:null,
-	scrollable:false
+	scrollable:false,
+	rowHeight:45
 });
 
 win.add(tableView);
