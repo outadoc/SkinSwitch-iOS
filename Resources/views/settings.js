@@ -19,7 +19,8 @@ function getTextFieldRow(text, hint, isPassword) {
 		returnKeyType:Ti.UI.RETURNKEY_NEXT,
 		hintText:hint,
 		passwordMask:isPassword,
-		autocapitalization:Ti.UI.TEXT_AUTOCAPITALIZATION_NONE
+		autocapitalization:Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
+		clearButtonMode:Ti.UI.INPUT_BUTTONMODE_ONFOCUS
 	});
 
 	row.add(textfield);

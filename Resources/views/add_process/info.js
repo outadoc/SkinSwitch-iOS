@@ -15,7 +15,8 @@ function getTextFieldRow(text) {
 		right:25,
 		width:I('addProcess.skinInfo.fieldWidth'),
 		borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
-		returnKeyType:Ti.UI.RETURNKEY_NEXT
+		returnKeyType:Ti.UI.RETURNKEY_NEXT,
+		clearButtonMode:Ti.UI.INPUT_BUTTONMODE_ONFOCUS
 	});
 
 	textfield.addEventListener('focus', function() {
