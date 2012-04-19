@@ -1,7 +1,10 @@
 Ti.include('/includes/db.js');
 Ti.include('/includes/utils.js');
 Ti.include('/includes/lib/json.i18n.js');
+
 var win = Ti.UI.currentWindow;
+var loadingWin = createLoadingWindow();
+loadingWin.open();
 
 var searchBar = Ti.UI.createSearchBar({
 	hintText:I('main.searchHint'),
@@ -15,15 +18,16 @@ var tableView = Ti.UI.createTableView({
 	search:searchBar,
 	filterAttribute:'title',
 	backgroundImage:null,
-	top:0,
-	minRowHeight:45
+	top:0
 });
 
 win.add(tableView);
 
 win.addEventListener('focus', function() {
+	loadingWin.open();
 	tableView.setData(getSkins());
 	updateSkinCount();
+	loadingWin.close();
 });
 var b_add = Ti.UI.createButton({
 	systemButton:Ti.UI.iPhone.SystemButton.ADD
@@ -235,14 +239,14 @@ tableView.addEventListener('click', function(e) {
 				left:0
 			});
 
-			img_skin_front.addEventListener('click', function(e) {
+			img_skin_front.addEventListener('singletap', function() {
 				view_skin.animate({
 					view:img_skin_back,
 					transition:Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
 				});
 			});
 
-			img_skin_back.addEventListener('click', function(e) {
+			img_skin_back.addEventListener('singletap', function() {
 				view_skin.animate({
 					view:img_skin_front,
 					transition:Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
@@ -333,6 +337,7 @@ tableView.addEventListener('click', function(e) {
 		}
 	}
 });
+
 function retractAllInfoPanels() {
 	for(var i = 0; i < tableView.data[0].rowCount; i++) {
 		if(tableView.data[0].rows[i].isInfoPanel) {
