@@ -10,9 +10,8 @@ function getTextFieldRow(text) {
 
 	var textfield = Ti.UI.createTextField({
 		color:'#336699',
-		height:35,
-		top:4,
-		right:25,
+		height:30,
+		right:5,
 		width:I('addProcess.skinInfo.fieldWidth'),
 		borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
 		returnKeyType:Ti.UI.RETURNKEY_NEXT,
