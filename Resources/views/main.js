@@ -353,7 +353,7 @@ function updateSkinCount() {
 		text:I('main.skins', String(getSkinCount())),
 		color:'#F8F8F8',
 		font: {
-			fontSize:17,
+			fontSize:15,
 			fontWeight:'bold'
 		},
 		shadowColor:'black',
@@ -363,7 +363,7 @@ function updateSkinCount() {
 		},
 		top:0,
 		left:15,
-		height:18
+		height:16
 	});
 	
 	tableView.setFooterView(lbl_footer);
