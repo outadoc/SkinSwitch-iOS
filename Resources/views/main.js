@@ -143,7 +143,7 @@ tableView.addEventListener('click', function(e) {
 			var lbl_skin_desc_title = Ti.UI.createLabel({
 				text:I('main.skin.description'),
 				top:20,
-				left:140,
+				left:135,
 				color:'darkGray',
 				font: {
 					fontWeight:'bold'
@@ -174,7 +174,6 @@ tableView.addEventListener('click', function(e) {
 				font: {
 					fontSize:13
 				},
-				height:'auto',
 				width:150
 			});
 
@@ -182,8 +181,8 @@ tableView.addEventListener('click', function(e) {
 
 			var lbl_skin_time_title = Ti.UI.createLabel({
 				text:I('main.skin.creation'),
-				top:125,
-				left:140,
+				top:130,
+				left:135,
 				color:'darkGray',
 				font: {
 					fontWeight:'bold'
@@ -199,7 +198,7 @@ tableView.addEventListener('click', function(e) {
 			var lbl_skin_time = Ti.UI.createLabel({
 				text:creationDate.toLocaleDateString(),
 				color:'darkGray',
-				top:150,
+				top:lbl_skin_time_title.getTop() + 25,
 				left:140,
 				font: {
 					fontSize:13
@@ -260,9 +259,19 @@ tableView.addEventListener('click', function(e) {
 
 			var b_wear = Ti.UI.createButton({
 				title:I('main.wear'),
-				height:30,
-				width:70,
-				right:10
+				height:27,
+				width:60,
+				right:10,
+				borderRadius:7,
+				backgroundImage:null,
+				borderWidth:1,
+				borderColor:'lightGray',
+				color:'darkGray',
+				font: {
+					fontSize:15
+				},
+				backgroundColor:'#d5d5d5',
+				selectedColor:'black'
 			});
 
 			e.row.setHasChild(false);
@@ -365,6 +374,6 @@ function updateSkinCount() {
 		left:15,
 		height:16
 	});
-	
+
 	tableView.setFooterView(lbl_footer);
 }
