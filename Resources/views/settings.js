@@ -42,13 +42,49 @@ var tableView = Ti.UI.createTableView({
 	style:Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundImage:null,
 	scrollable:false,
-	rowHeight:45
+	rowHeight:45,
+	top:20
 });
 
 win.add(tableView);
 
-tableView.setHeaderView(getHeaderFooterView(I('settings.header'), 30));
-tableView.setFooterView(getHeaderFooterView(I('settings.footer.migratedAccount') + '\n\n' + I('settings.footer.privacy'), I('settings.footer.height')));
+var lbl_header = Ti.UI.createLabel({
+	text:I('settings.header'),
+	color:'#F8F8F8',
+	font: {
+		fontSize:17,
+		fontWeight:'bold'
+	},
+	shadowColor:'black',
+	shadowOffset: {
+		x:0,
+		y:1
+	},
+	top:5,
+	left:15,
+	height:30
+});
+
+win.add(lbl_header);
+
+var lbl_footer = Ti.UI.createLabel({
+	text:I('settings.footer.migratedAccount') + '\n\n' + I('settings.footer.privacy'),
+	color:'#F8F8F8',
+	font: {
+		fontSize:15
+	},
+	shadowColor:'black',
+	shadowOffset: {
+		x:0,
+		y:1
+	},
+	top:135,
+	left:20,
+	width:285,
+	height:I('settings.footer.height')
+});
+
+win.add(lbl_footer);
 
 win.addEventListener('blur', function() {
 	var keychain = require('clearlyinnovative.keychain');
