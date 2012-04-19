@@ -9,13 +9,12 @@ function getSkins() {
 			title:skinList.fieldByName('name'),
 			skinDesc:skinList.fieldByName('description'),
 			skinTime:parseInt(skinList.fieldByName('timestamp')),
-
 			editable:true,
 			isExpanded:false,
 			isPlaceHolder:false,
 			hasChild:true,
 			selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.GRAY,
-
+			height:45,
 			removePanel: function() {
 				this.remove(this.children[0]);
 				this.isExpanded = false;
