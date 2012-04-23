@@ -174,7 +174,8 @@ tableView.addEventListener('click', function(e) {
 				font: {
 					fontSize:13
 				},
-				width:150
+				width:150,
+				height:Ti.UI.SIZE
 			});
 
 			scrollView_desc.add(lbl_skin_desc);
@@ -270,7 +271,6 @@ tableView.addEventListener('click', function(e) {
 				font: {
 					fontSize:15
 				},
-				backgroundColor:'#d5d5d5',
 				selectedColor:'black'
 			});
 
@@ -284,6 +284,21 @@ tableView.addEventListener('click', function(e) {
 		} else {
 			if(e.row.children != null && e.source == e.row.children[0]) {
 				Ti.API.debug('clicked wear button for id ' + e.rowData.skinID);
+
+				var prog_upload = Ti.UI.createProgressBar({
+					min:0,
+					max:100,
+					value:0,
+					color:'white',
+					message:'Reticulating Splines...',
+					font: {
+						fontSize:14
+					}
+				});
+
+				prog_upload.show();
+				win.setTitleControl(prog_upload);
+
 				var xhr_login = Ti.Network.createHTTPClient({
 					onload: function() {
 						Ti.API.debug('login succeeded, status code ' + this.getStatus());
@@ -293,26 +308,54 @@ tableView.addEventListener('click', function(e) {
 							onload: function() {
 								Ti.API.debug('uploaded skin, status code ' + this.getStatus());
 								Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
+
+								prog_upload.setMessage('Upload complete!');
+								prog_upload.setValue(100);
+
+								setTimeout(function() {
+									win.setTitleControl(null);
+								}, 1000);
 							},
 							onerror: function() {
 								Ti.API.debug('failed to upload skin, error ' + this.getStatus());
+
+								prog_upload.setMessage('Failed to upload');
+								prog_upload.setValue(0);
+
+								setTimeout(function() {
+									win.setTitleControl(null);
+								}, 1000);
 							},
 							autoRedirect:false
 						});
 
+						prog_upload.setMessage('Uploading skin...');
+						prog_upload.setValue(30);
+
 						xhr_skin.open('POST', 'http://www.minecraft.net/profile/skin');
 						xhr_skin.setRequestHeader('enctype', 'multipart/form-data');
 						xhr_skin.setRequestHeader('Content-Type', 'image/png');
+
 						xhr_skin.send({
 							skin:Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinID + '/skin.png').read()
 						});
 					},
 					onerror: function() {
 						Ti.API.debug('login failed, error ' + this.getStatus());
+
+						prog_upload.setMessage('Failed to login');
+						prog_upload.setValue(0);
+
+						setTimeout(function() {
+							win.setTitleControl(null);
+						}, 1000);
 					},
 					autoRedirect:false,
 					validatesSecureCertificate:false
 				});
+
+				prog_upload.setMessage('Logging in...');
+				prog_upload.setValue(3);
 
 				xhr_login.open('POST', 'https://www.minecraft.net/login');
 				xhr_login.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
