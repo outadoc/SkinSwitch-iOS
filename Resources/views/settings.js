@@ -35,7 +35,7 @@ b_close.addEventListener('click', function() {
 	win.close();
 });
 
-win.setLeftNavButton(b_close);
+win.setRightNavButton(b_close);
 
 var tableView = Ti.UI.createTableView({
 	data:[getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●●', true)],
