@@ -61,14 +61,26 @@ var b_settings = Ti.UI.createButton({
 });
 
 b_settings.addEventListener('click', function() {
+	var container = Ti.UI.createWindow({
+		navBarHidden:true
+	});
+	
 	var win_settings = Ti.UI.createWindow({
 		title:I('settings.title'),
 		barColor:getNavColor(),
 		backgroundImage:getBGImage(),
-		url:'settings.js'
+		url:'settings.js',
+		container:container
 	});
+	
+	var group = Ti.UI.iPhone.createNavigationGroup({
+		window:win_settings
+	});
+	
+	win_settings.navGroup = group;
+	container.add(group);
 
-	win_settings.open({
+	container.open({
 		modal:true
 	});
 });

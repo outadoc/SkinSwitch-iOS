@@ -32,10 +32,27 @@ var b_close = Ti.UI.createButton({
 });
 
 b_close.addEventListener('click', function() {
-	win.close();
+	win.container.close();
 });
 
 win.setRightNavButton(b_close);
+
+var b_credits = Ti.UI.createButton({
+	title:'Credits'
+});
+
+b_credits.addEventListener('click', function() {
+	var credits_win = Ti.UI.createWindow({
+		url:'credits.js',
+		title:'Credits',
+		backgroundImage:getBGImage(),
+		barColor:getNavColor()
+	});
+	
+	win.navGroup.open(credits_win);
+});
+
+win.setLeftNavButton(b_credits);
 
 var tableView = Ti.UI.createTableView({
 	data:[getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●●', true)],
