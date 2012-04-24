@@ -293,7 +293,8 @@ tableView.addEventListener('click', function(e) {
 					message:'Reticulating Splines...',
 					font: {
 						fontSize:14
-					}
+					},
+					style:Titanium.UI.iPhone.ProgressBarStyle.BAR
 				});
 
 				prog_upload.show();
