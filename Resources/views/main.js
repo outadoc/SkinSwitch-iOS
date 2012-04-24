@@ -290,7 +290,7 @@ tableView.addEventListener('click', function(e) {
 					max:100,
 					value:0,
 					color:'white',
-					message:'Reticulating Splines...',
+					width:150,
 					font: {
 						fontSize:14
 					},
