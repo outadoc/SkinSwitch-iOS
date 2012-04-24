@@ -309,7 +309,7 @@ tableView.addEventListener('click', function(e) {
 								Ti.API.debug('uploaded skin, status code ' + this.getStatus());
 								Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
 
-								prog_upload.setMessage('Upload complete!');
+								prog_upload.setMessage(I('main.progressBar.success'));
 								prog_upload.setValue(100);
 
 								setTimeout(function() {
@@ -319,7 +319,7 @@ tableView.addEventListener('click', function(e) {
 							onerror: function() {
 								Ti.API.debug('failed to upload skin, error ' + this.getStatus());
 
-								prog_upload.setMessage('Failed to upload');
+								prog_upload.setMessage(I('main.progressBar.uploadFail'));
 								prog_upload.setValue(0);
 
 								setTimeout(function() {
@@ -329,7 +329,7 @@ tableView.addEventListener('click', function(e) {
 							autoRedirect:false
 						});
 
-						prog_upload.setMessage('Uploading skin...');
+						prog_upload.setMessage(I('main.progressBar.upload'));
 						prog_upload.setValue(30);
 
 						xhr_skin.open('POST', 'http://www.minecraft.net/profile/skin');
@@ -343,7 +343,7 @@ tableView.addEventListener('click', function(e) {
 					onerror: function() {
 						Ti.API.debug('login failed, error ' + this.getStatus());
 
-						prog_upload.setMessage('Failed to login');
+						prog_upload.setMessage(I('main.progressBar.loginFail'));
 						prog_upload.setValue(0);
 
 						setTimeout(function() {
@@ -354,7 +354,7 @@ tableView.addEventListener('click', function(e) {
 					validatesSecureCertificate:false
 				});
 
-				prog_upload.setMessage('Logging in...');
+				prog_upload.setMessage(I('main.progressBar.login'));
 				prog_upload.setValue(3);
 
 				xhr_login.open('POST', 'https://www.minecraft.net/login');

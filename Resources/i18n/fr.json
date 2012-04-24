@@ -6,7 +6,14 @@
 			"creation": "Date de création"
 		},
 		"skins": "%s skins",
-		"wear": "Porter"
+		"wear": "Porter",
+		"progressBar": {
+			"login": "Connexion...",
+			"upload": "Envoi du skin...",
+			"loginFail": "Échec de connexion",
+			"uploadFail": "Échec de l'envoi",
+			"success": "Envoi terminé !"
+		}
 	},
 	"settings": {
 		"title": "Préférences",

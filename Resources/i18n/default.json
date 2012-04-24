@@ -6,7 +6,14 @@
 			"creation": "Date of creation"
 		},
 		"skins": "%s skins",
-		"wear": "Wear"
+		"wear": "Wear",
+		"progressBar": {
+			"login": "Logging in...",
+			"upload": "Uploading skin...",
+			"loginFail": "Login failed",
+			"uploadFail": "Upload failed",
+			"success": "Upload complete!"
+		}
 	},
 	"settings": {
 		"title": "Settings",
