@@ -23,7 +23,6 @@ function getSkins() {
 
 		var b_wear = Ti.UI.createButton({
 			style: Ti.UI.iPhone.SystemButton.DISCLOSURE,
-			zIndex: 1000,
 			right: 10
 		});
 
