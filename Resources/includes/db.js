@@ -1,3 +1,5 @@
+Ti.include('/includes/network.js');
+
 function getSkins() {
 	var rows = [];
 	var db = Ti.Database.open('skins');
@@ -12,16 +14,23 @@ function getSkins() {
 			editable:true,
 			isExpanded:false,
 			isPlaceHolder:false,
-			hasChild:true,
 			selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.GRAY,
 			height:45,
 			removePanel: function() {
-				this.remove(this.children[0]);
 				this.isExpanded = false;
-				this.setHasChild(true);
 			}
 		});
-
+		
+		var b_wear = Ti.UI.createButton({
+			style:Ti.UI.iPhone.SystemButton.DISCLOSURE,
+			right:10
+		});
+		
+		b_wear.addEventListener('click', function(e) {
+			uploadSkin(e.source.parent.skinID, e.source.parent.title);
+		});
+		
+		row.add(b_wear);
 		rows.push(row);
 		skinList.next();
 	}

@@ -64,7 +64,7 @@ b_settings.addEventListener('click', function() {
 	var container = Ti.UI.createWindow({
 		navBarHidden:true
 	});
-	
+
 	var win_settings = Ti.UI.createWindow({
 		title:I('settings.title'),
 		barColor:getNavColor(),
@@ -72,11 +72,11 @@ b_settings.addEventListener('click', function() {
 		url:'settings.js',
 		container:container
 	});
-	
+
 	var group = Ti.UI.iPhone.createNavigationGroup({
 		window:win_settings
 	});
-	
+
 	win_settings.navGroup = group;
 	container.add(group);
 
@@ -135,7 +135,7 @@ tableView.addEventListener('delete', function(e) {
 });
 
 tableView.addEventListener('click', function(e) {
-	if(e.index != null && !e.rowData.isInfoPanel && !e.rowData.isPlaceHolder) {
+	if(e.source != e.row.children[0] && e.index != null && !e.rowData.isInfoPanel && !e.rowData.isPlaceHolder) {
 		if(!e.rowData.isExpanded) {
 			var infoPanel = Ti.UI.createTableViewRow({
 				height:200,
@@ -270,135 +270,17 @@ tableView.addEventListener('click', function(e) {
 				animationStyle:Titanium.UI.iPhone.RowAnimationStyle.FADE
 			});
 
-			var b_wear = Ti.UI.createButton({
-				title:I('main.wear'),
-				height:27,
-				width:60,
-				right:10,
-				borderRadius:7,
-				backgroundImage:null,
-				borderWidth:1,
-				borderColor:'lightGray',
-				color:'darkGray',
-				font: {
-					fontSize:15
-				},
-				selectedColor:'black'
-			});
-
-			e.row.setHasChild(false);
-			e.row.add(b_wear);
 			e.rowData.isExpanded = true;
 
 			if(searchBar.getValue() != '') {
 				tableView.scrollToIndex(e.index + 1);
 			}
 		} else {
-			if(e.row.children != null && e.source == e.row.children[0]) {
-				Ti.API.debug('clicked wear button for id ' + e.rowData.skinID);
-
-				var prog_upload = Ti.UI.createProgressBar({
-					min:0,
-					max:100,
-					value:0,
-					color:'white',
-					width:150,
-					font: {
-						fontSize:14
-					},
-					style:Titanium.UI.iPhone.ProgressBarStyle.BAR
-				});
-
-				prog_upload.show();
-				win.setTitleControl(prog_upload);
-
-				var xhr_login = Ti.Network.createHTTPClient({
-					onload: function() {
-						Ti.API.debug('login succeeded, status code ' + this.getStatus());
-						Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
-
-						var xhr_skin = Ti.Network.createHTTPClient({
-							onload: function() {
-								Ti.API.debug('uploaded skin, status code ' + this.getStatus());
-								Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
-
-								prog_upload.setMessage(I('main.progressBar.success'));
-								prog_upload.setValue(100);
-
-								setTimeout(function() {
-									win.setTitleControl(null);
-								}, 1000);
-							},
-							onerror: function() {
-								Ti.API.debug('failed to upload skin, error ' + this.getStatus());
-
-								prog_upload.setMessage(I('main.progressBar.uploadFail'));
-								prog_upload.setValue(0);
-
-								setTimeout(function() {
-									win.setTitleControl(null);
-								}, 1000);
-							},
-							autoRedirect:false
-						});
-
-						prog_upload.setMessage(I('main.progressBar.upload'));
-						prog_upload.setValue(30);
-
-						xhr_skin.open('POST', 'http://www.minecraft.net/profile/skin');
-						xhr_skin.setRequestHeader('enctype', 'multipart/form-data');
-						xhr_skin.setRequestHeader('Content-Type', 'image/png');
-
-						xhr_skin.send({
-							skin:Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinID + '/skin.png').read()
-						});
-					},
-					onerror: function() {
-						Ti.API.debug('login failed, error ' + this.getStatus());
-
-						prog_upload.setMessage(I('main.progressBar.loginFail'));
-						prog_upload.setValue(0);
-
-						setTimeout(function() {
-							win.setTitleControl(null);
-						}, 1000);
-					},
-					autoRedirect:false,
-					validatesSecureCertificate:false
-				});
-
-				prog_upload.setMessage(I('main.progressBar.login'));
-				prog_upload.setValue(3);
-
-				xhr_login.open('POST', 'https://www.minecraft.net/login');
-				xhr_login.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-				var keychain = require('clearlyinnovative.keychain');
-
-				keychain.getForKey({
-					key:'username',
-					serviceName:Ti.App.getId()
-				}, function(data) {
-					var username = data.value;
-					keychain.getForKey({
-						key:'password',
-						serviceName:Ti.App.getId()
-					}, function(data) {
-						var password = data.value;
-						xhr_login.send({
-							username:username,
-							password:password,
-							remember:'true'
-						});
-					});
-				});
-			} else {
-				tableView.deleteRow(e.index + 1, {
-					animated:true,
-					animationStyle:Titanium.UI.iPhone.RowAnimationStyle.FADE
-				});
-				e.row.removePanel();
-			}
+			tableView.deleteRow(e.index + 1, {
+				animated:true,
+				animationStyle:Titanium.UI.iPhone.RowAnimationStyle.FADE
+			});
+			e.row.removePanel();
 		}
 	}
 });
