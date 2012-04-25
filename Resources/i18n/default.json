@@ -6,7 +6,6 @@
 			"creation": "Date of creation"
 		},
 		"skins": "%s skins",
-		"wear": "Wear",
 		"progressBar": {
 			"login": "Logging in...",
 			"upload": "Uploading skin...",
