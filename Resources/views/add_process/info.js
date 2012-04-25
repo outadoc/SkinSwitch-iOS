@@ -110,7 +110,8 @@ b_next.addEventListener('click', function(e) {
 win.setRightNavButton(b_next);
 
 var b_close = Ti.UI.createButton({
-	systemButton:Ti.UI.iPhone.SystemButton.DONE
+	title:I('buttons.close'),
+	style:Titanium.UI.iPhone.SystemButtonStyle.DONE
 });
 
 b_close.addEventListener('click', function(e) {

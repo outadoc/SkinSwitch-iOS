@@ -56,29 +56,31 @@ b_add.addEventListener('click', function(e) {
 		modal:true
 	});
 });
+
 var b_settings = Ti.UI.createButton({
 	image:'/img/gear.png'
 });
 
 b_settings.addEventListener('click', function() {
-	var container = Ti.UI.createWindow({
-		navBarHidden:true
-	});
-
 	var win_settings = Ti.UI.createWindow({
 		title:I('settings.title'),
 		barColor:getNavColor(),
 		backgroundImage:getBGImage(),
-		url:'settings.js',
-		container:container
+		url:'settings.js'
+	});
+	
+	var container = Ti.UI.createWindow({
+		navBarHidden:true
 	});
 
-	var group = Ti.UI.iPhone.createNavigationGroup({
+	var navGroup = Ti.UI.iPhone.createNavigationGroup({
 		window:win_settings
 	});
-
-	win_settings.navGroup = group;
-	container.add(group);
+	
+	container.add(navGroup);
+	
+	win_settings.navGroup = navGroup;
+	win_settings.container = container;
 
 	container.open({
 		modal:true
@@ -88,7 +90,8 @@ b_settings.addEventListener('click', function() {
 win.setLeftNavButton(b_settings);
 
 var b_done = Ti.UI.createButton({
-	systemButton:Ti.UI.iPhone.SystemButton.DONE
+	title:I('buttons.done'),
+	style:Titanium.UI.iPhone.SystemButtonStyle.DONE
 });
 
 b_done.addEventListener('click', function(e) {
@@ -96,8 +99,9 @@ b_done.addEventListener('click', function(e) {
 	win.setRightNavButton(b_edit);
 	win.setLeftNavButton(b_settings);
 });
+
 var b_edit = Ti.UI.createButton({
-	systemButton:Ti.UI.iPhone.SystemButton.EDIT
+	title:I('buttons.edit')
 });
 
 b_edit.addEventListener('click', function(e) {

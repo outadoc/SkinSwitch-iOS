@@ -28,7 +28,8 @@ function getTextFieldRow(text, hint, isPassword) {
 }
 
 var b_close = Ti.UI.createButton({
-	systemButton:Ti.UI.iPhone.SystemButton.DONE
+	title:I('buttons.close'),
+	style:Titanium.UI.iPhone.SystemButtonStyle.DONE
 });
 
 b_close.addEventListener('click', function() {

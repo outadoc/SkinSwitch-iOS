@@ -31,7 +31,7 @@
 			"shortTitle": "Info skin",
 			"name": "Nom du skin",
 			"description": "Description",
-			"fieldWidth": "155",
+			"fieldWidth": "172",
 			"error": {
 				"nameDescription": "Vous devez spécifier un nom et une description.",
 				"name": "Vous devez spécifier un nom.",
@@ -72,5 +72,10 @@
 			}
 		},
 		"next": "Suivant"
+	},
+	"buttons": {
+		"edit": "Modifier",
+		"done": "Terminé",
+		"close": "Fermer"
 	}
 }

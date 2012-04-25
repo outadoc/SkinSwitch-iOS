@@ -17,7 +17,8 @@ progBar.show();
 win.add(progBar);
 
 var b_done = Ti.UI.createButton({
-	systemButton:Ti.UI.iPhone.SystemButton.DONE
+	title:I('buttons.done'),
+	style:Titanium.UI.iPhone.SystemButtonStyle.DONE
 });
 
 b_done.addEventListener('click', function(e) {

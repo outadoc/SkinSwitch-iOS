@@ -72,5 +72,10 @@
 			}
 		},
 		"next": "Next"
+	},
+	"buttons": {
+		"edit": "Edit",
+		"done": "Done",
+		"close": "Close"
 	}
 }
