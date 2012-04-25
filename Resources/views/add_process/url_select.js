@@ -3,25 +3,25 @@ Ti.include('/includes/utils.js');
 Ti.include('/includes/lib/json.i18n.js');
 
 var view = Ti.UI.createView({
-	height:420,
-	top:0
+	height: 420,
+	top: 0
 });
 
 win.add(view);
 
 var lbl_url = Ti.UI.createLabel({
-	top:130,
-	left:20,
-	width:280,
-	height:60,
-	color:'white',
-	shadowColor:'darkGray',
+	top: 130,
+	left: 20,
+	width: 280,
+	height: 60,
+	color: 'white',
+	shadowColor: 'darkGray',
 	shadowOffset: {
-		x:1,
-		y:1
+		x: 1,
+		y: 1
 	},
 	font: {
-		fontSize:18
+		fontSize: 18
 	}
 });
 
@@ -34,16 +34,16 @@ if(win.from == 'url') {
 view.add(lbl_url);
 
 var txtfield_url = Ti.UI.createTextField({
-	height:35,
-	top:lbl_url.getTop() + lbl_url.getHeight() + 10,
-	left:20,
-	width:280,
-	autocorrect:false,
-	keyboardType:Ti.UI.KEYBOARD_URL,
-	returnKeyType:Ti.UI.RETURNKEY_DONE,
-	borderStyle:Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-	autocapitalization:Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
-	clearButtonMode:Ti.UI.INPUT_BUTTONMODE_ONFOCUS
+	height: 35,
+	top: lbl_url.getTop() + lbl_url.getHeight() + 10,
+	left: 20,
+	width: 280,
+	autocorrect: false,
+	keyboardType: Ti.UI.KEYBOARD_URL,
+	returnKeyType: Ti.UI.RETURNKEY_DONE,
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
 });
 
 if(win.from == 'url') {
@@ -54,22 +54,22 @@ if(win.from == 'url') {
 
 txtfield_url.addEventListener('focus', function() {
 	view.animate({
-		top:-95,
-		duration:300
+		top: -95,
+		duration: 300
 	});
 });
 
 txtfield_url.addEventListener('blur', function() {
 	view.animate({
-		top:0,
-		duration:300
+		top: 0,
+		duration: 300
 	});
 });
 
 view.add(txtfield_url);
 
 var b_next = Ti.UI.createButton({
-	title:I('addProcess.next')
+	title: I('addProcess.next')
 });
 
 b_next.addEventListener('click', function(e) {
@@ -88,17 +88,17 @@ b_next.addEventListener('click', function(e) {
 
 		if(url != null && url.split('.').pop().toLowerCase() == 'png') {
 			var win_process = Ti.UI.createWindow({
-				title:I('addProcess.process.title'),
-				url:'processing.js',
-				backgroundImage:getBGImage(),
-				barColor:getNavColor(),
+				title: I('addProcess.process.title'),
+				url: 'processing.js',
+				backgroundImage: getBGImage(),
+				barColor: getNavColor(),
 
-				skinUrl:url,
-				skinName:win.skinName,
-				skinDesc:win.skinDesc,
-				from:win.from,
-				container:win.container,
-				navGroup:win.navGroup
+				skinUrl: url,
+				skinName: win.skinName,
+				skinDesc: win.skinDesc,
+				from: win.from,
+				container: win.container,
+				navGroup: win.navGroup
 			});
 
 			win.navGroup.open(win_process);
@@ -109,4 +109,4 @@ b_next.addEventListener('click', function(e) {
 });
 
 win.setRightNavButton(b_next);
-txtfield_url.focus();
+txtfield_url.focus(); 

@@ -7,18 +7,18 @@ var loadingWin = createLoadingWindow();
 loadingWin.open();
 
 var searchBar = Ti.UI.createSearchBar({
-	hintText:I('main.searchHint'),
-	barColor:'#888888'
+	hintText: I('main.searchHint'),
+	barColor: '#888888'
 });
 
 searchBar.addEventListener('focus', retractAllInfoPanels);
 
 var tableView = Ti.UI.createTableView({
-	style:Ti.UI.iPhone.TableViewStyle.GROUPED,
-	search:searchBar,
-	filterAttribute:'title',
-	backgroundImage:null,
-	top:0
+	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
+	search: searchBar,
+	filterAttribute: 'title',
+	backgroundImage: null,
+	top: 0
 });
 
 win.add(tableView);
@@ -30,68 +30,68 @@ win.addEventListener('focus', function() {
 	loadingWin.close();
 });
 var b_add = Ti.UI.createButton({
-	systemButton:Ti.UI.iPhone.SystemButton.ADD
+	systemButton: Ti.UI.iPhone.SystemButton.ADD
 });
 
 b_add.addEventListener('click', function(e) {
 	var container = Ti.UI.createWindow({
-		navBarHidden:true
+		navBarHidden: true
 	});
 
 	var info_win = Ti.UI.createWindow({
-		url:'add_process/info.js',
-		title:I('addProcess.skinInfo.title'),
-		backgroundImage:getBGImage(),
-		container:container,
-		barColor:getNavColor()
+		url: 'add_process/info.js',
+		title: I('addProcess.skinInfo.title'),
+		backgroundImage: getBGImage(),
+		container: container,
+		barColor: getNavColor()
 	});
 
 	var group = Ti.UI.iPhone.createNavigationGroup({
-		window:info_win
+		window: info_win
 	});
 
 	info_win.navGroup = group;
 	container.add(group);
 	container.open({
-		modal:true
+		modal: true
 	});
 });
 
 var b_settings = Ti.UI.createButton({
-	image:'/img/gear.png'
+	image: '/img/gear.png'
 });
 
 b_settings.addEventListener('click', function() {
 	var win_settings = Ti.UI.createWindow({
-		title:I('settings.title'),
-		barColor:getNavColor(),
-		backgroundImage:getBGImage(),
-		url:'settings.js'
+		title: I('settings.title'),
+		barColor: getNavColor(),
+		backgroundImage: getBGImage(),
+		url: 'settings.js'
 	});
-	
+
 	var container = Ti.UI.createWindow({
-		navBarHidden:true
+		navBarHidden: true
 	});
 
 	var navGroup = Ti.UI.iPhone.createNavigationGroup({
-		window:win_settings
+		window: win_settings
 	});
-	
+
 	container.add(navGroup);
-	
+
 	win_settings.navGroup = navGroup;
 	win_settings.container = container;
 
 	container.open({
-		modal:true
+		modal: true
 	});
 });
 
 win.setLeftNavButton(b_settings);
 
 var b_done = Ti.UI.createButton({
-	title:I('buttons.done'),
-	style:Titanium.UI.iPhone.SystemButtonStyle.DONE
+	title: I('buttons.done'),
+	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
 });
 
 b_done.addEventListener('click', function(e) {
@@ -101,7 +101,7 @@ b_done.addEventListener('click', function(e) {
 });
 
 var b_edit = Ti.UI.createButton({
-	title:I('buttons.edit')
+	title: I('buttons.edit')
 });
 
 b_edit.addEventListener('click', function(e) {
@@ -133,7 +133,7 @@ tableView.addEventListener('delete', function(e) {
 	if(e.rowData.isExpanded) {
 		tableView.setData(tableView.data);
 		tableView.deleteRow(e.index, {
-			animationStyle:Ti.UI.iPhone.RowAnimationStyle.TOP
+			animationStyle: Ti.UI.iPhone.RowAnimationStyle.TOP
 		});
 	}
 });
@@ -142,70 +142,70 @@ tableView.addEventListener('click', function(e) {
 	if(e.source != e.row.children[0] && e.index != null && !e.rowData.isInfoPanel && !e.rowData.isPlaceHolder) {
 		if(!e.rowData.isExpanded) {
 			var infoPanel = Ti.UI.createTableViewRow({
-				height:200,
-				isInfoPanel:true,
-				editable:false,
-				selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
+				height: 200,
+				isInfoPanel: true,
+				editable: false,
+				selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
 			});
 
 			var panelView = Ti.UI.createView({
-				height:200,
-				width:300,
-				backgroundImage:'/img/panel_bg.png'
+				height: 200,
+				width: 300,
+				backgroundImage: '/img/panel_bg.png'
 			});
 
 			infoPanel.add(panelView);
 
 			var lbl_skin_desc_title = Ti.UI.createLabel({
-				text:I('main.skin.description'),
-				top:20,
-				left:135,
-				color:'darkGray',
+				text: I('main.skin.description'),
+				top: 20,
+				left: 135,
+				color: 'darkGray',
 				font: {
-					fontWeight:'bold'
+					fontWeight: 'bold'
 				},
-				height:20,
-				width:150
+				height: 20,
+				width: 150
 			});
 
 			panelView.add(lbl_skin_desc_title);
 
 			var scrollView_desc = Ti.UI.createScrollView({
-				height:75,
-				width:180,
-				top:45,
-				left:140,
-				scrollType:'vertical',
-				showVerticalScrollIndicator:true,
-				contentHeight:'auto'
+				height: 75,
+				width: 180,
+				top: 45,
+				left: 140,
+				scrollType: 'vertical',
+				showVerticalScrollIndicator: true,
+				contentHeight: 'auto'
 			});
 
 			panelView.add(scrollView_desc);
 
 			var lbl_skin_desc = Ti.UI.createLabel({
-				text:e.rowData.skinDesc,
-				color:'darkGray',
-				top:0,
-				left:0,
+				text: e.rowData.skinDesc,
+				color: 'darkGray',
+				top: 0,
+				left: 0,
 				font: {
-					fontSize:13
+					fontSize: 13
 				},
-				width:150,
-				height:Ti.UI.SIZE
+				width: 150,
+				height: Ti.UI.SIZE
 			});
 
 			scrollView_desc.add(lbl_skin_desc);
 
 			var lbl_skin_time_title = Ti.UI.createLabel({
-				text:I('main.skin.creation'),
-				top:130,
-				left:135,
-				color:'darkGray',
+				text: I('main.skin.creation'),
+				top: 130,
+				left: 135,
+				color: 'darkGray',
 				font: {
-					fontWeight:'bold'
+					fontWeight: 'bold'
 				},
-				height:20,
-				width:150
+				height: 20,
+				width: 150
 			});
 
 			panelView.add(lbl_skin_time_title);
@@ -213,65 +213,65 @@ tableView.addEventListener('click', function(e) {
 			var creationDate = new Date(e.rowData.skinTime);
 
 			var lbl_skin_time = Ti.UI.createLabel({
-				text:creationDate.toLocaleDateString(),
-				color:'darkGray',
-				top:lbl_skin_time_title.getTop() + 25,
-				left:140,
+				text: creationDate.toLocaleDateString(),
+				color: 'darkGray',
+				top: lbl_skin_time_title.getTop() + 25,
+				left: 140,
 				font: {
-					fontSize:13
+					fontSize: 13
 				},
-				height:'auto',
-				width:150
+				height: 'auto',
+				width: 150
 			});
 
 			panelView.add(lbl_skin_time);
 
 			var view_skin = Ti.UI.createImageView({
-				height:170,
-				width:85,
-				top:15,
-				left:20
+				height: 170,
+				width: 85,
+				top: 15,
+				left: 20
 			});
 
 			panelView.add(view_skin);
 
 			var img_skin_front = Ti.UI.createImageView({
-				defaultImage:'/img/char_front.png',
-				image:Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinID + '/front.png').getNativePath(),
-				height:170,
-				width:85,
-				top:0,
-				left:0
+				defaultImage: '/img/char_front.png',
+				image: Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinID + '/front.png').getNativePath(),
+				height: 170,
+				width: 85,
+				top: 0,
+				left: 0
 			});
 
 			view_skin.add(img_skin_front);
 
 			var img_skin_back = Ti.UI.createImageView({
-				defaultImage:'/img/char_back.png',
-				image:Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinID + '/back.png').getNativePath(),
-				height:170,
-				width:85,
-				top:0,
-				left:0
+				defaultImage: '/img/char_back.png',
+				image: Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinID + '/back.png').getNativePath(),
+				height: 170,
+				width: 85,
+				top: 0,
+				left: 0
 			});
 
 			img_skin_front.addEventListener('singletap', function() {
 				view_skin.animate({
-					view:img_skin_back,
-					transition:Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
+					view: img_skin_back,
+					transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
 				});
 			});
 
 			img_skin_back.addEventListener('singletap', function() {
 				view_skin.animate({
-					view:img_skin_front,
-					transition:Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+					view: img_skin_front,
+					transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
 				});
 			});
 
 			tableView.insertRowAfter(e.index, infoPanel, {
-				animated:true,
-				animationStyle:Titanium.UI.iPhone.RowAnimationStyle.FADE
+				animated: true,
+				animationStyle: Titanium.UI.iPhone.RowAnimationStyle.FADE
 			});
 
 			e.rowData.isExpanded = true;
@@ -281,8 +281,8 @@ tableView.addEventListener('click', function(e) {
 			}
 		} else {
 			tableView.deleteRow(e.index + 1, {
-				animated:true,
-				animationStyle:Titanium.UI.iPhone.RowAnimationStyle.FADE
+				animated: true,
+				animationStyle: Titanium.UI.iPhone.RowAnimationStyle.FADE
 			});
 			e.row.removePanel();
 		}
@@ -301,20 +301,20 @@ function retractAllInfoPanels() {
 
 function updateSkinCount() {
 	var lbl_footer = Ti.UI.createLabel({
-		text:I('main.skins', String(getSkinCount())),
-		color:'#F8F8F8',
+		text: I('main.skins', String(getSkinCount())),
+		color: '#F8F8F8',
 		font: {
-			fontSize:15,
-			fontWeight:'bold'
+			fontSize: 15,
+			fontWeight: 'bold'
 		},
-		shadowColor:'black',
+		shadowColor: 'black',
 		shadowOffset: {
-			x:0,
-			y:1
+			x: 0,
+			y: 1
 		},
-		top:0,
-		left:15,
-		height:16
+		top: 0,
+		left: 15,
+		height: 16
 	});
 
 	tableView.setFooterView(lbl_footer);

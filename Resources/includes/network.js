@@ -2,10 +2,10 @@ function uploadSkin(id, name) {
 	Ti.API.debug('clicked wear button for id ' + id);
 
 	var dialog_wear = Ti.UI.createAlertDialog({
-		title:'Replace skin ?',
-		message:'Do you really want to replace your skin with "' + name + '" ?',
-		buttonNames:['Cancel', 'Okay'],
-		cancel:1
+		title: 'Replace skin ?',
+		message: 'Do you really want to replace your skin with "' + name + '" ?',
+		buttonNames: ['Cancel', 'Okay'],
+		cancel: 1
 	});
 
 	dialog_wear.show();
@@ -13,15 +13,15 @@ function uploadSkin(id, name) {
 	dialog_wear.addEventListener('click', function(e) {
 		if(e.index == 1) {
 			var prog_upload = Ti.UI.createProgressBar({
-				min:0,
-				max:100,
-				value:0,
-				color:'white',
-				width:150,
+				min: 0,
+				max: 100,
+				value: 0,
+				color: 'white',
+				width: 150,
 				font: {
-					fontSize:14
+					fontSize: 14
 				},
-				style:Titanium.UI.iPhone.ProgressBarStyle.BAR
+				style: Titanium.UI.iPhone.ProgressBarStyle.BAR
 			});
 
 			prog_upload.show();
@@ -54,7 +54,7 @@ function uploadSkin(id, name) {
 								win.setTitleControl(null);
 							}, 1000);
 						},
-						autoRedirect:false
+						autoRedirect: false
 					});
 
 					prog_upload.setMessage(I('main.progressBar.upload'));
@@ -65,7 +65,7 @@ function uploadSkin(id, name) {
 					xhr_skin.setRequestHeader('Content-Type', 'image/png');
 
 					xhr_skin.send({
-						skin:Ti.Filesystem.getFile(getSkinsDir() + id + '/skin.png').read()
+						skin: Ti.Filesystem.getFile(getSkinsDir() + id + '/skin.png').read()
 					});
 				},
 				onerror: function() {
@@ -78,8 +78,8 @@ function uploadSkin(id, name) {
 						win.setTitleControl(null);
 					}, 1000);
 				},
-				autoRedirect:false,
-				validatesSecureCertificate:false
+				autoRedirect: false,
+				validatesSecureCertificate: false
 			});
 
 			prog_upload.setMessage(I('main.progressBar.login'));
@@ -91,19 +91,19 @@ function uploadSkin(id, name) {
 			var keychain = require('clearlyinnovative.keychain');
 
 			keychain.getForKey({
-				key:'username',
-				serviceName:Ti.App.getId()
+				key: 'username',
+				serviceName: Ti.App.getId()
 			}, function(data) {
 				var username = data.value;
 				keychain.getForKey({
-					key:'password',
-					serviceName:Ti.App.getId()
+					key: 'password',
+					serviceName: Ti.App.getId()
 				}, function(data) {
 					var password = data.value;
 					xhr_login.send({
-						username:username,
-						password:password,
-						remember:'true'
+						username: username,
+						password: password,
+						remember: 'true'
 					});
 				});
 			});

@@ -19,17 +19,17 @@ function createLoadingWindow() {
 	var timeoutID;
 
 	var win = Ti.UI.createWindow({
-		width:320,
-		height:480,
-		orientationModes:[Ti.UI.PORTRAIT]
+		width: 320,
+		height: 480,
+		orientationModes: [Ti.UI.PORTRAIT]
 	});
 
 	var view = Ti.UI.createView({
-		height:60,
-		width:60,
-		borderRadius:10,
-		backgroundColor:'black',
-		opacity:0.6
+		height: 60,
+		width: 60,
+		borderRadius: 10,
+		backgroundColor: 'black',
+		opacity: 0.6
 	});
 
 	win.add(view);
@@ -45,7 +45,7 @@ function createLoadingWindow() {
 	});
 
 	var spinWheel = Ti.UI.createActivityIndicator({
-		style:Ti.UI.iPhone.ActivityIndicatorStyle.BIG
+		style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG
 	});
 
 	view.add(spinWheel);

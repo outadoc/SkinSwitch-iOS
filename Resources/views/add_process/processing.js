@@ -4,21 +4,21 @@ var win = Ti.UI.currentWindow;
 var skinID = getRandomID();
 
 var progBar = Ti.UI.createProgressBar({
-	min:0,
-	max:100,
-	value:0,
-	width:240,
-	message:I('addProcess.process.progress.initial'),
-	style:Ti.UI.iPhone.ProgressBarStyle.BAR,
-	color:'white'
+	min: 0,
+	max: 100,
+	value: 0,
+	width: 240,
+	message: I('addProcess.process.progress.initial'),
+	style: Ti.UI.iPhone.ProgressBarStyle.BAR,
+	color: 'white'
 });
 
 progBar.show();
 win.add(progBar);
 
 var b_done = Ti.UI.createButton({
-	title:I('buttons.done'),
-	style:Titanium.UI.iPhone.SystemButtonStyle.DONE
+	title: I('buttons.done'),
+	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
 });
 
 b_done.addEventListener('click', function(e) {
@@ -42,10 +42,10 @@ function downloadSkin(url) {
 			win.setRightNavButton(b_done);
 		}
 	});
-	
+
 	xhr.open('GET', url);
 	xhr.setFile(Ti.Filesystem.getFile(getSkinsDir() + skinID + '/skin.png'));
-	
+
 	progBar.setMessage(I('addProcess.process.progress.skin'));
 	progBar.setValue(10);
 	xhr.send();
@@ -64,10 +64,10 @@ function downloadPreview(side) {
 		},
 		onerror: function() {
 			var dialog_continue = Ti.UI.createAlertDialog({
-				title:I('addProcess.process.progress.error.preview.title'),
-				message:I('addProcess.process.progress.error.preview.message'),
-				buttonNames:[I('addProcess.process.progress.error.preview.cancel'), I('addProcess.process.progress.error.preview.ok')],
-				cancel:0
+				title: I('addProcess.process.progress.error.preview.title'),
+				message: I('addProcess.process.progress.error.preview.message'),
+				buttonNames: [I('addProcess.process.progress.error.preview.cancel'), I('addProcess.process.progress.error.preview.ok')],
+				cancel: 0
 			});
 
 			dialog_continue.addEventListener('click', function(e) {

@@ -7,22 +7,22 @@ db.file.setRemoteBackup(true);
 db.close();
 
 var mainWin = Ti.UI.createWindow({
-	backgroundImage:getBGImage(),
-	url:'views/main.js',
-	tabBarHidden:true,
-	title:Ti.App.getName(),
-	barColor:getNavColor()
+	backgroundImage: getBGImage(),
+	url: 'views/main.js',
+	tabBarHidden: true,
+	title: Ti.App.getName(),
+	barColor: getNavColor()
 });
 
 var navGroup = Ti.UI.iPhone.createNavigationGroup({
-	window:mainWin
+	window: mainWin
 });
 
 var container = Ti.UI.createWindow({
-	navBarHidden:true
+	navBarHidden: true
 });
 
 container.add(navGroup);
 container.open({
-	modal:false
-});
+	modal: false
+}); 

@@ -7,29 +7,29 @@ function getSkins() {
 
 	while(skinList.isValidRow()) {
 		var row = Ti.UI.createTableViewRow({
-			skinID:skinList.fieldByName('id'),
-			title:skinList.fieldByName('name'),
-			skinDesc:skinList.fieldByName('description'),
-			skinTime:parseInt(skinList.fieldByName('timestamp')),
-			editable:true,
-			isExpanded:false,
-			isPlaceHolder:false,
-			selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.GRAY,
-			height:45,
+			skinID: skinList.fieldByName('id'),
+			title: skinList.fieldByName('name'),
+			skinDesc: skinList.fieldByName('description'),
+			skinTime: parseInt(skinList.fieldByName('timestamp')),
+			editable: true,
+			isExpanded: false,
+			isPlaceHolder: false,
+			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.GRAY,
+			height: 45,
 			removePanel: function() {
 				this.isExpanded = false;
 			}
 		});
-		
+
 		var b_wear = Ti.UI.createButton({
-			style:Ti.UI.iPhone.SystemButton.DISCLOSURE,
-			right:10
+			style: Ti.UI.iPhone.SystemButton.DISCLOSURE,
+			right: 10
 		});
-		
+
 		b_wear.addEventListener('click', function(e) {
 			uploadSkin(e.source.parent.skinID, e.source.parent.title);
 		});
-		
+
 		row.add(b_wear);
 		rows.push(row);
 		skinList.next();
@@ -38,9 +38,9 @@ function getSkins() {
 
 	if(rows.length == 0) {
 		var row = {
-			title:'No content at the moment',
-			editable:false,
-			isPlaceHolder:true
+			title: 'No content at the moment',
+			editable: false,
+			isPlaceHolder: true
 		};
 
 		rows.push(row);
