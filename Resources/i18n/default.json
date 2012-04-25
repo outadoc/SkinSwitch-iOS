@@ -73,6 +73,9 @@
 		},
 		"next": "Next"
 	},
+	"credits": {
+		"title": "Credits"
+	},
 	"buttons": {
 		"edit": "Edit",
 		"done": "Done",

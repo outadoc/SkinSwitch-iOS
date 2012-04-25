@@ -40,16 +40,15 @@ b_close.addEventListener('click', function() {
 win.setRightNavButton(b_close);
 
 var b_credits = Ti.UI.createButton({
-	title: 'Credits'
+	title: I('credits.title')
 });
 
 b_credits.addEventListener('click', function() {
 	var credits_win = Ti.UI.createWindow({
 		url: 'credits.js',
-		title: 'Credits',
+		title: I('credits.title'),
 		backgroundImage: getBGImage(),
-		barColor: getNavColor(),
-		layout: 'vertical'
+		barColor: getNavColor()
 	});
 
 	win.navGroup.open(credits_win);
