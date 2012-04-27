@@ -183,7 +183,7 @@ tableView.addEventListener('click', function(e) {
 			panelView.add(scrollView_desc);
 
 			var lbl_skin_desc = Ti.UI.createLabel({
-				text: e.rowData.skinDesc,
+				text: e.rowData.skinDesc + '\n ',
 				color: 'darkGray',
 				top: 0,
 				left: 0,
