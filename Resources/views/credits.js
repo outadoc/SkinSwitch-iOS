@@ -35,7 +35,7 @@ var lbl_app = Ti.UI.createLabel({
 scrollView.add(lbl_app);
 
 var lbl_credits = Ti.UI.createLabel({
-	text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean imperdiet, arcu sed tincidunt tempus, arcu tellus mattis sem, volutpat fringilla velit magna vitae risus. Ut in convallis tortor. Aliquam sed placerat nisl. Fusce ante augue, ornare imperdiet vehicula at, vulputate et ipsum. Vestibulum eleifend mauris sit amet dui imperdiet aliquet. Ut vel nulla a nisi eleifend congue. Etiam tempus auctor nisl. Duis ultrices, dui ut condimentum vehicula, augue lacus scelerisque elit, et faucibus ipsum lorem vel nibh. Proin ac ipsum cursus mauris accumsan tincidunt vitae quis diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque faucibus molestie leo cursus aliquam. Maecenas tristique lobortis nunc. Fusce in erat nibh, ac iaculis sem.',
+	text: I('credits.developer') + ' Baptiste Candellier (outadoc) for outa[dev]\n\n' + I('credits.platform') + ' Appcelerator Titanium\n\n' + I('credits.modules') + ' Keychain module by ClearlyInnovative\n\n' + I('credits.thanks') + '\nElarcis\nAntoine Cognard\nPhilippe Candellier\nEphysPotato\nRamikaze',
 	font: {
 		fontSize: 16
 	},
@@ -47,8 +47,15 @@ var lbl_credits = Ti.UI.createLabel({
 	},
 	width: 280,
 	top: 15,
-	height: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
 	textAlign: 'center'
 });
 
 scrollView.add(lbl_credits);
+
+var img_outadev = Ti.UI.createImageView({
+	image: '/img/outadev.png',
+	top: 20
+});
+
+scrollView.add(img_outadev);

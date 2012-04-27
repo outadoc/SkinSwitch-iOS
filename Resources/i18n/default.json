@@ -74,7 +74,11 @@
 		"next": "Next"
 	},
 	"credits": {
-		"title": "Credits"
+		"title": "Credits",
+		"developer": "Developer:",
+		"platform": "Platform:",
+		"thanks": "Special thanks to:",
+		"modules": "Modules:"
 	},
 	"buttons": {
 		"edit": "Edit",
