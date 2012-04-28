@@ -55,7 +55,9 @@ scrollView.add(lbl_credits);
 
 var img_outadev = Ti.UI.createImageView({
 	image: '/img/outadev.png',
-	top: 20
+	top: 20,
+	bottom: 20,
+	height: Ti.UI.SIZE
 });
 
 scrollView.add(img_outadev);
