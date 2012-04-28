@@ -2,9 +2,9 @@ function uploadSkin(id, name) {
 	Ti.API.debug('clicked wear button for id ' + id);
 
 	var dialog_wear = Ti.UI.createAlertDialog({
-		title: I('main.skinReplace.title'),
-		message: I('main.skinReplace.message', name),
-		buttonNames: [I('main.skinReplace.cancel'), I('main.skinReplace.okay')],
+		title: I('main.skinUpload.confirm.title'),
+		message: I('main.skinUpload.confirm.message', name),
+		buttonNames: [I('main.skinUpload.confirm.cancel'), I('main.skinUpload.confirm.okay')],
 		cancel: 1
 	});
 
@@ -32,61 +32,45 @@ function uploadSkin(id, name) {
 					Ti.API.debug('login succeeded, status code ' + this.getStatus());
 					Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
 
-					var xhr_skin = Ti.Network.createHTTPClient({
-						onload: function() {
-							Ti.API.debug('uploaded skin, status code ' + this.getStatus());
-							Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
-							
-							if(this.getResponseHeader('Location') == 'http://www.minecraft.net/login') {
-								alert(I('main.loginError'));
-								prog_upload.setMessage(I('main.progressBar.loginFail'));
-								prog_upload.setValue(0);
-			
-								setTimeout(function() {
-									win.setTitleControl(null);
-								}, 1000);
-							} else {
-								prog_upload.setMessage(I('main.progressBar.success'));
-								prog_upload.setValue(100);
-	
-								setTimeout(function() {
-									win.setTitleControl(null);
-								}, 1000);
-							}
-						},
-						onerror: function() {
-							Ti.API.debug('failed to upload skin, error ' + this.getStatus());
+					if(this.getResponseHeader('Location') == 'http://www.minecraft.net/login') {
+						triggerError('login', this);
+					} else {
+						var xhr_skin = Ti.Network.createHTTPClient({
+							onload: function() {
+								Ti.API.debug('uploaded skin, status code ' + this.getStatus());
+								Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
 
-							prog_upload.setMessage(I('main.progressBar.uploadFail'));
-							prog_upload.setValue(0);
+								if(this.getResponseHeader('Location') == 'http://www.minecraft.net/login') {
+									triggerError('login', this);
+								} else {
+									prog_upload.setMessage(I('main.progressBar.success'));
+									prog_upload.setValue(100);
 
-							setTimeout(function() {
-								win.setTitleControl(null);
-							}, 1000);
-						},
-						autoRedirect: false
-					});
+									setTimeout(function() {
+										win.setTitleControl(null);
+									}, 1000);
+								}
+							},
+							onerror: function() {
+								triggerError('upload', this)
+							},
+							autoRedirect: false
+						});
 
-					prog_upload.setMessage(I('main.progressBar.upload'));
-					prog_upload.setValue(30);
+						prog_upload.setMessage(I('main.progressBar.upload'));
+						prog_upload.setValue(30);
 
-					xhr_skin.open('POST', 'http://www.minecraft.net/profile/skin');
-					xhr_skin.setRequestHeader('enctype', 'multipart/form-data');
-					xhr_skin.setRequestHeader('Content-Type', 'image/png');
+						xhr_skin.open('POST', 'http://www.minecraft.net/profile/skin');
+						xhr_skin.setRequestHeader('enctype', 'multipart/form-data');
+						xhr_skin.setRequestHeader('Content-Type', 'image/png');
 
-					xhr_skin.send({
-						skin: Ti.Filesystem.getFile(getSkinsDir() + id + '/skin.png').read()
-					});
+						xhr_skin.send({
+							skin: Ti.Filesystem.getFile(getSkinsDir() + id + '/skin.png').read()
+						});
+					}
 				},
 				onerror: function() {
-					Ti.API.debug('login failed, error ' + this.getStatus());
-
-					prog_upload.setMessage(I('main.progressBar.loginFail'));
-					prog_upload.setValue(0);
-
-					setTimeout(function() {
-						win.setTitleControl(null);
-					}, 1000);
+					triggerError('login', this)
 				},
 				autoRedirect: false,
 				validatesSecureCertificate: false
@@ -117,6 +101,25 @@ function uploadSkin(id, name) {
 					});
 				});
 			});
+
+			function triggerError(type, xhr) {
+				Ti.API.debug(type + ' failed, error ' + xhr.getStatus());
+
+				var alert_error = Ti.UI.createAlertDialog({
+					title: I('main.skinUpload.error.title'),
+					message: I('main.skinUpload.error.' + type)
+				});
+
+				alert_error.show();
+
+				prog_upload.setMessage(I('main.progressBar.' + type + 'Fail'));
+				prog_upload.setValue(0);
+
+				setTimeout(function() {
+					win.setTitleControl(null);
+				}, 1000);
+			}
+
 		}
 	});
 }

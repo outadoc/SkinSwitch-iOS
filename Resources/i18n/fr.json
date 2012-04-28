@@ -13,13 +13,19 @@
 			"uploadFail": "Échec de l'envoi",
 			"success": "Envoi terminé !"
 		},
-		"skinReplace": {
-			"title": "Remplacer votre skin ?",
-			"message": "Voulez-vous vraiment remplacer votre skin par \"%s\" ?",
-			"cancel": "Non",
-			"okay": "Oui"
-		},
-		"loginError": "Échec lors de la connexion à minecraft.net. Vérifiez votre nom d'utilisateur et votre mot de passe dans les préférences."
+		"skinUpload": {
+			"confirm": {
+				"title": "Remplacer votre skin ?",
+				"message": "Voulez-vous vraiment remplacer votre skin par \"%s\" ?",
+				"cancel": "Non",
+				"okay": "Oui"
+			},
+			"error": {
+				"title": "Upload error",
+				"login": "Échec lors de la connexion à minecraft.net. Vérifiez votre nom d'utilisateur et votre mot de passe dans les préférences.",
+				"upload": "Échec lors de l'envoi du skin. Merci de réessayer plus tard."
+			}
+		}
 	},
 	"settings": {
 		"title": "Préférences",
