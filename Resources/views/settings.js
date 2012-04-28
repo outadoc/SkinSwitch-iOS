@@ -97,10 +97,10 @@ var lbl_footer = Ti.UI.createLabel({
 		x: 0,
 		y: 1
 	},
-	top: 135,
+	top: 145,
 	left: 20,
 	width: 285,
-	height: I('settings.footer.height')
+	height: Ti.UI.SIZE
 });
 
 win.add(lbl_footer);

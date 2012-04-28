@@ -27,8 +27,7 @@
 		"header": "Minecraft.net Account ID",
 		"footer": {
 			"migratedAccount": "If your account has been migrated to a Mojang account, you have to use your email address instead of your Minecraft username.",
-			"privacy": "Note: we will NEVER store or use any of your informations for anything else than switching your Minecraft skins. Your account info is stored securely in the iOS keychain.",
-			"height": "200"
+			"privacy": "Note: we will NEVER store or use any of your informations for anything else than switching your Minecraft skins. Your account info is stored securely in the iOS keychain."
 		}
 	},
 	"addProcess": {
