@@ -57,7 +57,7 @@ b_credits.addEventListener('click', function() {
 win.setLeftNavButton(b_credits);
 
 var tableView = Ti.UI.createTableView({
-	data: [getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●●', true)],
+	data: [getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●', true)],
 	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundImage: null,
 	scrollable: false,
