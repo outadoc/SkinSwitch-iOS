@@ -23,7 +23,9 @@ function getSkins() {
 
 		var b_wear = Ti.UI.createButton({
 			style: Ti.UI.iPhone.SystemButton.DISCLOSURE,
-			right: 10
+			right: 10,
+			width: 10,
+			height: 10
 		});
 
 		b_wear.addEventListener('click', function(e) {
