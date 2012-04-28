@@ -36,13 +36,23 @@ function uploadSkin(id, name) {
 						onload: function() {
 							Ti.API.debug('uploaded skin, status code ' + this.getStatus());
 							Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
-
-							prog_upload.setMessage(I('main.progressBar.success'));
-							prog_upload.setValue(100);
-
-							setTimeout(function() {
-								win.setTitleControl(null);
-							}, 1000);
+							
+							if(this.getResponseHeader('Location') == 'http://www.minecraft.net/login') {
+								alert(I('main.loginError'));
+								prog_upload.setMessage(I('main.progressBar.loginFail'));
+								prog_upload.setValue(0);
+			
+								setTimeout(function() {
+									win.setTitleControl(null);
+								}, 1000);
+							} else {
+								prog_upload.setMessage(I('main.progressBar.success'));
+								prog_upload.setValue(100);
+	
+								setTimeout(function() {
+									win.setTitleControl(null);
+								}, 1000);
+							}
 						},
 						onerror: function() {
 							Ti.API.debug('failed to upload skin, error ' + this.getStatus());

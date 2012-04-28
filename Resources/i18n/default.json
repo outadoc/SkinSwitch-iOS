@@ -18,7 +18,8 @@
 			"message": "Do you really want to replace your skin with \"%s\"?",
 			"cancel": "No",
 			"okay": "Yes"
-		}
+		},
+		"loginError": "Could not connect to minecraft.net. Please check your login and password in the preferences."
 	},
 	"settings": {
 		"title": "Settings",
