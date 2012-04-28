@@ -32,7 +32,7 @@ function uploadSkin(id, name) {
 					Ti.API.debug('login succeeded, status code ' + this.getStatus());
 					Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
 
-					if(this.getResponseHeader('Location') == 'http://www.minecraft.net/login') {
+					if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
 						triggerError('login', this);
 					} else {
 						var xhr_skin = Ti.Network.createHTTPClient({
@@ -40,7 +40,7 @@ function uploadSkin(id, name) {
 								Ti.API.debug('uploaded skin, status code ' + this.getStatus());
 								Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
 
-								if(this.getResponseHeader('Location') == 'http://www.minecraft.net/login') {
+								if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
 									triggerError('login', this);
 								} else {
 									prog_upload.setMessage(I('main.progressBar.success'));
