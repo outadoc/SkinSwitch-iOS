@@ -12,6 +12,12 @@
 			"loginFail": "Login failed",
 			"uploadFail": "Upload failed",
 			"success": "Upload complete!"
+		},
+		"skinReplace": {
+			"title": "Replace skin?",
+			"message": "Do you really want to replace your skin with \"%s\"?",
+			"cancel": "No",
+			"okay": "Yes"
 		}
 	},
 	"settings": {

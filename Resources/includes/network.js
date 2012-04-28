@@ -2,9 +2,9 @@ function uploadSkin(id, name) {
 	Ti.API.debug('clicked wear button for id ' + id);
 
 	var dialog_wear = Ti.UI.createAlertDialog({
-		title: 'Replace skin ?',
-		message: 'Do you really want to replace your skin with "' + name + '" ?',
-		buttonNames: ['Cancel', 'Okay'],
+		title: I('main.skinReplace.title'),
+		message: I('main.skinReplace.message', name),
+		buttonNames: [I('main.skinReplace.cancel'), I('main.skinReplace.okay')],
 		cancel: 1
 	});
 
