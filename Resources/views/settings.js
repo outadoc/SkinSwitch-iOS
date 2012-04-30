@@ -105,23 +105,6 @@ var lbl_footer = Ti.UI.createLabel({
 
 win.add(lbl_footer);
 
-win.addEventListener('blur', function() {
-	var keychain = require('clearlyinnovative.keychain');
-	keychain.setForKey({
-		key: 'username',
-		value: tableView.getData()[0].getRows()[0].getChildren()[0].getValue(),
-		serviceName: Ti.App.getId()
-	}, function() {
-	});
-
-	keychain.setForKey({
-		key: 'password',
-		value: tableView.getData()[0].getRows()[1].getChildren()[0].getValue(),
-		serviceName: Ti.App.getId()
-	}, function() {
-	});
-});
-
 win.addEventListener('focus', function() {
 	var keychain = require('clearlyinnovative.keychain');
 	keychain.getForKey({
@@ -136,5 +119,22 @@ win.addEventListener('focus', function() {
 		serviceName: Ti.App.getId()
 	}, function(data) {
 		tableView.getData()[0].getRows()[1].getChildren()[0].setValue(data.value);
+	});
+});
+
+win.addEventListener('blur', function() {
+	var keychain = require('clearlyinnovative.keychain');
+	keychain.setForKey({
+		key: 'username',
+		value: tableView.getData()[0].getRows()[0].getChildren()[0].getValue(),
+		serviceName: Ti.App.getId()
+	}, function() {
+	});
+
+	keychain.setForKey({
+		key: 'password',
+		value: tableView.getData()[0].getRows()[1].getChildren()[0].getValue(),
+		serviceName: Ti.App.getId()
+	}, function() {
 	});
 });
