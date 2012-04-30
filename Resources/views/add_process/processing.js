@@ -64,9 +64,9 @@ function downloadPreview(side) {
 		},
 		onerror: function() {
 			var dialog_continue = Ti.UI.createAlertDialog({
-				title: I('addProcess.process.progress.error.preview.title'),
-				message: I('addProcess.process.progress.error.preview.message'),
-				buttonNames: [I('addProcess.process.progress.error.preview.cancel'), I('addProcess.process.progress.error.preview.ok')],
+				title: I('addProcess.process.error.preview.title'),
+				message: I('addProcess.process.error.preview.message'),
+				buttonNames: [I('addProcess.process.error.preview.cancel'), I('addProcess.process.error.preview.ok')],
 				cancel: 0
 			});
 
