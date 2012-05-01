@@ -40,7 +40,7 @@ function getSkins() {
 
 	if(rows.length == 0) {
 		var row = {
-			title: 'No content at the moment',
+			title: I('main.noContent'),
 			editable: false,
 			isPlaceHolder: true
 		};

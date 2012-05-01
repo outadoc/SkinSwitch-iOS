@@ -5,6 +5,7 @@
 			"description": "Description",
 			"creation": "Date of creation"
 		},
+		"noContent": "No skins added yet",
 		"skins": "%s skins",
 		"progressBar": {
 			"login": "Logging in...",
