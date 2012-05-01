@@ -35,7 +35,7 @@ function downloadSkin(url) {
 			downloadPreview('front');
 		},
 		onerror: function(e) {
-			Ti.Filesystem.getFile(getSkinsDir() + skinID).deleteDirectory();
+			Ti.Filesystem.getFile(getSkinsDir() + skinID).deleteDirectory(true);
 			alert(I('addProcess.process.error.skin'));
 			progBar.setValue(0);
 			progBar.setMessage(I('addProcess.process.progress.fail'));
@@ -76,7 +76,7 @@ function downloadPreview(side) {
 				} else {
 					progBar.setValue(0);
 					progBar.setMessage(I('addProcess.process.progress.fail'));
-					Ti.Filesystem.getFile(getSkinsDir() + skinID).deleteDirectory();
+					Ti.Filesystem.getFile(getSkinsDir() + skinID).deleteDirectory(true);
 					win.setRightNavButton(b_done);
 				}
 			});
