@@ -35,7 +35,8 @@
 		"footer": {
 			"migratedAccount": "If your account has been migrated to a Mojang account, you have to use your email address instead of your Minecraft username.",
 			"privacy": "Note: we will NEVER store or use any of your informations for anything else than switching your Minecraft skins. Your account info is stored securely in the iOS keychain."
-		}
+		},
+		"donate": "Donate"
 	},
 	"addProcess": {
 		"skinInfo": {
@@ -96,5 +97,21 @@
 		"edit": "Edit",
 		"done": "Done",
 		"close": "Close"
+	},
+	"webview": {
+		"action": {
+			"safari": "Open in Safari",
+			"email": "Send via email",
+			"cancel": "Cancel"
+		},
+		"email": {
+			"subject": "Donate to outa[dev]",
+			"link": "Click here to donate!",
+			"message": "I can see you're considering a donation to the developer of SkinSwitch... thanks a lot, it really helps! &lt;3"
+		},
+		"error": {
+			"title": "Error",
+			"message": "Error while loading %s: %s"
+		}
 	}
 }
