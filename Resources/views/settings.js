@@ -107,9 +107,11 @@ win.add(lbl_footer);
 
 var b_donate = Ti.UI.createButton({
 	title: I('settings.donate'),
-	bottom: 10,
+	bottom: 15,
 	style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
 	backgroundImage: '/img/donate.png',
+	backgroundSelectedImage: '/img/donate_selected.png',
+	selectedColor:'#003366',
 	height: 35,
 	width: 160,
 	font: {
