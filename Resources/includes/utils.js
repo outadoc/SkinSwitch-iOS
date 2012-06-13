@@ -20,8 +20,6 @@ function getNavColor() {
 }
 
 function createLoadingWindow() {
-	var timeoutID;
-
 	var win = Ti.UI.createWindow({
 		width: 320,
 		height: 480,
@@ -37,16 +35,6 @@ function createLoadingWindow() {
 	});
 
 	win.add(view);
-
-	win.addEventListener('open', function(e) {
-		timeoutID = setTimeout(function() {
-			win.close();
-		}, 10000);
-	});
-
-	win.addEventListener('close', function(e) {
-		clearTimeout(timeoutID);
-	});
 
 	var spinWheel = Ti.UI.createActivityIndicator({
 		style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG
