@@ -15,7 +15,7 @@ function getSkins() {
 			},
 			title: skinList.fieldByName('name'),
 			editable: true,
-			isPlaceHolder: false,
+			isPlaceholder: false,
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.GRAY,
 			height: 45,
 			leftImage: '/img/blank.png',
@@ -62,7 +62,7 @@ function getSkins() {
 		var row = {
 			title: I('main.noContent'),
 			editable: false,
-			isPlaceHolder: true
+			isPlaceholder: true
 		};
 
 		rows.push(row);

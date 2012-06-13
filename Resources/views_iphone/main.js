@@ -136,7 +136,7 @@ tableView.addEventListener('delete', function(e) {
 });
 
 tableView.addEventListener('click', function(e) {
-	if((e.row.children == null || (e.row.children != null && e.source != e.row.children[0])) && e.index != null && !e.rowData.isInfoPanel && !e.rowData.isPlaceHolder) {
+	if((e.row.children == null || (e.row.children != null && e.source != e.row.children[0])) && e.index != null && !e.rowData.isInfoPanel && !e.rowData.isPlaceholder) {
 		if(!e.rowData.isExpanded) {
 			var infoPanel = Ti.UI.createTableViewRow({
 				height: 200,
@@ -283,7 +283,7 @@ tableView.addEventListener('click', function(e) {
 			});
 			e.row.removePanel();
 		}
-	} else if(e.rowData.isPlaceHolder) {
+	} else if(e.rowData.isPlaceholder) {
 		b_add.fireEvent('click', null);
 	}
 });

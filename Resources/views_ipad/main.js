@@ -114,9 +114,9 @@ tableView.addEventListener('delete', function(e) {
 });
 
 tableView.addEventListener('click', function(e) {
-	if(!e.rowData.isPlaceHolder && e.index != null) {
+	if(!e.rowData.isPlaceholder && e.index != null) {
 		displaySkinInfo(e.rowData.skinData);
-	} else if(e.rowData.isPlaceHolder) {
+	} else if(e.rowData.isPlaceholder) {
 		b_add.fireEvent('click', null);
 	}
 });
