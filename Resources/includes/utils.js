@@ -8,7 +8,11 @@ function getSkinsDir() {
 }
 
 function getBGImage() {
-	return '/img/bg.png';
+	if(Ti.Platform.getOsname() === 'iphone') {
+		return '/img/bg.png';
+	} else if(Ti.Platform.getOsname() === 'ipad') {
+		return '/img/block_stonebrick.png';
+	}
 }
 
 function getNavColor() {

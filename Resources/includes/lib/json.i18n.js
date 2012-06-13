@@ -1,5 +1,5 @@
 /*!
-* Appcelerator JSON i18n v0.1 by Matthew O'Riordan
+* Appcelerator JSON i18n v0.2 by Matthew O'Riordan
 * By: http://mattheworiordan.com/
 * Github: https://github.com/mattheworiordan/json.i18n-for-Titanium-Mobile
 *
@@ -118,6 +118,11 @@ var i18n = (function() {
     var val = getString(key);
     if (typeof val === 'string') {
       if (arguments.length > 1) {
+      	for (var i=0; i<arguments.length; i++) {
+      		if(arguments[i] === null || arguments[i] === undefined) {
+      			arguments[i] = String(arguments[i]);
+      		}
+      	}
         // additional string formatting arguments have been passed, pass on to String.format
         if (Ti.Platform.osname === 'android') {
           // ridiculous bug http://jira.appcelerator.org/browse/TC-188 means we need a workaround solution

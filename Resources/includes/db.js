@@ -7,32 +7,52 @@ function getSkins() {
 
 	while(skinList.isValidRow()) {
 		var row = Ti.UI.createTableViewRow({
-			skinID: skinList.fieldByName('id'),
+			skinData: {
+				id: skinList.fieldByName('id'),
+				desc: skinList.fieldByName('description'),
+				time: parseInt(skinList.fieldByName('timestamp')),
+				name: skinList.fieldByName('name')
+			},
 			title: skinList.fieldByName('name'),
-			skinDesc: skinList.fieldByName('description'),
-			skinTime: parseInt(skinList.fieldByName('timestamp')),
 			editable: true,
-			isExpanded: false,
 			isPlaceHolder: false,
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.GRAY,
 			height: 45,
+			leftImage: '/img/blank.png',
 			removePanel: function() {
 				this.isExpanded = false;
-			}
+			},
+			isExpanded: false
 		});
 
-		var b_wear = Ti.UI.createButton({
-			style: Ti.UI.iPhone.SystemButton.DISCLOSURE,
-			right: 10,
-			width: 10,
-			height: 10
+		if(Ti.Platform.getOsname() === 'iphone') {
+			var b_wear = Ti.UI.createButton({
+				style: Ti.UI.iPhone.SystemButton.DISCLOSURE,
+				right: 10,
+				width: 10,
+				height: 10
+			});
+
+			b_wear.addEventListener('click', function(e) {
+				uploadSkin(e.source.parent.skinData.id, e.source.parent.skinData.name);
+			});
+
+			row.add(b_wear);
+		} else if(Ti.Platform.getOsname() === 'ipad') {
+			row.hasChild = true;
+		}
+
+		var img_skin = Ti.UI.createImageView({
+			image: Ti.Filesystem.getFile(getSkinsDir() + skinList.fieldByName('id') + '/front.png').getNativePath(),
+			height: Ti.UI.FILL,
+			width: 18,
+			top: 2,
+			bottom: 2,
+			left: 13
 		});
 
-		b_wear.addEventListener('click', function(e) {
-			uploadSkin(e.source.parent.skinID, e.source.parent.title);
-		});
+		row.add(img_skin);
 
-		row.add(b_wear);
 		rows.push(row);
 		skinList.next();
 	}

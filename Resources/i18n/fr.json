@@ -1,10 +1,15 @@
 {
 	"main": {
 		"searchHint": "Trouver un skin...",
-		"skin": {
+		"skinList": "Liste des skins",
+		"skinDetails": {
+			"title": "Liste des skins",
 			"description": "Description",
-			"creation": "Date de création"
+			"creation": "Date de création",
+			"wear": "Porter ce skin",
+			"close": "Fermer"
 		},
+		"noSelectedSkin": "Aucun skin sélectionné.",
 		"noContent": "Aucun skin n'a encore été ajouté",
 		"skins": "%s skins",
 		"progressBar": {
