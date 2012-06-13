@@ -115,12 +115,12 @@ win.setRightNavButton(b_edit);
 
 tableView.addEventListener('delete', function(e) {
 	var db = Ti.Database.open('skins');
-	db.execute('DELETE FROM skins WHERE id=?', e.rowData.skinID);
+	db.execute('DELETE FROM skins WHERE id=?', e.rowData.skinData.id);
 	db.close();
 
-	Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinID).deleteDirectory(true);
-	Ti.API.debug(Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinID + '/').getExists());
-	Ti.API.debug('deleting skin id ' + e.rowData.skinID);
+	Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinData.id).deleteDirectory(true);
+	//Ti.API.debug(Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinData.id + '/').getExists());
+	//Ti.API.debug('deleting skin id ' + e.rowData.skinData.id);
 
 	updateSkinCount();
 
@@ -154,7 +154,7 @@ tableView.addEventListener('click', function(e) {
 			infoPanel.add(panelView);
 
 			var lbl_skin_desc_title = Ti.UI.createLabel({
-				text: I('main.skin.description'),
+				text: I('main.skinDetails.description'),
 				top: 20,
 				left: 135,
 				color: 'darkGray',
@@ -180,7 +180,7 @@ tableView.addEventListener('click', function(e) {
 			panelView.add(scrollView_desc);
 
 			var lbl_skin_desc = Ti.UI.createLabel({
-				text: e.rowData.skinDesc + '\n ',
+				text: e.rowData.skinData.desc + '\n ',
 				color: 'darkGray',
 				top: 0,
 				left: 0,
@@ -194,7 +194,7 @@ tableView.addEventListener('click', function(e) {
 			scrollView_desc.add(lbl_skin_desc);
 
 			var lbl_skin_time_title = Ti.UI.createLabel({
-				text: I('main.skin.creation'),
+				text: I('main.skinDetails.creation'),
 				top: 130,
 				left: 135,
 				color: 'darkGray',
@@ -207,7 +207,7 @@ tableView.addEventListener('click', function(e) {
 
 			panelView.add(lbl_skin_time_title);
 
-			var creationDate = new Date(e.rowData.skinTime);
+			var creationDate = new Date(e.rowData.skinData.time);
 
 			var lbl_skin_time = Ti.UI.createLabel({
 				text: creationDate.toLocaleDateString(),
@@ -234,7 +234,7 @@ tableView.addEventListener('click', function(e) {
 
 			var img_skin_front = Ti.UI.createImageView({
 				defaultImage: '/img/char_front.png',
-				image: Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinID + '/front.png').getNativePath(),
+				image: Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinData.id + '/front.png').getNativePath(),
 				height: 170,
 				width: 85,
 				top: 0,
@@ -245,7 +245,7 @@ tableView.addEventListener('click', function(e) {
 
 			var img_skin_back = Ti.UI.createImageView({
 				defaultImage: '/img/char_back.png',
-				image: Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinID + '/back.png').getNativePath(),
+				image: Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinData.id + '/back.png').getNativePath(),
 				height: 170,
 				width: 85,
 				top: 0,
