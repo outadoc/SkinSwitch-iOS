@@ -1,5 +1,5 @@
 function uploadSkin(id, name) {
-	Ti.API.debug('clicked wear button for id ' + id);
+	//Ti.API.debug('clicked wear button for id ' + id);
 
 	var dialog_wear = Ti.UI.createAlertDialog({
 		title: I('main.skinUpload.confirm.title'),
@@ -29,16 +29,16 @@ function uploadSkin(id, name) {
 
 			var xhr_login = Ti.Network.createHTTPClient({
 				onload: function() {
-					Ti.API.debug('login succeeded, status code ' + this.getStatus());
-					Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
+					//Ti.API.debug('login succeeded, status code ' + this.getStatus());
+					//Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
 
 					if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
 						triggerError('login', this);
 					} else {
 						var xhr_skin = Ti.Network.createHTTPClient({
 							onload: function() {
-								Ti.API.debug('uploaded skin, status code ' + this.getStatus());
-								Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
+								//Ti.API.debug('uploaded skin, status code ' + this.getStatus());
+								//Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
 
 								if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
 									triggerError('login', this);
@@ -97,13 +97,13 @@ function uploadSkin(id, name) {
 					xhr_login.send({
 						username: username,
 						password: password,
-						remember: 'true'
+						remember: 'false'
 					});
 				});
 			});
 
 			function triggerError(type, xhr) {
-				Ti.API.debug(type + ' failed, error ' + xhr.getStatus());
+				//Ti.API.debug(type + ' failed, error ' + xhr.getStatus());
 
 				var alert_error = Ti.UI.createAlertDialog({
 					title: I('main.skinUpload.error.title'),
