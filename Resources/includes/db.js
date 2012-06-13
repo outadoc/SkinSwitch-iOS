@@ -17,7 +17,7 @@ function getSkins() {
 			editable: true,
 			isPlaceholder: false,
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.GRAY,
-			height: 45,
+			height: 55,
 			leftImage: '/img/blank.png',
 			removePanel: function() {
 				this.isExpanded = false;
@@ -45,7 +45,7 @@ function getSkins() {
 		var img_skin = Ti.UI.createImageView({
 			image: Ti.Filesystem.getFile(getSkinsDir() + skinList.fieldByName('id') + '/front.png').getNativePath(),
 			height: Ti.UI.FILL,
-			width: 18,
+			width: 22,
 			top: 2,
 			bottom: 2,
 			left: 13
