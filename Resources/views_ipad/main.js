@@ -103,8 +103,8 @@ tableView.addEventListener('delete', function(e) {
 	db.close();
 
 	Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinData.id).deleteDirectory(true);
-	Ti.API.debug(Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinData.id + '/').getExists());
-	Ti.API.debug('deleting skin id ' + e.rowData.skinData.id);
+	//Ti.API.debug(Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinData.id + '/').getExists());
+	//Ti.API.debug('deleting skin id ' + e.rowData.skinData.id);
 
 	updateSkinCount();
 
