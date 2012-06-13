@@ -23,12 +23,22 @@ var tableView = Ti.UI.createTableView({
 
 win.add(tableView);
 
+var iad = Ti.UI.iOS.createAdView({
+	adSize: Ti.UI.iOS.AD_SIZE_PORTRAIT,
+	height: Ti.UI.SIZE,
+	width: Ti.UI.FIT,
+	bottom: 0
+});
+
+win.add(iad);
+
 win.addEventListener('focus', function() {
 	loadingWin.open();
 	tableView.setData(getSkins());
 	updateSkinCount();
 	loadingWin.close();
 });
+
 var b_add = Ti.UI.createButton({
 	systemButton: Ti.UI.iPhone.SystemButton.ADD
 });
