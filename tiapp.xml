@@ -15,7 +15,7 @@
     <url>http://dev.outadoc.fr</url>
     <description>Manage all your Minecraft skins, with one touch.</description>
     <copyright>2012 Baptiste Candellier</copyright>
-    <icon>icon.png</icon>
+    <icon>Icon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>
