@@ -45,7 +45,7 @@ var b_credits = Ti.UI.createButton({
 
 b_credits.addEventListener('click', function() {
 	var credits_win = Ti.UI.createWindow({
-		url: 'credits.js',
+		url: '../views_common/credits.js',
 		title: I('credits.title'),
 		backgroundImage: getBGImage(),
 		barColor: getNavColor()

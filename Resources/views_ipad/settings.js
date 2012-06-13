@@ -35,7 +35,7 @@ var b_credits = Ti.UI.createButton({
 
 b_credits.addEventListener('click', function() {
 	var credits_win = Ti.UI.createWindow({
-		url: 'credits.js',
+		url: '../views_common/credits.js',
 		title: I('credits.title'),
 		backgroundRepeat: true,
 		backgroundImage: getBGImage()
@@ -80,7 +80,7 @@ var lbl_footer = Ti.UI.createLabel({
 	text: I('settings.footer.migratedAccount') + '\n\n' + I('settings.footer.privacy'),
 	color: '#F8F8F8',
 	font: {
-		fontSize: 15
+		fontSize: 18
 	},
 	shadowColor: 'black',
 	shadowOffset: {
