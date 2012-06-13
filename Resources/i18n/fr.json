@@ -10,7 +10,10 @@
 			"close": "Fermer"
 		},
 		"noSelectedSkin": "Aucun skin sélectionné.",
-		"noContent": "Aucun skin n'a encore été ajouté",
+		"noContent": {
+			"title": "Aucun skin n'a encore été ajouté.",
+			"help": "Pour ajouter un skin, tapez \"Modifier\", puis \"+\"."
+		},
 		"skins": "%s skins",
 		"progressBar": {
 			"login": "Connexion...",

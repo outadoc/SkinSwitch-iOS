@@ -10,7 +10,10 @@
 			"close": "Close"
 		},
 		"noSelectedSkin": "No skin selected.",
-		"noContent": "No skins added yet",
+		"noContent": {
+			"title": "No skin has been added yet.",
+			"help": "To add a skin, tap \"Edit\", ten \"+\"."
+		},
 		"skins": "%s skins",
 		"progressBar": {
 			"login": "Logging in...",
