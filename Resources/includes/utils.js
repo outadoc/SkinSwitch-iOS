@@ -22,8 +22,7 @@ function getNavColor() {
 function createLoadingWindow() {
 	var win = Ti.UI.createWindow({
 		width: 320,
-		height: 480,
-		orientationModes: [Ti.UI.PORTRAIT]
+		height: 480
 	});
 
 	var view = Ti.UI.createView({
