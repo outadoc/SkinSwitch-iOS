@@ -111,12 +111,6 @@ tableView.addEventListener('delete', function(e) {
 	if(tableView.data[0] == null) {
 		win.fireEvent('focus', null);
 	}
-	if(e.rowData.isExpanded) {
-		tableView.setData(tableView.data);
-		tableView.deleteRow(e.index, {
-			animationStyle: Ti.UI.iPhone.RowAnimationStyle.TOP
-		});
-	}
 });
 
 tableView.addEventListener('click', function(e) {
