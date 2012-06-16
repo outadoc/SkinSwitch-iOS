@@ -106,8 +106,12 @@ var b_done = Ti.UI.createButton({
 
 b_done.addEventListener('click', function(e) {
 	tableView.setEditing(false);
-	win.setRightNavButton(b_edit);
-	win.setLeftNavButton(b_settings);
+	win.setRightNavButton(b_edit, {
+		animated: true
+	});
+	win.setLeftNavButton(b_settings, {
+		animated: true
+	});
 });
 
 var b_edit = Ti.UI.createButton({
@@ -117,8 +121,12 @@ var b_edit = Ti.UI.createButton({
 b_edit.addEventListener('click', function(e) {
 	retractAllInfoPanels();
 	tableView.setEditing(true);
-	win.setRightNavButton(b_done);
-	win.setLeftNavButton(b_add);
+	win.setRightNavButton(b_done, {
+		animated: true
+	});
+	win.setLeftNavButton(b_add, {
+		animated: true
+	});
 });
 
 win.setRightNavButton(b_edit);
