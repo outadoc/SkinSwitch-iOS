@@ -32,12 +32,14 @@ var iad = Ti.UI.iOS.createAdView({
 
 win.add(iad);
 
-win.addEventListener('focus', function() {
+function updateSkinsList() {
 	loadingWin.open();
 	tableView.setData(getSkins());
 	updateSkinCount();
 	loadingWin.close();
-});
+}
+
+win.addEventListener('focus', updateSkinsList);
 
 var b_add = Ti.UI.createButton({
 	systemButton: Ti.UI.iPhone.SystemButton.ADD
@@ -62,6 +64,7 @@ b_add.addEventListener('click', function(e) {
 
 	info_win.navGroup = group;
 	container.add(group);
+	container.addEventListener('close', updateSkinsList);
 	container.open({
 		modal: true
 	});
@@ -82,7 +85,9 @@ b_settings.addEventListener('click', function() {
 	var container = Ti.UI.createWindow({
 		navBarHidden: true
 	});
-
+	
+	container.addEventListener('close', updateSkinsList);
+	
 	var navGroup = Ti.UI.iPhone.createNavigationGroup({
 		window: win_settings
 	});
