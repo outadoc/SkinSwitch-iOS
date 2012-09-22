@@ -105,7 +105,6 @@ if(Ti.Platform.getOsname() === 'iphone') {
 				fontSize: 23
 			},
 			backgroundImage: '/img/button.png',
-			backgroundSelectedImage: '/img/button_selected.png',
 			width: Ti.UI.FILL,
 			height: 50,
 			left: '8%',
@@ -133,7 +132,6 @@ if(Ti.Platform.getOsname() === 'iphone') {
 				fontSize: 23
 			},
 			backgroundImage: '/img/button.png',
-			backgroundSelectedImage: '/img/button_selected.png',
 			width: Ti.UI.FILL,
 			height: 50,
 			left: '8%',

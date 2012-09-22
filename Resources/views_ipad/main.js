@@ -263,7 +263,6 @@ function displaySkinInfo(skinData) {
 			fontSize: 23
 		},
 		backgroundImage: '/img/button.png',
-		backgroundSelectedImage: '/img/button_selected.png',
 		width: Ti.UI.FILL,
 		top: 50,
 		left: '8%',
@@ -281,7 +280,6 @@ function displaySkinInfo(skinData) {
 			fontSize: 23
 		},
 		backgroundImage: '/img/button.png',
-		backgroundSelectedImage: '/img/button_selected.png',
 		width: Ti.UI.FILL,
 		top: 10,
 		left: '8%',
