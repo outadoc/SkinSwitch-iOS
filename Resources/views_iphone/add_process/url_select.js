@@ -3,7 +3,7 @@ Ti.include('/includes/utils.js');
 Ti.include('/includes/lib/json.i18n.js');
 
 var view = Ti.UI.createView({
-	height: 420,
+	height: Ti.Platform.displayCaps.platformHeight - 60,
 	top: 0
 });
 

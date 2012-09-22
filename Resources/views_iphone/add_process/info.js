@@ -38,7 +38,7 @@ function getTextFieldRow(text) {
 
 var view = Ti.UI.createView({
 	bottom: 0,
-	height: 420
+	height: Ti.Platform.displayCaps.platformHeight - 60
 });
 
 win.add(view);
