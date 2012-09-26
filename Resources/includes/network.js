@@ -60,7 +60,7 @@ function uploadSkin(id, name) {
 						prog_upload.setMessage(I('main.progressBar.upload'));
 						prog_upload.setValue(30);
 
-						xhr_skin.open('POST', 'http://www.minecraft.net/profile/skin');
+						xhr_skin.open('POST', 'http://minecraft.net/profile/skin');
 						xhr_skin.setRequestHeader('enctype', 'multipart/form-data');
 						xhr_skin.setRequestHeader('Content-Type', 'image/png');
 
@@ -79,7 +79,7 @@ function uploadSkin(id, name) {
 			prog_upload.setMessage(I('main.progressBar.login'));
 			prog_upload.setValue(3);
 
-			xhr_login.open('POST', 'https://www.minecraft.net/login');
+			xhr_login.open('POST', 'https://minecraft.net/login');
 			xhr_login.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 			var keychain = require('clearlyinnovative.keychain');
