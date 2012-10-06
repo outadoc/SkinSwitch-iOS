@@ -31,7 +31,7 @@
 			},
 			"error": {
 				"title": "Upload error",
-				"login": "Could not connect to minecraft.net. Please check your login and password in the preferences.",
+				"login": "Could not connect to minecraft.net. Minecraft.net may be down. Please check your login and password in the preferences.",
 				"upload": "Could not upload the skin to minecraft.net. Please try again later."
 			}
 		}

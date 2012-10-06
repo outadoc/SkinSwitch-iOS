@@ -31,7 +31,7 @@
 			},
 			"error": {
 				"title": "Upload error",
-				"login": "Échec lors de la connexion à minecraft.net. Vérifiez votre nom d'utilisateur et votre mot de passe dans les préférences.",
+				"login": "Échec lors de la connexion à minecraft.net. Minecraft.net est peut-être indisponbile. Vérifiez votre nom d'utilisateur et votre mot de passe dans les préférences.",
 				"upload": "Échec lors de l'envoi du skin. Merci de réessayer plus tard."
 			}
 		}
