@@ -12,7 +12,7 @@
 		"noSelectedSkin": "No skin selected.",
 		"noContent": {
 			"title": "No skin has been added yet.",
-			"help": "To add a skin, tap \"Edit\", ten \"+\"."
+			"help": "To add a skin, tap \"Edit\", then \"+\"."
 		},
 		"skins": "%s skins",
 		"progressBar": {
