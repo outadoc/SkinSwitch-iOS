@@ -106,35 +106,6 @@ var lbl_footer = Ti.UI.createLabel({
 
 win.add(lbl_footer);
 
-var b_donate = Ti.UI.createButton({
-	title: I('settings.donate'),
-	bottom: 15,
-	style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
-	backgroundImage: '/img/donate.png',
-	backgroundSelectedImage: '/img/donate_selected.png',
-	selectedColor:'#003366',
-	height: 35,
-	width: 160,
-	font: {
-		fontSize: 17,
-		fontFamily: 'Arial-BoldItalicMT'
-	},
-	color: '#003366'
-});
-
-b_donate.addEventListener('click', function() {
-	var win_webview = Ti.UI.createWindow({
-		url: '../views_common/paypal.js',
-		title: I('settings.donate'),
-		backgroundColor: 'white',
-		barColor: getNavColor()
-	});
-	
-	win.navGroup.open(win_webview);
-});
-
-win.add(b_donate);
-
 win.addEventListener('focus', function() {
 	var keychain = require('clearlyinnovative.keychain');
 	keychain.getForKey({
