@@ -323,6 +323,12 @@ function retractAllInfoPanels() {
 }
 
 function updateSkinCount() {
+	var view_wrapper = Ti.UI.createView({
+		left: 0,
+		right: 0, 
+		height: 55
+	});
+	
 	var lbl_footer = Ti.UI.createLabel({
 		text: I('main.skins', String(getSkinCount())),
 		color: '#F8F8F8',
@@ -339,6 +345,7 @@ function updateSkinCount() {
 		left: 15,
 		height: 16
 	});
-
-	tableView.setFooterView(lbl_footer);
+	
+	view_wrapper.add(lbl_footer);
+	tableView.setFooterView(view_wrapper);
 }
