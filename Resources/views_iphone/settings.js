@@ -59,7 +59,8 @@ win.setLeftNavButton(b_credits);
 var tableView = Ti.UI.createTableView({
 	data: [getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●', true)],
 	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
-	backgroundImage: null,
+	backgroundColor: 'transparent',
+	rowBackgroundColor: 'white',
 	scrollable: false,
 	rowHeight: 45,
 	top: 20

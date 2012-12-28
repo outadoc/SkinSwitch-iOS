@@ -15,7 +15,8 @@ var tableView = Ti.UI.createTableView({
 	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
 	search: searchBar,
 	filterAttribute: 'title',
-	backgroundImage: null,
+	backgroundColor: 'transparent',
+	rowBackgroundColor: 'white',
 	top: 0
 });
 
