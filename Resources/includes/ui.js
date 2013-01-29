@@ -36,6 +36,7 @@
 		});
 		
 		row.add(lbl_help);
+		return row;
 	}
 	
 })();
