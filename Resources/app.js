@@ -42,7 +42,6 @@ if(Ti.Platform.getOsname() === 'iphone') {
 	detailWin.add(content);
 
 	var iad = Ti.UI.iOS.createAdView({
-		adSize: Ti.UI.iOS.AD_SIZE_PORTRAIT,
 		height: Ti.UI.SIZE,
 		width: Ti.UI.FIT,
 		bottom: 0
