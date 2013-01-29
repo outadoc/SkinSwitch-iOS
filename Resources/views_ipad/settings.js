@@ -1,7 +1,7 @@
-var win = Ti.UI.currentWindow;
-
-Ti.include('/includes/utils.js');
 Ti.include('/includes/lib/json.i18n.js');
+
+var win = Ti.UI.currentWindow;
+var Utils = require('/includes/utils');
 
 function getTextFieldRow(text, hint, isPassword) {
 	var row = Ti.UI.createTableViewRow({
@@ -38,7 +38,7 @@ b_credits.addEventListener('click', function() {
 		url: '../views_common/credits.js',
 		title: I('credits.title'),
 		backgroundRepeat: true,
-		backgroundImage: getBGImage()
+		backgroundImage: Utils.getBGImage()
 	});
 
 	win.masterGroup.open(credits_win);

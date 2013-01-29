@@ -1,7 +1,9 @@
-Ti.include('/includes/utils.js');
 Ti.include('/includes/lib/json.i18n.js');
+
 var win = Ti.UI.currentWindow;
-var skinID = getRandomID();
+var Utils = require('/includes/utils');
+
+var skinID = Utils.getRandomID();
 
 var progBar = Ti.UI.createProgressBar({
 	min: 0,
@@ -33,7 +35,7 @@ b_done.addEventListener('click', function(e) {
 	});
 });
 
-Ti.Filesystem.getFile(getSkinsDir() + skinID).createDirectory();
+Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID).createDirectory();
 downloadSkin(win.skinUrl, skinID);
 
 function downloadSkin(url) {
@@ -43,7 +45,7 @@ function downloadSkin(url) {
 			downloadPreview('front');
 		},
 		onerror: function(e) {
-			Ti.Filesystem.getFile(getSkinsDir() + skinID).deleteDirectory(true);
+			Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID).deleteDirectory(true);
 			alert(I('addProcess.process.error.skin'));
 			progBar.setValue(0);
 			progBar.setMessage(I('addProcess.process.progress.fail'));
@@ -52,7 +54,7 @@ function downloadSkin(url) {
 	});
 
 	xhr.open('GET', url);
-	xhr.setFile(Ti.Filesystem.getFile(getSkinsDir() + skinID + '/skin.png'));
+	xhr.setFile(Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/skin.png'));
 
 	progBar.setMessage(I('addProcess.process.progress.skin'));
 	progBar.setValue(10);
@@ -84,7 +86,7 @@ function downloadPreview(side) {
 				} else {
 					progBar.setValue(0);
 					progBar.setMessage(I('addProcess.process.progress.fail'));
-					Ti.Filesystem.getFile(getSkinsDir() + skinID).deleteDirectory(true);
+					Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID).deleteDirectory(true);
 					win.setRightNavButton(b_done);
 				}
 			});
@@ -96,7 +98,7 @@ function downloadPreview(side) {
 		}
 	});
 
-	var output = Ti.Filesystem.getFile(getSkinsDir() + skinID + '/' + side + '.png');
+	var output = Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/' + side + '.png');
 	xhr.open('GET', 'http://apps.outadoc.fr/skinswitch/skinpreview.php?side=' + side + '&url=' + win.skinUrl);
 	xhr.setFile(output);
 	xhr.send();

@@ -1,10 +1,11 @@
-Ti.include('/includes/db.js');
-Ti.include('/includes/utils.js');
 Ti.include('/includes/lib/json.i18n.js');
-Ti.include('/includes/network.js');
+
+var Database = require('/includes/db');
+var Utils = require('/includes/utils');
+var Network = require('/includes/network');
 
 var win = Ti.UI.currentWindow;
-var loadingWin = createLoadingWindow();
+var loadingWin = Utils.createLoadingWindow();
 loadingWin.open();
 
 var searchBar = Ti.UI.createSearchBar({
@@ -24,7 +25,7 @@ win.add(tableView);
 
 win.addEventListener('focus', function() {
 	loadingWin.open();
-	tableView.setData(getSkins());
+	tableView.setData(Database.getSkins());
 	updateSkinCount();
 	loadingWin.close();
 });
@@ -36,7 +37,7 @@ var b_settings = Ti.UI.createButton({
 b_settings.addEventListener('click', function() {
 	var win_settings = Ti.UI.createWindow({
 		title: I('settings.title'),
-		backgroundImage: getBGImage(),
+		backgroundImage: Utils.getBGImage(),
 		backgroundRepeat: true,
 		url: 'settings.js',
 		masterGroup: win.masterGroup,
@@ -56,7 +57,7 @@ b_add.addEventListener('click', function(e) {
 	var info_win = Ti.UI.createWindow({
 		url: 'add_process/info.js',
 		title: I('addProcess.skinInfo.title'),
-		backgroundImage: getBGImage(),
+		backgroundImage: Utils.getBGImage(),
 		backgroundRepeat: true,
 		masterGroup: win.masterGroup
 	});
@@ -111,8 +112,8 @@ tableView.addEventListener('delete', function(e) {
 	db.execute('DELETE FROM skins WHERE id=?', e.rowData.skinData.id);
 	db.close();
 
-	Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinData.id).deleteDirectory(true);
-	//Ti.API.debug(Ti.Filesystem.getFile(getSkinsDir() + e.rowData.skinData.id + '/').getExists());
+	Ti.Filesystem.getFile(Utils.getSkinsDir() + e.rowData.skinData.id).deleteDirectory(true);
+	//Ti.API.debug(Ti.Filesystem.getFile(Utils.getSkinsDir() + e.rowData.skinData.id + '/').getExists());
 	//Ti.API.debug('deleting skin id ' + e.rowData.skinData.id);
 
 	updateSkinCount();
@@ -132,7 +133,7 @@ tableView.addEventListener('click', function(e) {
 
 function updateSkinCount() {
 	var lbl_footer = Ti.UI.createLabel({
-		text: I('main.skins', String(getSkinCount())),
+		text: I('main.skins', String(Database.getSkinCount())),
 		color: '#F8F8F8',
 		font: {
 			fontSize: 15,
@@ -228,7 +229,7 @@ function displaySkinInfo(skinData) {
 
 	var img_skin_front = Ti.UI.createImageView({
 		defaultImage: '/img/char_front.png',
-		image: Ti.Filesystem.getFile(getSkinsDir() + skinData.id + '/front.png').getNativePath(),
+		image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinData.id + '/front.png').getNativePath(),
 		height: 300,
 		width: 150,
 		top: 0
@@ -238,7 +239,7 @@ function displaySkinInfo(skinData) {
 
 	var img_skin_back = Ti.UI.createImageView({
 		defaultImage: '/img/char_back.png',
-		image: Ti.Filesystem.getFile(getSkinsDir() + skinData.id + '/back.png').getNativePath(),
+		image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinData.id + '/back.png').getNativePath(),
 		height: 300,
 		width: 150,
 		top: 0
@@ -272,7 +273,7 @@ function displaySkinInfo(skinData) {
 	});
 
 	b_wear.addEventListener('click', function() {
-		uploadSkin(skinData.id, skinData.name);
+		Network.uploadSkin(skinData.id, skinData.name);
 	});
 
 	var b_close = Ti.UI.createButton({

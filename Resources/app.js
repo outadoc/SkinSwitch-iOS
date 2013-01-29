@@ -1,4 +1,4 @@
-Ti.include('/includes/utils.js');
+var Utils = require('/includes/utils');
 Ti.UI.setBackgroundColor('#000');
 
 var db = Ti.Database.open('skins');
@@ -8,11 +8,11 @@ db.close();
 
 if(Ti.Platform.getOsname() === 'iphone') {
 	var mainWin = Ti.UI.createWindow({
-		backgroundImage: getBGImage(),
 		url: 'views_iphone/main.js',
 		tabBarHidden: true,
 		title: Ti.App.getName(),
-		barColor: getNavColor()
+		backgroundImage: Utils.getBGImage(),
+		barColor: Utils.getNavColor()
 	});
 
 	var navGroup = Ti.UI.iPhone.createNavigationGroup({
@@ -52,7 +52,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 
 	var masterWin = Ti.UI.createWindow({
 		url: 'views_ipad/main.js',
-		backgroundImage: getBGImage(),
+		backgroundImage: Utils.getBGImage(),
 		backgroundRepeat: true,
 		title: I('main.skinList'),
 		detailWin: detailWin,
@@ -116,7 +116,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 			var info_win = Ti.UI.createWindow({
 				url: 'views_ipad/add_process/info.js',
 				title: I('addProcess.skinInfo.title'),
-				backgroundImage: getBGImage(),
+				backgroundImage: Utils.getBGImage(),
 				backgroundRepeat: true,
 				masterGroup: splitWin.masterView
 			});
@@ -142,7 +142,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 		b_settings.addEventListener('click', function() {
 			var win_settings = Ti.UI.createWindow({
 				title: I('settings.title'),
-				backgroundImage: getBGImage(),
+				backgroundImage: Utils.getBGImage(),
 				backgroundRepeat: true,
 				url: 'views_ipad/settings.js',
 				masterGroup: splitWin.masterView

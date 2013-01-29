@@ -1,6 +1,7 @@
-var win = Ti.UI.currentWindow;
-Ti.include('/includes/utils.js');
 Ti.include('/includes/lib/json.i18n.js');
+
+var win = Ti.UI.currentWindow;
+var Utils = require('/includes/utils');
 
 function getTextFieldRow(text) {
 	var row = Ti.UI.createTableViewRow({
@@ -69,7 +70,7 @@ b_next.addEventListener('click', function(e) {
 				skinName: tableView.data[0].rows[0].children[0].getValue(),
 				skinDesc: tableView.data[0].rows[1].children[0].getValue(),
 				backButtonTitle: I('addProcess.skinInfo.shortTitle'),
-				backgroundImage: getBGImage(),
+				backgroundImage: Utils.getBGImage(),
 				backgroundRepeat: true,
 				url: 'url_select.js',
 				masterGroup: win.masterGroup,

@@ -1,5 +1,6 @@
 var win = Ti.UI.currentWindow;
-Ti.include('/includes/utils.js');
+var Utils = require('/includes/utils');
+
 Ti.include('/includes/lib/json.i18n.js');
 
 var view = Ti.UI.createView({
@@ -90,8 +91,8 @@ b_next.addEventListener('click', function(e) {
 			var win_process = Ti.UI.createWindow({
 				title: I('addProcess.process.title'),
 				url: 'processing.js',
-				backgroundImage: getBGImage(),
-				barColor: getNavColor(),
+				backgroundImage: Utils.getBGImage(),
+				barColor: Utils.getNavColor(),
 
 				skinUrl: url,
 				skinName: win.skinName,

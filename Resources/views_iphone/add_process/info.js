@@ -1,5 +1,6 @@
 var win = Ti.UI.currentWindow;
-Ti.include('/includes/utils.js');
+var Utils = require('/includes/utils');
+
 Ti.include('/includes/lib/json.i18n.js');
 
 function getTextFieldRow(text) {
@@ -83,8 +84,8 @@ b_next.addEventListener('click', function(e) {
 				skinName: tableView.data[0].rows[0].children[0].getValue(),
 				skinDesc: tableView.data[0].rows[1].children[0].getValue(),
 				backButtonTitle: I('addProcess.skinInfo.shortTitle'),
-				backgroundImage: getBGImage(),
-				barColor: getNavColor(),
+				backgroundImage: Utils.getBGImage(),
+				barColor: Utils.getNavColor(),
 				navGroup: win.navGroup,
 				container: win.container
 			});
