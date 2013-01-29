@@ -60,4 +60,8 @@ var img_outadev = Ti.UI.createImageView({
 	height: Ti.UI.SIZE
 });
 
+img_outadev.addEventListener('click', function(e) {
+	Ti.Platform.openURL('http://dev.outadoc.fr');
+});
+
 scrollView.add(img_outadev);
