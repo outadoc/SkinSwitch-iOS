@@ -106,21 +106,5 @@
 		"edit": "Edit",
 		"done": "Done",
 		"close": "Close"
-	},
-	"webview": {
-		"action": {
-			"safari": "Open in Safari",
-			"email": "Send via email",
-			"cancel": "Cancel"
-		},
-		"email": {
-			"subject": "Donate to outa[dev]",
-			"link": "Click here to donate!",
-			"message": "I can see you're considering a donation to the developer of SkinSwitch... thanks a lot, it really helps! &lt;3"
-		},
-		"error": {
-			"title": "Error",
-			"message": "Error while loading %s: %s"
-		}
 	}
 }

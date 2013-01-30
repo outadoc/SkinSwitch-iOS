@@ -106,21 +106,5 @@
 		"edit": "Modifier",
 		"done": "Terminé",
 		"close": "Fermer"
-	},
-	"webview": {
-		"action": {
-			"safari": "Ouvrir dans Safari",
-			"email": "Envoyer par email",
-			"cancel": "Annuler"
-		},
-		"email": {
-			"subject": "Faire un don à outa[dev]",
-			"link": "Cliquez ici pour donner !",
-			"message": "Je vois que vous considérez de faire un don à outa[dev]... merci beaucoup, ça aide vraiment ! &lt;3"
-		},
-		"error": {
-			"title": "Erreur",
-			"message": "Erreur lors du chargement de %s : %s"
-		}
 	}
 }
