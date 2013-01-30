@@ -22,9 +22,6 @@
 				selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.GRAY,
 				height: 55,
 				leftImage: '/img/blank.png',
-				removePanel: function() {
-					this.isExpanded = false;
-				},
 				isExpanded: false
 			});
 

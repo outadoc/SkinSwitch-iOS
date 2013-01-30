@@ -189,8 +189,7 @@ tableView.addEventListener('click', function(e) {
 function retractAllInfoPanels() {
 	for(var i = 0; i < tableView.data[0].rowCount; i++) {
 		if(tableView.data[0].rows[i].isInfoPanel) {
-			tableView.setData(tableView.data);
-			tableView.data[0].rows[i - 1].removePanel();
+			tableView.data[0].rows[i - 1].isExpanded = false;
 			tableView.deleteRow(i);
 		}
 	}
