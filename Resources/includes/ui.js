@@ -43,14 +43,14 @@
 	
 	exports.getSkinInfoPanel = function(id, description, timestamp, updateSkinsList) {
 		var infoPanel = Ti.UI.createTableViewRow({
-			height: 215,
+			height: 200,
 			isInfoPanel: true,
 			editable: false,
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
 		});
 
 		var panelView = Ti.UI.createView({
-			height: 215,
+			height: 200,
 			width: 300,
 			backgroundImage: '/img/panel_bg.png'
 		});
@@ -162,7 +162,7 @@
 		var view_skin = Ti.UI.createImageView({
 			height: 170,
 			width: 85,
-			top: 20,
+			top: 15,
 			left: 20
 		});
 
