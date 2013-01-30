@@ -128,11 +128,18 @@
 		panelView.add(lbl_skin_time);
 		
 		var b_edit = Ti.UI.createButton({
-			bottom: 10,
-			right: 10,
-			width: 50,
+			top: 20,
+			right: 25,
+			width: Ti.UI.SIZE,
 			height: 20,
-			title: 'Edit'
+			title: '[' + 'Edit' + ']',
+			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
+			color: '#cbcbcb',
+			selectedColor: 'gray',
+			font: {
+				fontSize: 15,
+				fontStyle: 'italic'
+			}
 		});
 		
 		b_edit.addEventListener('click', function(e) {
@@ -149,7 +156,6 @@
 				modal: true
 			});
 		});
-
 		
 		panelView.add(b_edit);
 
