@@ -164,7 +164,7 @@ tableView.addEventListener('delete', function(e) {
 tableView.addEventListener('click', function(e) {
 	if((e.row.children == null || (e.row.children != null && e.source != e.row.children[0])) && e.index != null && !e.rowData.isInfoPanel && !e.rowData.isPlaceholder) {
 		if(!e.rowData.isExpanded) {
-			tableView.insertRowAfter(e.index, Ui.getSkinInfoPanel(e.rowData.skinData.id, e.rowData.skinData.desc, e.rowData.skinData.time), {
+			tableView.insertRowAfter(e.index, Ui.getSkinInfoPanel(e.rowData.skinData.id, e.rowData.skinData.desc, e.rowData.skinData.time, updateSkinsList), {
 				animated: true,
 				animationStyle: Titanium.UI.iPhone.RowAnimationStyle.FADE
 			});

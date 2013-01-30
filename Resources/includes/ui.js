@@ -41,16 +41,16 @@
 		return row;
 	}
 	
-	exports.getSkinInfoPanel = function(id, description, timestamp) {
+	exports.getSkinInfoPanel = function(id, description, timestamp, updateSkinsList) {
 		var infoPanel = Ti.UI.createTableViewRow({
-			height: 200,
+			height: 215,
 			isInfoPanel: true,
 			editable: false,
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
 		});
 
 		var panelView = Ti.UI.createView({
-			height: 200,
+			height: 215,
 			width: 300,
 			backgroundImage: '/img/panel_bg.png'
 		});
@@ -126,11 +126,37 @@
 		});
 
 		panelView.add(lbl_skin_time);
+		
+		var b_edit = Ti.UI.createButton({
+			bottom: 10,
+			right: 10,
+			width: 50,
+			height: 20,
+			title: 'Edit'
+		});
+		
+		b_edit.addEventListener('click', function(e) {
+			var edit_win = Ti.UI.createWindow({
+				url: 'add_process/info.js',
+				skinIDToEdit: id,
+				title: 'Edit skin',
+				backgroundImage: Utils.getBGImage(),
+				barColor: Utils.getNavColor()
+			});
+
+			edit_win.addEventListener('close', updateSkinsList);
+			edit_win.open({
+				modal: true
+			});
+		});
+
+		
+		panelView.add(b_edit);
 
 		var view_skin = Ti.UI.createImageView({
 			height: 170,
 			width: 85,
-			top: 15,
+			top: 20,
 			left: 20
 		});
 
