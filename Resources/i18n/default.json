@@ -106,5 +106,9 @@
 		"edit": "Edit",
 		"done": "Done",
 		"close": "Close"
+	},
+	"editSkin": {
+		"short": "Edit",
+		"title": "Edit Skin Info"
 	}
 }

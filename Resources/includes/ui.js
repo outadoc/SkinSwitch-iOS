@@ -129,10 +129,10 @@
 		
 		var b_edit = Ti.UI.createButton({
 			top: 20,
-			right: 25,
+			right: 15,
 			width: Ti.UI.SIZE,
 			height: 20,
-			title: '[' + 'Edit' + ']',
+			title: '[' + I('editSkin.short') + ']',
 			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
 			color: '#cbcbcb',
 			selectedColor: 'gray',
@@ -146,7 +146,7 @@
 			var edit_win = Ti.UI.createWindow({
 				url: 'add_process/info.js',
 				skinIDToEdit: id,
-				title: 'Edit skin',
+				title: I('editSkin.title'),
 				backgroundImage: Utils.getBGImage(),
 				barColor: Utils.getNavColor()
 			});
@@ -330,13 +330,13 @@
 		});
 		
 		var b_edit = Ti.UI.createButton({
-			title: 'Edit'
+			title: I('editSkin.short')
 		});
 	
 		b_edit.addEventListener('click', function() {
 			var info_win = Ti.UI.createWindow({
 				url: 'add_process/info.js',
-				title: 'Edit Skin',
+				title: I('editSkin.title'),
 				backgroundImage: Utils.getBGImage(),
 				backgroundRepeat: true,
 				masterGroup: win.masterGroup,

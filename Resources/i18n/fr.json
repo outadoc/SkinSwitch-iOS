@@ -106,5 +106,9 @@
 		"edit": "Modifier",
 		"done": "Terminé",
 		"close": "Fermer"
+	},
+	"editSkin": {
+		"short": "Modifier",
+		"title": "Modifier les infos..."
 	}
 }
