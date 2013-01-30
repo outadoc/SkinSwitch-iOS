@@ -179,7 +179,7 @@ tableView.addEventListener('click', function(e) {
 				animated: true,
 				animationStyle: Titanium.UI.iPhone.RowAnimationStyle.FADE
 			});
-			e.row.removePanel();
+			e.row.isExpanded = false;
 		}
 	} else if(e.rowData.isPlaceholder) {
 		b_add.fireEvent('click', null);
