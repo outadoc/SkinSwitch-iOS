@@ -44,8 +44,7 @@
 		"footer": {
 			"migratedAccount": "Si votre compte a été migré vers un compte Mojang, vous devez utiliser votre adresse email au lieu de votre pseudo Minecraft.",
 			"privacy": "Note: nous ne stockerons ou n'utiliserons AUCUNE de vos informations pour autre-chose que changer votre skin Minecraft. Les informations de votre compte sont stockées de façon sécurisée dans le trousseau d'iOS."
-		},
-		"donate": "Faire un don"
+		}
 	},
 	"addProcess": {
 		"skinInfo": {
