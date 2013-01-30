@@ -3,40 +3,6 @@ var Utils = require('/includes/utils');
 
 Ti.include('/includes/lib/json.i18n.js');
 
-function getTextFieldRow(text) {
-	var row = Ti.UI.createTableViewRow({
-		title: text,
-		selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
-	});
-
-	var textfield = Ti.UI.createTextField({
-		color: '#336699',
-		height: 30,
-		right: 5,
-		width: I('addProcess.skinInfo.fieldWidth'),
-		borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
-		returnKeyType: Ti.UI.RETURNKEY_NEXT,
-		clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
-	});
-
-	textfield.addEventListener('focus', function() {
-		view.animate({
-			bottom: 90,
-			duration: 300
-		});
-	});
-
-	textfield.addEventListener('blur', function() {
-		view.animate({
-			bottom: 0,
-			duration: 300
-		});
-	});
-
-	row.add(textfield);
-	return row;
-}
-
 var view = Ti.UI.createView({
 	bottom: 0,
 	height: Ti.Platform.displayCaps.platformHeight - 60
@@ -45,12 +11,12 @@ var view = Ti.UI.createView({
 win.add(view);
 
 var tableView = Ti.UI.createTableView({
-	data: [getTextFieldRow(I('addProcess.skinInfo.name')), getTextFieldRow(I('addProcess.skinInfo.description'))],
+	data: [Utils.getTextFieldRow(I('addProcess.skinInfo.name')), Utils.getTextAreaRow(I('addProcess.skinInfo.description'))],
 	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundColor: 'transparent',
 	rowBackgroundColor: 'white',
 	scrollable: false,
-	height: 160,
+	height: 180,
 	rowHeight: 45
 });
 

@@ -47,4 +47,76 @@
 		return win;
 	}
 
-})(); 
+	exports.getTextFieldRow = function(text) {
+		var row = Ti.UI.createTableViewRow({
+			title: text,
+			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
+		});
+
+		var textfield = Ti.UI.createTextField({
+			color: '#336699',
+			height: 30,
+			right: 5,
+			width: I('addProcess.skinInfo.fieldWidth'),
+			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
+			returnKeyType: Ti.UI.RETURNKEY_NEXT,
+			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
+		});
+
+		textfield.addEventListener('focus', function() {
+			view.animate({
+				bottom: 90,
+				duration: 300
+			});
+		});
+
+		textfield.addEventListener('blur', function() {
+			view.animate({
+				bottom: 0,
+				duration: 300
+			});
+		});
+
+		row.add(textfield);
+		return row;
+	}
+	
+	exports.getTextAreaRow = function(text) {
+		var row = Ti.UI.createTableViewRow({
+			title: text,
+			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
+			height: 100
+		});
+
+		var textarea = Ti.UI.createTextArea({
+			color: '#336699',
+			height: Ti.UI.FILL,
+			right: 5,
+			width: I('addProcess.skinInfo.fieldWidth'),
+			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
+			returnKeyType: Ti.UI.RETURNKEY_NEXT,
+			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS,
+			font: {
+				fontSize: 15
+			}
+		});
+
+		textarea.addEventListener('focus', function() {
+			view.animate({
+				bottom: 90,
+				duration: 300
+			});
+		});
+
+		textarea.addEventListener('blur', function() {
+			view.animate({
+				bottom: 0,
+				duration: 300
+			});
+		});
+
+		row.add(textarea);
+		return row;
+	}
+	
+})();
