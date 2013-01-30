@@ -37,6 +37,11 @@ win.add(iad);
 
 function updateSkinsList() {
 	loadingWin.open();
+	
+	if(tableView.getData().length > 0) {
+		retractAllInfoPanels();
+	}
+	
 	tableView.setData(Database.getSkins());
 	updateSkinCount();
 	loadingWin.close();
@@ -153,6 +158,7 @@ tableView.addEventListener('delete', function(e) {
 	if(tableView.data[0] == null) {
 		win.fireEvent('focus', null);
 	}
+	
 	if(e.rowData.isExpanded) {
 		tableView.setData(tableView.data);
 		tableView.deleteRow(e.index, {
