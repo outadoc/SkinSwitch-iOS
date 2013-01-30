@@ -2,6 +2,7 @@ Ti.include('/includes/lib/json.i18n.js');
 
 var win = Ti.UI.currentWindow;
 var Utils = require('/includes/utils');
+var keychain = require('clearlyinnovative.keychain');
 
 function getTextFieldRow(text, hint, isPassword) {
 	var row = Ti.UI.createTableViewRow({
@@ -107,7 +108,6 @@ var lbl_footer = Ti.UI.createLabel({
 win.add(lbl_footer);
 
 win.addEventListener('focus', function() {
-	var keychain = require('clearlyinnovative.keychain');
 	keychain.getForKey({
 		key: 'username',
 		serviceName: Ti.App.getId()
@@ -124,7 +124,6 @@ win.addEventListener('focus', function() {
 });
 
 win.addEventListener('blur', function() {
-	var keychain = require('clearlyinnovative.keychain');
 	keychain.setForKey({
 		key: 'username',
 		value: tableView.getData()[0].getRows()[0].getChildren()[0].getValue(),
