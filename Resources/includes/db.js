@@ -6,7 +6,7 @@
 	exports.getSkins = function() {
 		var rows = [];
 		var db = Ti.Database.open('skins');
-		var skinList = db.execute('SELECT * FROM skins');
+		var skinList = db.execute('SELECT * FROM skins ORDER BY name');
 
 		while(skinList.isValidRow()) {
 			var row = Ti.UI.createTableViewRow({
@@ -64,17 +64,6 @@
 		if(rows.length == 0) {
 			rows.push(Ui.getEmptyRow());
 		}
-
-		function sortRows(ob1, ob2) {
-			if(ob1.title > ob2.title) {
-				return 1;
-			} else if(ob1.title < ob2.title) {
-				return -1;
-			}
-			return 0;
-		}
-
-		rows = rows.sort(sortRows);
 
 		db.close();
 		return rows;
