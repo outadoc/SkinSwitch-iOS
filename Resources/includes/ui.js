@@ -328,6 +328,23 @@
 		b_wear.addEventListener('click', function() {
 			Network.uploadSkin(skinData.id, skinData.name);
 		});
+		
+		var b_edit = Ti.UI.createButton({
+			title: 'Edit'
+		});
+	
+		b_edit.addEventListener('click', function() {
+			var info_win = Ti.UI.createWindow({
+				url: 'add_process/info.js',
+				title: 'Edit Skin',
+				backgroundImage: Utils.getBGImage(),
+				backgroundRepeat: true,
+				masterGroup: win.masterGroup,
+				skinIDToEdit: skinData.id
+			});
+		
+			win.masterGroup.open(info_win);
+		});
 	
 		var b_close = Ti.UI.createButton({
 			title: I('main.skinDetails.close'),
@@ -344,6 +361,7 @@
 	
 		b_close.addEventListener('click', function() {
 			win.detailWin.remove(win.detailContent);
+			win.detailWin.setRightNavButton(null);
 			win.detailContent = win.initialInfoView;
 			win.detailContent.setOpacity(0);
 	
@@ -366,7 +384,9 @@
 		win.detailContent.add(skinInfos);
 		win.detailContent.add(b_wear);
 		win.detailContent.add(b_close);
-	
+		
+		win.detailWin.setRightNavButton(b_edit);
+		
 		win.detailWin.add(win.detailContent);
 		win.detailContent.animate({
 			opacity: 1,
