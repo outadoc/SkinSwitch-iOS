@@ -25,13 +25,13 @@ var b_done = Ti.UI.createButton({
 
 b_done.addEventListener('click', function(e) {
 	win.masterGroup.close(win, {
-		animated: true
+		animated: false
 	});
 	win.masterGroup.close(win.prevWins[1], {
-		animated: true
+		animated: false
 	});
 	win.masterGroup.close(win.prevWins[0], {
-		animated: true
+		animated: false
 	});
 });
 
