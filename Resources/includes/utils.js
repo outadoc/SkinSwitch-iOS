@@ -47,7 +47,7 @@
 		return win;
 	}
 
-	exports.getTextFieldRow = function(text) {
+	exports.getTextFieldRow = function(text, animate) {
 		var row = Ti.UI.createTableViewRow({
 			title: text,
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
@@ -62,26 +62,28 @@
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
 			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
 		});
-
-		textfield.addEventListener('focus', function() {
-			view.animate({
-				bottom: 90,
-				duration: 300
+		
+		if(animate) {
+			textfield.addEventListener('focus', function() {
+				view.animate({
+					bottom: 90,
+					duration: 300
+				});
 			});
-		});
-
-		textfield.addEventListener('blur', function() {
-			view.animate({
-				bottom: 0,
-				duration: 300
+	
+			textfield.addEventListener('blur', function() {
+				view.animate({
+					bottom: 0,
+					duration: 300
+				});
 			});
-		});
-
+		}
+		
 		row.add(textfield);
 		return row;
 	}
 	
-	exports.getTextAreaRow = function(text) {
+	exports.getTextAreaRow = function(text, animate) {
 		var row = Ti.UI.createTableViewRow({
 			title: text,
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
@@ -100,20 +102,22 @@
 				fontSize: 15
 			}
 		});
-
-		textarea.addEventListener('focus', function() {
-			view.animate({
-				bottom: 90,
-				duration: 300
+		
+		if(animate) {
+			textarea.addEventListener('focus', function() {
+				view.animate({
+					bottom: 90,
+					duration: 300
+				});
 			});
-		});
-
-		textarea.addEventListener('blur', function() {
-			view.animate({
-				bottom: 0,
-				duration: 300
+	
+			textarea.addEventListener('blur', function() {
+				view.animate({
+					bottom: 0,
+					duration: 300
+				});
 			});
-		});
+		}
 
 		row.add(textarea);
 		return row;

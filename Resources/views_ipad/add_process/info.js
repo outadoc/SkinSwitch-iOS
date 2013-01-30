@@ -3,26 +3,6 @@ Ti.include('/includes/lib/json.i18n.js');
 var win = Ti.UI.currentWindow;
 var Utils = require('/includes/utils');
 
-function getTextFieldRow(text) {
-	var row = Ti.UI.createTableViewRow({
-		title: text,
-		selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
-	});
-
-	var textfield = Ti.UI.createTextField({
-		color: '#336699',
-		height: 30,
-		right: 5,
-		width: I('addProcess.skinInfo.fieldWidth'),
-		borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
-		returnKeyType: Ti.UI.RETURNKEY_NEXT,
-		clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
-	});
-
-	row.add(textfield);
-	return row;
-}
-
 var view = Ti.UI.createView({
 	height: Ti.UI.SIZE,
 	top: 30
@@ -31,7 +11,7 @@ var view = Ti.UI.createView({
 win.add(view);
 
 var tableView = Ti.UI.createTableView({
-	data: [getTextFieldRow(I('addProcess.skinInfo.name')), getTextFieldRow(I('addProcess.skinInfo.description'))],
+	data: [Utils.getTextFieldRow(I('addProcess.skinInfo.name'), false), Utils.getTextAreaRow(I('addProcess.skinInfo.description'), false)],
 	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundColor: 'transparent',
 	rowBackgroundColor: 'white',
