@@ -21,11 +21,11 @@
 		return '#888888';
 	}
 	
-	exports.isiPhone() {
+	exports.isiPhone = function() {
 		return Ti.Platform.getOsname() === 'iphone';
 	}
 	
-	exports.isiPad() {
+	exports.isiPad = function() {
 		return Ti.Platform.getOsname() === 'ipad';
 	}
 
