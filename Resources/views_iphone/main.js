@@ -38,16 +38,12 @@ win.add(iad);
 function updateSkinsList() {
 	loadingWin.open();
 	
-	if(tableView.getData().length > 0) {
-		retractAllInfoPanels();
-	}
-	
+	retractAllInfoPanels();
 	tableView.setData(Database.getSkins());
 	updateSkinCount();
+	
 	loadingWin.close();
 }
-
-win.addEventListener('focus', updateSkinsList);
 
 var b_add = Ti.UI.createButton({
 	systemButton: Ti.UI.iPhone.SystemButton.ADD
@@ -192,11 +188,15 @@ tableView.addEventListener('click', function(e) {
 	}
 });
 
+updateSkinsList();
+
 function retractAllInfoPanels() {
-	for(var i = 0; i < tableView.data[0].rowCount; i++) {
-		if(tableView.data[0].rows[i].isInfoPanel) {
-			tableView.data[0].rows[i - 1].isExpanded = false;
-			tableView.deleteRow(i);
+	if(tableView.getData().length > 0) {
+		for(var i = 0; i < tableView.data[0].rowCount; i++) {
+			if(tableView.data[0].rows[i].isInfoPanel) {
+				tableView.data[0].rows[i - 1].isExpanded = false;
+				tableView.deleteRow(i);
+			}
 		}
 	}
 }
