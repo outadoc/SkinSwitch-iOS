@@ -24,7 +24,19 @@ var b_done = Ti.UI.createButton({
 });
 
 b_done.addEventListener('click', function(e) {
-	win.container.close();
+	if(Utils.isiPhone) {
+		win.container.close();
+	} else if(Utils.isiPad) {
+		win.masterGroup.close(win, {
+			animated: false
+		});
+		win.masterGroup.close(win.prevWins[1], {
+			animated: false
+		});
+		win.masterGroup.close(win.prevWins[0], {
+			animated: false
+		});
+	}
 });
 
 Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID).createDirectory();

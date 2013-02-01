@@ -90,7 +90,7 @@ b_next.addEventListener('click', function(e) {
 		if(url != null && url.split('.').pop().toLowerCase() == 'png') {
 			var win_process = Ti.UI.createWindow({
 				title: I('addProcess.process.title'),
-				url: 'processing.js',
+				url: '/views_common/processing.js',
 				backgroundImage: Utils.getBGImage(),
 				barColor: Utils.getNavColor(),
 
