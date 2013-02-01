@@ -20,6 +20,14 @@
 	exports.getNavColor = function() {
 		return '#888888';
 	}
+	
+	exports.isiPhone() {
+		return Ti.Platform.getOsname() === 'iphone';
+	}
+	
+	exports.isiPad() {
+		return Ti.Platform.getOsname() === 'ipad';
+	}
 
 	exports.createLoadingWindow = function() {
 		var win = Ti.UI.createWindow({
