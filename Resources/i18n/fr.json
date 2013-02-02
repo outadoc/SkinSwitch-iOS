@@ -54,10 +54,7 @@
 			"description": "Description",
 			"fieldWidth": "172",
 			"error": {
-				"nameDescription": "Vous devez spécifier un nom et une description.",
-				"name": "Vous devez spécifier un nom.",
-				"description": "Vous devez spécifier une description.",
-				"length": "Le nom doit être de 16 caractères au maximum."
+				"name": "Vous devez spécifier un nom."
 			},
 			"method": {
 				"title": "Ajouter le skin...",

@@ -30,14 +30,8 @@ var b_next = Ti.UI.createButton({
 });
 
 b_next.addEventListener('click', function(e) {
-	if(tableView.data[0].rows[0].children[0].getValue() == '' && tableView.data[0].rows[1].children[0].getValue() == '') {
-		alert(I('addProcess.skinInfo.error.nameDescription'));
-	} else if(tableView.data[0].rows[0].children[0].getValue() == '') {
+	if(tableView.data[0].rows[0].children[0].getValue() == '') {
 		alert(I('addProcess.skinInfo.error.name'));
-	} else if(tableView.data[0].rows[1].children[0].getValue() == '') {
-		alert(I('addProcess.skinInfo.error.description'));
-	} else if(tableView.data[0].rows[0].children[0].getValue().length > 16) {
-		alert(I('addProcess.skinInfo.error.length'));
 	} else {
 		if(win.skinIDToEdit == null) {
 			//if we're adding a new skin to the database, ask for more info

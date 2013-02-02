@@ -54,10 +54,7 @@
 			"description": "Description",
 			"fieldWidth": "165",
 			"error": {
-				"nameDescription": "You must specify a name and a description for this skin.",
-				"name": "You must specify a name for this skin.",
-				"description": "You must specify a description for this skin.",
-				"length": "The name must be shorter than 16 characters."
+				"name": "You must specify a name for this skin."
 			},
 			"method": {
 				"title": "Add the skin...",
