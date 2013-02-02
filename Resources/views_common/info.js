@@ -5,7 +5,7 @@ var Utils = require('/includes/utils');
 
 var view = Ti.UI.createView({
 	height: Ti.UI.SIZE,
-	top: 30
+	top: (Utils.isiPad()) ? 30 : (((Ti.Platform.displayCaps.platformHeight - 70 - 215) / 2) - (180 / 2))
 });
 
 win.add(view);
@@ -16,7 +16,7 @@ var tableView = Ti.UI.createTableView({
 	backgroundColor: 'transparent',
 	rowBackgroundColor: 'white',
 	scrollable: false,
-	height: 160,
+	height: 180,
 	rowHeight: 45
 });
 
