@@ -4,8 +4,8 @@ var win = Ti.UI.currentWindow;
 var Utils = require('/includes/utils');
 
 var view = Ti.UI.createView({
-	height: (Utils.isiPad()) ? Ti.UI.SIZE : (Ti.Platform.displayCaps.platformHeight - 60),
-	top: 30
+	height: Ti.UI.SIZE,
+	top: (Utils.isiPad()) ? 30 : (((Ti.Platform.displayCaps.platformHeight - 70 - 215) / 2) - (100 / 2))
 });
 
 win.add(view);
