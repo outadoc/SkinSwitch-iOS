@@ -51,6 +51,7 @@
 			"title": "Skin Information",
 			"shortTitle": "Skin Info",
 			"name": "Skin Name",
+			"nameHint": "My Awesome Skin",
 			"description": "Description",
 			"fieldWidth": "165",
 			"error": {

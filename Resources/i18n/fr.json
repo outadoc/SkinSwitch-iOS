@@ -51,6 +51,7 @@
 			"title": "Informations",
 			"shortTitle": "Info skin",
 			"name": "Nom du skin",
+			"nameHint": "Mon super skin",
 			"description": "Description",
 			"fieldWidth": "172",
 			"error": {
