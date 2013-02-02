@@ -78,18 +78,20 @@ b_next.addEventListener('click', function(e) {
 				title: I('addProcess.process.title'),
 				url: '/views_common/processing.js',
 				backgroundImage: Utils.getBGImage(),
-				backgroundRepeat: true,
+				barColor: Utils.getNavColor(),
+				backgroundRepeat: Utils.isiPad(),
 
 				skinUrl: url,
 				skinName: win.skinName,
 				skinDesc: win.skinDesc,
-				from: win.from,
-				masterGroup: win.masterGroup,
-				prevWins: [win.prevWins[0], win]
+				from: win.from
 			});
 			if(Utils.isiPad()) {
+				win_process.masterGroup = win.masterGroup;
+				win_process.prevWins = [win.prevWins[0], win];
 				win.masterGroup.open(win_process);
 			} else {
+				win_process.container = win.container;
 				win.navGroup.open(win_process);
 			}
 		} else {

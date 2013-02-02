@@ -55,7 +55,7 @@ b_add.addEventListener('click', function(e) {
 	});
 
 	var info_win = Ti.UI.createWindow({
-		url: 'add_process/info.js',
+		url: '/views_common/info.js',
 		title: I('addProcess.skinInfo.title'),
 		backgroundImage: Utils.getBGImage(),
 		container: container,
