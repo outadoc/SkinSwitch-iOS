@@ -89,7 +89,7 @@ b_next.addEventListener('click', function(e) {
 
 win.setRightNavButton(b_next);
 
-if(Utils.isiPhone) {
+if(Utils.isiPhone()) {
 	var b_close = Ti.UI.createButton({
 		title: I('buttons.close'),
 		style: Titanium.UI.iPhone.SystemButtonStyle.DONE
