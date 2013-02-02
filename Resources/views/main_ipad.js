@@ -41,7 +41,7 @@ b_settings.addEventListener('click', function() {
 		backgroundImage: Utils.getBGImage(),
 		barColor: Utils.getNavColor(),
 		backgroundRepeat: true,
-		url: '/views_common/settings.js',
+		url: 'settings.js',
 		masterGroup: win.masterGroup,
 		detailGroup: win.detailGroup,
 	});
@@ -57,7 +57,7 @@ var b_add = Ti.UI.createButton({
 
 b_add.addEventListener('click', function(e) {
 	var info_win = Ti.UI.createWindow({
-		url: '/views_common/info.js',
+		url: 'add_process/info.js',
 		title: I('addProcess.skinInfo.title'),
 		backgroundImage: Utils.getBGImage(),
 		barColor: Utils.getNavColor(),

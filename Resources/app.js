@@ -8,7 +8,7 @@ db.close();
 
 if(Ti.Platform.getOsname() === 'iphone') {
 	var mainWin = Ti.UI.createWindow({
-		url: 'views_iphone/main.js',
+		url: 'views/main_iphone.js',
 		tabBarHidden: true,
 		title: Ti.App.getName(),
 		backgroundImage: Utils.getBGImage(),
@@ -51,7 +51,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 	detailWin.add(iad);
 
 	var masterWin = Ti.UI.createWindow({
-		url: 'views_ipad/main.js',
+		url: 'views/main_ipad.js',
 		backgroundImage: Utils.getBGImage(),
 		barColor: Utils.getNavColor(),
 		backgroundRepeat: true,
@@ -115,7 +115,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 
 		b_add.addEventListener('click', function() {
 			var info_win = Ti.UI.createWindow({
-				url: 'views_ipad/add_process/info.js',
+				url: 'views/add_process/info.js',
 				title: I('addProcess.skinInfo.title'),
 				backgroundImage: Utils.getBGImage(),
 				barColor: Utils.getNavColor(),
@@ -147,7 +147,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 				backgroundImage: Utils.getBGImage(),
 				backgroundRepeat: true,
 				barColor: Utils.getNavColor(),
-				url: 'views_common/settings.js',
+				url: 'views/settings.js',
 				masterGroup: splitWin.masterView
 			});
 

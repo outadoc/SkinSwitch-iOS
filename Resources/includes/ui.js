@@ -144,7 +144,7 @@
 		
 		b_edit.addEventListener('click', function(e) {
 			var edit_win = Ti.UI.createWindow({
-				url: '/views_common/info.js',
+				url: '/views/add_process/info.js',
 				skinIDToEdit: id,
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getBGImage(),
@@ -335,7 +335,7 @@
 	
 		b_edit.addEventListener('click', function() {
 			var info_win = Ti.UI.createWindow({
-				url: '/views_common/info.js',
+				url: '/views/add_process/info.js',
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getBGImage(),
 				backgroundRepeat: true,

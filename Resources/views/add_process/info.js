@@ -49,7 +49,7 @@ b_next.addEventListener('click', function(e) {
 					backgroundImage: Utils.getBGImage(),
 					barColor: Utils.getNavColor(),
 					backgroundRepeat: Utils.isiPad(),
-					url: '/views_common/url_select.js'
+					url: 'url_select.js'
 				});
 
 				if(e.index == 0 || e.index == 1) {
