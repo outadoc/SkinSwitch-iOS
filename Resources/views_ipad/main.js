@@ -40,7 +40,7 @@ b_settings.addEventListener('click', function() {
 		title: I('settings.title'),
 		backgroundImage: Utils.getBGImage(),
 		backgroundRepeat: true,
-		url: 'settings.js',
+		url: '/views_common/settings.js',
 		masterGroup: win.masterGroup,
 		detailGroup: win.detailGroup,
 	});

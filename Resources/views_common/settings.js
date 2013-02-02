@@ -15,8 +15,8 @@ function getTextFieldRow(text, hint, isPassword) {
 		height: 35,
 		top: 4,
 		right: 5,
-		left: 130,
-		width: Ti.UI.FILL,
+		left: (Utils.isiPad) ? 130 : undefined,
+		width: (Utils.isiPad()) ? Ti.UI.FILL : 160,
 		autocorrect: false,
 		borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 		returnKeyType: Ti.UI.RETURNKEY_NEXT,
@@ -38,14 +38,33 @@ b_credits.addEventListener('click', function() {
 	var credits_win = Ti.UI.createWindow({
 		url: '../views_common/credits.js',
 		title: I('credits.title'),
-		backgroundRepeat: true,
+		backgroundRepeat: Utils.isiPad(),
+		barColor: Utils.getNavColor(),
 		backgroundImage: Utils.getBGImage()
 	});
-
-	win.masterGroup.open(credits_win);
+	
+	if(Utils.isiPad()) {
+		win.masterGroup.open(credits_win);
+	} else {
+		win.navGroup.open(credits_win);
+	}
 });
 
-win.setRightNavButton(b_credits);
+if(Utils.isiPhone()) {
+	var b_close = Ti.UI.createButton({
+		title: I('buttons.close'),
+		style: Titanium.UI.iPhone.SystemButtonStyle.DONE
+	});
+
+	b_close.addEventListener('click', function() {
+		win.container.close();
+	});
+	
+	win.setRightNavButton(b_close);
+	win.setLeftNavButton(b_credits);
+} else {
+	win.setRightNavButton(b_credits);
+}
 
 var tableView = Ti.UI.createTableView({
 	data: [getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●', true)],
@@ -72,8 +91,8 @@ var lbl_header = Ti.UI.createLabel({
 		y: 1
 	},
 	top: 5,
-	left: '7%',
-	height: 30
+	left: (Utils.isiPad()) ? '7%' : 15,
+	height: (Utils.isiPad()) ? Ti.UI.SIZE : 30
 });
 
 win.add(lbl_header);
@@ -82,17 +101,17 @@ var lbl_footer = Ti.UI.createLabel({
 	text: I('settings.footer.migratedAccount') + '\n\n' + I('settings.footer.privacy'),
 	color: '#F8F8F8',
 	font: {
-		fontSize: 18
+		fontSize: (Utils.isiPad()) ? 18 : 15
 	},
 	shadowColor: 'black',
 	shadowOffset: {
 		x: 0,
 		y: 1
 	},
-	top: 155,
-	left: '7%',
-	right: '7%',
-	width: Ti.UI.SIZE,
+	top: (Utils.isiPad) ? 155 : 145,
+	left: (Utils.isiPad) ? '7%' : 20,
+	right: (Utils.isiPad) ? '7%' : 20,
+	//width: (Utils.isiPad) ? Ti.UI.SIZE : undefined,
 	height: Ti.UI.SIZE
 });
 
@@ -132,4 +151,4 @@ function saveCredentials() {
 
 win.addEventListener('blur', saveCredentials);
 tableView.getData()[0].getRows()[0].getChildren()[0].addEventListener('blur', saveCredentials);
-tableView.getData()[0].getRows()[1].getChildren()[0].addEventListener('blur', saveCredentials); 
+tableView.getData()[0].getRows()[1].getChildren()[0].addEventListener('blur', saveCredentials);

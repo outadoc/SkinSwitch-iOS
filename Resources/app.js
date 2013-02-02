@@ -143,7 +143,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 				title: I('settings.title'),
 				backgroundImage: Utils.getBGImage(),
 				backgroundRepeat: true,
-				url: 'views_ipad/settings.js',
+				url: 'views_common/settings.js',
 				masterGroup: splitWin.masterView
 			});
 

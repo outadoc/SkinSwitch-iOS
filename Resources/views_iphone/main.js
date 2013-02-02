@@ -83,7 +83,7 @@ b_settings.addEventListener('click', function() {
 		title: I('settings.title'),
 		barColor: Utils.getNavColor(),
 		backgroundImage: Utils.getBGImage(),
-		url: 'settings.js'
+		url: '/views_common/settings.js'
 	});
 
 	var container = Ti.UI.createWindow({
