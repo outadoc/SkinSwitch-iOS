@@ -111,7 +111,6 @@ var lbl_footer = Ti.UI.createLabel({
 	top: (Utils.isiPad) ? 155 : 145,
 	left: (Utils.isiPad) ? '7%' : 20,
 	right: (Utils.isiPad) ? '7%' : 20,
-	//width: (Utils.isiPad) ? Ti.UI.SIZE : undefined,
 	height: Ti.UI.SIZE
 });
 

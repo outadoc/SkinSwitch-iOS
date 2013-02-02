@@ -32,6 +32,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 
 	var detailWin = Ti.UI.createWindow({
 		title: I('main.skinDetails.title'),
+		barColor: Utils.getNavColor(),
 		backgroundGradient: {
 			colors: ['c6c6c6', 'e4e4e4']
 		}
@@ -52,6 +53,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 	var masterWin = Ti.UI.createWindow({
 		url: 'views_ipad/main.js',
 		backgroundImage: Utils.getBGImage(),
+		barColor: Utils.getNavColor(),
 		backgroundRepeat: true,
 		title: I('main.skinList'),
 		detailWin: detailWin,
@@ -116,6 +118,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 				url: 'views_ipad/add_process/info.js',
 				title: I('addProcess.skinInfo.title'),
 				backgroundImage: Utils.getBGImage(),
+				barColor: Utils.getNavColor(),
 				backgroundRepeat: true,
 				masterGroup: splitWin.masterView
 			});
@@ -143,6 +146,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 				title: I('settings.title'),
 				backgroundImage: Utils.getBGImage(),
 				backgroundRepeat: true,
+				barColor: Utils.getNavColor(),
 				url: 'views_common/settings.js',
 				masterGroup: splitWin.masterView
 			});
