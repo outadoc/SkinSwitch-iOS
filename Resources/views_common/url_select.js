@@ -4,7 +4,7 @@ var win = Ti.UI.currentWindow;
 var Utils = require('/includes/utils');
 
 var view = Ti.UI.createView({
-	height: Ti.UI.SIZE,
+	height: (Utils.isiPad()) ? Ti.UI.SIZE : (Ti.Platform.displayCaps.platformHeight - 60),
 	top: 30
 });
 
@@ -87,8 +87,11 @@ b_next.addEventListener('click', function(e) {
 				masterGroup: win.masterGroup,
 				prevWins: [win.prevWins[0], win]
 			});
-
-			win.masterGroup.open(win_process);
+			if(Utils.isiPad()) {
+				win.masterGroup.open(win_process);
+			} else {
+				win.navGroup.open(win_process);
+			}
 		} else {
 			alert(I('addProcess.urlSelect.invalidUrl'));
 		}
@@ -96,4 +99,4 @@ b_next.addEventListener('click', function(e) {
 });
 
 win.setRightNavButton(b_next);
-txtfield_url.focus(); 
+txtfield_url.focus();

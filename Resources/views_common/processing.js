@@ -24,9 +24,9 @@ var b_done = Ti.UI.createButton({
 });
 
 b_done.addEventListener('click', function(e) {
-	if(Utils.isiPhone) {
+	if(Utils.isiPhone()) {
 		win.container.close();
-	} else if(Utils.isiPad) {
+	} else if(Utils.isiPad()) {
 		win.masterGroup.close(win, {
 			animated: false
 		});

@@ -53,7 +53,7 @@ b_next.addEventListener('click', function(e) {
 					backButtonTitle: I('addProcess.skinInfo.shortTitle'),
 					backgroundImage: Utils.getBGImage(),
 					backgroundRepeat: true,
-					url: 'url_select.js',
+					url: '/views_common/url_select.js',
 					masterGroup: win.masterGroup,
 					prevWins: [win]
 				});

@@ -49,6 +49,7 @@ b_next.addEventListener('click', function(e) {
 	
 			optionDialog.addEventListener('click', function(e) {
 				var win_next = Ti.UI.createWindow({
+					url: '/views_common/url_select.js',
 					skinName: tableView.data[0].rows[0].children[0].getValue(),
 					skinDesc: tableView.data[0].rows[1].children[0].getValue(),
 					backButtonTitle: I('addProcess.skinInfo.shortTitle'),
@@ -59,16 +60,12 @@ b_next.addEventListener('click', function(e) {
 				});
 	
 				if(e.index == 0) {
-					win_next.setUrl('url_select.js');
 					win_next.from = 'pseudo';
 					win_next.setTitle(I('addProcess.skinInfo.method.pseudo'));
-	
 					win.navGroup.open(win_next);
 				} else if(e.index == 1) {
-					win_next.setUrl('url_select.js');
 					win_next.from = 'url';
 					win_next.setTitle(I('addProcess.skinInfo.method.url'));
-	
 					win.navGroup.open(win_next);
 				}
 			});

@@ -22,11 +22,11 @@
 	}
 	
 	exports.isiPhone = function() {
-		return Ti.Platform.getOsname() === 'iphone';
+		return (Ti.Platform.getOsname() === 'iphone');
 	}
 	
 	exports.isiPad = function() {
-		return Ti.Platform.getOsname() === 'ipad';
+		return (Ti.Platform.getOsname() === 'ipad');
 	}
 
 	exports.createLoadingWindow = function() {
