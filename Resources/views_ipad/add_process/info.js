@@ -11,7 +11,7 @@ var view = Ti.UI.createView({
 win.add(view);
 
 var tableView = Ti.UI.createTableView({
-	data: [Utils.getTextFieldRow(I('addProcess.skinInfo.name'), false), Utils.getTextAreaRow(I('addProcess.skinInfo.description'), false)],
+	data: [Utils.getTextFieldRow(I('addProcess.skinInfo.name')), Utils.getTextAreaRow(I('addProcess.skinInfo.description'))],
 	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundColor: 'transparent',
 	rowBackgroundColor: 'white',

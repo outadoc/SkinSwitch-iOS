@@ -4,14 +4,14 @@ var Utils = require('/includes/utils');
 Ti.include('/includes/lib/json.i18n.js');
 
 var view = Ti.UI.createView({
-	bottom: 0,
-	height: Ti.Platform.displayCaps.platformHeight - 60
+	height: Ti.UI.SIZE,
+	top: (Utils.isiPad()) ? 30 : (((Ti.Platform.displayCaps.platformHeight - 70 - 215) / 2) - (180 / 2))
 });
 
 win.add(view);
 
 var tableView = Ti.UI.createTableView({
-	data: [Utils.getTextFieldRow(I('addProcess.skinInfo.name'), true), Utils.getTextAreaRow(I('addProcess.skinInfo.description'), true)],
+	data: [Utils.getTextFieldRow(I('addProcess.skinInfo.name')), Utils.getTextAreaRow(I('addProcess.skinInfo.description'))],
 	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundColor: 'transparent',
 	rowBackgroundColor: 'white',

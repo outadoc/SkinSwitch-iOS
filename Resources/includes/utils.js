@@ -55,7 +55,7 @@
 		return win;
 	}
 
-	exports.getTextFieldRow = function(text, animate) {
+	exports.getTextFieldRow = function(text) {
 		var row = Ti.UI.createTableViewRow({
 			title: text,
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
@@ -71,27 +71,11 @@
 			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
 		});
 		
-		if(animate) {
-			textfield.addEventListener('focus', function() {
-				view.animate({
-					bottom: 90,
-					duration: 300
-				});
-			});
-	
-			textfield.addEventListener('blur', function() {
-				view.animate({
-					bottom: 0,
-					duration: 300
-				});
-			});
-		}
-		
 		row.add(textfield);
 		return row;
 	}
 	
-	exports.getTextAreaRow = function(text, animate) {
+	exports.getTextAreaRow = function(text) {
 		var row = Ti.UI.createTableViewRow({
 			title: text,
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
@@ -110,22 +94,6 @@
 				fontSize: 15
 			}
 		});
-		
-		if(animate) {
-			textarea.addEventListener('focus', function() {
-				view.animate({
-					bottom: 90,
-					duration: 300
-				});
-			});
-	
-			textarea.addEventListener('blur', function() {
-				view.animate({
-					bottom: 0,
-					duration: 300
-				});
-			});
-		}
 
 		row.add(textarea);
 		return row;
