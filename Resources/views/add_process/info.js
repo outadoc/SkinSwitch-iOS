@@ -79,10 +79,16 @@ b_next.addEventListener('click', function(e) {
 			var db = Ti.Database.open('skins');
 			db.execute('UPDATE skins SET name=?, description=? WHERE id=?', tableView.data[0].rows[0].children[0].getValue(), tableView.data[0].rows[1].children[0].getValue(), win.skinIDToEdit);
 			db.close();
-
-			win.masterGroup.close(win, {
-				animated: true
-			});
+			
+			if(Utils.isiPad()) {
+				win.masterGroup.close(win, {
+					animated: true
+				});
+			} else {
+				win.close(win, {
+					animated: true
+				});
+			}
 		}
 	}
 });
