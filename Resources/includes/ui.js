@@ -41,7 +41,7 @@
 		return row;
 	}
 	
-	exports.getiPhoneSkinInfoPanel = function(id, description, timestamp, updateSkinsList) {
+	exports.getiPhoneSkinInfoPanel = function(skinData, updateSkinsList, callback) {
 		var infoPanel = Ti.UI.createTableViewRow({
 			height: 200,
 			isInfoPanel: true,
@@ -56,6 +56,7 @@
 		});
 
 		infoPanel.add(panelView);
+		callback(infoPanel);
 
 		var lbl_skin_desc_title = Ti.UI.createLabel({
 			text: I('main.skinDetails.description'),
@@ -84,7 +85,7 @@
 		panelView.add(scrollView_desc);
 
 		var lbl_skin_desc = Ti.UI.createLabel({
-			text: description + '\n ',
+			text: skinData.desc + '\n ',
 			color: 'darkGray',
 			top: 0,
 			left: 0,
@@ -111,7 +112,7 @@
 
 		panelView.add(lbl_skin_time_title);
 
-		var creationDate = new Date(timestamp);
+		var creationDate = new Date(skinData.time);
 
 		var lbl_skin_time = Ti.UI.createLabel({
 			text: creationDate.toLocaleDateString(),
@@ -145,7 +146,7 @@
 		b_edit.addEventListener('click', function(e) {
 			var edit_win = Ti.UI.createWindow({
 				url: '/views/add_process/info.js',
-				skinIDToEdit: id,
+				skinIDToEdit: skinData.id,
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getBGImage(),
 				barColor: Utils.getNavColor()
@@ -170,7 +171,7 @@
 
 		var img_skin_front = Ti.UI.createImageView({
 			defaultImage: '/img/char_front.png',
-			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + id + '/front.png').getNativePath(),
+			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinData.id + '/front.png').getNativePath(),
 			height: 170,
 			width: 85,
 			top: 0,
@@ -181,7 +182,7 @@
 
 		var img_skin_back = Ti.UI.createImageView({
 			defaultImage: '/img/char_back.png',
-			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + id + '/back.png').getNativePath(),
+			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinData.id + '/back.png').getNativePath(),
 			height: 170,
 			width: 85,
 			top: 0,
@@ -201,8 +202,6 @@
 				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
 			});
 		});
-		
-		return infoPanel;
 	}
 	
 	exports.getiPadSkinInfoPanel = function(skinData, win) {

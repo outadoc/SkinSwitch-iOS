@@ -166,16 +166,18 @@ tableView.addEventListener('delete', function(e) {
 tableView.addEventListener('click', function(e) {
 	if((e.row.children == null || (e.row.children != null && e.source != e.row.children[0])) && e.index != null && !e.rowData.isInfoPanel && !e.rowData.isPlaceholder) {
 		if(!e.rowData.isExpanded) {
-			tableView.insertRowAfter(e.index, Ui.getiPhoneSkinInfoPanel(e.rowData.skinData.id, e.rowData.skinData.desc, e.rowData.skinData.time, updateSkinsList), {
-				animated: true,
-				animationStyle: Titanium.UI.iPhone.RowAnimationStyle.FADE
+			Ui.getiPhoneSkinInfoPanel(e.rowData.skinData, updateSkinsList, function(row) {
+				tableView.insertRowAfter(e.index, row, {
+					animated: true,
+					animationStyle: Titanium.UI.iPhone.RowAnimationStyle.FADE
+				});
+
+				e.rowData.isExpanded = true;
+	
+				if(searchBar.getValue() != '') {
+					tableView.scrollToIndex(e.index + 1);
+				}
 			});
-
-			e.rowData.isExpanded = true;
-
-			if(searchBar.getValue() != '') {
-				tableView.scrollToIndex(e.index + 1);
-			}
 		} else {
 			tableView.deleteRow(e.index + 1, {
 				animated: true,
