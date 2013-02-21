@@ -2,6 +2,8 @@
 	"main": {
 		"searchHint": "Find a skin...",
 		"skinList": "Skins List",
+		"addSkin": "Add a Skin",
+		"editSettings": "Edit Settings",
 		"skinDetails": {
 			"title": "Skins Details",
 			"description": "Description",

@@ -2,6 +2,8 @@
 	"main": {
 		"searchHint": "Trouver un skin...",
 		"skinList": "Liste des skins",
+		"addSkin": "Ajouter un skin",
+		"editSettings": "Modifier les réglages",
 		"skinDetails": {
 			"title": "Détails du skin",
 			"description": "Description",

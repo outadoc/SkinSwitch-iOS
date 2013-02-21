@@ -101,7 +101,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 		view.add(lbl_noskin);
 
 		var b_add = Ti.UI.createButton({
-			title: 'Ajouter un skin',
+			title: I('main.addSkin'),
 			font: {
 				fontSize: 23
 			},
@@ -129,7 +129,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 		view.add(b_add);
 
 		var b_settings = Ti.UI.createButton({
-			title: 'Modifier les réglages',
+			title: I('main.editSettings'),
 			font: {
 				fontSize: 23
 			},
