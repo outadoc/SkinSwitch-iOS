@@ -27,10 +27,11 @@
 
 			if(Ti.Platform.getOsname() === 'iphone') {
 				var b_wear = Ti.UI.createButton({
-					style: Ti.UI.iPhone.SystemButton.DISCLOSURE,
+					style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
+					image: '/img/upload.png',
 					right: 10,
-					width: 10,
-					height: 10
+					width: 30,
+					height: 30
 				});
 
 				b_wear.addEventListener('click', function(e) {
