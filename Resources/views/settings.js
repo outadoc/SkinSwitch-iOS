@@ -15,7 +15,7 @@ function getTextFieldRow(text, hint, isPassword) {
 		height: 35,
 		top: 4,
 		right: 5,
-		left: (Utils.isiPad) ? 130 : undefined,
+		left: (Utils.isiPad()) ? 130 : undefined,
 		width: (Utils.isiPad()) ? Ti.UI.FILL : 160,
 		autocorrect: false,
 		borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,

@@ -104,7 +104,7 @@ b_edit.addEventListener('click', function(e) {
 	win.detailContent.animate({
 		opacity: 1,
 		duration: 300,
-		curve: Ti.UI.iOS.ANIMATION_CURVE_EASE_IN
+		curve: Ti.UI.ANIMATION_CURVE_EASE_IN
 	});
 });
 
