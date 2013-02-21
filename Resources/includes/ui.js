@@ -338,10 +338,12 @@
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getBGImage(),
 				backgroundRepeat: true,
+				barColor: Utils.getNavColor(),
 				masterGroup: win.masterGroup,
 				skinIDToEdit: skinData.id
 			});
-		
+			
+			b_close.fireEvent('click', null);
 			win.masterGroup.open(info_win);
 		});
 	
