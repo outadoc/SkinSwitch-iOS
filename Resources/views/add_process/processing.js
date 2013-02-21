@@ -33,6 +33,7 @@ b_done.addEventListener('click', function(e) {
 		win.masterGroup.close(win.prevWins[1], {
 			animated: false
 		});
+		win.masterGroup.fireEvent('close', null);
 		win.masterGroup.close(win.prevWins[0], {
 			animated: false
 		});

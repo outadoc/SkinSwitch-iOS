@@ -122,7 +122,12 @@ if(Ti.Platform.getOsname() === 'iphone') {
 				backgroundRepeat: true,
 				masterGroup: splitWin.masterView
 			});
-
+			
+			info_win.addEventListener('close', function(e) {
+				b_add.setEnabled(true);
+			});
+			
+			b_add.setEnabled(false);
 			splitWin.masterView.open(info_win);
 		});
 
@@ -150,7 +155,12 @@ if(Ti.Platform.getOsname() === 'iphone') {
 				url: 'views/settings.js',
 				masterGroup: splitWin.masterView
 			});
-
+			
+			win_settings.addEventListener('close', function(e) {
+				b_settings.setEnabled(true);
+			});
+			
+			b_settings.setEnabled(false);
 			splitWin.masterView.open(win_settings);
 		});
 
