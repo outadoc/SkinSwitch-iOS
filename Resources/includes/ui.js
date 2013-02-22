@@ -273,7 +273,7 @@
 		var view_skin = Ti.UI.createImageView({
 			height: 300,
 			width: 150,
-			right: '5%',
+			right: '8%',
 			top: 25
 		});
 	
