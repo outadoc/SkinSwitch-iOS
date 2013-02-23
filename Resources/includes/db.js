@@ -25,7 +25,7 @@
 				isExpanded: false
 			});
 
-			if(Ti.Platform.getOsname() === 'iphone') {
+			if(Utils.isiPhone()) {
 				var b_wear = Ti.UI.createButton({
 					style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
 					image: '/img/upload.png',
@@ -39,7 +39,7 @@
 				});
 
 				row.add(b_wear);
-			} else if(Ti.Platform.getOsname() === 'ipad') {
+			} else if(Utils.isiPad()) {
 				row.hasChild = true;
 			}
 		

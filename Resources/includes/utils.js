@@ -10,9 +10,9 @@
 	}
 
 	exports.getBGImage = function() {
-		if(Ti.Platform.getOsname() === 'iphone') {
+		if(exports.isiPhone()) {
 			return '/img/bg.png';
-		} else if(Ti.Platform.getOsname() === 'ipad') {
+		} else if(exports.isiPad()) {
 			return '/img/block_stonebrick.png';
 		}
 	}
