@@ -14,7 +14,7 @@
 		"noSelectedSkin": "Aucun skin sélectionné.",
 		"noContent": {
 			"title": "Aucun skin n'a encore été ajouté.",
-			"help": "Pour ajouter un skin, tapez \"Modifier\", puis \"+\"."
+			"help": "Pour ajouter un skin, tapez \"+\"."
 		},
 		"skins": "%s skins",
 		"progressBar": {

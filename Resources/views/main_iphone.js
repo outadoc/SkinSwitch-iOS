@@ -107,38 +107,7 @@ b_settings.addEventListener('click', function() {
 });
 
 win.setLeftNavButton(b_settings);
-
-var b_done = Ti.UI.createButton({
-	title: I('buttons.done'),
-	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
-});
-
-b_done.addEventListener('click', function(e) {
-	tableView.setEditing(false);
-	win.setRightNavButton(b_edit, {
-		animated: true
-	});
-	win.setLeftNavButton(b_settings, {
-		animated: true
-	});
-});
-
-var b_edit = Ti.UI.createButton({
-	title: I('buttons.edit')
-});
-
-b_edit.addEventListener('click', function(e) {
-	retractAllInfoPanels();
-	tableView.setEditing(true);
-	win.setRightNavButton(b_done, {
-		animated: true
-	});
-	win.setLeftNavButton(b_add, {
-		animated: true
-	});
-});
-
-win.setRightNavButton(b_edit);
+win.setRightNavButton(b_add);
 
 tableView.addEventListener('delete', function(e) {
 	var db = Ti.Database.open('skins');
