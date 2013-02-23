@@ -6,7 +6,7 @@ db.execute('CREATE TABLE IF NOT EXISTS skins (id VARCHAR(16) PRIMARY KEY, name V
 db.file.setRemoteBackup(true);
 db.close();
 
-if(Ti.Platform.getOsname() === 'iphone') {
+if(Utils.isiPhone()) {
 	var mainWin = Ti.UI.createWindow({
 		url: 'views/main_iphone.js',
 		tabBarHidden: true,
@@ -27,7 +27,7 @@ if(Ti.Platform.getOsname() === 'iphone') {
 	container.open({
 		modal: false
 	});
-} else if(Ti.Platform.getOsname() === 'ipad') {
+} else if(Utils.isiPad()) {
 	Ti.include('/includes/lib/json.i18n.js');
 
 	var detailWin = Ti.UI.createWindow({
