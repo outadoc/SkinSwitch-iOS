@@ -42,14 +42,17 @@
 			} else if(Ti.Platform.getOsname() === 'ipad') {
 				row.hasChild = true;
 			}
-
+		
 			var img_skin = Ti.UI.createImageView({
-				image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinList.fieldByName('id') + '/front.png').getNativePath(),
-				height: Ti.UI.FILL,
-				width: 22,
-				top: 2,
-				bottom: 2,
-				left: 13
+				image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinList.fieldByName('id') + '/front.png').read().imageAsCropped({
+					height: 42, 
+					width: 42,
+					x: 21,
+					y: 0
+				}),
+				height: 28,
+				width: 28,
+				left: 12
 			});
 
 			row.add(img_skin);
