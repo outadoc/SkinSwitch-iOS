@@ -62,7 +62,7 @@
 			},
 			"method": {
 				"title": "Add the skin...",
-				"pseudo": "From an existing pseudo",
+				"pseudo": "From an existing user",
 				"url": "From an URL",
 				"cancel": "Cancel"
 			}

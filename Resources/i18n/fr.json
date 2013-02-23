@@ -62,7 +62,7 @@
 			},
 			"method": {
 				"title": "Ajouter le skin...",
-				"pseudo": "Depuis un pseudo existant",
+				"pseudo": "Depuis un joueur existant",
 				"url": "Depuis une URL",
 				"cancel": "Annuler"
 			}
