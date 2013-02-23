@@ -32,8 +32,9 @@
 				"okay": "Oui"
 			},
 			"error": {
-				"title": "Upload error",
-				"login": "Échec lors de la connexion à minecraft.net. Minecraft.net est peut-être indisponbile. Vérifiez votre nom d'utilisateur et votre mot de passe dans les préférences.",
+				"title": "Erreur d'envoi",
+				"login": "Échec lors de la connexion à minecraft.net. Vérifiez votre nom d'utilisateur et votre mot de passe dans les préférences.",
+				"server": "Impossible de contacter minecraft.net. Le site est peut-être temporairement indisponible. Vérifiez sur http://help.mojang.com et réessayez plus tard.",
 				"upload": "Échec lors de l'envoi du skin. Merci de réessayer plus tard."
 			}
 		}

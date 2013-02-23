@@ -71,8 +71,8 @@
 							});
 						}
 					},
-					onerror: function() {
-						triggerError('login', this)
+					onerror: function(e) {
+						triggerError('server', this);
 					},
 					autoRedirect: false,
 					validatesSecureCertificate: false

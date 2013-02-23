@@ -33,7 +33,8 @@
 			},
 			"error": {
 				"title": "Upload error",
-				"login": "Could not connect to minecraft.net. Minecraft.net may be down. Please check your login and password in the preferences.",
+				"login": "Could not login to minecraft.net. Please check your login and password in the settings.",
+				"server": "Could not reach minecraft.net. The site may be down. Check http://help.mojang.com and retry later.",
 				"upload": "Could not upload the skin to minecraft.net. Please try again later."
 			}
 		}
