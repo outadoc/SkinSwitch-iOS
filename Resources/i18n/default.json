@@ -110,5 +110,11 @@
 	"editSkin": {
 		"short": "Edit",
 		"title": "Edit Skin Info"
+	},
+	"restoreDatabase": {
+		"title": "Uh oh...",
+		"message": "We were unable to open the file containing your skins, for some reason.\nFortunately, there's a backup from %s. Would you like to restore it?",
+		"no": "No, thanks.",
+		"yes": "Let's do this!"
 	}
 }

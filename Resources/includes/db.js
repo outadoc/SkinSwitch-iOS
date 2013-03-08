@@ -1,5 +1,7 @@
 (function() {
 
+	Ti.include('/includes/lib/json.i18n.js');
+	
 	var Network = require('/includes/network');
 	var Ui = require('/includes/ui');
 
@@ -129,9 +131,9 @@
 	exports.askForDatabaseRestore = function(successCallback) {
 		var backupTime = new Date(exports.getDatabaseBackupFile().modificationTimestamp());
 		var alert_restore = Ti.UI.createAlertDialog({
-			title: 'Uh oh...',
-			message: "We were unable to open the file containing your skins, for some reason.\nFortunately, there's a backup from " + backupTime.toUTCString() + ". Would you like to restore it?",
-			buttonNames: ["No, thanks", "Let's do this"],
+			title: I('restoreDatabase.title'),
+			message: I('restoreDatabase.message', backupTime.toUTCString()),
+			buttonNames: [I('restoreDatabase.no'), I('restoreDatabase.yes')],
 			cancel: 0
 		});
 
