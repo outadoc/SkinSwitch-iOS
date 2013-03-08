@@ -5,7 +5,7 @@ Ti.UI.setBackgroundColor('#000');
 
 try {
 	//if the skins db exists
-	if(Ti.Filesystem.getFile(Ti.Filesystem.applicationSupportDirectory, '../Private Documents/' + Database.getDbName() + '.sql').exists()) {
+	if(Database.getDatabaseFile().exists()) {
 		//make a backup while it's here
 		Database.backupDatabase();
 		//continue to start the application
@@ -13,7 +13,7 @@ try {
 	} else {
 		//else, if the skins db doesn't exist
 		//check if there is a backup of it
-		if(Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, Database.getDbName() + '.sql.bck').exists()) {
+		if(Database.getDatabaseBackupFile().exists()) {
 			//if there is, ask the user if he wants to restore it
 			Database.askForDatabaseRestore(function() {
 				startApp();
@@ -25,7 +25,7 @@ try {
 	}
 } catch(e) {
 	//if we catch any error, check if there's a backup and ask the user if he wants to restore it
-	if(Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, Database.getDbName() + '.sql.bck').exists()) {
+	if(Database.getDatabaseBackupFile().exists()) {
 		Database.askForDatabaseRestore(function() {
 			startApp();
 		});

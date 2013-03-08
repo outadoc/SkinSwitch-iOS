@@ -81,11 +81,19 @@
 	exports.getDbName = function() {
 		return 'skins';
 	}
+	
+	exports.getDatabaseFile = function() {
+		return Ti.Filesystem.getFile(Ti.Filesystem.applicationSupportDirectory, '../Private Documents/' + exports.getDbName() + '.sql');
+	}
+	
+	exports.getDatabaseBackupFile = function() {
+		return Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, exports.getDbName() + '.sql.bck');
+	}
 
 	exports.backupDatabase = function() {
 		try {
-			var db = Ti.Filesystem.getFile(Ti.Filesystem.applicationSupportDirectory, '../Private Documents/' + exports.getDbName() + '.sql');
-			var backup = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, exports.getDbName() + '.sql.bck');
+			var db = exports.getDatabaseFile();
+			var backup = exports.getDatabaseBackupFile();
 
 			if(backup != null) {
 				backup.deleteFile();
@@ -99,8 +107,8 @@
 
 	exports.restoreDatabase = function() {
 		try {
-			var db = Ti.Filesystem.getFile(Ti.Filesystem.applicationSupportDirectory, '../Private Documents/' + exports.getDbName() + '.sql');
-			var backup = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, exports.getDbName() + '.sql.bck');
+			var db = exports.getDatabaseFile();
+			var backup = exports.getDatabaseBackupFile();
 
 			if(backup != null) {
 				db.deleteFile();
@@ -119,7 +127,7 @@
 	}
 
 	exports.askForDatabaseRestore = function(successCallback) {
-		var backupTime = new Date(Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, Database.getDbName() + '.sql.bck').modificationTimestamp());
+		var backupTime = new Date(exports.getDatabaseBackupFile().modificationTimestamp());
 		var alert_restore = Ti.UI.createAlertDialog({
 			title: 'Uh oh...',
 			message: "We were unable to open the file containing your skins, for some reason.\nFortunately, there's a backup from " + backupTime.toUTCString() + ". Would you like to restore it?",
