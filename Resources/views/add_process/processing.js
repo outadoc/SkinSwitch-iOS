@@ -2,6 +2,7 @@ Ti.include('/includes/lib/json.i18n.js');
 
 var win = Ti.UI.currentWindow;
 var Utils = require('/includes/utils');
+var Database = require('/includes/db');
 
 var skinID = Utils.getRandomID();
 
@@ -114,7 +115,7 @@ function registerSkinToDatabase() {
 	progBar.setMessage(I('addProcess.process.progress.database'));
 	progBar.setValue(90);
 
-	var db = Ti.Database.open('skins');
+	var db = Ti.Database.open(Database.getDbName());
 
 	db.execute('INSERT INTO skins (id, name, description, timestamp) VALUES (?, ?, ?, ?)', skinID, win.skinName, win.skinDesc, String(new Date().getTime()));
 	db.close();

@@ -32,7 +32,7 @@ win.addEventListener('focus', function() {
 });
 
 tableView.addEventListener('delete', function(e) {
-	var db = Ti.Database.open('skins');
+	var db = Ti.Database.open(Database.getDbName());
 	db.execute('DELETE FROM skins WHERE id=?', e.rowData.skinData.id);
 	db.close();
 

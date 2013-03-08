@@ -2,6 +2,7 @@ Ti.include('/includes/lib/json.i18n.js');
 
 var win = Ti.UI.currentWindow;
 var Utils = require('/includes/utils');
+var Database = require('/includes/db');
 
 var view = Ti.UI.createView({
 	height: Ti.UI.SIZE,
@@ -114,7 +115,7 @@ if(Utils.isiPhone()) {
 
 //if we're editing a skin and not actually creating a new one
 if(win.skinIDToEdit != null) {
-	var db = Ti.Database.open('skins');
+	var db = Ti.Database.open(Database.getDbName());
 	var skin = db.execute('SELECT * FROM skins WHERE id=?', win.skinIDToEdit);
 
 	if(skin.rowCount != 0) {
