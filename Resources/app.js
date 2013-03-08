@@ -1,6 +1,5 @@
 var Utils = require('/includes/utils');
 var Database = require('/includes/db');
-var db;
 
 Ti.UI.setBackgroundColor('#000');
 
