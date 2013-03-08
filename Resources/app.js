@@ -1,8 +1,6 @@
 var Utils = require('/includes/utils');
 var Database = require('/includes/db');
 
-Ti.UI.setBackgroundColor('#000');
-
 try {
 	//if the skins db exists
 	if(Database.getDatabaseFile().exists()) {
