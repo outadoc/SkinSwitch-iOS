@@ -128,11 +128,11 @@
 		db.close();
 	}
 
-	exports.askForDatabaseRestore = function(successCallback) {
+	exports.askForDatabaseRestore = function(reason, successCallback) {
 		var backupTime = new Date(exports.getDatabaseBackupFile().modificationTimestamp());
 		var alert_restore = Ti.UI.createAlertDialog({
 			title: I('restoreDatabase.title'),
-			message: I('restoreDatabase.message', backupTime.toUTCString()),
+			message: I('restoreDatabase.message', reason, backupTime.toUTCString()),
 			buttonNames: [I('restoreDatabase.no'), I('restoreDatabase.yes')],
 			cancel: 0
 		});

@@ -13,7 +13,7 @@ try {
 		//check if there is a backup of it
 		if(Database.getDatabaseBackupFile().exists()) {
 			//if there is, ask the user if he wants to restore it
-			Database.askForDatabaseRestore(function() {
+			Database.askForDatabaseRestore('the database is missing', function() {
 				startApp();
 			});
 		} else {
@@ -24,7 +24,7 @@ try {
 } catch(e) {
 	//if we catch any error, check if there's a backup and ask the user if he wants to restore it
 	if(Database.getDatabaseBackupFile().exists()) {
-		Database.askForDatabaseRestore(function() {
+		Database.askForDatabaseRestore(e, function() {
 			startApp();
 		});
 	} else {
