@@ -113,7 +113,7 @@
 	},
 	"restoreDatabase": {
 		"title": "Erf...",
-		"message": "Nous n'avons pas réussi à ouvrir le fichier qui contient vos skins (%s).\nHeureusement, une sauvegarde a été effectuée le %s.\nSouhaitez-vous la restaurer ?",
+		"message": "Nous n'avons pas réussi à ouvrir le fichier qui contient vos skins (%s).\nHeureusement, il existe une sauvegarde datant du %s.\nSouhaitez-vous la restaurer ?",
 		"no": "Non merci.",
 		"yes": "Allez hop !"
 	}
