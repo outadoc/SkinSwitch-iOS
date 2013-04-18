@@ -69,7 +69,7 @@
 		},
 		"urlSelect": {
 			"urlTitle": "Paste or type the skin URL here (must be a PNG file):",
-			"pseudoTitle": "Type the Minecraft pseudo here (case-sensitive):",
+			"pseudoTitle": "Type the Minecraft username here (case-sensitive):",
 			"blankField": "This field cannot be blank.",
 			"invalidUrl": "This URL is invalid (MUST be a PNG file)."
 		},
@@ -80,7 +80,7 @@
 				"skin": "Downloading Skin...",
 				"preview": "Downloading skin preview...",
 				"database": "Registering skin to database...",
-				"success": "Successfuly added the skin! :)",
+				"success": "Successfully added the skin! :)",
 				"fail": "Fail :("
 			},
 			"error": {
