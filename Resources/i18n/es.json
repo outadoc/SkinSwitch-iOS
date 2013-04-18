@@ -1,0 +1,120 @@
+{
+	"main": {
+		"searchHint": "Buscar un skin...",
+		"skinList": "Lista de skins",
+		"addSkin": "Añadir un skin",
+		"editSettings": "Ajustar",
+		"skinDetails": {
+			"title": "Detalles del skin",
+			"description": "Descripción",
+			"creation": "Fetcha de creación",
+			"wear": "Usar este skin",
+			"close": "Cerrar"
+		},
+		"noSelectedSkin": "No skin seleccionado.",
+		"noContent": {
+			"title": "No skin se añadió aún.",
+			"help": "Para añadir un skin, toca \"+\"."
+		},
+		"skins": "%s skins",
+		"progressBar": {
+			"login": "Conexión...",
+			"upload": "Subiendo skin...",
+			"loginFail": "Error de inicio",
+			"uploadFail": "Envío imposible",
+			"success": "¡Envío completo!"
+		},
+		"skinUpload": {
+			"confirm": {
+				"title": "¿Reemplazar tu skin?",
+				"message": "¿Realmente quieres reemplazar tu skin con \"%s\"?",
+				"cancel": "No",
+				"okay": "Si"
+			},
+			"error": {
+				"title": "Error de envío",
+				"login": "Error de inicio de sesión en minecraft.net. Por favor comproba a tu nombre de usuario y contraseã.",
+				"server": "No se pudo conectar a minecraft.net. El sitio web podría no estar disponible. Comproba http://help.mojang.com y inténte de nuevo más tarde.",
+				"upload": "No se pudo enviar el skin en minecraft.net. Por favor inténte de nuevo más tarde."
+			}
+		}
+	},
+	"settings": {
+		"title": "Ajustes",
+		"username": "Nombre de usario",
+		"password": "Contraseã",
+		"header": "Datos de conexión a Minecraft.net",
+		"footer": {
+			"migratedAccount": "Si tu cuenta se ha migrado a un Mojang account, tienes que utilizar tu dirección de correo electrónico en lugar de tu nombre de usuario Minecraft.",
+			"privacy": "Nota: NUNCA vamos a almacenar o utilizar cualquiera de tus datos para cualquier otra cosa que cambiar tus Minecraft skins. Los datos de tu cuenta son almacena de forma segura en el llavero de iOS."
+		}
+	},
+	"addProcess": {
+		"skinInfo": {
+			"title": "Skin información",
+			"shortTitle": "Skin info",
+			"name": "Skin nombre",
+			"nameHint": "Mi increible skin",
+			"description": "Descripción",
+			"fieldWidth": "165",
+			"error": {
+				"name": "Debes especificar un nombre para este skin."
+			},
+			"method": {
+				"title": "Añadir este skin...",
+				"pseudo": "Desde un usuario existente",
+				"url": "Desde una URL",
+				"cancel": "Cancelar"
+			}
+		},
+		"urlSelect": {
+			"urlTitle": "Pega o escribe la URL del skin aquí (debe ser un PNG archivo):",
+			"pseudoTitle": "Escribe el Minecraft username aquí:",
+			"blankField": "Este campo no puede ser vacío.",
+			"invalidUrl": "Este URL es inválida (DEBE ser un PNG archivo)."
+		},
+		"process": {
+			"title": "Tratamiento...",
+			"progress": {
+				"initial": "Reticulating Splines...",
+				"skin": "Cargando el skin...",
+				"preview": "Cargando la previa del skin...",
+				"database": "Registrando el skin en la base de datos...",
+				"success": "¡Añadido el skin con éxito! :)",
+				"fail": "Fail :("
+			},
+			"error": {
+				"skin": "Error descargando el skin. Abortando.",
+				"preview": {
+					"title": "Error de red",
+					"message": "Error descargando la previa. No habrá ninguna previa para este skin. ¿Seguir de todas formas?",
+					"cancel": "Cancelar",
+					"ok": "Seguir"
+				}
+			}
+		},
+		"next": "Siguiente"
+	},
+	"credits": {
+		"title": "Créditos",
+		"developer": "Desarrollador:",
+		"platform": "plataforma:",
+		"thanks": "Muchas gracias a:",
+		"modules": "Módulos:"
+	},
+	"buttons": {
+		"edit": "Editar",
+		"done": "OK",
+		"close": "Cerrar"
+	},
+	"editSkin": {
+		"short": "Editar",
+		"title": "Editar skin detalles"
+	},
+	"restoreDatabase": {
+		"title": "¡No no noooo!..",
+		"message": "No se pudo abrir el archivo que contiene sus skins, por alguna razón.\nPor suerte, hay una copia de seguridad de %s.\n¿Te gustaría restaurar?",
+		"no": "No, gracias.",
+		"yes": "Vamos!"
+	}
+}
