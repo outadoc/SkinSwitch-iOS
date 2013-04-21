@@ -56,7 +56,6 @@
 			"name": "Skin Name",
 			"nameHint": "My Awesome Skin",
 			"description": "Description",
-			"fieldWidth": "165",
 			"error": {
 				"name": "You must specify a name for this skin."
 			},
