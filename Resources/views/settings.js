@@ -6,17 +6,27 @@ var keychain = require('clearlyinnovative.keychain');
 
 function getTextFieldRow(text, hint, isPassword) {
 	var row = Ti.UI.createTableViewRow({
-		title: text,
 		selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
 	});
+	
+	var rowText = Ti.UI.createLabel({
+		text: text,
+		left: 10,
+		width: 140,
+		font: {
+			fontWeight: 'bold',
+			fontSize: 17
+		}
+	});
+	
+	row.add(rowText);
 
 	var textfield = Ti.UI.createTextField({
 		color: '#336699',
 		height: 35,
 		top: 4,
 		right: 5,
-		left: (Utils.isiPad()) ? 130 : undefined,
-		width: (Utils.isiPad()) ? Ti.UI.FILL : 160,
+		width: 140,
 		autocorrect: false,
 		borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 		returnKeyType: Ti.UI.RETURNKEY_NEXT,
