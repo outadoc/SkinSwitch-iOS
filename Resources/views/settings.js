@@ -13,6 +13,7 @@ function getTextFieldRow(text, hint, isPassword) {
 		text: text,
 		left: 10,
 		width: 140,
+		height: 20,
 		font: {
 			fontWeight: 'bold',
 			fontSize: 17
