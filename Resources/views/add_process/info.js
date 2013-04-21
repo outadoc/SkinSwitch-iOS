@@ -23,8 +23,8 @@ var tableView = Ti.UI.createTableView({
 
 view.add(tableView);
 
-tableView.data[0].rows[0].children[0].addEventListener('return', function(e) {
-	tableView.data[0].rows[1].children[0].focus();
+tableView.data[0].rows[0].children[1].addEventListener('return', function(e) {
+	tableView.data[0].rows[1].children[1].focus();
 });
 var b_next = Ti.UI.createButton({
 	title: I('addProcess.next')
@@ -44,8 +44,8 @@ b_next.addEventListener('click', function(e) {
 
 			optionDialog.addEventListener('click', function(e) {
 				var win_next = Ti.UI.createWindow({
-					skinName: tableView.data[0].rows[0].children[0].getValue(),
-					skinDesc: tableView.data[0].rows[1].children[0].getValue(),
+					skinName: tableView.data[0].rows[0].children[1].getValue(),
+					skinDesc: tableView.data[0].rows[1].children[1].getValue(),
 					backButtonTitle: I('addProcess.skinInfo.shortTitle'),
 					backgroundImage: Utils.getBGImage(),
 					barColor: Utils.getNavColor(),
@@ -119,11 +119,11 @@ if(win.skinIDToEdit != null) {
 	var skin = db.execute('SELECT * FROM skins WHERE id=?', win.skinIDToEdit);
 
 	if(skin.rowCount != 0) {
-		tableView.data[0].rows[0].children[0].setValue(skin.fieldByName('name'));
-		tableView.data[0].rows[1].children[0].setValue(skin.fieldByName('description'));
+		tableView.data[0].rows[0].children[1].setValue(skin.fieldByName('name'));
+		tableView.data[0].rows[1].children[1].setValue(skin.fieldByName('description'));
 	}
 
 	db.close();
 }
 
-tableView.data[0].rows[0].children[0].focus();
+tableView.data[0].rows[0].children[1].focus();

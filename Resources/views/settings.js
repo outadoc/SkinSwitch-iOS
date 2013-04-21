@@ -132,33 +132,33 @@ win.addEventListener('focus', function() {
 		key: 'username',
 		serviceName: Ti.App.getId()
 	}, function(data) {
-		tableView.getData()[0].getRows()[0].getChildren()[0].setValue(data.value);
+		tableView.getData()[0].getRows()[0].getChildren()[1].setValue(data.value);
 	});
 
 	keychain.getForKey({
 		key: 'password',
 		serviceName: Ti.App.getId()
 	}, function(data) {
-		tableView.getData()[0].getRows()[1].getChildren()[0].setValue(data.value);
+		tableView.getData()[0].getRows()[1].getChildren()[1].setValue(data.value);
 	});
 });
 
 function saveCredentials() {
 	keychain.setForKey({
 		key: 'username',
-		value: tableView.getData()[0].getRows()[0].getChildren()[0].getValue(),
+		value: tableView.getData()[0].getRows()[0].getChildren()[1].getValue(),
 		serviceName: Ti.App.getId()
 	}, function() {
 	});
 
 	keychain.setForKey({
 		key: 'password',
-		value: tableView.getData()[0].getRows()[1].getChildren()[0].getValue(),
+		value: tableView.getData()[0].getRows()[1].getChildren()[1].getValue(),
 		serviceName: Ti.App.getId()
 	}, function() {
 	});
 }
 
 win.addEventListener('blur', saveCredentials);
-tableView.getData()[0].getRows()[0].getChildren()[0].addEventListener('blur', saveCredentials);
-tableView.getData()[0].getRows()[1].getChildren()[0].addEventListener('blur', saveCredentials);
+tableView.getData()[0].getRows()[0].getChildren()[1].addEventListener('blur', saveCredentials);
+tableView.getData()[0].getRows()[1].getChildren()[1].addEventListener('blur', saveCredentials);
