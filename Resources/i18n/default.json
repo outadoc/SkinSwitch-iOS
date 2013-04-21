@@ -1,120 +1,120 @@
 {
-	"main": {
-		"searchHint": "Find a skin...",
-		"skinList": "Skins List",
-		"addSkin": "Add a Skin",
-		"editSettings": "Edit Settings",
-		"skinDetails": {
-			"title": "Skins Details",
-			"description": "Description",
-			"creation": "Date of Creation",
-			"wear": "Wear this skin",
-			"close": "Close"
+	"main":{
+		"searchHint":"Find a skin...",
+		"skinList":"Skins List",
+		"addSkin":"Add a Skin",
+		"editSettings":"Edit Settings",
+		"skinDetails":{
+			"title":"Skins Details",
+			"description":"Description",
+			"creation":"Date of Creation",
+			"wear":"Wear this skin",
+			"close":"Close"
 		},
-		"noSelectedSkin": "No skin selected.",
-		"noContent": {
-			"title": "No skin has been added yet.",
-			"help": "To add a skin, tap \"+\"."
+		"noSelectedSkin":"No skin selected.",
+		"noContent":{
+			"title":"No skin has been added yet.",
+			"help":"To add a skin, tap \"+\"."
 		},
-		"skins": "%s skins",
-		"progressBar": {
-			"login": "Logging in...",
-			"upload": "Uploading skin...",
-			"loginFail": "Login failed",
-			"uploadFail": "Upload failed",
-			"success": "Upload complete!"
+		"skins":"%s skins",
+		"progressBar":{
+			"login":"Logging in...",
+			"upload":"Uploading skin...",
+			"loginFail":"Login failed",
+			"uploadFail":"Upload failed",
+			"success":"Upload complete!"
 		},
-		"skinUpload": {
-			"confirm": {
-				"title": "Replace skin?",
-				"message": "Do you really want to replace your skin with \"%s\"?",
-				"cancel": "No",
-				"okay": "Yes"
+		"skinUpload":{
+			"confirm":{
+				"title":"Replace skin?",
+				"message":"Do you really want to replace your skin with \"%s\"?",
+				"cancel":"No",
+				"okay":"Yes"
 			},
-			"error": {
-				"title": "Upload error",
-				"login": "Could not login to minecraft.net. Please check your login and password in the settings.",
-				"server": "Could not reach minecraft.net. The site may be down. Check http://help.mojang.com and retry later.",
-				"upload": "Could not upload the skin to minecraft.net. Please try again later."
+			"error":{
+				"title":"Upload error",
+				"login":"Could not login to minecraft.net. Please check your login and password in the settings.",
+				"server":"Could not reach minecraft.net. The site may be down. Check http:\/\/help.mojang.com and retry later.",
+				"upload":"Could not upload the skin to minecraft.net. Please try again later."
 			}
 		}
 	},
-	"settings": {
-		"title": "Settings",
-		"username": "Username",
-		"password": "Password",
-		"header": "Minecraft.net Login Credentials",
-		"footer": {
-			"migratedAccount": "If your account has been migrated to a Mojang account, you have to use your email address instead of your Minecraft username.",
-			"privacy": "Note: we will NEVER store or use any of your informations for anything else than switching your Minecraft skins. Your account info is stored securely in the iOS keychain."
+	"settings":{
+		"title":"Settings",
+		"username":"Username",
+		"password":"Password",
+		"header":"Minecraft.net Login Credentials",
+		"footer":{
+			"migratedAccount":"If your account has been migrated to a Mojang account, you have to use your email address instead of your Minecraft username.",
+			"privacy":"Note: we will NEVER store or use any of your informations for anything else than switching your Minecraft skins. Your account info is stored securely in the iOS keychain."
 		}
 	},
-	"addProcess": {
-		"skinInfo": {
-			"title": "Skin Information",
-			"shortTitle": "Skin Info",
-			"name": "Skin Name",
-			"nameHint": "My Awesome Skin",
-			"description": "Description",
-			"error": {
-				"name": "You must specify a name for this skin."
+	"addProcess":{
+		"skinInfo":{
+			"title":"Skin Information",
+			"shortTitle":"Skin Info",
+			"name":"Skin Name",
+			"nameHint":"My Awesome Skin",
+			"description":"Description",
+			"error":{
+				"name":"You must specify a name for this skin."
 			},
-			"method": {
-				"title": "Add the skin...",
-				"pseudo": "From an existing user",
-				"url": "From an URL",
-				"cancel": "Cancel"
+			"method":{
+				"title":"Add the skin...",
+				"pseudo":"From an existing user",
+				"url":"From an URL",
+				"cancel":"Cancel"
 			}
 		},
-		"urlSelect": {
-			"urlTitle": "Paste or type the skin URL here (must be a PNG file):",
-			"pseudoTitle": "Type the Minecraft username here (case-sensitive):",
-			"blankField": "This field cannot be blank.",
-			"invalidUrl": "This URL is invalid (MUST be a PNG file)."
+		"urlSelect":{
+			"urlTitle":"Paste or type the skin URL here (must be a PNG file):",
+			"pseudoTitle":"Type the Minecraft username here (case-sensitive):",
+			"blankField":"This field cannot be blank.",
+			"invalidUrl":"This URL is invalid (MUST be a PNG file)."
 		},
-		"process": {
-			"title": "Processing...",
-			"progress": {
-				"initial": "Reticulating Splines...",
-				"skin": "Downloading Skin...",
-				"preview": "Downloading skin preview...",
-				"database": "Registering skin to database...",
-				"success": "Successfully added the skin! :)",
-				"fail": "Fail :("
+		"process":{
+			"title":"Processing...",
+			"progress":{
+				"initial":"Reticulating Splines...",
+				"skin":"Downloading Skin...",
+				"preview":"Downloading skin preview...",
+				"database":"Registering skin to database...",
+				"success":"Successfully added the skin! :)",
+				"fail":"Fail :("
 			},
-			"error": {
-				"skin": "Error while downloading the skin. Aborting.",
-				"preview": {
-					"title": "Network Error",
-					"message": "Error while downloading the preview. There will be no preview for this skin. Continue anyway?",
-					"cancel": "Cancel",
-					"ok": "Continue"
+			"error":{
+				"skin":"Error while downloading the skin. Aborting.",
+				"preview":{
+					"title":"Network Error",
+					"message":"Error while downloading the preview. There will be no preview for this skin. Continue anyway?",
+					"cancel":"Cancel",
+					"ok":"Continue"
 				}
 			}
 		},
-		"next": "Next"
+		"next":"Next"
 	},
-	"credits": {
-		"title": "Credits",
-		"developer": "Developer:",
-		"platform": "Platform:",
-		"translators" : "Translators:",
-		"thanks": "Special thanks to:",
-		"modules": "Modules:"
+	"credits":{
+		"title":"Credits",
+		"developer":"Developer:",
+		"platform":"Platform:",
+		"translators":"Translators:",
+		"thanks":"Special thanks to:",
+		"modules":"Modules:"
 	},
-	"buttons": {
-		"edit": "Edit",
-		"done": "Done",
-		"close": "Close"
+	"buttons":{
+		"edit":"Edit",
+		"done":"Done",
+		"close":"Close"
 	},
-	"editSkin": {
-		"short": "Edit",
-		"title": "Edit Skin Info"
+	"editSkin":{
+		"short":"Edit",
+		"title":"Edit Skin Info"
 	},
-	"restoreDatabase": {
-		"title": "Uh oh...",
-		"message": "We were unable to open the file containing your skins, for some reason.\nFortunately, there's a backup from %s.\nWould you like to restore it?",
-		"no": "No, thanks.",
-		"yes": "Let's do this!"
+	"restoreDatabase":{
+		"title":"Uh oh...",
+		"message":"We were unable to open the file containing your skins, for some reason.\nFortunately, there's a backup from %s.\nWould you like to restore it?",
+		"no":"No, thanks.",
+		"yes":"Let's do this!"
 	}
 }

@@ -1,120 +1,120 @@
 {
-	"main": {
-		"searchHint": "Trouver un skin...",
-		"skinList": "Liste des skins",
-		"addSkin": "Ajouter un skin",
-		"editSettings": "Modifier les réglages",
-		"skinDetails": {
-			"title": "Détails du skin",
-			"description": "Description",
-			"creation": "Date de création",
-			"wear": "Porter ce skin",
-			"close": "Fermer"
+	"main":{
+		"searchHint":"Trouver un skin...",
+		"skinList":"Liste des skins",
+		"addSkin":"Ajouter un skin",
+		"editSettings":"Modifier les r\u00e9glages",
+		"skinDetails":{
+			"title":"D\u00e9tails du skin",
+			"description":"Description",
+			"creation":"Date de cr\u00e9ation",
+			"wear":"Porter ce skin",
+			"close":"Fermer"
 		},
-		"noSelectedSkin": "Aucun skin sélectionné.",
-		"noContent": {
-			"title": "Aucun skin n'a encore été ajouté.",
-			"help": "Pour ajouter un skin, tapez \"+\"."
+		"noSelectedSkin":"Aucun skin s\u00e9lectionn\u00e9.",
+		"noContent":{
+			"title":"Aucun skin n'a encore \u00e9t\u00e9 ajout\u00e9.",
+			"help":"Pour ajouter un skin, tapez \"+\"."
 		},
-		"skins": "%s skins",
-		"progressBar": {
-			"login": "Connexion...",
-			"upload": "Envoi du skin...",
-			"loginFail": "Échec de connexion",
-			"uploadFail": "Échec de l'envoi",
-			"success": "Envoi terminé !"
+		"skins":"%s skins",
+		"progressBar":{
+			"login":"Connexion...",
+			"upload":"Envoi du skin...",
+			"loginFail":"\u00c9chec de connexion",
+			"uploadFail":"\u00c9chec de l'envoi",
+			"success":"Envoi termin\u00e9 !"
 		},
-		"skinUpload": {
-			"confirm": {
-				"title": "Remplacer votre skin ?",
-				"message": "Voulez-vous vraiment remplacer votre skin par \"%s\" ?",
-				"cancel": "Non",
-				"okay": "Oui"
+		"skinUpload":{
+			"confirm":{
+				"title":"Remplacer votre skin ?",
+				"message":"Voulez-vous vraiment remplacer votre skin par \"%s\" ?",
+				"cancel":"Non",
+				"okay":"Oui"
 			},
-			"error": {
-				"title": "Erreur d'envoi",
-				"login": "Échec lors de la connexion à minecraft.net. Vérifiez votre nom d'utilisateur et votre mot de passe dans les préférences.",
-				"server": "Impossible de contacter minecraft.net. Le site est peut-être temporairement indisponible. Vérifiez sur http://help.mojang.com et réessayez plus tard.",
-				"upload": "Échec lors de l'envoi du skin. Merci de réessayer plus tard."
+			"error":{
+				"title":"Erreur d'envoi",
+				"login":"\u00c9chec lors de la connexion \u00e0 minecraft.net. V\u00e9rifiez votre nom d'utilisateur et votre mot de passe dans les pr\u00e9f\u00e9rences.",
+				"server":"Impossible de contacter minecraft.net. Le site est peut-\u00eatre temporairement indisponible. V\u00e9rifiez sur http:\/\/help.mojang.com et r\u00e9essayez plus tard.",
+				"upload":"\u00c9chec lors de l'envoi du skin. Merci de r\u00e9essayer plus tard."
 			}
 		}
 	},
-	"settings": {
-		"title": "Préférences",
-		"username": "Utilisateur",
-		"password": "Mot de passe",
-		"header": "Identifiants minecraft.net",
-		"footer": {
-			"migratedAccount": "Si votre compte a été migré vers un compte Mojang, vous devez utiliser votre adresse email au lieu de votre pseudo Minecraft.",
-			"privacy": "Note: nous ne stockerons ou n'utiliserons AUCUNE de vos informations pour autre-chose que changer votre skin Minecraft. Les informations de votre compte sont stockées de façon sécurisée dans le trousseau d'iOS."
+	"settings":{
+		"title":"Pr\u00e9f\u00e9rences",
+		"username":"Utilisateur",
+		"password":"Mot de passe",
+		"header":"Identifiants minecraft.net",
+		"footer":{
+			"migratedAccount":"Si votre compte a \u00e9t\u00e9 migr\u00e9 vers un compte Mojang, vous devez utiliser votre adresse email au lieu de votre pseudo Minecraft.",
+			"privacy":"Note: nous ne stockerons ou n'utiliserons AUCUNE de vos informations pour autre-chose que changer votre skin Minecraft. Les informations de votre compte sont stock\u00e9es de fa\u00e7on s\u00e9curis\u00e9e dans le trousseau d'iOS."
 		}
 	},
-	"addProcess": {
-		"skinInfo": {
-			"title": "Informations",
-			"shortTitle": "Info skin",
-			"name": "Nom du skin",
-			"nameHint": "Mon super skin",
-			"description": "Description",
-			"fieldWidth": "172",
-			"error": {
-				"name": "Vous devez spécifier un nom."
+	"addProcess":{
+		"skinInfo":{
+			"title":"Informations",
+			"shortTitle":"Info skin",
+			"name":"Nom du skin",
+			"nameHint":"Mon super skin",
+			"description":"Description",
+			"error":{
+				"name":"Vous devez sp\u00e9cifier un nom."
 			},
-			"method": {
-				"title": "Ajouter le skin...",
-				"pseudo": "Depuis un joueur existant",
-				"url": "Depuis une URL",
-				"cancel": "Annuler"
+			"method":{
+				"title":"Ajouter le skin...",
+				"pseudo":"Depuis un joueur existant",
+				"url":"Depuis une URL",
+				"cancel":"Annuler"
 			}
 		},
-		"urlSelect": {
-			"urlTitle": "Collez ou tapez l'URL du skin (doit être en PNG) :",
-			"pseudoTitle": "Tapez le pseudo Minecraft (sensible à la casse) :",
-			"blankField": "Ce champ ne peut pas être vide.",
-			"invalidUrl": "Cette URL est invalide (DOIT être un fichier PNG)."
+		"urlSelect":{
+			"urlTitle":"Collez ou tapez l'URL du skin (doit \u00eatre en PNG) :",
+			"pseudoTitle":"Tapez le pseudo Minecraft (sensible \u00e0 la casse) :",
+			"blankField":"Ce champ ne peut pas \u00eatre vide.",
+			"invalidUrl":"Cette URL est invalide (DOIT \u00eatre un fichier PNG)."
 		},
-		"process": {
-			"title": "Chargement...",
-			"progress": {
-				"initial": "Reticulating Splines...",
-				"skin": "Téléchargement du skin...",
-				"preview": "Téléchargement des aperçus...",
-				"database": "Ajout dans la base de données...",
-				"success": "Ajouté avec succès ! :)",
-				"fail": "Raté :("
+		"process":{
+			"title":"Chargement...",
+			"progress":{
+				"initial":"Reticulating Splines...",
+				"skin":"T\u00e9l\u00e9chargement du skin...",
+				"preview":"T\u00e9l\u00e9chargement des aper\u00e7us...",
+				"database":"Ajout dans la base de donn\u00e9es...",
+				"success":"Ajout\u00e9 avec succ\u00e8s ! :)",
+				"fail":"Rat\u00e9 :("
 			},
-			"error": {
-				"skin": "Erreur lors du téléchargement du skin. Abandon.",
-				"preview": {
-					"title": "Erreur réseau",
-					"message": "Erreur lors du téléchargement de l'aperçu. Il n'y aura pas d'aperçu pour ce skin. Continuer quand même ?",
-					"cancel": "Annuler",
-					"ok": "Continuer"
+			"error":{
+				"skin":"Erreur lors du t\u00e9l\u00e9chargement du skin. Abandon.",
+				"preview":{
+					"title":"Erreur r\u00e9seau",
+					"message":"Erreur lors du t\u00e9l\u00e9chargement de l'aper\u00e7u. Il n'y aura pas d'aper\u00e7u pour ce skin. Continuer quand m\u00eame ?",
+					"cancel":"Annuler",
+					"ok":"Continuer"
 				}
 			}
 		},
-		"next": "Suivant"
+		"next":"Suivant"
 	},
-	"credits": {
-		"title": "Crédits",
-		"developer": "Développeur :",
-		"platform": "Plateforme :",
-		"thanks": "Remerciements à :",
-		"modules": "Modules :"
+	"credits":{
+		"title":"Cr\u00e9dits",
+		"developer":"D\u00e9veloppeur :",
+		"platform":"Plateforme :",
+		"translators":"Traducteurs :",
+		"thanks":"Remerciements \u00e0 :",
+		"modules":"Modules :"
 	},
-	"buttons": {
-		"edit": "Modifier",
-		"done": "Terminé",
-		"close": "Fermer"
+	"buttons":{
+		"edit":"Modifier",
+		"done":"Termin\u00e9",
+		"close":"Fermer"
 	},
-	"editSkin": {
-		"short": "Modifier",
-		"title": "Modifier les infos..."
+	"editSkin":{
+		"short":"Modifier",
+		"title":"Modifier les infos..."
 	},
-	"restoreDatabase": {
-		"title": "Erf...",
-		"message": "Nous n'avons pas réussi à ouvrir le fichier qui contient vos skins (%s).\nHeureusement, il existe une sauvegarde datant du %s.\nSouhaitez-vous la restaurer ?",
-		"no": "Non merci.",
-		"yes": "Allez hop !"
+	"restoreDatabase":{
+		"title":"Erf...",
+		"message":"Nous n'avons pas r\u00e9ussi \u00e0 ouvrir le fichier qui contient vos skins (%s).\nHeureusement, il existe une sauvegarde datant du %s.\nSouhaitez-vous la restaurer ?",
+		"no":"Non merci.",
+		"yes":"Allez hop !"
 	}
 }
