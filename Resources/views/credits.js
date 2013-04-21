@@ -35,7 +35,7 @@ var lbl_app = Ti.UI.createLabel({
 scrollView.add(lbl_app);
 
 var lbl_credits = Ti.UI.createLabel({
-	text: I('credits.developer') + ' Baptiste Candellier (outadoc) for outa[dev]\n\n' + I('credits.platform') + ' Appcelerator Titanium\n\n' + I('credits.modules') + ' Keychain module by ClearlyInnovative\n\n' + I('credits.thanks') + '\nElarcis, Antoine Cognard, EphysPotato, Ramikaze',
+	text: I('credits.developer') + ' Baptiste Candellier (outadoc) for outa[dev]\n\n' + I('credits.platform') + ' Appcelerator Titanium\n\n' + I('credits.modules') + ' Keychain module by ClearlyInnovative\n\n' + I('credits.translators') + '\nSvante Bengtson (svbeon)\n\n' + I('credits.thanks') + '\nElarcis, Antoine Cognard, EphysPotato, Ramikaze',
 	font: {
 		fontSize: 16
 	},
