@@ -57,16 +57,28 @@
 
 	exports.getTextFieldRow = function(text, hint) {
 		var row = Ti.UI.createTableViewRow({
-			title: text,
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
 		});
+		
+		var rowText = Ti.UI.createLabel({
+			text: text,
+			left: 10,
+			width: 120,
+			height: 20,
+			font: {
+				fontWeight: 'bold',
+				fontSize: 17
+			}
+		});
+		
+		row.add(rowText);
 
 		var textfield = Ti.UI.createTextField({
 			hintText: hint,
 			color: '#336699',
 			height: 30,
+			width: 160,
 			right: 5,
-			width: I('addProcess.skinInfo.fieldWidth'),
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
 			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
@@ -78,16 +90,28 @@
 	
 	exports.getTextAreaRow = function(text) {
 		var row = Ti.UI.createTableViewRow({
-			title: text,
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
 			height: 100
 		});
+		
+		var rowText = Ti.UI.createLabel({
+			text: text,
+			left: 10,
+			width: 120,
+			height: 20,
+			font: {
+				fontWeight: 'bold',
+				fontSize: 17
+			}
+		});
+		
+		row.add(rowText);
 
 		var textarea = Ti.UI.createTextArea({
 			color: '#336699',
 			height: Ti.UI.FILL,
 			right: 10,
-			width: I('addProcess.skinInfo.fieldWidth'),
+			width: 160,
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
 			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS,
