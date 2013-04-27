@@ -33,7 +33,7 @@
 			},
 			"error":{
 				"title":"Error de env\u00edo",
-				"login":"Error de inicio de sesi\u00f3n en minecraft.net. Por favor comproba a tu nombre de usuario y contrase\u00e3.",
+				"login":"Error de inicio de sesi\u00f3n en minecraft.net. Por favor comproba a tu nombre de usuario y contrase\u00f1a.",
 				"server":"No se pudo conectar a minecraft.net. El sitio web podr\u00eda no estar disponible. Comproba http:\/\/help.mojang.com y int\u00e9nte de nuevo m\u00e1s tarde.",
 				"upload":"No se pudo enviar el skin en minecraft.net. Por favor int\u00e9nte de nuevo m\u00e1s tarde."
 			}
@@ -42,7 +42,7 @@
 	"settings":{
 		"title":"Ajustes",
 		"username":"Nombre de usario",
-		"password":"Contrase\u00e3",
+		"password":"Contrase\u00f1a",
 		"header":"Datos de conexi\u00f3n a Minecraft.net",
 		"footer":{
 			"migratedAccount":"Si tu cuenta se ha migrado a un Mojang account, tienes que utilizar tu direcci\u00f3n de correo electr\u00f3nico en lugar de tu nombre de usuario Minecraft.",
@@ -62,15 +62,15 @@
 			"method":{
 				"title":"A\u00f1adir este skin...",
 				"pseudo":"Desde un usuario existente",
-				"url":"Desde una URL",
+				"url":"Desde un enlace",
 				"cancel":"Cancelar"
 			}
 		},
 		"urlSelect":{
-			"urlTitle":"Pega o escribe la URL del skin aqu\u00ed (debe ser un PNG archivo):",
+			"urlTitle":"Pega o escribe el enlace del skin aqu\u00ed (debe ser un PNG archivo):",
 			"pseudoTitle":"Escribe el Minecraft username aqu\u00ed:",
-			"blankField":"Este campo no puede ser vac\u00edo.",
-			"invalidUrl":"Este URL es inv\u00e1lida (DEBE ser un PNG archivo)."
+			"blankField":"Este entrada no puede ser vac\u00eda.",
+			"invalidUrl":"Este enlace es inv\u00e1lida (DEBE ser un PNG archivo)."
 		},
 		"process":{
 			"title":"Tratamiento...",

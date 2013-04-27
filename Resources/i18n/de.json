@@ -1,0 +1,120 @@
+{
+	"main":{
+		"searchHint":"Finden eine Skin...",
+		"skinList":"Skins Liste",
+		"addSkin":"f\u00fcgen Sie eine Haut",
+		"editSettings":"editieren Einstellung",
+		"skinDetails":{
+			"title":"Skins Einzelheiten",
+			"description":"Beschreibung",
+			"creation":"Datum der Sch\u00f6pfung",
+			"wear":"Tragen diesen Skin",
+			"close":"Schliessen"
+		},
+		"noSelectedSkin":"Keine Skin  ausgew\u00e4hlt.",
+		"noContent":{
+			"title":"Keine Haut wurde noch hinzugef\u00fcgt.",
+			"help":"Um einen Skin hinzuf\u00fcgen, schreiben \"+\"."
+		},
+		"skins":"%s skins",
+		"progressBar":{
+			"login":"Sich anmelden...",
+			"upload":"Hochladen Skin...",
+			"loginFail":"Fehler bei der Einloggund",
+			"uploadFail":"Hochladen fehlgeschlagen",
+			"success":"Laden Sie komplett!"
+		},
+		"skinUpload":{
+			"confirm":{
+				"title":"Ersetzen Skin?",
+				"message":"Wollen Sie Ihre Skin mit \"%s\" ersetzen ?",
+				"cancel":"Nein",
+				"okay":"Ja"
+			},
+			"error":{
+				"title":"Hochladen Fehler",
+				"login":"Konnte keine Verbindung zum minecraft.net anzumelden. Bitte \u00fcberpr\u00fcfen Sie Ihren Benutzernamen und Passwort in den Einstellungen.",
+				"server":"Nicht erreichen konnte minecraft.net. Die Website ist au\u00dfer Betrieb. Pr\u00fcfen http:\/\/help.mojang.com und sp\u00e4ter wiederholen.",
+				"upload":"Das Hochladen des Haut minecraft.net. Bitte versuchen Sie es sp\u00e4ter erneut."
+			}
+		}
+	},
+	"settings":{
+		"title":"Einstellungen",
+		"username":"Benutzername",
+		"password":"Kennwort",
+		"header":"Minecraft.net Anmeldeinformationen",
+		"footer":{
+			"migratedAccount":"Wenn Ihr Konto zu einem Mojang Konto migriert wurde, m\u00fcssen Sie Ihre E-Mail-Adresse anstelle Ihres Minecraft Benutzernamen verwenden.",
+			"privacy":"Bemerkung: Wir werden nie Ihre Informationen speichern oder benutzen. Wir wechseln nur Ihres SKin. Ihren Konteinformationen sind auch in Sicherheit mit dem iOS Kaychain speichern."
+		}
+	},
+	"addProcess":{
+		"skinInfo":{
+			"title":"Skins Informationen",
+			"shortTitle":"Skins Info",
+			"name":"Skins Name",
+			"nameHint":"Mein wundersch\u00f6nes Skin",
+			"description":"Beschreibung",
+			"error":{
+				"name":"Sie mussen ein Name f\u00fcr dieses Skin ausw\u00e4hlen."
+			},
+			"method":{
+				"title":"Dieses Skin hinzuf\u00fcgen...",
+				"pseudo":"Von ein bestehender Spieler",
+				"url":"Von eine URL",
+				"cancel":"Abbrechen"
+			}
+		},
+		"urlSelect":{
+			"urlTitle":"Einf\u00fcgen Sie oder tippen Sie die SkinURL (Muss ein PNG File sein):",
+			"pseudoTitle":"Tippen Sie das Minecraft Username hier (Gro\u00df-\/Kleinschreibung beachten):",
+			"blankField":"Dieses Feld darf nicht leer sein.",
+			"invalidUrl":"Diese URL ist ung\u00fcltig (Muss ein PNG-File sein)."
+		},
+		"process":{
+			"title":"Verarbeitung...",
+			"progress":{
+				"initial":"Reticulating Splines...",
+				"skin":"Skin wird heruntergeladen...",
+				"preview":"Skin-Vorschau wird heruntergeladen...",
+				"database":"Skin wird im Datenbank registriert...",
+				"success":"Das Skin wurde erfolgreich hinzugef\u00fcgt! :)",
+				"fail":"Digital-Fehler :("
+			},
+			"error":{
+				"skin":"Fehler beim Herunterladen des Skins. Wird abgebrochen.",
+				"preview":{
+					"title":"Netzwerkfehler",
+					"message":"Fehler beim Herunterladen der Vorschau. Es wird keine Vorschau f\u00fcr diese Haut geben. Installation fortsetzen?",
+					"cancel":"Abbrechen",
+					"ok":"Weiter"
+				}
+			}
+		},
+		"next":"N\u00e4chste"
+	},
+	"credits":{
+		"title":"Credits",
+		"developer":"Entwickler:",
+		"platform":"Plattform:",
+		"translators":"\u00dcbersetzern:",
+		"thanks":"Besonderen Dank an:",
+		"modules":"Module:"
+	},
+	"buttons":{
+		"edit":"Bearbeiten",
+		"done":"Fertig",
+		"close":"Schlie\u00dfen"
+	},
+	"editSkin":{
+		"short":"Bearbeiten",
+		"title":"Skin-Informationen bearbeiten"
+	},
+	"restoreDatabase":{
+		"title":"Uh oh...",
+		"message":"Wir waren nicht in der Lage, um die Datei mit Ihren Skins zu \u00f6ffnen, aus irgendeinem Grund.\nGl\u00fccklicherweise gibt es ein Backup von %s.\nM\u00f6chten Sie es wiederherstellen?",
+		"no":"Nein, danke.",
+		"yes":"Jetzt geht's los !"
+	}
+}

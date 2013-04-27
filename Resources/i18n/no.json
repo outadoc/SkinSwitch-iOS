@@ -1,0 +1,120 @@
+{
+	"main":{
+		"searchHint":"Finn et skin...",
+		"skinList":"Skinliste",
+		"addSkin":"Legg til et skin",
+		"editSettings":"Rediger Innstillinger",
+		"skinDetails":{
+			"title":"Skin detaljer",
+			"description":"Beskrivelse",
+			"creation":"Opprettelsesdato",
+			"wear":"Bruk dette skinet",
+			"close":"Lukk"
+		},
+		"noSelectedSkin":"Ingen skin er valgt.",
+		"noContent":{
+			"title":"Ingen skin er lagt inn enn\u00e5.",
+			"help":"For \u00e5 legge til et skin, trykk p\u00e5 \"+\"."
+		},
+		"skins":"%s skins",
+		"progressBar":{
+			"login":"Logger p\u00e5...",
+			"upload":"Laster opp skinet...",
+			"loginFail":"P\u00e5loggingen mislyktes",
+			"uploadFail":"Opplastingen mislyktes",
+			"success":"Opplasting fullf\u00f8rt!"
+		},
+		"skinUpload":{
+			"confirm":{
+				"title":"Erstatte skin?",
+				"message":"Vil du erstatte skinet ditt med \"%s\"?",
+				"cancel":"Nei",
+				"okay":"Ja"
+			},
+			"error":{
+				"title":"Feil ved opplastingen",
+				"login":"Kunne ikke logge p\u00e5 minecraft.net. Kontroller ditt brukernavn og passord i innstillingene.",
+				"server":"Kunne ikke n\u00e5 minecraft.net. Nettstedet kan v\u00e6re nede. Sjekk http:\/\/help.mojang.com og pr\u00f8v p\u00e5 nytt senere.",
+				"upload":"Kunne ikke laste opp skinet til minecraft.net. Pr\u00f8v igjen senere."
+			}
+		}
+	},
+	"settings":{
+		"title":"Innstillinger",
+		"username":"Brukernavn",
+		"password":"Passord",
+		"header":"Minecraft.net Innlogging Legitimasjon",
+		"footer":{
+			"migratedAccount":"Hvis kontoen din har blitt overf\u00f8rt til en Mojang konto, m\u00e5 du bruke e-postadressen din i stedet for Minecraft-brukernavnet.",
+			"privacy":"Merk: vi vil ALDRI lagre eller bruke noen av din informasjon til noe annet enn \u00e5 bytte ditt Minecraft skin. Din Kontoinformasjon er sikkert lagret p\u00e5 iOS keychain."
+		}
+	},
+	"addProcess":{
+		"skinInfo":{
+			"title":"Skin Informasjon",
+			"shortTitle":"Skin Info",
+			"name":"Skin navn",
+			"nameHint":"Mitt t\u00f8ffe skin",
+			"description":"Beskrivelse",
+			"error":{
+				"name":"Du m\u00e5 angi et navn for dette skinet."
+			},
+			"method":{
+				"title":"Legg til skinet...",
+				"pseudo":"Fra en eksisterende bruker",
+				"url":"Fra en URL-adresse",
+				"cancel":"Avbryt"
+			}
+		},
+		"urlSelect":{
+			"urlTitle":"Lim inn eller skriv inn skin URL-adressen her (m\u00e5 v\u00e6re en PNG-fil):",
+			"pseudoTitle":"Skriv inn Minecraft-brukernavnet her (skiller mellom sm\u00e5 og store bokstaver):",
+			"blankField":"Dette feltet kan ikke v\u00e6re tomt.",
+			"invalidUrl":"Denne URL-adressen er ugyldig (M\u00c5 v\u00e6re en PNG-fil)."
+		},
+		"process":{
+			"title":"Behandler...",
+			"progress":{
+				"initial":"Reticulating Splines...",
+				"skin":"Laster ned skinet...",
+				"preview":"Laster ned forh\u00e5ndsvisning av skinet...",
+				"database":"Registrerer skinet til databasen...",
+				"success":"La til skinet! :)",
+				"fail":"Mislykkes :("
+			},
+			"error":{
+				"skin":"Feil under nedlasting av skinet. Avbryter.",
+				"preview":{
+					"title":"Nettverksfeil",
+					"message":"Feil under nedlasting av forh\u00e5ndsvisningen. Det blir ingen forh\u00e5ndsvisning for dette skinet. Fortsette likevel?",
+					"cancel":"Avbryt",
+					"ok":"Fortsett"
+				}
+			}
+		},
+		"next":"Neste"
+	},
+	"credits":{
+		"title":"Om",
+		"developer":"Utvikler:",
+		"platform":"Plattform:",
+		"translators":"Oversettere:",
+		"thanks":"Spesiell takk til:",
+		"modules":"Moduler:"
+	},
+	"buttons":{
+		"edit":"Rediger",
+		"done":"Ferdig",
+		"close":"Lukk"
+	},
+	"editSkin":{
+		"short":"Rediger",
+		"title":"Rediger skin Info"
+	},
+	"restoreDatabase":{
+		"title":"Uh oh...",
+		"message":"Vi kunne ikke \u00e5pne filen som inneholder dine skins, av en eller annen grunn. Heldigvis er det en sikkerhetskopi fra %s. Vil du gjenopprette den?",
+		"no":"Nei takk.",
+		"yes":"La oss gj\u00f8re dette!"
+	}
+}
