@@ -113,7 +113,7 @@
 	},
 	"restoreDatabase":{
 		"title":"Uh oh...",
-		"message":"Wir waren nicht in der Lage, um die Datei mit Ihren Skins zu \u00f6ffnen, aus irgendeinem Grund.\nGl\u00fccklicherweise gibt es ein Backup von %s.\nM\u00f6chten Sie es wiederherstellen?",
+		"message":"Aus irgendeinem Grund waren wir nicht in der Lage,um die Datei mit Ihren Skins zu \u00f6ffnen.\nGl\u00fccklicherweise gibt es ein Backup von %s.\nM\u00f6chten Sie es wiederherstellen?",
 		"no":"Nein, danke.",
 		"yes":"Jetzt geht's los !"
 	}
