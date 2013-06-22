@@ -9,38 +9,38 @@
 			"description":"Description",
 			"creation":"Date of Creation",
 			"wear":"Wear this skin",
-			"close":"Close"
+			"close":"Закрыть"
 		},
-		"noSelectedSkin":"No skin selected.",
+		"noSelectedSkin":"Не выбран скин.",
 		"noContent":{
-			"title":"No skin has been added yet.",
-			"help":"To add a skin, tap \"+\"."
+			"title":"Не был добавлен ни один скин.",
+			"help":"Нажмите \"+\", чтобы добавить скин."
 		},
-		"skins":"%s skins",
+		"skins":"\"%s\" скины",
 		"progressBar":{
-			"login":"Logging in...",
-			"upload":"Uploading skin...",
-			"loginFail":"Login failed",
-			"uploadFail":"Upload failed",
-			"success":"Upload complete!"
+			"login":"Вхожу...",
+			"upload":"Загружаю скин...",
+			"loginFail":"Не удалось войти",
+			"uploadFail":"Не удалось загрузить",
+			"success":"Загрузка завершена!"
 		},
 		"skinUpload":{
 			"confirm":{
-				"title":"Replace skin?",
-				"message":"Do you really want to replace your skin with \"%s\"?",
-				"cancel":"No",
-				"okay":"Yes"
+				"title":"Заменить скин?",
+				"message":"Вы действительно хотите заменить свой скин на \"%s\"?",
+				"cancel":"Нет",
+				"okay":"Да"
 			},
 			"error":{
-				"title":"Upload error",
-				"login":"Could not login to minecraft.net. Please check your login and password in the settings.",
+				"title":"Ошибка отправки",
+				"login":"Не удается войти в minecraft.net. Пожалуйста, проверьте ваш логин и пароль в настройках.",
 				"server":"Could not reach minecraft.net. The site may be down. Check http:\/\/help.mojang.com and retry later.",
 				"upload":"Could not upload the skin to minecraft.net. Please try again later."
 			}
 		}
 	},
 	"settings":{
-		"title":"Settings",
+		"title":"Настройки",
 		"username":"Username",
 		"password":"Password",
 		"header":"Minecraft.net Login Credentials",
@@ -60,10 +60,10 @@
 				"name":"You must specify a name for this skin."
 			},
 			"method":{
-				"title":"Add the skin...",
+				"title":"Добавить скин...",
 				"pseudo":"From an existing user",
 				"url":"From an URL",
-				"cancel":"Cancel"
+				"cancel":"Отмена"
 			}
 		},
 		"urlSelect":{

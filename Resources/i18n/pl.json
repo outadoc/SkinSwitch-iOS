@@ -1,0 +1,120 @@
+{
+	"main":{
+		"searchHint":"Znajdź skórkę...",
+		"skinList":"Lista skórek",
+		"addSkin":"Dodaj skórkę",
+		"editSettings":"Zmień ustawienia",
+		"skinDetails":{
+			"title":"Szczegóły skórki",
+			"description":"Opis",
+			"creation":"Data utworzenia",
+			"wear":"Używaj tej skórki",
+			"close":"Zamknij"
+		},
+		"noSelectedSkin":"Nie wybrano skórki",
+		"noContent":{
+			"title":"Nie dodano skórki.",
+			"help":"By dodać skórkę, kliknij \"+\"."
+		},
+		"skins":"%s skórek",
+		"progressBar":{
+			"login":"Logowanie...",
+			"upload":"Przesyłanie skórki...",
+			"loginFail":"Logowanie nie powiodło się",
+			"uploadFail":"Błąd przesyłania",
+			"success":"Przesyłanie zakończone!"
+		},
+		"skinUpload":{
+			"confirm":{
+				"title":"Zastąpić skórkę?",
+				"message":"Na pewno chcesz podmienić swoją skórkę na \"%s\"?",
+				"cancel":"Nie",
+				"okay":"Tak"
+			},
+			"error":{
+				"title":"Błąd",
+				"login":"Nie można zalogować się na minecraft.net. Proszę, sprawdź swój login i hasło w ustawieniach.",
+				"server":"Nie można osiągnąć połączenia z minecraft.net. Strona może być wyłączona. Sprawdź http:\/\/help.mojang.com i spróbuj ponownie później.",
+				"upload":"Nie można przesłać skórki na minecraft.net. Prosimy spróbować później."
+			}
+		}
+	},
+	"settings":{
+		"title":"Ustawienia",
+		"username":"Nazwa użytkownika",
+		"password":"Hasło",
+		"header":"Poświadczenia logowania Minecraft.net",
+		"footer":{
+			"migratedAccount":"Jeśli Twoje konto zostało poddane migracji do konta Mojang, musisz użyć adresu e-mail zamiast nazwy użytkownika Minecraft!",
+			"privacy":"Zapamiętaj: nigdy nie będziemy przechowywać, lub używać żadnej z informacji, które podałeś. Ustawienia konta przechowywane są na keychain'ie w iOS."
+		}
+	},
+	"addProcess":{
+		"skinInfo":{
+			"title":"Informacje o skórce",
+			"shortTitle":"Informacje o skórce",
+			"name":"Nazwa skórki",
+			"nameHint":"Moja niesamowita skórka",
+			"description":"Opis",
+			"error":{
+				"name":"Musisz nazwać swoją skórkę."
+			},
+			"method":{
+				"title":"Dodaj skórkę...",
+				"pseudo":"Od istniejącego użytkownika",
+				"url":"Z adresu URL",
+				"cancel":"Anuluj"
+			}
+		},
+		"urlSelect":{
+			"urlTitle":"Wklej, lub wpisz tutaj adres URL skórki (musi być w pliku .png):",
+			"pseudoTitle":"Wpisz nazwę użytkownika Minecraft tutaj:",
+			"blankField":"To pole nie może pozostać puste.",
+			"invalidUrl":"Adres URL jest nieprawidłowy (musi być w pliku .png)."
+		},
+		"process":{
+			"title":"Przetwarzanie...",
+			"progress":{
+				"initial":"Reticulating Splines...",
+				"skin":"Ściąganie skórki...",
+				"preview":"Ściąganie podglądu skórki...",
+				"database":"Rejestrowanie do bazy danych skórek...",
+				"success":"Successfully added the skin! :)",
+				"fail":"Fail :("
+			},
+			"error":{
+				"skin":"Error while downloading the skin. Aborting.",
+				"preview":{
+					"title":"Network Error",
+					"message":"Error while downloading the preview. There will be no preview for this skin. Continue anyway?",
+					"cancel":"Cancel",
+					"ok":"Continue"
+				}
+			}
+		},
+		"next":"Next"
+	},
+	"credits":{
+		"title":"Credits",
+		"developer":"Developer:",
+		"platform":"Platform:",
+		"translators":"Translators:",
+		"thanks":"Special thanks to:",
+		"modules":"Modules:"
+	},
+	"buttons":{
+		"edit":"Edit",
+		"done":"Done",
+		"close":"Close"
+	},
+	"editSkin":{
+		"short":"Edit",
+		"title":"Edit Skin Info"
+	},
+	"restoreDatabase":{
+		"title":"Uh oh...",
+		"message":"We were unable to open the file containing your skins, for some reason.\nFortunately, there's a backup from %s.\nWould you like to restore it?",
+		"no":"No, thanks.",
+		"yes":"Let's do this!"
+	}
+}

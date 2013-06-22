@@ -1,0 +1,120 @@
+{
+	"main":{
+		"searchHint":"尋找皮膚...",
+		"skinList":"皮膚清單",
+		"addSkin":"添加皮膚",
+		"editSettings":"編輯設定",
+		"skinDetails":{
+			"title":"皮膚細節",
+			"description":"描述",
+			"creation":"創建日期",
+			"wear":"使用皮膚",
+			"close":"關閉"
+		},
+		"noSelectedSkin":"沒有選取皮膚",
+		"noContent":{
+			"title":"未添加皮膚",
+			"help":"按 “+” 以添加皮膚"
+		},
+		"skins":"%s 皮膚",
+		"progressBar":{
+			"login":"登入中...",
+			"upload":"正上載皮膚...",
+			"loginFail":"登入失敗",
+			"uploadFail":"上載失敗",
+			"success":"上載成功！"
+		},
+		"skinUpload":{
+			"confirm":{
+				"title":"替換皮膚？",
+				"message":"你確定要以 “%s” 替換現有皮膚？",
+				"cancel":"否",
+				"okay":"是"
+			},
+			"error":{
+				"title":"上載錯誤",
+				"login":"無法登入 minecraft.net，請檢查設定中的用戶名及密碼",
+				"server":"無法連接到 minecraft.net，該網站可能已關閉。\n請查看 http:\/\/help.mojang.com 並稍后重試",
+				"upload":"無法上載皮膚到 minecraft.net，請稍后重試"
+			}
+		}
+	},
+	"settings":{
+		"title":"設定",
+		"username":"用戶名",
+		"password":"密碼",
+		"header":"Minecraft.net 登入憑證",
+		"footer":{
+			"migratedAccount":"若您的帳戶已被轉移成 Mojang 帳戶，請使用電郵地址代替 Minecraft 用戶名",
+			"privacy":"注意：我們絕不儲存或把您的個人資料運用在切換皮膚以外的事上。您的帳戶資料會被安全的保管在iOS 鑰匙圈裏。"
+		}
+	},
+	"addProcess":{
+		"skinInfo":{
+			"title":"皮膚資料",
+			"shortTitle":"皮膚資料",
+			"name":"皮膚名稱",
+			"nameHint":"我超棒的皮膚",
+			"description":"描述",
+			"error":{
+				"name":"請為皮膚取名"
+			},
+			"method":{
+				"title":"添加皮膚為...",
+				"pseudo":"從現有的使用者",
+				"url":"從 URL",
+				"cancel":"取消"
+			}
+		},
+		"urlSelect":{
+			"urlTitle":"輸入\/貼上 皮膚的URL（需為PNG檔）：",
+			"pseudoTitle":"輸入 Minecraft 用戶名（區分大小寫）：",
+			"blankField":"必須輸入資料",
+			"invalidUrl":"URL無效（必需為PNG檔）"
+		},
+		"process":{
+			"title":"處理中...",
+			"progress":{
+				"initial":"Reticulating Splines...",
+				"skin":"皮膚下載中......",
+				"preview":"下載皮膚預覽中...",
+				"database":"正在註冊皮膚到資料庫...",
+				"success":"已成功添加皮膚！:)",
+				"fail":"失敗了 :("
+			},
+			"error":{
+				"skin":"下載皮膚是出現錯誤，正在中止",
+				"preview":{
+					"title":"網路錯誤",
+					"message":"下載預覽時出現錯誤。皮膚將會沒有預覽，是否繼續？",
+					"cancel":"取消",
+					"ok":"繼續"
+				}
+			}
+		},
+		"next":"下一步"
+	},
+	"credits":{
+		"title":"鳴謝",
+		"developer":"開發者:",
+		"platform":"平台：",
+		"translators":"翻譯者：",
+		"thanks":"特別感謝：",
+		"modules":"模組："
+	},
+	"buttons":{
+		"edit":"編輯",
+		"done":"完成",
+		"close":"關閉"
+	},
+	"editSkin":{
+		"short":"編輯",
+		"title":"編輯皮膚資料"
+	},
+	"restoreDatabase":{
+		"title":"糟糕...",
+		"message":"我們無法開啓含有您皮膚的檔案。\n幸運的是，%s有備份。是否要恢復它？",
+		"no":"不用了，謝謝。",
+		"yes":"來吧！"
+	}
+}
