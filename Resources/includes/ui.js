@@ -5,7 +5,7 @@
 	exports.getSkinFrame = function(data) {
 		var view = Ti.UI.createView({
 			top: 10,
-			width: 96,
+			width: 98,
 			height: 100,
 			skinData: data,
 			layout: 'vertical'
@@ -13,8 +13,8 @@
 		
 		var backgroundFrame = Ti.UI.createImageView({
 			image: '/img/itemframe.png',
-			width: 75,
-			height: 75
+			width: 72,
+			height: 72
 		});
 		
 		var headPreview = Ti.UI.createImageView({
@@ -29,12 +29,14 @@
 		
 		var title = Ti.UI.createLabel({
 			text: data.name,
-			top: 5,
+			top: 3,
 			width: 75,
 			height: 20,
 			font: {
 				fontSize: 15
-			}
+			},
+			color: 'white',
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 		});
 		
 		view.add(backgroundFrame);
@@ -58,10 +60,10 @@
 		  	contentHeight: Ti.UI.SIZE,
 		  	showVerticalScrollIndicator: true,
 		  	layout: 'horizontal',
-		  	left: 15,
-		  	top: 15,
-		  	bottom: 15,
-		  	right: 15
+		  	left: 13,
+		  	top: 13,
+		  	bottom: 13,
+		  	right: 13
 		});
 		
 		for(var i = 0; i < skins.length; i ++) {
