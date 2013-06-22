@@ -2,45 +2,90 @@
 	
 	Ti.include('/includes/lib/json.i18n.js');
 	
-	exports.getEmptyRow = function() {
-		var row = Ti.UI.createTableViewRow({
-			editable: false,
-			isPlaceholder: true,
-			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.GRAY
+	exports.getSkinFrame = function(data) {
+		var view = Ti.UI.createView({
+			width: 96,
+			height: 100,
+			skinData: data,
+			layout: 'vertical'
 		});
 		
-		var lbl_title = Ti.UI.createLabel({
-			text: I('main.noContent.title'),
+		var backgroundFrame = Ti.UI.createImageView({
+			image: '/img/itemframe.png',
+			width: 75,
+			height: 75
+		});
+		
+		var headPreview = Ti.UI.createImageView({
+			image: exports.getHeadFromSkinID(data.id),
+			top: 15,
+			left: 15,
+			right: 15,
+			bottom: 15
+		})
+		
+		backgroundFrame.add(headPreview);
+		
+		var title = Ti.UI.createLabel({
+			text: data.name,
+			top: 10,
+			width: 70,
 			font: {
-				fontWeight: 'bold',
-				fontSize: 17
-			},
-			top: 7,
-			left: 10,
-			right: 10,
-			width: Ti.UI.SIZE,
-			height: Ti.UI.SIZE
+				fontSize: 20
+			}
 		});
 		
-		row.add(lbl_title);
+		view.add(backgroundFrame);
+		view.add(title);
 		
-		var lbl_help = Ti.UI.createLabel({
-			text: I('main.noContent.help'),
-			top: 35,
-			bottom: 10,
-			left: 10,
-			right: 10,
-			font: {
-				fontSize: 15
-			},
-			height: Ti.UI.SIZE,
-			width: Ti.UI.FILL
-		});
-		
-		row.add(lbl_help);
-		return row;
+		return view;
 	}
 	
+	exports.getHeadFromSkinID = function(skinID) {
+		return Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/front.png').read().imageAsCropped({
+			height: 42,
+			width: 42,
+			x: 21,
+			y: 0
+		});
+	}
+	
+	exports.getSkinsShowcase = function(skins) {
+		var skinsShowcase = Ti.UI.createScrollView({
+			contentWidth: 'auto',
+		  	contentHeight: 'auto',
+		  	showVerticalScrollIndicator: true,
+		  	layout: 'vertical',
+		  	left: 15,
+		  	top: 15,
+		  	bottom: 15,
+		  	right: 15
+		});
+		
+		for(var i = 0; i < skins.length; i += 3) {
+			var row = Ti.UI.createView({
+				width: '100%',
+				height: Ti.UI.SIZE,
+				layout: 'horizontal'
+			});
+						
+			row.add(exports.getSkinFrame(skins[i]));
+			
+			if(i+1 < skins.length) {
+				row.add(exports.getSkinFrame(skins[i+1]));
+			}
+			
+			if(i+2 < skins.length) {
+				row.add(exports.getSkinFrame(skins[i+2]));
+			}
+			
+			skinsShowcase.add(row);
+		}
+		
+		return skinsShowcase;
+	}
+	
+	/*
 	exports.getiPhoneSkinInfoPanel = function(skinData, updateSkinsList, callback) {
 		var infoPanel = Ti.UI.createTableViewRow({
 			height: 200,
@@ -394,6 +439,6 @@
 			duration: 300,
 			curve: Ti.UI.ANIMATION_CURVE_EASE_IN
 		});
-	}
+	}*/
 	
 })();

@@ -5,27 +5,14 @@ var Utils = require('/includes/utils');
 var Ui = require('/includes/ui');
 
 var win = Ti.UI.currentWindow;
+
+var skinsShowcase = Ui.getSkinsShowcase(Database.getSkins());
+win.add(skinsShowcase);
+
 var loadingWin = Utils.createLoadingWindow();
-loadingWin.open();
+//loadingWin.open();
 
-var searchBar = Ti.UI.createSearchBar({
-	hintText: I('main.searchHint'),
-	barColor: '#888888'
-});
-
-searchBar.addEventListener('focus', retractAllInfoPanels);
-
-var tableView = Ti.UI.createTableView({
-	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
-	search: searchBar,
-	filterAttribute: 'title',
-	backgroundColor: 'transparent',
-	rowBackgroundColor: 'white',
-	top: 0
-});
-
-win.add(tableView);
-
+/*
 var iad = Ti.UI.iOS.createAdView({
 	adSize: Ti.UI.iOS.AD_SIZE_PORTRAIT,
 	height: Ti.UI.SIZE,
@@ -34,14 +21,14 @@ var iad = Ti.UI.iOS.createAdView({
 });
 
 win.add(iad);
+*/
 
 function updateSkinsList() {
 	loadingWin.open();
 	
-	retractAllInfoPanels();
-	tableView.setData(Database.getSkins());
-	updateSkinCount();
+	skinsShowcase = Ui.getSkinsShowcase(Database.getSkins());
 	
+	updateSkinCount();
 	loadingWin.close();
 }
 
@@ -109,6 +96,7 @@ b_settings.addEventListener('click', function() {
 win.setLeftNavButton(b_settings);
 win.setRightNavButton(b_add);
 
+/*
 tableView.addEventListener('delete', function(e) {
 	var db = Ti.Database.open(Database.getDbName());
 	db.execute('DELETE FROM skins WHERE id=?', e.rowData.skinData.id);
@@ -158,19 +146,9 @@ tableView.addEventListener('click', function(e) {
 		b_add.fireEvent('click', null);
 	}
 });
+*/
 
-updateSkinsList();
-
-function retractAllInfoPanels() {
-	if(tableView.getData().length > 0) {
-		for(var i = 0; i < tableView.data[0].rowCount; i++) {
-			if(tableView.data[0].rows[i].isInfoPanel) {
-				tableView.data[0].rows[i - 1].isExpanded = false;
-				tableView.deleteRow(i);
-			}
-		}
-	}
-}
+//updateSkinsList();
 
 function updateSkinCount() {
 	var view_wrapper = Ti.UI.createView({
@@ -197,5 +175,5 @@ function updateSkinCount() {
 	});
 	
 	view_wrapper.add(lbl_footer);
-	tableView.setFooterView(view_wrapper);
+	//tableView.setFooterView(view_wrapper);
 }
