@@ -4,6 +4,7 @@
 	
 	exports.getSkinFrame = function(data) {
 		var view = Ti.UI.createView({
+			top: 10,
 			width: 96,
 			height: 100,
 			skinData: data,
@@ -28,10 +29,11 @@
 		
 		var title = Ti.UI.createLabel({
 			text: data.name,
-			top: 10,
-			width: 70,
+			top: 5,
+			width: 75,
+			height: 20,
 			font: {
-				fontSize: 20
+				fontSize: 15
 			}
 		});
 		
@@ -52,34 +54,18 @@
 	
 	exports.getSkinsShowcase = function(skins) {
 		var skinsShowcase = Ti.UI.createScrollView({
-			contentWidth: 'auto',
-		  	contentHeight: 'auto',
+			contentWidth: Ti.UI.FILL,
+		  	contentHeight: Ti.UI.SIZE,
 		  	showVerticalScrollIndicator: true,
-		  	layout: 'vertical',
+		  	layout: 'horizontal',
 		  	left: 15,
 		  	top: 15,
 		  	bottom: 15,
 		  	right: 15
 		});
 		
-		for(var i = 0; i < skins.length; i += 3) {
-			var row = Ti.UI.createView({
-				width: '100%',
-				height: Ti.UI.SIZE,
-				layout: 'horizontal'
-			});
-						
-			row.add(exports.getSkinFrame(skins[i]));
-			
-			if(i+1 < skins.length) {
-				row.add(exports.getSkinFrame(skins[i+1]));
-			}
-			
-			if(i+2 < skins.length) {
-				row.add(exports.getSkinFrame(skins[i+2]));
-			}
-			
-			skinsShowcase.add(row);
+		for(var i = 0; i < skins.length; i ++) {
+			skinsShowcase.add(exports.getSkinFrame(skins[i]));
 		}
 		
 		return skinsShowcase;
