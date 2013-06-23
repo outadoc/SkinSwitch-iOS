@@ -2,24 +2,23 @@
 	
 	Ti.include('/includes/lib/json.i18n.js');
 	
-	exports.getSkinFrame = function(data) {
+	exports.getSkinFrame = function(skinData) {
 		var view = Ti.UI.createView({
 			top: 10,
 			width: 98,
 			height: 100,
-			skinData: data,
+			skinData: skinData,
 			layout: 'vertical'
 		});
 		
 		var backgroundFrame = Ti.UI.createImageView({
 			image: '/img/itemframe.png',
 			width: 72,
-			height: 72,
-			data: (data == null) ? { isPlaceholder: true } : data
+			height: 72
 		});
 		
 		var headPreview = Ti.UI.createImageView({
-			image: (data == null) ? '/img/plus_sign.png' : exports.getHeadFromSkinID(data.id),
+			image: (skinData == null) ? '/img/plus_sign.png' : exports.getHeadFromSkinID(skinData.id),
 			top: 15,
 			left: 15,
 			right: 15,
@@ -29,12 +28,12 @@
 		backgroundFrame.add(headPreview);
 		
 		var title = Ti.UI.createLabel({
-			text: (data == null) ? I('main.addSkin') : data.name,
+			text: (skinData == null) ? I('main.addSkin') : skinData.name,
 			top: 3,
 			width: 75,
 			height: 20,
 			font: {
-				fontSize: (data == null) ? 10 : 12,
+				fontSize: (skinData == null) ? 10 : 12,
 				fontFamily: 'Minecraftia'
 			},
 			color: 'white',
@@ -44,29 +43,73 @@
 		view.add(backgroundFrame);
 		view.add(title);
 		
-		backgroundFrame.addEventListener('click', function(e) {
-			if(data != null) {
-				var win = exports.getiPhoneDetailWindow(data);
+		if(skinData != null) {
+			var startTimestamp = 0;
+			var wasCanceled = false;
+			
+			var anim_normal = Ti.UI.createAnimation({
+				transform: Ti.UI.create2DMatrix({
+					rotate: 0,
+					scale: 1
+				}),
+				duration: 300
+			});
+			
+			var anim_maxout = Ti.UI.createAnimation({
+				transform: Ti.UI.create2DMatrix({
+					rotate: 180,
+					scale: 1.5
+				}),
+				curve: Ti.UI.ANIMATION_CURVE_EASE_OUT,
+				duration: 1000
+			}); 
+			
+			anim_maxout.addEventListener('complete', function(e) {
+				startTimestamp = 0;
+				headPreview.animate(anim_normal);
+				
+				if(!wasCanceled) {
+					Network.uploadSkin(skinData.id, skinData.name);
+				}
+				
+				wasCanceled = false;
+			});
 
-				var anim = Ti.UI.createAnimation({
-					transform: Ti.UI.create2DMatrix({
-						scale: 1.1
-					}),
-					duration: 200
-				});
+			backgroundFrame.addEventListener('touchstart', function(e) {	
+				wasCanceled = false;			
+				startTimestamp = (new Date).getTime();
+				headPreview.animate(anim_maxout);
+			});
+			
+			backgroundFrame.addEventListener('touchend', function(e) {
+				headPreview.animate(anim_normal);
+				
+				if((new Date).getTime() - startTimestamp < 300) {
+					var win = exports.getiPhoneDetailWindow(skinData);
 	
-				anim.addEventListener('complete', function() {
-					win.animate({
+					var anim = Ti.UI.createAnimation({
 						transform: Ti.UI.create2DMatrix({
-							scale: 1.0
+							scale: 1.1
 						}),
 						duration: 200
 					});
-				});
-	
-				win.open(anim);
-			}
-		});
+		
+					anim.addEventListener('complete', function() {
+						win.animate({
+							transform: Ti.UI.create2DMatrix({
+								scale: 1.0
+							}),
+							duration: 200
+						});
+					});
+		
+					win.open(anim);
+				}
+				
+				wasCanceled = true;
+				startTimestamp = 0;
+			});
+		}
 		
 		return view;
 	}
