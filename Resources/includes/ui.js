@@ -43,6 +43,30 @@
 		view.add(backgroundFrame);
 		view.add(title);
 		
+		backgroundFrame.addEventListener('click', function(e) {
+			if(data != null) {
+				var win = exports.getiPhoneDetailWindow(data);
+
+				var anim = Ti.UI.createAnimation({
+					transform: Ti.UI.create2DMatrix({
+						scale: 1.1
+					}),
+					duration: 200
+				});
+	
+				anim.addEventListener('complete', function() {
+					win.animate({
+						transform: Ti.UI.create2DMatrix({
+							scale: 1.0
+						}),
+						duration: 200
+					});
+				});
+	
+				win.open(anim);
+			}
+		});
+		
 		return view;
 	}
 	
@@ -79,7 +103,169 @@
 	}
 	
 	exports.getiPhoneDetailWindow = function(skinData) {
+		var win = Ti.UI.createWindow({
+			transform: Ti.UI.create2DMatrix({
+				scale: 0
+			})
+		});
 		
+		win.addEventListener('click', function(e) {
+			if(e.source == win) {
+				win.close({
+					transform: Ti.UI.create2DMatrix({
+						scale: 0
+					}),
+					duration: 300
+				}); 
+			}
+		});
+		
+		var containerView = Ti.UI.createScrollView({
+			height: '70%',
+			width: '90%',
+			contentWidth: Ti.UI.FILL,
+		  	contentHeight: Ti.UI.SIZE,
+		  	showVerticalScrollIndicator: true,
+			backgroundColor: '#f2f2f2',
+			borderWidth: 1,
+			borderColor: 'gray',
+			borderRadius: 3,
+			layout: 'vertical'
+		});
+		
+		win.add(containerView);
+		
+		var skinTitle = Ti.UI.createLabel({
+			text: skinData.name,
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			font: {
+				fontSize: 21,
+				fontFamily: 'HelveticaNeue-Light'
+			},
+			color: 'gray',
+			top: 10,
+			left: 20,
+			right: 20,
+			height: 25
+		});
+		
+		containerView.add(skinTitle);
+		
+		var line = Ti.UI.createView({
+			left: 10,
+			right: 10,
+			top: 10,
+			height: 1,
+			backgroundColor: 'lightGray'
+		});
+		
+		containerView.add(line);
+		
+		var skinView = exports.getSkinPreview(skinData.id);
+		containerView.add(skinView);
+		
+		var descriptionTitle = Ti.UI.createLabel({
+			text: I('main.skinDetails.description'),
+			font: {
+				fontSize: 17,
+			},
+			color: 'gray',
+			top: 10,
+			left: 20,
+			right: 20,
+			height: 20
+		});
+		
+		containerView.add(descriptionTitle);
+		
+		var skinDescription = Ti.UI.createLabel({
+			text: skinData.desc,
+			font: {
+				fontSize: 15,
+			},
+			color: 'lightGray',
+			top: 5,
+			left: 20,
+			right: 20
+		});
+		
+		containerView.add(skinDescription);
+		
+		var timestampTitle = Ti.UI.createLabel({
+			text: I('main.skinDetails.creation'),
+			font: {
+				fontSize: 17,
+			},
+			color: 'gray',
+			top: 10,
+			left: 20,
+			right: 20,
+			height: 20
+		});
+		
+		containerView.add(timestampTitle);
+		
+		var skinTimestamp = Ti.UI.createLabel({
+			text: (new Date(skinData.time)).toLocaleDateString(),
+			font: {
+				fontSize: 15,
+			},
+			color: 'lightGray',
+			top: 5,
+			bottom: 20,
+			left: 20,
+			right: 20,
+			height: 20
+		});
+		
+		containerView.add(skinTimestamp);
+		
+		return win;
+	}
+	
+	exports.getSkinPreview = function(skinID) {
+		var view_skin = Ti.UI.createImageView({
+			height: 170,
+			width: 85,
+			top: 15,
+			bottom: 15
+		});
+
+		var img_skin_front = Ti.UI.createImageView({
+			defaultImage: '/img/char_front.png',
+			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/front.png').getNativePath(),
+			height: 170,
+			width: 85,
+			top: 0,
+			left: 0
+		});
+
+		view_skin.add(img_skin_front);
+
+		var img_skin_back = Ti.UI.createImageView({
+			defaultImage: '/img/char_back.png',
+			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/back.png').getNativePath(),
+			height: 170,
+			width: 85,
+			top: 0,
+			left: 0
+		});
+
+		img_skin_front.addEventListener('singletap', function() {
+			view_skin.animate({
+				view: img_skin_back,
+				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
+			});
+		});
+
+		img_skin_back.addEventListener('singletap', function() {
+			view_skin.animate({
+				view: img_skin_front,
+				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+			});
+		});
+		
+		return view_skin;
 	}
 	
 })();
