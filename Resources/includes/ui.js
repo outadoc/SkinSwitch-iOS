@@ -34,7 +34,8 @@
 			width: 75,
 			height: 20,
 			font: {
-				fontSize: (data == null) ? 13 : 15
+				fontSize: (data == null) ? 10 : 12,
+				fontFamily: 'Minecraftia'
 			},
 			color: 'white',
 			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
