@@ -109,14 +109,18 @@
 			})
 		});
 		
+		function closeDetailWin() {
+			win.close({
+				transform: Ti.UI.create2DMatrix({
+					scale: 0
+				}),
+				duration: 300
+			});
+		}
+		
 		win.addEventListener('click', function(e) {
 			if(e.source == win) {
-				win.close({
-					transform: Ti.UI.create2DMatrix({
-						scale: 0
-					}),
-					duration: 300
-				}); 
+				closeDetailWin();
 			}
 		});
 		
@@ -159,15 +163,7 @@
 		
 		skinInfoView.add(skinTitle);
 		
-		var line = Ti.UI.createView({
-			left: 10,
-			right: 10,
-			top: 10,
-			height: 1,
-			backgroundColor: 'lightGray'
-		});
-		
-		skinInfoView.add(line);
+		skinInfoView.add(exports.getHorizontalSeparator('lightGray'));
 		
 		var skinView = exports.getSkinPreview(skinData.id);
 		skinInfoView.add(skinView);
@@ -233,13 +229,103 @@
 			top: 0,
 			height: 40,
 			width: Ti.UI.FILL,
+			layout: 'horizontal',
 			borderColor: 'lightGray',
-			borderRadius: 1
+			borderWidth: 1,
 		});
 		
 		containerView.add(actionView);
+		
+		var b_edit = Ti.UI.createButton({
+			title: I('buttons.edit'),
+			width: 79,
+			height: Ti.UI.FILL,
+			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
+			color: 'gray',
+			selectedColor: 'lightGray',
+			font: {
+				fontSize: 17
+			}
+		});
+		
+		actionView.add(b_edit);
+		actionView.add(exports.getVerticalSeparator('lightGray'));
+		
+		var b_wear = Ti.UI.createButton({
+			title: I('main.skinDetails.wear'),
+			width: 140,
+			height: Ti.UI.FILL,
+			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
+			color: 'gray',
+			selectedColor: 'lightGray',
+			font: {
+				fontSize: 17
+			}
+		});
+		
+		actionView.add(b_wear);
+		actionView.add(exports.getVerticalSeparator('lightGray'));
+		
+		var b_close = Ti.UI.createButton({
+			title: I('buttons.close'),
+			width: 79,
+			height: Ti.UI.FILL,
+			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
+			color: 'gray',
+			selectedColor: 'lightGray',
+			font: {
+				fontSize: 17
+			}
+		});
+		
+		actionView.add(b_close);
+		
+		b_close.addEventListener('click', function(e) {
+			closeDetailWin();
+		});
+		
+		b_edit.addEventListener('click', function(e) {
+			var edit_win = Ti.UI.createWindow({
+				url: '/views/add_process/info.js',
+				skinIDToEdit: skinData.id,
+				title: I('editSkin.title'),
+				backgroundImage: Utils.getBGImage(),
+				barColor: Utils.getNavColor()
+			});
+
+			edit_win.addEventListener('close', updateSkinsList);
+			
+			edit_win.open({
+				modal: true
+			});
+			
+			closeDetailWin();
+		});
+		
+		b_wear.addEventListener('click', function(e) {
+			closeDetailWin();
+			Network.uploadSkin(skinData.id, skinData.name);
+		});
 
 		return win;
+	}
+	
+	exports.getVerticalSeparator = function(color) {
+		return Ti.UI.createView({
+			width: 1,
+			height: Ti.UI.FILL,
+			backgroundColor: color
+		});
+	}
+	
+	exports.getHorizontalSeparator = function(color) {
+		return Ti.UI.createView({
+			height: 1,
+			top: 10,
+			left: 10,
+			right: 10,
+			backgroundColor: color
+		});
 	}
 	
 	exports.getSkinPreview = function(skinID) {
