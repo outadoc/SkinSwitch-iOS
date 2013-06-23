@@ -120,12 +120,9 @@
 			}
 		});
 		
-		var containerView = Ti.UI.createScrollView({
-			height: '70%',
-			width: '90%',
-			contentWidth: Ti.UI.FILL,
-		  	contentHeight: Ti.UI.SIZE,
-		  	showVerticalScrollIndicator: true,
+		var containerView = Ti.UI.createView({
+			height: 350,
+			width: 300,
 			backgroundColor: '#f2f2f2',
 			borderWidth: 1,
 			borderColor: 'gray',
@@ -134,6 +131,17 @@
 		});
 		
 		win.add(containerView);
+		
+		var skinInfoView = Ti.UI.createScrollView({
+			width: Ti.UI.FILL,
+			height: containerView.height - 40,
+			contentWidth: Ti.UI.FILL,
+		  	contentHeight: Ti.UI.SIZE,
+		  	showVerticalScrollIndicator: true,
+		  	layout: 'vertical'
+		});
+		
+		containerView.add(skinInfoView);
 		
 		var skinTitle = Ti.UI.createLabel({
 			text: skinData.name,
@@ -149,7 +157,7 @@
 			height: 25
 		});
 		
-		containerView.add(skinTitle);
+		skinInfoView.add(skinTitle);
 		
 		var line = Ti.UI.createView({
 			left: 10,
@@ -159,10 +167,10 @@
 			backgroundColor: 'lightGray'
 		});
 		
-		containerView.add(line);
+		skinInfoView.add(line);
 		
 		var skinView = exports.getSkinPreview(skinData.id);
-		containerView.add(skinView);
+		skinInfoView.add(skinView);
 		
 		var descriptionTitle = Ti.UI.createLabel({
 			text: I('main.skinDetails.description'),
@@ -176,7 +184,7 @@
 			height: 20
 		});
 		
-		containerView.add(descriptionTitle);
+		skinInfoView.add(descriptionTitle);
 		
 		var skinDescription = Ti.UI.createLabel({
 			text: skinData.desc,
@@ -189,7 +197,7 @@
 			right: 20
 		});
 		
-		containerView.add(skinDescription);
+		skinInfoView.add(skinDescription);
 		
 		var timestampTitle = Ti.UI.createLabel({
 			text: I('main.skinDetails.creation'),
@@ -203,7 +211,7 @@
 			height: 20
 		});
 		
-		containerView.add(timestampTitle);
+		skinInfoView.add(timestampTitle);
 		
 		var skinTimestamp = Ti.UI.createLabel({
 			text: (new Date(skinData.time)).toLocaleDateString(),
@@ -218,8 +226,19 @@
 			height: 20
 		});
 		
-		containerView.add(skinTimestamp);
+		skinInfoView.add(skinTimestamp);
 		
+		var actionView = Ti.UI.createView({
+			bottom: 0,
+			top: 0,
+			height: 40,
+			width: Ti.UI.FILL,
+			borderColor: 'lightGray',
+			borderRadius: 1
+		});
+		
+		containerView.add(actionView);
+
 		return win;
 	}
 	
@@ -251,14 +270,14 @@
 			left: 0
 		});
 
-		img_skin_front.addEventListener('singletap', function() {
+		img_skin_front.addEventListener('click', function() {
 			view_skin.animate({
 				view: img_skin_back,
 				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
 			});
 		});
 
-		img_skin_back.addEventListener('singletap', function() {
+		img_skin_back.addEventListener('click', function() {
 			view_skin.animate({
 				view: img_skin_front,
 				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
