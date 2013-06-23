@@ -71,8 +71,8 @@ if(Utils.isiPhone()) {
 		win.container.close();
 	});
 	
-	win.setRightNavButton(b_close);
-	win.setLeftNavButton(b_credits);
+	win.setRightNavButton(b_credits);
+	win.setLeftNavButton(b_close);
 } else {
 	win.setRightNavButton(b_credits);
 }
