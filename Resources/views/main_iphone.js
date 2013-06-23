@@ -24,8 +24,11 @@ win.add(iad);
 
 function updateSkinsList() {
 	loadingWin.open();
+	
+	win.remove(skinsShowcase);
 	skinsShowcase = Ui.getSkinsShowcase(Database.getSkins());
 	win.add(skinsShowcase);
+	
 	loadingWin.close();
 }
 
