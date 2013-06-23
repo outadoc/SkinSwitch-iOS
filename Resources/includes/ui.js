@@ -125,7 +125,7 @@
 		});
 		
 		var containerView = Ti.UI.createView({
-			height: 350,
+			height: 355,
 			width: 300,
 			backgroundColor: '#f2f2f2',
 			borderWidth: 1,
@@ -138,7 +138,7 @@
 		
 		var skinInfoView = Ti.UI.createScrollView({
 			width: Ti.UI.FILL,
-			height: containerView.height - 40,
+			height: containerView.height - 45,
 			contentWidth: Ti.UI.FILL,
 		  	contentHeight: Ti.UI.SIZE,
 		  	showVerticalScrollIndicator: true,
@@ -227,7 +227,7 @@
 		var actionView = Ti.UI.createView({
 			bottom: 0,
 			top: 0,
-			height: 40,
+			height: 45,
 			width: Ti.UI.FILL,
 			layout: 'horizontal',
 			borderColor: 'lightGray',
