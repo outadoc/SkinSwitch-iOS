@@ -14,21 +14,22 @@
 		var backgroundFrame = Ti.UI.createImageView({
 			image: '/img/itemframe.png',
 			width: 72,
-			height: 72
+			height: 72,
+			data: (data == null) ? { isPlaceholder: true } : data
 		});
 		
 		var headPreview = Ti.UI.createImageView({
-			image: exports.getHeadFromSkinID(data.id),
+			image: (data == null) ? '/img/plus_sign.png' : exports.getHeadFromSkinID(data.id),
 			top: 15,
 			left: 15,
 			right: 15,
 			bottom: 15
-		})
+		});
 		
 		backgroundFrame.add(headPreview);
 		
 		var title = Ti.UI.createLabel({
-			text: data.name,
+			text: (data == null) ? I('main.add') : data.name,
 			top: 3,
 			width: 75,
 			height: 20,
@@ -65,6 +66,10 @@
 		  	bottom: 13,
 		  	right: 13
 		});
+		
+		if(skins == null || skins.length == 0) {
+			skinsShowcase.add(exports.getSkinFrame(null));
+		}
 		
 		for(var i = 0; i < skins.length; i ++) {
 			skinsShowcase.add(exports.getSkinFrame(skins[i]));
