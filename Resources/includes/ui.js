@@ -29,12 +29,12 @@
 		backgroundFrame.add(headPreview);
 		
 		var title = Ti.UI.createLabel({
-			text: (data == null) ? I('main.add') : data.name,
+			text: (data == null) ? I('main.addSkin') : data.name,
 			top: 3,
 			width: 75,
 			height: 20,
 			font: {
-				fontSize: 15
+				fontSize: (data == null) ? 13 : 15
 			},
 			color: 'white',
 			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
