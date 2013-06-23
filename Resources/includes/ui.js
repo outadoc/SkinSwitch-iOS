@@ -228,7 +228,7 @@
 		var actionView = Ti.UI.createView({
 			bottom: 0,
 			top: 0,
-			height: 45,
+			height: 44,
 			width: Ti.UI.FILL,
 			layout: 'horizontal',
 			borderColor: 'lightGray',
@@ -237,9 +237,24 @@
 		
 		containerView.add(actionView);
 		
+		var b_delete = Ti.UI.createButton({
+			image: '/img/trash.png',
+			width: 44,
+			height: Ti.UI.FILL,
+			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
+			color: 'gray',
+			selectedColor: 'lightGray',
+			font: {
+				fontSize: 17
+			}
+		});
+		
+		actionView.add(b_delete);
+		actionView.add(exports.getVerticalSeparator('lightGray'));
+		
 		var b_edit = Ti.UI.createButton({
-			title: I('buttons.edit'),
-			width: 79,
+			image: '/img/pencil.png',
+			width: 44,
 			height: Ti.UI.FILL,
 			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
 			color: 'gray',
@@ -254,7 +269,7 @@
 		
 		var b_wear = Ti.UI.createButton({
 			title: I('main.skinDetails.wear'),
-			width: 140,
+			width: 120,
 			height: Ti.UI.FILL,
 			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
 			color: 'gray',
@@ -269,7 +284,7 @@
 		
 		var b_close = Ti.UI.createButton({
 			title: I('buttons.close'),
-			width: 79,
+			width: 89,
 			height: Ti.UI.FILL,
 			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
 			color: 'gray',
@@ -301,6 +316,11 @@
 			});
 			
 			closeDetailWin();
+		});
+		
+		b_delete.addEventListener('click', function(e) {
+			closeDetailWin();
+			Database.deleteSkin(skinData);
 		});
 		
 		b_wear.addEventListener('click', function(e) {

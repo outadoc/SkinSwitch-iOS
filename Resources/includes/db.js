@@ -41,6 +41,28 @@
 		db.close();
 		return rowCount;
 	}
+	
+	exports.deleteSkin = function(skinData) {
+		var confirm = Ti.UI.createAlertDialog({
+			title: I('main.skinDelete.title'),
+			message: I('main.skinDelete.message', skinData.name),
+			buttonNames: [I('main.skinDelete.cancel'), I('main.skinDelete.okay')],
+			cancel: 0
+		});
+
+		confirm.show();
+
+		confirm.addEventListener('click', function(e) {
+			if(e.index == 1) {
+				var db = Ti.Database.open(exports.getDbName());
+				db.execute('DELETE FROM skins WHERE id=?', skinData.id);
+				db.close();
+			
+				Ti.Filesystem.getFile(Utils.getSkinsDir() + skinData.id).deleteDirectory(true);
+				updateSkinsList();
+			}
+		});
+	}
 
 	exports.getDbName = function() {
 		return 'skins';
