@@ -109,7 +109,7 @@
 
 		var textarea = Ti.UI.createTextArea({
 			color: '#336699',
-			height: Ti.UI.FILL,
+			height: 98,
 			right: 10,
 			width: 160,
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
