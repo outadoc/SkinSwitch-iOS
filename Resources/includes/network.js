@@ -7,7 +7,7 @@
 			title: I('main.skinUpload.confirm.title'),
 			message: I('main.skinUpload.confirm.message', name),
 			buttonNames: [I('main.skinUpload.confirm.cancel'), I('main.skinUpload.confirm.okay')],
-			cancel: 1
+			cancel: 0
 		});
 
 		dialog_wear.show();
