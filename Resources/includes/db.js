@@ -8,7 +8,15 @@
 	exports.getSkins = function() {
 		var skins = [];
 		var db = Ti.Database.open(exports.getDbName());
-		var skinsFromDB = db.execute('SELECT * FROM skins ORDER BY name');
+		var skinsFromDB;
+		
+		var orderBy = Ti.App.Properties.getString('orderBy', 'name');
+		
+		if(orderBy == 'date') {
+			skinsFromDB = db.execute('SELECT * FROM skins ORDER BY timestamp');
+		} else {
+			skinsFromDB = db.execute('SELECT * FROM skins ORDER BY name');
+		}
 
 		while(skinsFromDB.isValidRow()) {
 			skins.push({
