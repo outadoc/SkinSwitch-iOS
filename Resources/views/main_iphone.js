@@ -5,12 +5,10 @@ var Utils = require('/includes/utils');
 var Ui = require('/includes/ui');
 
 var win = Ti.UI.currentWindow;
-
-var skinsShowcase = Ui.getSkinsShowcase(Database.getSkins());
-win.add(skinsShowcase);
-
+var skinsShowcase = Ui.getSkinsShowcase([]);
 var loadingWin = Utils.createLoadingWindow();
-//loadingWin.open();
+
+loadingWin.open();
 
 /*
 var iad = Ti.UI.iOS.createAdView({
@@ -25,10 +23,8 @@ win.add(iad);
 
 function updateSkinsList() {
 	loadingWin.open();
-	
 	skinsShowcase = Ui.getSkinsShowcase(Database.getSkins());
-	
-	updateSkinCount();
+	win.add(skinsShowcase);
 	loadingWin.close();
 }
 
@@ -96,6 +92,8 @@ b_settings.addEventListener('click', function() {
 win.setLeftNavButton(b_settings);
 win.setRightNavButton(b_add);
 
+updateSkinsList();
+
 /*
 tableView.addEventListener('delete', function(e) {
 	var db = Ti.Database.open(Database.getDbName());
@@ -147,33 +145,3 @@ tableView.addEventListener('click', function(e) {
 	}
 });
 */
-
-//updateSkinsList();
-
-function updateSkinCount() {
-	var view_wrapper = Ti.UI.createView({
-		left: 0,
-		right: 0, 
-		height: 55
-	});
-	
-	var lbl_footer = Ti.UI.createLabel({
-		text: I('main.skins', String(Database.getSkinCount())),
-		color: '#F8F8F8',
-		font: {
-			fontSize: 15,
-			fontWeight: 'bold'
-		},
-		shadowColor: 'black',
-		shadowOffset: {
-			x: 0,
-			y: 1
-		},
-		top: 0,
-		left: 15,
-		height: 16
-	});
-	
-	view_wrapper.add(lbl_footer);
-	//tableView.setFooterView(view_wrapper);
-}
