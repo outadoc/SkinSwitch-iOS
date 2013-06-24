@@ -11,7 +11,7 @@
 
 	exports.getBGImage = function() {
 		if(exports.isiPad()) {
-			return '/img/block_stonebrick.png';
+			return '/img/bg_ipad_portrait.png';
 		} else if(exports.isiPhone() && Ti.Platform.displayCaps.platformHeight > 480) {
 			return '/img/bg_tall.png';
 		} else {
