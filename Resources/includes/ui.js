@@ -128,19 +128,26 @@
 			contentWidth: Ti.UI.FILL,
 		  	contentHeight: Ti.UI.SIZE,
 		  	showVerticalScrollIndicator: true,
-		  	layout: 'horizontal',
+		  	//scrollIndicatorStyle: Ti.UI.iPhone.ScrollIndicatorStyle.WHITE
+		});
+		
+		var container = Ti.UI.createView({
+			layout: 'horizontal',
 		  	left: 13,
 		  	top: 13,
 		  	bottom: 13,
-		  	right: 13
+		  	right: 13,
+		  	height: Ti.UI.FILL
 		});
 		
+		skinsShowcase.add(container);
+		
 		if(skins == null || skins.length == 0) {
-			skinsShowcase.add(exports.getSkinFrame(null));
+			container.add(exports.getSkinFrame(null));
 		}
 		
 		for(var i = 0; i < skins.length; i ++) {
-			skinsShowcase.add(exports.getSkinFrame(skins[i]));
+			container.add(exports.getSkinFrame(skins[i]));
 		}
 		
 		return skinsShowcase;
