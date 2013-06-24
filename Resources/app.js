@@ -38,7 +38,7 @@ function startApp() {
 
 	if(Utils.isiPhone()) {
 		var mainWin = Ti.UI.createWindow({
-			url: 'views/main_iphone.js',
+			url: 'views/main.js',
 			tabBarHidden: true,
 			title: Ti.App.getName(),
 			backgroundImage: Utils.getBGImage(),
@@ -79,7 +79,7 @@ function startApp() {
 		detailWin.add(iad);
 
 		var masterWin = Ti.UI.createWindow({
-			url: 'views/main_iphone.js',
+			url: 'views/main.js',
 			backgroundImage: Utils.getBGImage(),
 			barColor: Utils.getNavColor(),
 			backgroundRepeat: true,

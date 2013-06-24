@@ -126,4 +126,19 @@
 		return row;
 	}
 	
+	exports.closeiPadSkinDetails = function(ipad_win) {
+		ipad_win.detailWin.remove(ipad_win.detailContent);
+		ipad_win.detailWin.setRightNavButton(null);
+		ipad_win.detailWin.setLeftNavButton(null);
+		ipad_win.detailContent = ipad_win.initialInfoView;
+		ipad_win.detailContent.setOpacity(0);
+
+		ipad_win.detailWin.add(ipad_win.detailContent);
+		ipad_win.detailContent.animate({
+			opacity: 1,
+			duration: 300,
+			curve: Ti.UI.ANIMATION_CURVE_EASE_IN
+		});
+	}
+	
 })();

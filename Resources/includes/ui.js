@@ -2,7 +2,7 @@
 	
 	Ti.include('/includes/lib/json.i18n.js');
 	
-	exports.getSkinFrame = function(skinData) {
+	exports.getSkinFrame = function(skinData, ipad_win) {
 		var view = Ti.UI.createView({
 			top: 10,
 			width: 98,
@@ -85,25 +85,29 @@
 				headPreview.animate(anim_normal);
 				
 				if((new Date).getTime() - startTimestamp < 300) {
-					var win = exports.getiPhoneDetailWindow(skinData);
-	
-					var anim = Ti.UI.createAnimation({
-						transform: Ti.UI.create2DMatrix({
-							scale: 1.1
-						}),
-						duration: 200
-					});
+					if(Utils.isiPad()) {
+						exports.getiPadDetailWindow(skinData, ipad_win);
+					} else {
+						var win = exports.getiPhoneDetailWindow(skinData);
 		
-					anim.addEventListener('complete', function() {
-						win.animate({
+						var anim = Ti.UI.createAnimation({
 							transform: Ti.UI.create2DMatrix({
-								scale: 1.0
+								scale: 1.1
 							}),
 							duration: 200
 						});
-					});
-		
-					win.open(anim);
+			
+						anim.addEventListener('complete', function() {
+							win.animate({
+								transform: Ti.UI.create2DMatrix({
+									scale: 1.0
+								}),
+								duration: 200
+							});
+						});
+			
+						win.open(anim);
+					}
 				}
 				
 				wasCanceled = true;
@@ -123,7 +127,7 @@
 		});
 	}
 	
-	exports.getSkinsShowcase = function(skins) {
+	exports.getSkinsShowcase = function(skins, ipad_win) {
 		var skinsShowcase = Ti.UI.createScrollView({
 			contentWidth: Ti.UI.FILL,
 		  	contentHeight: Ti.UI.SIZE,
@@ -142,12 +146,20 @@
 		
 		skinsShowcase.add(container);
 		
+		if(Utils.isiPad()) {
+			container.addEventListener('click', function(e) {
+				if(e.source == container) {
+					Utils.closeiPadSkinDetails(ipad_win);
+				}
+			});
+		}
+		
 		if(skins == null || skins.length == 0) {
 			container.add(exports.getSkinFrame(null));
 		}
 		
 		for(var i = 0; i < skins.length; i ++) {
-			container.add(exports.getSkinFrame(skins[i]));
+			container.add(exports.getSkinFrame(skins[i], ipad_win));
 		}
 		
 		return skinsShowcase;
@@ -288,7 +300,7 @@
 		containerView.add(actionView);
 		
 		var b_delete = Ti.UI.createButton({
-			image: '/img/trash.png',
+			image : '/img/delete_grey.png',
 			width: 44,
 			height: Ti.UI.FILL,
 			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
@@ -303,7 +315,7 @@
 		actionView.add(exports.getVerticalSeparator('lightGray'));
 		
 		var b_edit = Ti.UI.createButton({
-			image: '/img/pencil.png',
+			image : '/img/edit_grey.png',
 			width: 44,
 			height: Ti.UI.FILL,
 			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
@@ -379,6 +391,162 @@
 		});
 
 		return win;
+	}
+	
+	exports.getiPadDetailWindow = function(skinData, win) {
+		var skinInfos = Ti.UI.createView({
+			height: Ti.UI.SIZE,
+			width: Ti.UI.FILL
+		});
+
+		var lbl_skin_time_title = Ti.UI.createLabel({
+			text: I('main.skinDetails.creation'),
+			top: 20,
+			left: '5%',
+			color: 'darkGray',
+			font: {
+				fontWeight: 'bold',
+				fontSize: 17
+			},
+			height: 20,
+			width: 150
+		});
+
+		skinInfos.add(lbl_skin_time_title);
+
+		var creationDate = new Date(skinData.time);
+
+		var lbl_skin_time = Ti.UI.createLabel({
+			text: creationDate.toLocaleDateString(),
+			color: 'darkGray',
+			top: 40,
+			left: '5%',
+			font: {
+				fontSize: 16
+			},
+			height: 'auto',
+			width: 150
+		});
+
+		skinInfos.add(lbl_skin_time);
+
+		var lbl_skin_desc_title = Ti.UI.createLabel({
+			text: I('main.skinDetails.description'),
+			top: 65,
+			left: '5%',
+			color: 'darkGray',
+			font: {
+				fontWeight: 'bold',
+				fontSize: 17
+			},
+			height: 20,
+			width: 150
+		});
+
+		skinInfos.add(lbl_skin_desc_title);
+
+		var lbl_skin_desc = Ti.UI.createLabel({
+			text: skinData.desc,
+			color: 'darkGray',
+			width: '50%',
+			height: Ti.UI.SIZE,
+			top: 85,
+			left: '5%',
+			font: {
+				fontSize: 16
+			}
+		});
+
+		skinInfos.add(lbl_skin_desc);
+
+		var view_skin = Ti.UI.createImageView({
+			height: 300,
+			width: 150,
+			right: '8%',
+			top: 25
+		});
+
+		skinInfos.add(view_skin);
+
+		var img_skin_front = Ti.UI.createImageView({
+			defaultImage: '/img/char_front.png',
+			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinData.id + '/front.png').getNativePath(),
+			height: 300,
+			width: 150,
+			top: 0
+		});
+
+		view_skin.add(img_skin_front);
+
+		var img_skin_back = Ti.UI.createImageView({
+			defaultImage: '/img/char_back.png',
+			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinData.id + '/back.png').getNativePath(),
+			height: 300,
+			width: 150,
+			top: 0
+		});
+
+		img_skin_front.addEventListener('click', function() {
+			view_skin.animate({
+				view: img_skin_back,
+				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
+			});
+		});
+
+		img_skin_back.addEventListener('click', function() {
+			view_skin.animate({
+				view: img_skin_front,
+				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+			});
+		});
+
+		var b_delete = Ti.UI.createButton({
+			image: '/img/delete.png'
+		});
+
+		b_delete.addEventListener('click', function() {
+			Utils.closeiPadSkinDetails(win);
+			Database.deleteSkin(skinData);
+		});
+
+		var b_edit = Ti.UI.createButton({
+			image: '/img/edit.png',
+		});
+
+		b_edit.addEventListener('click', function() {
+			var info_win = Ti.UI.createWindow({
+				url: '/views/add_process/info.js',
+				title: I('editSkin.title'),
+				backgroundImage: Utils.getBGImage(),
+				backgroundRepeat: true,
+				barColor: Utils.getNavColor(),
+				masterGroup: win.masterGroup,
+				skinIDToEdit: skinData.id
+			});
+
+			Utils.closeiPadSkinDetails(win);
+			win.masterGroup.open(info_win);
+		});
+
+		win.detailWin.remove(win.detailContent);
+		win.detailContent = Ti.UI.createView({
+			layout: 'vertical',
+			opacity: 0,
+			height: Ti.UI.SIZE,
+			top: '10%'
+		});
+
+		win.detailContent.add(skinInfos);
+
+		win.detailWin.setRightNavButton(b_edit);
+		win.detailWin.setLeftNavButton(b_delete);
+
+		win.detailWin.add(win.detailContent);
+		win.detailContent.animate({
+			opacity: 1,
+			duration: 300,
+			curve: Ti.UI.ANIMATION_CURVE_EASE_IN
+		});
 	}
 	
 	exports.getVerticalSeparator = function(color) {
