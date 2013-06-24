@@ -37,28 +37,42 @@ var b_add = Ti.UI.createButton({
 });
 
 b_add.addEventListener('click', function(e) {
-	var container = Ti.UI.createWindow({
-		navBarHidden: true
-	});
+	if(Utils.isiPad()) {
+		var info_win = Ti.UI.createWindow({
+			url: 'add_process/info.js',
+			title: I('addProcess.skinInfo.title'),
+			backgroundImage: Utils.getBGImage(),
+			barColor: Utils.getNavColor(),
+			backgroundRepeat: true,
+			masterGroup: win.masterGroup
+		});
 
-	var info_win = Ti.UI.createWindow({
-		url: 'add_process/info.js',
-		title: I('addProcess.skinInfo.title'),
-		backgroundImage: Utils.getBGImage(),
-		container: container,
-		barColor: Utils.getNavColor()
-	});
-
-	var group = Ti.UI.iPhone.createNavigationGroup({
-		window: info_win
-	});
-
-	info_win.navGroup = group;
-	container.add(group);
-	container.addEventListener('close', updateSkinsList);
-	container.open({
-		modal: true
-	});
+		info_win.addEventListener('close', updateSkinsList);
+		win.masterGroup.open(info_win);
+	} else {
+		var container = Ti.UI.createWindow({
+			navBarHidden: true
+		});
+	
+		var info_win = Ti.UI.createWindow({
+			url: 'add_process/info.js',
+			title: I('addProcess.skinInfo.title'),
+			backgroundImage: Utils.getBGImage(),
+			container: container,
+			barColor: Utils.getNavColor()
+		});
+	
+		var group = Ti.UI.iPhone.createNavigationGroup({
+			window: info_win
+		});
+	
+		info_win.navGroup = group;
+		container.add(group);
+		container.addEventListener('close', updateSkinsList);
+		container.open({
+			modal: true
+		});
+	}
 });
 
 var b_settings = Ti.UI.createButton({
@@ -66,31 +80,45 @@ var b_settings = Ti.UI.createButton({
 });
 
 b_settings.addEventListener('click', function() {
-	var win_settings = Ti.UI.createWindow({
-		title: I('settings.title'),
-		barColor: Utils.getNavColor(),
-		backgroundImage: Utils.getBGImage(),
-		url: 'settings.js'
-	});
+	if(Utils.isiPad()) {
+		var win_settings = Ti.UI.createWindow({
+			title: I('settings.title'),
+			backgroundImage: Utils.getBGImage(),
+			backgroundRepeat: true,
+			barColor: Utils.getNavColor(),
+			url: 'settings.js',
+			masterGroup: win.masterGroup
+		});
 
-	var container = Ti.UI.createWindow({
-		navBarHidden: true
-	});
+		win_settings.addEventListener('close', updateSkinsList);
+		win.masterGroup.open(win_settings);
+	} else {
+		var win_settings = Ti.UI.createWindow({
+			title: I('settings.title'),
+			barColor: Utils.getNavColor(),
+			backgroundImage: Utils.getBGImage(),
+			url: 'settings.js'
+		});
 	
-	container.addEventListener('close', updateSkinsList);
+		var container = Ti.UI.createWindow({
+			navBarHidden: true
+		});
+		
+		container.addEventListener('close', updateSkinsList);
+		
+		var navGroup = Ti.UI.iPhone.createNavigationGroup({
+			window: win_settings
+		});
 	
-	var navGroup = Ti.UI.iPhone.createNavigationGroup({
-		window: win_settings
-	});
-
-	container.add(navGroup);
-
-	win_settings.navGroup = navGroup;
-	win_settings.container = container;
-
-	container.open({
-		modal: true
-	});
+		container.add(navGroup);
+	
+		win_settings.navGroup = navGroup;
+		win_settings.container = container;
+	
+		container.open({
+			modal: true
+		});
+	}
 });
 
 win.setLeftNavButton(b_settings);

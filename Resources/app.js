@@ -63,9 +63,7 @@ function startApp() {
 		var detailWin = Ti.UI.createWindow({
 			title: I('main.skinDetails.title'),
 			barColor: Utils.getNavColor(),
-			backgroundGradient: {
-				colors: ['c6c6c6', 'e4e4e4']
-			}
+			backgroundColor: '#eeeeee'
 		});
 
 		var initialInfoView = getInitialInfoView();
@@ -81,7 +79,7 @@ function startApp() {
 		detailWin.add(iad);
 
 		var masterWin = Ti.UI.createWindow({
-			url: 'views/main_ipad.js',
+			url: 'views/main_iphone.js',
 			backgroundImage: Utils.getBGImage(),
 			barColor: Utils.getNavColor(),
 			backgroundRepeat: true,
@@ -112,8 +110,7 @@ function startApp() {
 		function getInitialInfoView() {
 			var view = Ti.UI.createView({
 				height: Ti.UI.SIZE,
-				width: Ti.UI.FILL,
-				layout: 'vertical'
+				width: Ti.UI.FILL
 			});
 
 			var lbl_noskin = Ti.UI.createLabel({
@@ -129,72 +126,6 @@ function startApp() {
 			});
 
 			view.add(lbl_noskin);
-
-			var b_add = Ti.UI.createButton({
-				title: I('main.addSkin'),
-				font: {
-					fontSize: 23
-				},
-				backgroundImage: '/img/button.png',
-				width: Ti.UI.FILL,
-				height: 50,
-				left: '8%',
-				right: '8%',
-				top: 40
-			});
-
-			b_add.addEventListener('click', function() {
-				var info_win = Ti.UI.createWindow({
-					url: 'views/add_process/info.js',
-					title: I('addProcess.skinInfo.title'),
-					backgroundImage: Utils.getBGImage(),
-					barColor: Utils.getNavColor(),
-					backgroundRepeat: true,
-					masterGroup: splitWin.masterView
-				});
-
-				info_win.addEventListener('close', function(e) {
-					b_add.setEnabled(true);
-				});
-
-				b_add.setEnabled(false);
-				splitWin.masterView.open(info_win);
-			});
-
-			view.add(b_add);
-
-			var b_settings = Ti.UI.createButton({
-				title: I('main.editSettings'),
-				font: {
-					fontSize: 23
-				},
-				backgroundImage: '/img/button.png',
-				width: Ti.UI.FILL,
-				height: 50,
-				left: '8%',
-				right: '8%',
-				top: 10
-			});
-
-			b_settings.addEventListener('click', function() {
-				var win_settings = Ti.UI.createWindow({
-					title: I('settings.title'),
-					backgroundImage: Utils.getBGImage(),
-					backgroundRepeat: true,
-					barColor: Utils.getNavColor(),
-					url: 'views/settings.js',
-					masterGroup: splitWin.masterView
-				});
-
-				win_settings.addEventListener('close', function(e) {
-					b_settings.setEnabled(true);
-				});
-
-				b_settings.setEnabled(false);
-				splitWin.masterView.open(win_settings);
-			});
-
-			view.add(b_settings);
 
 			return view;
 		}

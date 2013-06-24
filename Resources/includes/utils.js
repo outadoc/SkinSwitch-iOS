@@ -20,7 +20,7 @@
 	}
 
 	exports.getNavColor = function() {
-		return '#888888';
+		return '#6d482b';
 	}
 	
 	exports.isiPhone = function() {
