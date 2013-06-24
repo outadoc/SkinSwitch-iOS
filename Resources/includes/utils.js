@@ -10,10 +10,12 @@
 	}
 
 	exports.getBGImage = function() {
-		if(exports.isiPhone()) {
-			return '/img/bg.png';
-		} else if(exports.isiPad()) {
+		if(exports.isiPad()) {
 			return '/img/block_stonebrick.png';
+		} else if(exports.isiPhone() && Ti.Platform.displayCaps.platformHeight > 480) {
+			return '/img/bg_tall.png';
+		} else {
+			return '/img/bg.png';
 		}
 	}
 
