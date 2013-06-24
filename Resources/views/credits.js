@@ -35,7 +35,11 @@ var lbl_app = Ti.UI.createLabel({
 scrollView.add(lbl_app);
 
 var lbl_credits = Ti.UI.createLabel({
-	text: I('credits.developer') + ' Baptiste Candellier (outadoc) for outa[dev]\n\n' + I('credits.platform') + ' Appcelerator Titanium\n\n' + I('credits.modules') + ' Keychain module by ClearlyInnovative\n\n' + I('credits.translators') + '\nSvante Bengtson (Swedish, English)\nAntonin Langlinay (German)\nAubiet (Italian)\nAzaret (Spanish)\nGeoffrey Frogeye (German, English)\nPriinceOverkill (Dutch, Norwegian)\nNicolas Dimov (German)\nSilentXeno (Norwegian)\nxxElbarto88xx (German, English)\nArium_2 (English)\nBastienDuke (English)\nMatthew Laskowsky (Polish)\nВиктор Якушев (Russian)\nJoão Victor Marques Andreotti (Portuguese)\niRewiewer (Romanian)\nJun1292 (Chinese Traditional)\n\n' + I('credits.thanks') + '\nElarcis, Antoine Cognard, EphysPotato, Ramikaze',
+	text: I('credits.developer') 	+ '\nBaptiste Candellier (outadoc) for outa[dev]\n\n' + 
+		  I('credits.platform') 	+ '\nAppcelerator Titanium\n\n' + 
+		  I('credits.modules') 		+ '\nKeychain module by ClearlyInnovative\n\n' + 
+		  I('credits.translators') 	+ '\nSvante Bengtson (Swedish, English)\nAntonin Langlinay (German)\nAubiet (Italian)\nAzaret (Spanish)\nGeoffrey Frogeye (German, English)\nPriinceOverkill (Dutch, Norwegian)\nNicolas Dimov (German)\nSilentXeno (Norwegian)\nxxElbarto88xx (German, English)\nArium_2 (English)\nBastienDuke (English)\nMatthew Laskowsky (Polish)\nВиктор Якушев (Russian)\nJoão Victor Marques Andreotti (Portuguese)\niRewiewer (Romanian)\nJun1292 (Chinese Traditional)\n\n' + 
+		  I('credits.thanks') 		+ '\nElarcis, Antoine\xA0Cognard, EphysPotato, Ramikaze, Alexia\xa0Legros',
 	font: {
 		fontSize: 16
 	},
