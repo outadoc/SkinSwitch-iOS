@@ -394,112 +394,96 @@
 	}
 	
 	exports.getiPadDetailWindow = function(skinData, win) {
-		var skinInfos = Ti.UI.createView({
+		var skinInfoView = Ti.UI.createView({
 			height: Ti.UI.SIZE,
-			width: Ti.UI.FILL
+			width: Ti.UI.FILL,
+			layout: 'vertical'
 		});
 
-		var lbl_skin_time_title = Ti.UI.createLabel({
-			text: I('main.skinDetails.creation'),
-			top: 20,
-			left: '5%',
-			color: 'darkGray',
+		var skinTitle = Ti.UI.createLabel({
+			text: skinData.name,
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 			font: {
-				fontWeight: 'bold',
-				fontSize: 17
+				fontSize: 28,
+				fontFamily: 'HelveticaNeue-Light'
 			},
-			height: 20,
-			width: 150
+			color: 'gray',
+			top: 10,
+			left: 20,
+			right: 20,
+			height: 25
 		});
-
-		skinInfos.add(lbl_skin_time_title);
-
-		var creationDate = new Date(skinData.time);
-
-		var lbl_skin_time = Ti.UI.createLabel({
-			text: creationDate.toLocaleDateString(),
-			color: 'darkGray',
-			top: 40,
-			left: '5%',
-			font: {
-				fontSize: 16
-			},
-			height: 'auto',
-			width: 150
-		});
-
-		skinInfos.add(lbl_skin_time);
-
-		var lbl_skin_desc_title = Ti.UI.createLabel({
+		
+		skinInfoView.add(skinTitle);
+		
+		skinInfoView.add(exports.getHorizontalSeparator('lightGray'));
+		
+		var skinView = exports.getSkinPreview(skinData.id);
+		skinView.top = 30;
+		skinInfoView.add(skinView);
+		
+		var descriptionTitle = Ti.UI.createLabel({
 			text: I('main.skinDetails.description'),
-			top: 65,
-			left: '5%',
-			color: 'darkGray',
 			font: {
-				fontWeight: 'bold',
-				fontSize: 17
+				fontSize: 22,
 			},
-			height: 20,
-			width: 150
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			color: 'gray',
+			top: 10,
+			left: 20,
+			right: 20,
+			height: 20
 		});
-
-		skinInfos.add(lbl_skin_desc_title);
-
-		var lbl_skin_desc = Ti.UI.createLabel({
+		
+		skinInfoView.add(descriptionTitle);
+		
+		var skinDescription = Ti.UI.createLabel({
 			text: skinData.desc,
-			color: 'darkGray',
-			width: '50%',
-			height: Ti.UI.SIZE,
-			top: 85,
-			left: '5%',
 			font: {
-				fontSize: 16
-			}
+				fontSize: 20,
+			},
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			color: 'lightGray',
+			top: 5,
+			left: 20,
+			right: 20
 		});
-
-		skinInfos.add(lbl_skin_desc);
-
-		var view_skin = Ti.UI.createImageView({
-			height: 300,
-			width: 150,
-			right: '8%',
-			top: 25
+		
+		skinInfoView.add(skinDescription);
+		
+		var timestampTitle = Ti.UI.createLabel({
+			text: I('main.skinDetails.creation'),
+			font: {
+				fontSize: 22,
+			},
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			color: 'gray',
+			top: 30,
+			left: 20,
+			right: 20,
+			height: 20
 		});
-
-		skinInfos.add(view_skin);
-
-		var img_skin_front = Ti.UI.createImageView({
-			defaultImage: '/img/char_front.png',
-			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinData.id + '/front.png').getNativePath(),
-			height: 300,
-			width: 150,
-			top: 0
+		
+		skinInfoView.add(timestampTitle);
+		
+		var skinTimestamp = Ti.UI.createLabel({
+			text: (new Date(skinData.time)).toLocaleDateString(),
+			font: {
+				fontSize: 20,
+			},
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+			color: 'lightGray',
+			top: 5,
+			bottom: 20,
+			left: 20,
+			right: 20,
+			height: 20
 		});
-
-		view_skin.add(img_skin_front);
-
-		var img_skin_back = Ti.UI.createImageView({
-			defaultImage: '/img/char_back.png',
-			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinData.id + '/back.png').getNativePath(),
-			height: 300,
-			width: 150,
-			top: 0
-		});
-
-		img_skin_front.addEventListener('click', function() {
-			view_skin.animate({
-				view: img_skin_back,
-				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
-			});
-		});
-
-		img_skin_back.addEventListener('click', function() {
-			view_skin.animate({
-				view: img_skin_front,
-				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
-			});
-		});
-
+		
+		skinInfoView.add(skinTimestamp);
+		
+		//buttons
+		
 		var b_delete = Ti.UI.createButton({
 			image: '/img/delete.png'
 		});
@@ -536,7 +520,7 @@
 			top: '10%'
 		});
 
-		win.detailContent.add(skinInfos);
+		win.detailContent.add(skinInfoView);
 
 		win.detailWin.setRightNavButton(b_edit);
 		win.detailWin.setLeftNavButton(b_delete);
@@ -560,17 +544,19 @@
 	exports.getHorizontalSeparator = function(color) {
 		return Ti.UI.createView({
 			height: 1,
+			width: '80%',
 			top: 10,
-			left: 10,
-			right: 10,
 			backgroundColor: color
 		});
 	}
 	
 	exports.getSkinPreview = function(skinID) {
+		var height = (Utils.isiPad()) ? 300 : 170;
+		var width = (Utils.isiPad()) ? 150 : 85;
+		
 		var view_skin = Ti.UI.createImageView({
-			height: 170,
-			width: 85,
+			height: height,
+			width: width,
 			top: 15,
 			bottom: 15
 		});
@@ -578,8 +564,8 @@
 		var img_skin_front = Ti.UI.createImageView({
 			defaultImage: '/img/char_front.png',
 			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/front.png').getNativePath(),
-			height: 170,
-			width: 85,
+			height: height,
+			width: width,
 			top: 0,
 			left: 0
 		});
@@ -589,8 +575,8 @@
 		var img_skin_back = Ti.UI.createImageView({
 			defaultImage: '/img/char_back.png',
 			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/back.png').getNativePath(),
-			height: 170,
-			width: 85,
+			height: height,
+			width: width,
 			top: 0,
 			left: 0
 		});
