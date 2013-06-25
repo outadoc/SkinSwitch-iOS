@@ -108,7 +108,7 @@
 	exports.initializeDatabase = function() {
 		var db = Ti.Database.open(exports.getDbName());
 		db.execute('CREATE TABLE IF NOT EXISTS skins (id VARCHAR(16) PRIMARY KEY, name VARCHAR(16) NOT NULL, description TEXT NOT NULL, timestamp VARCHAR(16) NOT NULL)');
-		db.file.setRemoteBackup(true);
+		db.file.setRemoteBackup(Ti.App.Properties.getBool('syncToCloud', true));
 		db.close();
 	}
 

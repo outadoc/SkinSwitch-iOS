@@ -8,7 +8,7 @@
 	<string>Nom</string>
 	<key>date</key>
 	<string>Date d'ajout</string>
-	<key>title</key>
-	<string>SVOINDSFVI</string>
+    <key>icloud</key>
+    <string>Sync to iCloud</string>
 </dict>
 </plist>

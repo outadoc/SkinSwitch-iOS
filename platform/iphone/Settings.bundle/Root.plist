@@ -24,6 +24,16 @@
 			<key>DefaultValue</key>
 			<string>name</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>icloud</string>
+			<key>Key</key>
+			<string>syncToCloud</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
 	</array>
 	<key>StringsTable</key>
 	<string>Root</string>

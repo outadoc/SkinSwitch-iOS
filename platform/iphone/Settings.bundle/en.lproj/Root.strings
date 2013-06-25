@@ -8,5 +8,7 @@
 	<string>Name</string>
 	<key>date</key>
 	<string>Date of Creation</string>
+	<key>icloud</key>
+	<string>Sync to iCloud</string>
 </dict>
 </plist>
