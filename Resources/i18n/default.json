@@ -1,6 +1,5 @@
 {
 	"main":{
-		"searchHint":"Find a skin...",
 		"skinList":"Skins List",
 		"addSkin":"Add a Skin",
 		"editSettings":"Edit Settings",
@@ -12,11 +11,12 @@
 			"close":"Close"
 		},
 		"noSelectedSkin":"No skin selected.",
-		"noContent":{
-			"title":"No skin has been added yet.",
-			"help":"To add a skin, tap \"+\"."
+		"skinDelete":{
+			"title":"Confirm Deletion",
+			"message":"Do you really want to delete \"%s\"?",
+			"cancel": "Nooooooo!",
+			"okay": "Sure!"
 		},
-		"skins":"%s skins",
 		"progressBar":{
 			"login":"Logging in...",
 			"upload":"Uploading skin...",
