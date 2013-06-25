@@ -113,6 +113,45 @@
 				wasCanceled = true;
 				startTimestamp = 0;
 			});
+		} else {
+			backgroundFrame.addEventListener('click', function(e) {
+				if(Utils.isiPad()) {
+					var info_win = Ti.UI.createWindow({
+						url: 'add_process/info.js',
+						title: I('addProcess.skinInfo.title'),
+						backgroundImage: Utils.getBGImage(),
+						barColor: Utils.getNavColor(),
+						backgroundRepeat: true,
+						masterGroup: win.masterGroup
+					});
+			
+					info_win.addEventListener('close', updateSkinsList);
+					ipad_win.masterGroup.open(info_win);
+				} else {
+					var container = Ti.UI.createWindow({
+						navBarHidden: true
+					});
+				
+					var info_win = Ti.UI.createWindow({
+						url: 'add_process/info.js',
+						title: I('addProcess.skinInfo.title'),
+						backgroundImage: Utils.getBGImage(),
+						container: container,
+						barColor: Utils.getNavColor()
+					});
+				
+					var group = Ti.UI.iPhone.createNavigationGroup({
+						window: info_win
+					});
+				
+					info_win.navGroup = group;
+					container.add(group);
+					container.addEventListener('close', updateSkinsList);
+					container.open({
+						modal: true
+					});
+				}
+			});
 		}
 		
 		return view;
@@ -131,8 +170,7 @@
 		var skinsShowcase = Ti.UI.createScrollView({
 			contentWidth: Ti.UI.FILL,
 		  	contentHeight: Ti.UI.SIZE,
-		  	showVerticalScrollIndicator: true,
-		  	//scrollIndicatorStyle: Ti.UI.iPhone.ScrollIndicatorStyle.WHITE
+		  	showVerticalScrollIndicator: true
 		});
 		
 		var container = Ti.UI.createView({
@@ -155,7 +193,7 @@
 		}
 		
 		if(skins == null || skins.length == 0) {
-			container.add(exports.getSkinFrame(null));
+			container.add(exports.getSkinFrame(null, ipad_win));
 		}
 		
 		for(var i = 0; i < skins.length; i ++) {
