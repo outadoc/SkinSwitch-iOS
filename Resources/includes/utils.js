@@ -5,8 +5,8 @@
 	}
 
 	exports.getSkinsDir = function() {
-		Titanium.Filesystem.getFile(Titanium.Filesystem.getApplicationDataDirectory() + 'skins/').createDirectory();
-		return Titanium.Filesystem.getApplicationDataDirectory() + 'skins/';
+		Ti.Filesystem.getFile(Ti.Filesystem.getApplicationDataDirectory() + 'skins/').createDirectory();
+		return Ti.Filesystem.getApplicationDataDirectory() + 'skins/';
 	}
 
 	exports.getBGImage = function() {
