@@ -130,8 +130,8 @@
 	
 	exports.closeiPadSkinDetails = function(ipad_win) {
 		ipad_win.detailWin.remove(ipad_win.detailContent);
-		ipad_win.detailWin.setRightNavButton(null);
-		ipad_win.detailWin.setLeftNavButton(null);
+		ipad_win.detailWin.setRightNavButton(null, {animated: true});
+		ipad_win.detailWin.setLeftNavButton(null, {animated: true});
 		ipad_win.detailContent = ipad_win.initialInfoView;
 		ipad_win.detailContent.setOpacity(0);
 
