@@ -20,12 +20,25 @@ loadingWin.open();
 function updateSkinsList() {
 	loadingWin.open();
 	
-	if(skinsShowcase.children[0] != null) {
-		skinsShowcase.remove(skinsShowcase.children[0]);
-	}
-	
-	skinsShowcase.add(Ui.getSkinsShowcaseView(Database.getSkins(), win));
-	loadingWin.close();
+	skinsShowcase.animate({
+		opacity: 0,
+		duration: 100,
+		curve: Ti.UI.ANIMATION_CURVE_EASE_OUT
+	}, function() {
+		if(skinsShowcase.children[0] != null) {
+			skinsShowcase.remove(skinsShowcase.children[0]);
+		}
+		
+		skinsShowcase.add(Ui.getSkinsShowcaseView(Database.getSkins(), win));
+		
+		skinsShowcase.animate({
+			opacity: 1,
+			duration: 100,
+			curve: Ti.UI.ANIMATION_CURVE_EASE_OUT
+		});
+		
+		loadingWin.close();
+	});
 }
 
 var b_add = Ti.UI.createButton({
