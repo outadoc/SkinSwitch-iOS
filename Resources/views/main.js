@@ -11,6 +11,7 @@ var loadingWin = Utils.createLoadingWindow();
 var skinsShowcase = Ti.UI.createScrollView({
 	contentWidth: Ti.UI.FILL,
   	contentHeight: Ti.UI.SIZE,
+  	verticalBounce: true,
   	showVerticalScrollIndicator: true
 });
 
