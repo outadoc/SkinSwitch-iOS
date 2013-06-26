@@ -6,29 +6,25 @@ var Network = require('/includes/network');
 var Ui = require('/includes/ui');
 
 var win = Ti.UI.currentWindow;
-var skinsShowcase = Ui.getSkinsShowcase([]);
 var loadingWin = Utils.createLoadingWindow();
 
-loadingWin.open();
-
-/*
-var iad = Ti.UI.iOS.createAdView({
-	adSize: Ti.UI.iOS.AD_SIZE_PORTRAIT,
-	height: Ti.UI.SIZE,
-	width: Ti.UI.FIT,
-	bottom: 0
+var skinsShowcase = Ti.UI.createScrollView({
+	contentWidth: Ti.UI.FILL,
+  	contentHeight: Ti.UI.SIZE,
+  	showVerticalScrollIndicator: true
 });
 
-win.add(iad);
-*/
+win.add(skinsShowcase);
+loadingWin.open();
 
 function updateSkinsList() {
 	loadingWin.open();
 	
-	win.remove(skinsShowcase);
-	skinsShowcase = Ui.getSkinsShowcase(Database.getSkins(), win);
-	win.add(skinsShowcase);
+	if(skinsShowcase.children[0] != null) {
+		skinsShowcase.remove(skinsShowcase.children[0]);
+	}
 	
+	skinsShowcase.add(Ui.getSkinsShowcaseView(Database.getSkins(), win));
 	loadingWin.close();
 }
 
@@ -125,3 +121,14 @@ win.setLeftNavButton(b_settings);
 win.setRightNavButton(b_add);
 
 updateSkinsList();
+
+if(!Utils.isiPad()) {
+	var iad = Ti.UI.iOS.createAdView({
+		adSize: Ti.UI.iOS.AD_SIZE_PORTRAIT,
+		height: Ti.UI.SIZE,
+		width: Ti.UI.FIT,
+		bottom: 0
+	});
+	
+	win.add(iad);
+}

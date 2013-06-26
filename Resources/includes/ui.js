@@ -166,18 +166,12 @@
 		});
 	}
 	
-	exports.getSkinsShowcase = function(skins, ipad_win) {
-		var skinsShowcase = Ti.UI.createScrollView({
-			contentWidth: Ti.UI.FILL,
-		  	contentHeight: Ti.UI.SIZE,
-		  	showVerticalScrollIndicator: true
-		});
-		
+	exports.getSkinsShowcaseView = function(skins, ipad_win) {
 		var container = Ti.UI.createView({
 			layout: 'horizontal',
 		  	left: 13,
 		  	top: 13,
-		  	bottom: 13,
+		  	bottom: 50,
 		  	right: 13,
 		  	height: Ti.UI.FILL
 		});
@@ -200,7 +194,7 @@
 			container.add(exports.getSkinFrame(skins[i], ipad_win));
 		}
 		
-		return skinsShowcase;
+		return container;
 	}
 	
 	exports.getiPhoneDetailWindow = function(skinData) {
