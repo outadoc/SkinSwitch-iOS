@@ -78,7 +78,7 @@ b_next.addEventListener('click', function(e) {
 		} else {
 			//if we're only updating an existing skin, just update its info in db
 			var db = Ti.Database.open('skins');
-			db.execute('UPDATE skins SET name=?, description=? WHERE id=?', tableView.data[0].rows[0].children[0].getValue(), tableView.data[0].rows[1].children[0].getValue(), win.skinIDToEdit);
+			db.execute('UPDATE skins SET name=?, description=? WHERE id=?', tableView.data[0].rows[0].children[1].getValue(), tableView.data[0].rows[1].children[1].getValue(), win.skinIDToEdit);
 			db.close();
 			
 			if(Utils.isiPad()) {
