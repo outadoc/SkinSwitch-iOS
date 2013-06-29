@@ -53,7 +53,7 @@
 														questionID: questionID,
 														triggerError: exports.triggerError,
 														ipad_win: ipad_win,
-														title: 'Identity Confirmation',
+														title: I('addProcess.process.challenge.title'),
 														backgroundImage: Utils.getBGImage(),
 														barColor: Utils.getNavColor()
 													});
@@ -95,7 +95,7 @@
 									}
 								},
 								onerror: function() {
-									exports.triggerError('upload', this)
+									exports.triggerError('upload', this);
 								},
 								autoRedirect: false
 							});

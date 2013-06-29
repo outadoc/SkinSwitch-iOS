@@ -22,6 +22,7 @@
 			"upload":"Uploading skin...",
 			"loginFail":"Login failed",
 			"uploadFail":"Upload failed",
+			"challengeFail":"Challenge failed",
 			"success":"Upload complete!"
 		},
 		"skinUpload":{
@@ -93,6 +94,7 @@
 				}
 			},
 			"challenge":{
+				"title": "Identity Confirmation",
 				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
 				"cancel":"Cancel",
 				"continue":"Continue",
