@@ -52,18 +52,20 @@ container.add(lbl_info);
 
 win.add(container);
 
-if(!Utils.isiPad()) {
-	var b_cancel = Ti.UI.createButton({
-		title: I('addProcess.process.challenge.cancel'),
-		style: Titanium.UI.iPhone.SystemButtonStyle.DONE
-	});
-	
-	b_cancel.addEventListener('click', function() {
+var b_cancel = Ti.UI.createButton({
+	title: I('addProcess.process.challenge.cancel'),
+	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
+});
+
+b_cancel.addEventListener('click', function() {
+	if(Utils.isiPad()) {
+		win.ipad_win.masterGroup.close(win);
+	} else {
 		win.close();
-	});
-	
-	win.setLeftNavButton(b_cancel);
-}
+	}
+});
+
+win.setLeftNavButton(b_cancel);
 
 var b_continue = Ti.UI.createButton({
 	title: I('addProcess.process.challenge.continue')
@@ -85,17 +87,15 @@ b_continue.addEventListener('click', function() {
 				alert(responseObj.error);
 			}
 			
-			if(Utils.isiPad()) {
-				win.ipad_win.masterGroup.close(win);
-			} else {
-				win.close();
-			}
+			b_cancel.fireEvent('click', null);
 		},
 		onerror: function(e) {
 			win.triggerError('challenge');
 		},
 		autoRedirect: false
 	});
+	
+	b_continue.setEnabled(false);
 	
 	xhr_answer.open('POST', 'http://minecraft.net/challenge');
 	xhr_answer.send({
