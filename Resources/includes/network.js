@@ -46,27 +46,31 @@
 										//identity check
 										var xhr_challenge = Ti.Network.createHTTPClient({
 											onload: function(e) {
-												var question = this.getResponseText().match(/<label for="answer">(.*)<\/label>/)[1],
-													questionID = this.getResponseText().match(/<input type="hidden" name="questionId" value="([0-9]+)" \/>/)[1];
-												
-												var win_answer = Ti.UI.createWindow({
-													url: '/views/identity_confirm.js',
-													question: question,
-													questionID: questionID,
-													triggerError: exports.triggerError,
-													title: 'Identity Confirmation',
-													backgroundImage: Utils.getBGImage(),
-													barColor: Utils.getNavColor()
-												});
-												
-												win.setTitleControl(null);
-												
-												win_answer.open({
-													modal: true
-												});
+												try {
+													var question = this.getResponseText().match(/<label for="answer">(.*)<\/label>/)[1],
+														questionID = this.getResponseText().match(/<input type="hidden" name="questionId" value="([0-9]+)" \/>/)[1];
+													
+													var win_answer = Ti.UI.createWindow({
+														url: '/views/identity_confirm.js',
+														question: question,
+														questionID: questionID,
+														triggerError: exports.triggerError,
+														title: 'Identity Confirmation',
+														backgroundImage: Utils.getBGImage(),
+														barColor: Utils.getNavColor()
+													});
+													
+													win.setTitleControl(null);
+													
+													win_answer.open({
+														modal: true
+													});
+												} catch(e) {
+													exports.triggerError('challenge');
+												}
 											},
 											onerror: function(e) {
-												alert("woops")
+												exports.triggerError('challenge');
 											},
 											autoRedirect: false
 										});

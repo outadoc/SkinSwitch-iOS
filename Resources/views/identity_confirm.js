@@ -56,14 +56,14 @@ b_continue.addEventListener('click', function() {
 			}
 			
 			if(responseObj.error != null) {
-				//oh noes, une erreur !
+				//oh noes, an error!
 				alert(responseObj.error);
 			}
 			
 			win.close();
 		},
 		onerror: function(e) {
-			win.triggerError('identity')
+			win.triggerError('challenge')
 		},
 		autoRedirect: false
 	});
@@ -72,7 +72,7 @@ b_continue.addEventListener('click', function() {
 	xhr_answer.send({
 		answer: txtfield_answer.getValue(),
 		questionId: win.questionID
-	})
+	});
 });
 
 win.setRightNavButton(b_continue);
