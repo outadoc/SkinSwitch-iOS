@@ -1,37 +1,59 @@
 var win = Ti.UI.currentWindow;
 
+var Utils = require('/includes/utils');
 Ti.include('/includes/lib/json.i18n.js');
 
 var container = Ti.UI.createView({
 	layout: 'vertical',
-	height: Ti.UI.SIZE,
-	top: 30
-})
+	height: Ti.UI.FILL
+});
 
 var lbl_question = Ti.UI.createLabel({
-	text: win.question,
+	text: '- ' + win.question,
 	color: 'white',
-	top: 10,
+	top: 30,
 	left: 10,
-	right: 10
+	right: 10,
+	font: {
+		fontWeight: 'bold',
+		fontSize: 19
+	}
 });
 
 var txtfield_answer = Ti.UI.createTextField({
 	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
 	autocorrect: false,
-	top: 10,
+	hintText: I('addProcess.process.challenge.hint'),
+	top: 20,
 	left: 10,
 	right: 10
 });
 
+var lbl_info = Ti.UI.createLabel({
+	text: I('addProcess.process.challenge.help'),
+	left: (Utils.isiPad()) ? '7%' : 15,
+	right: (Utils.isiPad()) ? '7%' : 15,
+	top: 30,
+	color: '#F8F8F8',
+	font: {
+		fontSize: (Utils.isiPad()) ? 18 : 15
+	},
+	shadowColor: 'black',
+	shadowOffset: {
+		x: 0,
+		y: 1
+	}
+});
+
 container.add(lbl_question);
 container.add(txtfield_answer);
+container.add(lbl_info);
 
 win.add(container);
 
 var b_cancel = Ti.UI.createButton({
-	title: I('addProcess.process.error.preview.cancel')
+	title: I('addProcess.process.challenge.cancel')
 });
 
 b_cancel.addEventListener('click', function() {
@@ -41,7 +63,7 @@ b_cancel.addEventListener('click', function() {
 win.setLeftNavButton(b_cancel);
 
 var b_continue = Ti.UI.createButton({
-	title: I('addProcess.process.error.preview.ok')
+	title: I('addProcess.process.challenge.continue')
 });
 
 b_continue.addEventListener('click', function() {
