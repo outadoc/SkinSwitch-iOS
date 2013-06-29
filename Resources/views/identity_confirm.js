@@ -25,6 +25,7 @@ var txtfield_answer = Ti.UI.createTextField({
 	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
 	autocorrect: false,
 	hintText: I('addProcess.process.challenge.hint'),
+	height: 40,
 	top: 20,
 	left: 10,
 	right: 10
