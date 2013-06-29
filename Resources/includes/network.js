@@ -1,8 +1,18 @@
 (function() {
+	
+	var prog_upload = Ti.UI.createProgressBar({
+		min: 0,
+		max: 100,
+		value: 0,
+		color: 'white',
+		width: 150,
+		font: {
+			fontSize: 14
+		},
+		style: Titanium.UI.iPhone.ProgressBarStyle.BAR
+	});
 
 	exports.uploadSkin = function(id, name) {
-		//Ti.API.debug('clicked wear button for id ' + id);
-
 		var dialog_wear = Ti.UI.createAlertDialog({
 			title: I('main.skinUpload.confirm.title'),
 			message: I('main.skinUpload.confirm.message', name),
@@ -14,37 +24,57 @@
 
 		dialog_wear.addEventListener('click', function(e) {
 			if(e.index == 1) {
-				var prog_upload = Ti.UI.createProgressBar({
-					min: 0,
-					max: 100,
-					value: 0,
-					color: 'white',
-					width: 150,
-					font: {
-						fontSize: 14
-					},
-					style: Titanium.UI.iPhone.ProgressBarStyle.BAR
-				});
-
 				prog_upload.show();
 				win.setTitleControl(prog_upload);
 
 				var xhr_login = Ti.Network.createHTTPClient({
 					onload: function() {
-						//Ti.API.debug('login succeeded, status code ' + this.getStatus());
-						//Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
+						//Ti.API.info('login succeeded, status code ' + this.getStatus());
+						//Ti.API.info('page tried to redirect to ' + this.getResponseHeader('Location'));
 
 						if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
-							triggerError('login', this);
+							exports.triggerError('login', this);
 						} else {
 							var xhr_skin = Ti.Network.createHTTPClient({
 								onload: function() {
-									//Ti.API.debug('uploaded skin, status code ' + this.getStatus());
-									//Ti.API.debug('page tried to redirect to ' + this.getResponseHeader('Location'));
+									//when skin upload xhr loaded
 
 									if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
-										triggerError('login', this);
+										//login error
+										exports.triggerError('login', this);
+									} else if(this.getResponseHeader('Location').indexOf('minecraft.net/challenge') != -1) {
+										//identity check
+										var xhr_challenge = Ti.Network.createHTTPClient({
+											onload: function(e) {
+												var question = this.getResponseText().match(/<label for="answer">(.*)<\/label>/)[1],
+													questionID = this.getResponseText().match(/<input type="hidden" name="questionId" value="([0-9]+)" \/>/)[1];
+												
+												var win_answer = Ti.UI.createWindow({
+													url: '/views/identity_confirm.js',
+													question: question,
+													questionID: questionID,
+													triggerError: exports.triggerError,
+													title: 'Identity Confirmation',
+													backgroundImage: Utils.getBGImage(),
+													barColor: Utils.getNavColor()
+												});
+												
+												win.setTitleControl(null);
+												
+												win_answer.open({
+													modal: true
+												});
+											},
+											onerror: function(e) {
+												alert("woops")
+											},
+											autoRedirect: false
+										});
+										
+										xhr_challenge.open('GET', 'http://minecraft.net/challenge');
+										xhr_challenge.send(null);
 									} else {
+										//no problem, conclude
 										prog_upload.setMessage(I('main.progressBar.success'));
 										prog_upload.setValue(100);
 
@@ -54,7 +84,7 @@
 									}
 								},
 								onerror: function() {
-									triggerError('upload', this)
+									exports.triggerError('upload', this)
 								},
 								autoRedirect: false
 							});
@@ -72,7 +102,8 @@
 						}
 					},
 					onerror: function(e) {
-						triggerError('server', this);
+						exports.triggerError('server', this);
+						Ti.API.info(e);
 					},
 					autoRedirect: false,
 					validatesSecureCertificate: false
@@ -103,27 +134,24 @@
 						});
 					});
 				});
-
-				function triggerError(type, xhr) {
-					//Ti.API.debug(type + ' failed, error ' + xhr.getStatus());
-
-					var alert_error = Ti.UI.createAlertDialog({
-						title: I('main.skinUpload.error.title'),
-						message: I('main.skinUpload.error.' + type)
-					});
-
-					alert_error.show();
-
-					prog_upload.setMessage(I('main.progressBar.' + type + 'Fail'));
-					prog_upload.setValue(0);
-
-					setTimeout(function() {
-						win.setTitleControl(null);
-					}, 1000);
-				}
-
 			}
 		});
+	}
+	
+	exports.triggerError = function(type, xhr) {
+		var alert_error = Ti.UI.createAlertDialog({
+			title: I('main.skinUpload.error.title'),
+			message: I('main.skinUpload.error.' + type)
+		});
+
+		alert_error.show();
+
+		prog_upload.setMessage(I('main.progressBar.' + type + 'Fail'));
+		prog_upload.setValue(0);
+
+		setTimeout(function() {
+			win.setTitleControl(null);
+		}, 1000);
 	}
 
 })(); 
