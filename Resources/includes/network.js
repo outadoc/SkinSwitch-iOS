@@ -55,6 +55,7 @@
 														ipad_win: ipad_win,
 														title: I('addProcess.process.challenge.title'),
 														backgroundImage: Utils.getBGImage(),
+														backgroundRepeat: true,
 														barColor: Utils.getNavColor()
 													});
 													
