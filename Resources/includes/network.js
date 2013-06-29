@@ -62,6 +62,11 @@
 													
 													win.setTitleControl(null);
 													
+													win_answer.addEventListener('close', function() {
+														//freeing the memory
+														win_answer = null;
+													});
+													
 													win_answer.open({
 														modal: true
 													});
