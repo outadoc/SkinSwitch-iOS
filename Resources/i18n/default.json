@@ -35,7 +35,8 @@
 				"title":"Upload error",
 				"login":"Could not login to minecraft.net. Please check your login and password in the settings.",
 				"server":"Could not reach minecraft.net. The site may be down. Check http:\/\/help.mojang.com and retry later.",
-				"upload":"Could not upload the skin to minecraft.net. Please try again later."
+				"upload":"Could not upload the skin to minecraft.net. Please try again later.",
+				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
 			}
 		}
 	},
