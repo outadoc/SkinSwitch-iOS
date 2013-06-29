@@ -12,10 +12,10 @@
 		style: Titanium.UI.iPhone.ProgressBarStyle.BAR
 	});
 
-	exports.uploadSkin = function(id, name) {
+	exports.uploadSkin = function(skinData, ipad_win) {
 		var dialog_wear = Ti.UI.createAlertDialog({
 			title: I('main.skinUpload.confirm.title'),
-			message: I('main.skinUpload.confirm.message', name),
+			message: I('main.skinUpload.confirm.message', skinData.name),
 			buttonNames: [I('main.skinUpload.confirm.cancel'), I('main.skinUpload.confirm.okay')],
 			cancel: 0
 		});
@@ -29,16 +29,13 @@
 
 				var xhr_login = Ti.Network.createHTTPClient({
 					onload: function() {
-						//Ti.API.info('login succeeded, status code ' + this.getStatus());
-						//Ti.API.info('page tried to redirect to ' + this.getResponseHeader('Location'));
-
+						//when login xhr loaded
 						if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
 							exports.triggerError('login', this);
 						} else {
 							var xhr_skin = Ti.Network.createHTTPClient({
 								onload: function() {
 									//when skin upload xhr loaded
-
 									if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
 										//login error
 										exports.triggerError('login', this);
@@ -55,6 +52,7 @@
 														question: question,
 														questionID: questionID,
 														triggerError: exports.triggerError,
+														ipad_win: ipad_win,
 														title: 'Identity Confirmation',
 														backgroundImage: Utils.getBGImage(),
 														barColor: Utils.getNavColor()
@@ -67,9 +65,13 @@
 														win_answer = null;
 													});
 													
-													win_answer.open({
-														modal: true
-													});
+													if(Utils.isiPad()) {
+														ipad_win.masterGroup.open(win_answer);
+													} else {
+														win_answer.open({
+															modal: true
+														});
+													}
 												} catch(e) {
 													exports.triggerError('challenge');
 												}
@@ -106,7 +108,7 @@
 							xhr_skin.setRequestHeader('Content-Type', 'image/png');
 
 							xhr_skin.send({
-								skin: Ti.Filesystem.getFile(Utils.getSkinsDir() + id + '/skin.png').read()
+								skin: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinData.id + '/skin.png').read()
 							});
 						}
 					},

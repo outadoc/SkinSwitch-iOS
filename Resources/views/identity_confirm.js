@@ -52,16 +52,18 @@ container.add(lbl_info);
 
 win.add(container);
 
-var b_cancel = Ti.UI.createButton({
-	title: I('addProcess.process.challenge.cancel'),
-	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
-});
-
-b_cancel.addEventListener('click', function() {
-	win.close();
-});
-
-win.setLeftNavButton(b_cancel);
+if(!Utils.isiPad()) {
+	var b_cancel = Ti.UI.createButton({
+		title: I('addProcess.process.challenge.cancel'),
+		style: Titanium.UI.iPhone.SystemButtonStyle.DONE
+	});
+	
+	b_cancel.addEventListener('click', function() {
+		win.close();
+	});
+	
+	win.setLeftNavButton(b_cancel);
+}
 
 var b_continue = Ti.UI.createButton({
 	title: I('addProcess.process.challenge.continue')
@@ -83,10 +85,14 @@ b_continue.addEventListener('click', function() {
 				alert(responseObj.error);
 			}
 			
-			win.close();
+			if(Utils.isiPad()) {
+				win.ipad_win.masterGroup.close(win);
+			} else {
+				win.close();
+			}
 		},
 		onerror: function(e) {
-			win.triggerError('challenge')
+			win.triggerError('challenge');
 		},
 		autoRedirect: false
 	});

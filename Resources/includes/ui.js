@@ -69,7 +69,7 @@
 				headPreview.animate(anim_normal);
 				
 				if(!wasCanceled) {
-					Network.uploadSkin(skinData.id, skinData.name);
+					Network.uploadSkin(skinData, ipad_win);
 				}
 				
 				wasCanceled = false;
