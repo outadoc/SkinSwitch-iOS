@@ -113,6 +113,12 @@
 				wasCanceled = true;
 				startTimestamp = 0;
 			});
+			
+			backgroundFrame.addEventListener('touchcancel', function(e) {
+				headPreview.animate(anim_normal);
+				wasCanceled = true;
+				startTimestamp = 0;
+			});
 		} else {
 			backgroundFrame.addEventListener('click', function(e) {
 				if(Utils.isiPad()) {
