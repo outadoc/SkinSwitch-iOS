@@ -49,7 +49,7 @@ b_credits.addEventListener('click', function() {
 	var credits_win = Ti.UI.createWindow({
 		url: 'credits.js',
 		title: I('credits.title'),
-		backgroundRepeat: Utils.isiPad(),
+		backgroundRepeat: true,
 		barColor: Utils.getNavColor(),
 		backgroundImage: Utils.getBGImage()
 	});

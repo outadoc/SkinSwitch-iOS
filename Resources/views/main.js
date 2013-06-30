@@ -68,7 +68,8 @@ b_add.addEventListener('click', function(e) {
 			url: 'add_process/info.js',
 			title: I('addProcess.skinInfo.title'),
 			backgroundImage: Utils.getBGImage(),
-			barColor: Utils.getNavColor()
+			barColor: Utils.getNavColor(),
+			backgroundRepeat: true
 		});
 	
 		var container = Ti.UI.createWindow({
@@ -107,8 +108,8 @@ b_settings.addEventListener('click', function() {
 		var win_settings = Ti.UI.createWindow({
 			title: I('settings.title'),
 			backgroundImage: Utils.getBGImage(),
-			backgroundRepeat: true,
 			barColor: Utils.getNavColor(),
+			backgroundRepeat: true,
 			url: 'settings.js',
 			masterGroup: win.masterGroup
 		});
@@ -124,6 +125,7 @@ b_settings.addEventListener('click', function() {
 			title: I('settings.title'),
 			barColor: Utils.getNavColor(),
 			backgroundImage: Utils.getBGImage(),
+			backgroundRepeat: true,
 			url: 'settings.js'
 		});
 	

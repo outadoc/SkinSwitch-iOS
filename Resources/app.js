@@ -42,7 +42,8 @@ function startApp() {
 			tabBarHidden: true,
 			title: Ti.App.getName(),
 			backgroundImage: Utils.getBGImage(),
-			barColor: Utils.getNavColor()
+			barColor: Utils.getNavColor(),
+			backgroundRepeat: true
 		});
 
 		var navGroup = Ti.UI.iPhone.createNavigationGroup({

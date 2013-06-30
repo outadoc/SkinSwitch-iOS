@@ -79,7 +79,7 @@ b_next.addEventListener('click', function(e) {
 				url: 'processing.js',
 				backgroundImage: Utils.getBGImage(),
 				barColor: Utils.getNavColor(),
-				backgroundRepeat: Utils.isiPad(),
+				backgroundRepeat: true,
 
 				skinUrl: url,
 				skinName: win.skinName,

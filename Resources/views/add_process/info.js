@@ -49,7 +49,7 @@ b_next.addEventListener('click', function(e) {
 					backButtonTitle: I('addProcess.skinInfo.shortTitle'),
 					backgroundImage: Utils.getBGImage(),
 					barColor: Utils.getNavColor(),
-					backgroundRepeat: Utils.isiPad(),
+					backgroundRepeat: true,
 					url: 'url_select.js'
 				});
 

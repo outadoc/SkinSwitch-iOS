@@ -12,8 +12,6 @@
 	exports.getBGImage = function() {
 		if(exports.isiPad()) {
 			return '/img/bg_ipad.png';
-		} else if(exports.isiPhone() && Ti.Platform.displayCaps.platformHeight > 480) {
-			return '/img/bg_tall.png';
 		} else {
 			return '/img/bg.png';
 		}

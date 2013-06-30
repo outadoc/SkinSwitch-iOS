@@ -142,8 +142,10 @@
 						url: 'add_process/info.js',
 						title: I('addProcess.skinInfo.title'),
 						backgroundImage: Utils.getBGImage(),
-						container: container,
-						barColor: Utils.getNavColor()
+						barColor: Utils.getNavColor(),
+						backgroundRepeat: true,
+						container: container
+						
 					});
 				
 					var group = Ti.UI.iPhone.createNavigationGroup({
@@ -410,7 +412,8 @@
 				skinIDToEdit: skinData.id,
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getBGImage(),
-				barColor: Utils.getNavColor()
+				barColor: Utils.getNavColor(),
+				backgroundRepeat: true
 			});
 
 			edit_win.addEventListener('close', updateSkinsList);
@@ -544,8 +547,8 @@
 				url: '/views/add_process/info.js',
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getBGImage(),
-				backgroundRepeat: true,
 				barColor: Utils.getNavColor(),
+				backgroundRepeat: true,
 				masterGroup: win.masterGroup,
 				skinIDToEdit: skinData.id
 			});
