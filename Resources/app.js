@@ -36,29 +36,7 @@ try {
 function startApp() {
 	Database.initializeDatabase();
 
-	if(Utils.isiPhone()) {
-		var mainWin = Ti.UI.createWindow({
-			url: 'views/main.js',
-			tabBarHidden: true,
-			title: Ti.App.getName(),
-			backgroundImage: Utils.getBGImage(),
-			barColor: Utils.getNavColor(),
-			backgroundRepeat: true
-		});
-
-		var navGroup = Ti.UI.iPhone.createNavigationGroup({
-			window: mainWin
-		});
-
-		var container = Ti.UI.createWindow({
-			navBarHidden: true
-		});
-
-		container.add(navGroup);
-		container.open({
-			modal: false
-		});
-	} else if(Utils.isiPad()) {
+	if(Utils.isiPad()) {
 		Ti.include('/includes/lib/json.i18n.js');
 		
 		var detailWin = Ti.UI.createWindow({
@@ -151,6 +129,27 @@ function startApp() {
 
 			return view;
 		}
+	} else {
+		var mainWin = Ti.UI.createWindow({
+			url: 'views/main.js',
+			tabBarHidden: true,
+			title: Ti.App.getName(),
+			backgroundImage: Utils.getBGImage(),
+			barColor: Utils.getNavColor(),
+			backgroundRepeat: true
+		});
 
+		var navGroup = Ti.UI.iPhone.createNavigationGroup({
+			window: mainWin
+		});
+
+		var container = Ti.UI.createWindow({
+			navBarHidden: true
+		});
+
+		container.add(navGroup);
+		container.open({
+			modal: false
+		});
 	}
 }
