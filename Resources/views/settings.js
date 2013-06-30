@@ -2,7 +2,7 @@ Ti.include('/includes/lib/json.i18n.js');
 
 var win = Ti.UI.currentWindow;
 var Utils = require('/includes/utils');
-var keychain = require('clearlyinnovative.keychain');
+var Keychain = require('clearlyinnovative.keychain');
 
 function getTextFieldRow(text, hint, isPassword) {
 	var row = Ti.UI.createTableViewRow({
@@ -89,18 +89,6 @@ if(Utils.isiPhone()) {
 	win.setRightNavButton(b_credits);
 }
 
-var tableView = Ti.UI.createTableView({
-	data: [getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●', true)],
-	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
-	backgroundColor: 'transparent',
-	rowBackgroundColor: 'white',
-	scrollable: false,
-	rowHeight: 45,
-	top: 30
-});
-
-win.add(tableView);
-
 var lbl_header = Ti.UI.createLabel({
 	text: I('settings.header'),
 	color: '#F8F8F8',
@@ -114,11 +102,23 @@ var lbl_header = Ti.UI.createLabel({
 		y: 1
 	},
 	top: 5,
-	left: (Utils.isiPad()) ? '7%' : 15,
-	height: (Utils.isiPad()) ? Ti.UI.SIZE : 30
+	left: 15,
+	height: Ti.UI.SIZE
 });
 
 win.add(lbl_header);
+
+var tableView = Ti.UI.createTableView({
+	data: [getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●', true)],
+	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
+	backgroundColor: 'transparent',
+	rowBackgroundColor: 'white',
+	scrollable: false,
+	rowHeight: 45,
+	height: 120
+});
+
+win.add(tableView);
 
 var lbl_footer = Ti.UI.createLabel({
 	text: I('settings.footer.migratedAccount') + '\n\n' + I('settings.footer.privacy'),
@@ -131,23 +131,23 @@ var lbl_footer = Ti.UI.createLabel({
 		x: 0,
 		y: 1
 	},
-	top: (Utils.isiPad()) ? 155 : 145,
-	left: (Utils.isiPad()) ? '7%' : 15,
-	right: (Utils.isiPad()) ? '7%' : 15,
+	top: 15,
+	left: 15,
+	right: 15,
 	height: Ti.UI.SIZE
 });
 
 win.add(lbl_footer);
 
 win.addEventListener('focus', function() {
-	keychain.getForKey({
+	Keychain.getForKey({
 		key: 'username',
 		serviceName: Ti.App.getId()
 	}, function(data) {
 		tableView.getData()[0].getRows()[0].getChildren()[1].setValue(data.value);
 	});
 
-	keychain.getForKey({
+	Keychain.getForKey({
 		key: 'password',
 		serviceName: Ti.App.getId()
 	}, function(data) {
@@ -156,14 +156,14 @@ win.addEventListener('focus', function() {
 });
 
 function saveCredentials() {
-	keychain.setForKey({
+	Keychain.setForKey({
 		key: 'username',
 		value: tableView.getData()[0].getRows()[0].getChildren()[1].getValue(),
 		serviceName: Ti.App.getId()
 	}, function() {
 	});
 
-	keychain.setForKey({
+	Keychain.setForKey({
 		key: 'password',
 		value: tableView.getData()[0].getRows()[1].getChildren()[1].getValue(),
 		serviceName: Ti.App.getId()

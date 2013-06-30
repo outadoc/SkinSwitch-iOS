@@ -117,6 +117,7 @@ b_settings.addEventListener('click', function() {
 			backgroundImage: Utils.getBGImage(),
 			barColor: Utils.getNavColor(),
 			backgroundRepeat: true,
+			layout: 'vertical',
 			url: 'settings.js',
 			masterGroup: win.masterGroup
 		});
@@ -134,7 +135,8 @@ b_settings.addEventListener('click', function() {
 			barColor: Utils.getNavColor(),
 			backgroundImage: Utils.getBGImage(),
 			backgroundRepeat: true,
-			url: 'settings.js'
+			url: 'settings.js',
+			layout: 'vertical'
 		});
 	
 		var container = Ti.UI.createWindow({
