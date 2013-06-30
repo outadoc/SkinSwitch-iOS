@@ -589,8 +589,8 @@
 	}
 	
 	exports.getSkinPreview = function(skinID) {
-		var height = (Utils.isiPad()) ? 300 : 170;
-		var width = (Utils.isiPad()) ? 150 : 85;
+		var height = (Utils.isiPad()) ? 300 : 170,
+			width = (Utils.isiPad()) ? 150 : 85;
 		
 		var view_skin = Ti.UI.createImageView({
 			height: height,
@@ -618,7 +618,10 @@
 			top: 0,
 			left: 0
 		});
-
+		
+		//fix bug where you wouldn't be able to click?
+		view_skin.addEventListener('click', function(e) {});
+		
 		img_skin_front.addEventListener('click', function() {
 			view_skin.animate({
 				view: img_skin_back,
