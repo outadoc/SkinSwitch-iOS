@@ -82,6 +82,7 @@ b_next.addEventListener('click', function(e) {
 			db.close();
 			
 			if(Utils.isiPad()) {
+				win.updateSkinsList();
 				win.masterGroup.close(win, {
 					animated: true
 				});

@@ -543,18 +543,19 @@
 		});
 
 		b_edit.addEventListener('click', function() {
-			var info_win = Ti.UI.createWindow({
+			var win_info = Ti.UI.createWindow({
 				url: '/views/add_process/info.js',
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getBGImage(),
 				barColor: Utils.getNavColor(),
 				backgroundRepeat: true,
 				masterGroup: win.masterGroup,
-				skinIDToEdit: skinData.id
+				skinIDToEdit: skinData.id,
+				updateSkinsList: updateSkinsList
 			});
-
+			
 			Utils.closeiPadSkinDetails(win);
-			win.masterGroup.open(info_win);
+			win.masterGroup.open(win_info);
 		});
 
 		win.detailWin.remove(win.detailContent);
