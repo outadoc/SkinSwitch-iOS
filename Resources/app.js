@@ -60,7 +60,7 @@ function startApp() {
 		});
 	} else if(Utils.isiPad()) {
 		Ti.include('/includes/lib/json.i18n.js');
-
+		
 		var detailWin = Ti.UI.createWindow({
 			title: I('main.skinDetails.title'),
 			barColor: Utils.getNavColor(),
@@ -69,15 +69,8 @@ function startApp() {
 
 		var initialInfoView = getInitialInfoView();
 		var content = initialInfoView;
+		
 		detailWin.add(content);
-
-		var iad = Ti.UI.iOS.createAdView({
-			height: Ti.UI.SIZE,
-			width: Ti.UI.FIT,
-			bottom: 0
-		});
-
-		detailWin.add(iad);
 
 		var masterWin = Ti.UI.createWindow({
 			url: 'views/main.js',
@@ -99,6 +92,34 @@ function startApp() {
 			}),
 			showMasterInPortrait: true
 		});
+		
+		var adView = Ti.UI.iOS.createAdView({
+			height: Ti.UI.SIZE,
+			width: Ti.UI.FILL,
+			bottom: 0
+		});
+		
+		adView.addEventListener('load', function(e) {
+			var anim = {
+				bottom: 65,
+				duration: 200
+			}
+			
+			detailWin.animate(anim);
+			masterWin.animate(anim);
+		});
+		
+		adView.addEventListener('error', function(e) {
+			var anim = {
+				bottom: 0,
+				duration: 200
+			}
+			
+			detailWin.animate(anim);
+			masterWin.animate(anim);
+		});
+	
+		splitWin.add(adView);
 
 		splitWin.open();
 
