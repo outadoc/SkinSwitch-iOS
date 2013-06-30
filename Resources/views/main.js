@@ -183,7 +183,8 @@ if(!Utils.isiPad()) {
 		
 		if(skinsShowcase != null) {
 			skinsShowcase.animate({
-				bottom: 50
+				bottom: 50,
+				duration: 200
 			});
 		}
 	});
@@ -193,7 +194,8 @@ if(!Utils.isiPad()) {
 		
 		if(skinsShowcase != null) {
 			skinsShowcase.animate({
-				bottom: 0
+				bottom: 0,
+				duration: 200
 			});
 		}
 	});
