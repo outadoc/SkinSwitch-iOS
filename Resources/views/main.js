@@ -62,6 +62,7 @@ b_add.addEventListener('click', function(e) {
 			info_win = null;
 		});
 		
+		Utils.closeiPadSkinDetails(win);
 		win.masterGroup.open(info_win);
 	} else {
 		var win_add = Ti.UI.createWindow({
@@ -119,6 +120,7 @@ b_settings.addEventListener('click', function() {
 			win_settings = null;
 		});
 		
+		Utils.closeiPadSkinDetails(win);
 		win.masterGroup.open(win_settings);
 	} else {
 		var win_settings = Ti.UI.createWindow({
