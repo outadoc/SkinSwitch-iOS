@@ -101,7 +101,7 @@ var lbl_header = Ti.UI.createLabel({
 		x: 0,
 		y: 1
 	},
-	top: 5,
+	top: 15,
 	left: 15,
 	height: Ti.UI.SIZE
 });
