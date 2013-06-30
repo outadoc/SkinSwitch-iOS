@@ -6,14 +6,17 @@ var keychain = require('clearlyinnovative.keychain');
 
 function getTextFieldRow(text, hint, isPassword) {
 	var row = Ti.UI.createTableViewRow({
-		selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
+		selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
+		layout: 'horizontal'
 	});
 	
 	var rowText = Ti.UI.createLabel({
 		text: text,
 		left: 10,
-		width: 140,
-		height: 20,
+		width: Ti.UI.SIZE,
+		top: 5,
+		bottom: 5,
+		height: 30,
 		font: {
 			fontWeight: 'bold',
 			fontSize: 17
@@ -21,13 +24,22 @@ function getTextFieldRow(text, hint, isPassword) {
 	});
 	
 	row.add(rowText);
+	
+	rowText.addEventListener('postlayout', function() {
+		if(rowText.rect.width >= 120) {
+			rowText.width = 120;
+		}
+	});
 
 	var textfield = Ti.UI.createTextField({
 		color: '#336699',
-		height: 35,
-		top: 4,
-		right: 5,
-		width: 140,
+		right: 10,
+		left: 5,
+		top: 5,
+		bottom: 5,
+		height: 30,
+		width: Ti.UI.FILL,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 		autocorrect: false,
 		borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 		returnKeyType: Ti.UI.RETURNKEY_NEXT,
