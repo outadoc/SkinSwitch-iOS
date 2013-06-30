@@ -26,8 +26,8 @@ function getTextFieldRow(text, hint, isPassword) {
 	row.add(rowText);
 	
 	rowText.addEventListener('postlayout', function() {
-		if(rowText.rect.width >= 120) {
-			rowText.width = 120;
+		if(rowText.rect.width >= 140) {
+			rowText.width = 140;
 		}
 	});
 
