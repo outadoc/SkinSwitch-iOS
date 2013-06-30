@@ -225,6 +225,10 @@
 			}
 		});
 		
+		win.addEventListener('close', function() {
+			win = null;
+		});
+		
 		var containerView = Ti.UI.createView({
 			height: 355,
 			width: 300,

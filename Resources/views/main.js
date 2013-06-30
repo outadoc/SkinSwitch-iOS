@@ -57,28 +57,41 @@ b_add.addEventListener('click', function(e) {
 			masterGroup: win.masterGroup
 		});
 
-		info_win.addEventListener('close', updateSkinsList);
+		info_win.addEventListener('close', function() {
+			updateSkinsList();
+			info_win = null;
+		});
+		
 		win.masterGroup.open(info_win);
 	} else {
-		var container = Ti.UI.createWindow({
-			navBarHidden: true
-		});
-	
-		var info_win = Ti.UI.createWindow({
+		var win_add = Ti.UI.createWindow({
 			url: 'add_process/info.js',
 			title: I('addProcess.skinInfo.title'),
 			backgroundImage: Utils.getBGImage(),
-			container: container,
 			barColor: Utils.getNavColor()
 		});
 	
-		var group = Ti.UI.iPhone.createNavigationGroup({
-			window: info_win
+		var container = Ti.UI.createWindow({
+			navBarHidden: true
+		});
+		
+		var navGroup = Ti.UI.iPhone.createNavigationGroup({
+			window: win_add
 		});
 	
-		info_win.navGroup = group;
-		container.add(group);
-		container.addEventListener('close', updateSkinsList);
+		container.add(navGroup);
+		
+		container.addEventListener('close', function() {
+			updateSkinsList();
+			
+			container = null;
+			navGroup = null;
+			win_add = null;
+		});
+	
+		win_add.navGroup = navGroup;
+		win_add.container = container;
+	
 		container.open({
 			modal: true
 		});
@@ -100,7 +113,11 @@ b_settings.addEventListener('click', function() {
 			masterGroup: win.masterGroup
 		});
 
-		win_settings.addEventListener('close', updateSkinsList);
+		win_settings.addEventListener('close', function() {
+			updateSkinsList();
+			win_settings = null;
+		});
+		
 		win.masterGroup.open(win_settings);
 	} else {
 		var win_settings = Ti.UI.createWindow({
@@ -114,13 +131,19 @@ b_settings.addEventListener('click', function() {
 			navBarHidden: true
 		});
 		
-		container.addEventListener('close', updateSkinsList);
-		
 		var navGroup = Ti.UI.iPhone.createNavigationGroup({
 			window: win_settings
 		});
 	
 		container.add(navGroup);
+		
+		container.addEventListener('close', function() {
+			updateSkinsList();
+			
+			container = null;
+			navGroup = null;
+			win_settings = null;
+		});
 	
 		win_settings.navGroup = navGroup;
 		win_settings.container = container;
