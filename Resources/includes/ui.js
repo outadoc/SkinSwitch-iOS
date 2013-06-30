@@ -179,13 +179,11 @@
 			layout: 'horizontal',
 		  	left: 13,
 		  	top: 13,
-		  	bottom: 50,
+		  	bottom: 13,
 		  	right: 13,
 		  	height: Ti.UI.FILL
 		});
-		
-		skinsShowcase.add(container);
-		
+				
 		if(Utils.isiPad()) {
 			container.addEventListener('click', function(e) {
 				if(e.source == container) {
