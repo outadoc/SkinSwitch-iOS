@@ -233,9 +233,9 @@
 			height: 355,
 			width: 300,
 			backgroundColor: '#f2f2f2',
-			borderWidth: 1,
+			borderWidth: 2,
 			borderColor: 'gray',
-			borderRadius: 3,
+			borderRadius: 10,
 			layout: 'vertical'
 		});
 		
