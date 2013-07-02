@@ -44,7 +44,16 @@ function getSkinsFromSearch(match) {
 
 function getLatestSkins(match) {
 	getRequestResults({
-		method: 'getLastestSkins',
+		method: 'getRandomSkins',
+		max: 10,
+		start: 0
+	});
+}
+
+function getSkin(match) {
+	getRequestResults({
+		method: 'getSkin',
+		base64: false,
 		max: 10,
 		start: 0
 	});
@@ -84,20 +93,54 @@ function getSingleSkinCell(skinData) {
 		top: 30,
 		bottom: 30,
 		borderRadius: 7,
-		backgroundColor: 'white'
+		backgroundColor: 'white',
+		skinData: skinData,
+		layout: 'vertical'
 	});
 	
 	var lbl_title = Ti.UI.createLabel({
 		text: skinData.title,
 		left: 10,
 		right: 10,
-		bottom: 5,
+		top: 5,
 		height: 30,
-		color: '#303030',
-		textAlign: 'center'
+		color: '#4f4f4f',
+		textAlign: 'center',
+		font: {
+			fontSize: 19
+		}
 	});
 	
 	view.add(lbl_title);
 	
+	var img = Ti.UI.createImageView({
+		top: 20
+	});
+	
+	view.img = img;
+	view.add(img);
+	
+	loadSkinPreview({
+		view: view
+	});
+	
 	return view;
+}
+
+containerView.addEventListener('scrollend', loadSkinPreview);
+
+function loadSkinPreview(e) {
+	if(e.view.img.image == null) {
+		var xhr = Ti.Network.createHTTPClient({
+			onload: function() {
+				if(this.getResponseData() != null && this.responseText.error == null) {
+					e.view.img.setImage(this.getResponseData());
+				}
+			},
+			cache: true
+		});
+		
+		xhr.open('GET', 'http://apps.outadoc.fr/skinswitch/skinpreview.php?url=' + encodeURIComponent('http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=false'));
+		xhr.send();
+	}
 }
