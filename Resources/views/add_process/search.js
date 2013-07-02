@@ -11,11 +11,15 @@ var searchBar = Ti.UI.createSearchBar({
 
 win.add(searchBar);
 
-var tableView = Ti.UI.createTableView({
-	height: Ti.UI.FILL
+var containerView = Ti.UI.createScrollableView({
+	height: Ti.UI.FILL,
+	width: '80%',
+	showPagingControl: true,
+	clipViews: false,
+	pagingControlColor: 'transparent'
 });
 
-win.add(tableView);
+win.add(containerView);
 
 searchBar.addEventListener('return', function(e) {
 	e.source.blur();
@@ -57,15 +61,10 @@ function getRequestResults(params) {
 				if(resultArray.error != null) {
 					alert(resultArray.error);
 				} else {
-					tableView.setData([]);
-					
 					for(var i = 0; i < resultArray.length; i++) {
 						Ti.API.info(resultArray[i]);
 						
-						tableView.appendRow({
-							title: resultArray[i].title,
-							skinData: resultArray[i]
-						});
+						containerView.addView(getSingleSkinCell(resultArray[i]));
 					}
 				}
 			} catch(e) {
@@ -76,4 +75,29 @@ function getRequestResults(params) {
 	
 	xhr.open('POST', 'http://skinmanager.fr.nf/json/');
 	xhr.send(params);
+}
+
+function getSingleSkinCell(skinData) {
+	var view = Ti.UI.createView({
+		left: 10,
+		right: 10,
+		top: 30,
+		bottom: 30,
+		borderRadius: 7,
+		backgroundColor: 'white'
+	});
+	
+	var lbl_title = Ti.UI.createLabel({
+		text: skinData.title,
+		left: 10,
+		right: 10,
+		bottom: 5,
+		height: 30,
+		color: '#303030',
+		textAlign: 'center'
+	});
+	
+	view.add(lbl_title);
+	
+	return view;
 }
