@@ -38,8 +38,8 @@ b_next.addEventListener('click', function(e) {
 			//if we're adding a new skin to the database, ask for more info
 			var optionDialog = Ti.UI.createOptionDialog({
 				title: I('addProcess.skinInfo.method.title'),
-				options: [I('addProcess.skinInfo.method.pseudo'), I('addProcess.skinInfo.method.url'), I('addProcess.skinInfo.method.cancel')],
-				cancel: 2
+				options: [I('addProcess.skinInfo.method.search'), I('addProcess.skinInfo.method.pseudo'), I('addProcess.skinInfo.method.url'), I('addProcess.skinInfo.method.cancel')],
+				cancel: 3
 			});
 
 			optionDialog.addEventListener('click', function(e) {
@@ -50,17 +50,23 @@ b_next.addEventListener('click', function(e) {
 					backgroundImage: Utils.getBGImage(),
 					barColor: Utils.getNavColor(),
 					backgroundRepeat: true,
-					url: 'url_select.js'
+					layout: 'vertical'
 				});
 
 				if(e.index == 0 || e.index == 1) {
 					if(e.index == 0) {
+						win_next.from = 'search';
+						win_next.setTitle(I('addProcess.skinInfo.method.search'));
+						win_next.setUrl('search.js');
+					} else if(e.index == 1) {
 						win_next.from = 'pseudo';
 						win_next.setTitle(I('addProcess.skinInfo.method.pseudo'));
-					} else if(e.index == 1) {
+						win_next.setUrl('url_select.js');
+					} else if(e.index == 2) {
 						win_next.from = 'url';
 						win_next.setTitle(I('addProcess.skinInfo.method.url'));
-					}
+						win_next.setUrl('url_select.js');
+					} 
 
 					if(Utils.isiPad()) {
 						win_next.masterGroup = win.masterGroup;

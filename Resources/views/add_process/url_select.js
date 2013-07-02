@@ -4,17 +4,14 @@ var win = Ti.UI.currentWindow;
 var Utils = require('/includes/utils');
 
 var view = Ti.UI.createView({
-	height: Ti.UI.SIZE,
-	top: (Utils.isiPad()) ? 30 : (((Ti.Platform.displayCaps.platformHeight - 70 - 215) / 2) - (100 / 2))
+	height: Ti.UI.SIZE
 });
 
 win.add(view);
 
 var lbl_url = Ti.UI.createLabel({
-	top: 0,
 	left: 20,
 	width: 280,
-	height: 60,
 	color: 'white',
 	shadowColor: 'darkGray',
 	shadowOffset: {
@@ -36,7 +33,7 @@ view.add(lbl_url);
 
 var txtfield_url = Ti.UI.createTextField({
 	height: 35,
-	top: lbl_url.getTop() + lbl_url.getHeight() + 10,
+	top: 10,
 	left: 20,
 	width: 280,
 	autocorrect: false,
