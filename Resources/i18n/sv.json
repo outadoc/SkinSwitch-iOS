@@ -1,83 +1,94 @@
 {
 	"main":{
-		"searchHint":"S\u00f6k bland dina skin...",
 		"skinList":"skin lista",
-		"addSkin":"L\u00e4gg till ett skin",
-		"editSettings":"\u00e4ndra inst\u00e4llningar",
+		"addSkin":"Lägg till ett skin",
+		"editSettings":"ändra inställningar",
 		"skinDetails":{
 			"title":"skin detaljer",
-			"description":"F\u00f6rklaring",
+			"description":"Förklaring",
 			"creation":"Skapades den",
-			"wear":"Anv\u00e4nd",
-			"close":"St\u00e4ng"
+			"wear":"Använd",
+			"close":"Stäng"
 		},
 		"noSelectedSkin":"Inget skin markerat.",
-		"noContent":{
-			"title":"Inget skin har lagts till.",
-			"help":"F\u00f6r att l\u00e4gga till ett skin, tryck p\u00e5 +-et."
+		"skinDelete":{
+			"title":"Bekräfta radering",
+			"message":"Vill du verkligen ta bort \"%s\"?",
+			"cancel":"Neeeeeeeej!",
+			"okay":"Ja, ta bort det!"
 		},
-		"skins":"%s skins",
 		"progressBar":{
 			"login":"Loggar in...",
 			"upload":"Laddar upp...",
 			"loginFail":"Inloggningen misslyckades",
 			"uploadFail":"Uppladdningen misslyckades",
+			"challengeFail":"Challenge failed",
 			"success":"Uppladningen lyckades!"
 		},
 		"skinUpload":{
 			"confirm":{
 				"title":"byt skin?",
-				"message":"Vill du verkligen ers\u00e4tta ditt nuvarande skin med\"%s\"?",
+				"message":"Vill du verkligen ersätta ditt nuvarande skin med\"%s\"?",
 				"cancel":"Nej",
 				"okay":"ja"
 			},
 			"error":{
 				"title":"Uppladningsfel...",
-				"login":"Kunde inte logga in p\u00e5 minecraft.net. V\u00e4nligen kontrollera ditt anv\u00e4ndarnamn och l\u00f6senord i inst\u00e4llningarna.",
-				"server":"Inte kunde n\u00e5 minecraft.net. Hemsidan kan vara nere. Kontrollera om http:\/\/help.mojang.com fungerar och f\u00f6rs\u00f6k igen senare.",
-				"upload":"Det gick inte att ladda upp skinet till minecraft.net. F\u00f6rs\u00f6k igen senare."
+				"login":"Kunde inte logga in på minecraft.net. Vänligen kontrollera ditt användarnamn och lösenord i inställningarna.",
+				"server":"Inte kunde nå minecraft.net. Hemsidan kan vara nere. Kontrollera om http:\/\/help.mojang.com fungerar och försök igen senare.",
+				"upload":"Det gick inte att ladda upp skinet till minecraft.net. Försök igen senare.",
+				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
 			}
 		}
 	},
 	"settings":{
-		"title":"Inst\u00e4llningar",
-		"username":"Anv\u00e4ndarnamn",
-		"password":"L\u00f6senord",
+		"title":"Inställningar",
+		"username":"Användarnamn",
+		"password":"Lösenord",
 		"header":"Minecraft.net inloggningsuppgifter",
 		"footer":{
-			"migratedAccount":"Om ditt konto har migrerats till ett Mojangkonto, m\u00e5ste du anv\u00e4nda din e-postadress ist\u00e4llet f\u00f6r ditt anv\u00e4ndarnamn p\u00e5 Minecraft.",
-			"privacy":"Obs: vi kommer aldrig att lagra eller anv\u00e4nda n\u00e5gon av din information f\u00f6r n\u00e5got annat \u00e4n att byta din Minecraft skins. Din kontoinformation lagras s\u00e4kert i iOS s\u00e4kerhet."
+			"migratedAccount":"Om ditt konto har migrerats till ett Mojangkonto, måste du använda din e-postadress istället för ditt användarnamn på Minecraft.",
+			"privacy":"Obs: vi kommer aldrig att lagra eller använda någon av din information för något annat än att byta din Minecraft skins. Din kontoinformation lagras säkert i iOS säkerhet."
 		}
 	},
 	"addProcess":{
 		"skinInfo":{
 			"title":"Skin Information",
 			"shortTitle":"Skin info",
-			"name":"Skin namn",
-			"nameHint":"Mitt awesome skin",
-			"description":"F\u00f6rklaring",
-			"error":{
-				"name":"Du m\u00e5ste d\u00f6pa skinet."
-			},
+			"name":"Skin-namn",
+			"nameHint":"Mitt häftiga skin-namn",
+			"description":"Förklaring",
 			"method":{
-				"title":"L\u00e4gg till skinet...",
-				"pseudo":"Fr\u00e5n en minecraft figur",
-				"url":"Fr\u00e5n en l\u00e4nk",
+				"title":"Lägg till skinet...",
+				"search":"By searching the Web",
+				"pseudo":"Från en minecraft figur",
+				"url":"Från en länk",
 				"cancel":"Avbryt"
 			}
 		},
 		"urlSelect":{
-			"urlTitle":"Klistra in eller skriv l\u00e4nken till skinet h\u00e4r (det m\u00e5ste vara en PNG-fil):",
-			"pseudoTitle":"Skriv ett Minecraft anv\u00e4ndarnamn h\u00e4r (skiftl\u00e4gesk\u00e4nslig):",
-			"blankField":"Det h\u00e4r f\u00e4ltet f\u00e5r inte vara tomt.",
-			"invalidUrl":"L\u00e4nken \u00e4r ogiltig (det m\u00e5ste vara en PNG-fil)."
+			"urlTitle":"Klistra in eller skriv länken till skinet här (det måste vara en PNG-fil):",
+			"pseudoTitle":"Skriv ett Minecraft användarnamn här (skiftlägeskänslig):",
+			"invalidUrl":"Länken är ogiltig (det måste vara en PNG-fil)."
+		},
+		"search":{
+			"select":"Select this skin",
+			"searchHint":"Search on MC Network...",
+			"indicator":{
+				"searchResults":"Search Results for: %s",
+				"noResults":"No results for: %s",
+				"random":"Random Skins"
+			},
+			"error":{
+				"network":"Couldn't load your search results. Check your connexion, and retry later."
+			}
 		},
 		"process":{
 			"title":"Bearbetar...",
 			"progress":{
 				"initial":"Reticulating Splines...",
-				"skin":"H\u00e4mtar...",
-				"preview":"H\u00e4mtar f\u00f6rhandsgranskning av skin...",
+				"skin":"Hämtar...",
+				"preview":"Hämtar förhandsgranskning av skin...",
 				"database":"Registrerar skinet idatabasen...",
 				"success":"Skinnet tilllagt! :)",
 				"fail":"Misslyckades :("
@@ -85,35 +96,42 @@
 			"error":{
 				"skin":"Ett fel uppstod. Avbryter.",
 				"preview":{
-					"title":"N\u00e4tverksfel",
-					"message":"Fel vid nedladdning av f\u00f6rhandsgranskning. Vill du forts\u00e4tta utan?",
+					"title":"Nätverksfel",
+					"message":"Fel vid nedladdning av förhandsgranskning. Vill du fortsätta utan?",
 					"cancel":"Avbryt",
-					"ok":"Forts\u00e4tt"
+					"ok":"Fortsätt"
 				}
+			},
+			"challenge":{
+				"title":"Identity Confirmation",
+				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+				"cancel":"Avbryt",
+				"continue":"Fortsätt",
+				"hint":"Answer"
 			}
 		},
-		"next":"N\u00e4sta"
+		"next":"Nästa"
 	},
 	"credits":{
 		"title":"Tack till",
 		"developer":"Utvecklare:",
 		"platform":"Plattform:",
-		"translators":"\u00d6vers\u00e4ttare:",
+		"translators":"Översättare:",
 		"thanks":"Speciellt tack till:",
 		"modules":"Moduler:"
 	},
 	"buttons":{
-		"edit":"\u00c4ndra",
+		"edit":"Ändra",
 		"done":"Klar",
-		"close":"St\u00e4ng"
+		"close":"Stäng"
 	},
 	"editSkin":{
-		"short":"\u00c4ndra",
-		"title":"\u00c4ndra skinets information"
+		"short":"Ändra",
+		"title":"Ändra skinets information"
 	},
 	"restoreDatabase":{
-		"title":"Oj d\u00e5...",
-		"message":"vi kunde inte \u00f6ppna filen med ditt skin, av n\u00e5gon konstig anledning.\nSom tur \u00e4r s\u00e5 finns det en s\u00e4kerhetskopia av %s.\nVill du \u00e5terst\u00e4lla den?",
+		"title":"Oj då...",
+		"message":"vi kunde inte öppna filen med ditt skin, av någon konstig anledning.\nSom tur är så finns det en säkerhetskopia av %s.\nVill du återställa den?",
 		"no":"Nej tack.",
 		"yes":"Ja!"
 	}

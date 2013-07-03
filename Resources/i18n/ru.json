@@ -1,6 +1,5 @@
 {
 	"main":{
-		"searchHint":"Find a skin...",
 		"skinList":"Skins List",
 		"addSkin":"Add a Skin",
 		"editSettings":"Edit Settings",
@@ -12,16 +11,18 @@
 			"close":"Закрыть"
 		},
 		"noSelectedSkin":"Не выбран скин.",
-		"noContent":{
-			"title":"Не был добавлен ни один скин.",
-			"help":"Нажмите \"+\", чтобы добавить скин."
+		"skinDelete":{
+			"title":"Confirm Deletion",
+			"message":"Do you really want to delete \"%s\"?",
+			"cancel":"Nooooooo!",
+			"okay":"Sure!"
 		},
-		"skins":"\"%s\" скины",
 		"progressBar":{
 			"login":"Вхожу...",
 			"upload":"Загружаю скин...",
 			"loginFail":"Не удалось войти",
 			"uploadFail":"Не удалось загрузить",
+			"challengeFail":"Challenge failed",
 			"success":"Загрузка завершена!"
 		},
 		"skinUpload":{
@@ -35,7 +36,8 @@
 				"title":"Ошибка отправки",
 				"login":"Не удается войти в minecraft.net. Пожалуйста, проверьте ваш логин и пароль в настройках.",
 				"server":"Could not reach minecraft.net. The site may be down. Check http:\/\/help.mojang.com and retry later.",
-				"upload":"Could not upload the skin to minecraft.net. Please try again later."
+				"upload":"Could not upload the skin to minecraft.net. Please try again later.",
+				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
 			}
 		}
 	},
@@ -56,11 +58,9 @@
 			"name":"Skin Name",
 			"nameHint":"My Awesome Skin",
 			"description":"Description",
-			"error":{
-				"name":"You must specify a name for this skin."
-			},
 			"method":{
 				"title":"Добавить скин...",
+				"search":"By searching the Web",
 				"pseudo":"From an existing user",
 				"url":"From an URL",
 				"cancel":"Отмена"
@@ -69,8 +69,19 @@
 		"urlSelect":{
 			"urlTitle":"Paste or type the skin URL here (must be a PNG file):",
 			"pseudoTitle":"Type the Minecraft username here (case-sensitive):",
-			"blankField":"This field cannot be blank.",
 			"invalidUrl":"This URL is invalid (MUST be a PNG file)."
+		},
+		"search":{
+			"select":"Select this skin",
+			"searchHint":"Search on MC Network...",
+			"indicator":{
+				"searchResults":"Search Results for: %s",
+				"noResults":"No results for: %s",
+				"random":"Random Skins"
+			},
+			"error":{
+				"network":"Couldn't load your search results. Check your connexion, and retry later."
+			}
 		},
 		"process":{
 			"title":"Processing...",
@@ -87,9 +98,16 @@
 				"preview":{
 					"title":"Network Error",
 					"message":"Error while downloading the preview. There will be no preview for this skin. Continue anyway?",
-					"cancel":"Cancel",
+					"cancel":"Отмена",
 					"ok":"Continue"
 				}
+			},
+			"challenge":{
+				"title":"Identity Confirmation",
+				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+				"cancel":"Отмена",
+				"continue":"Continue",
+				"hint":"Answer"
 			}
 		},
 		"next":"Next"
@@ -105,7 +123,7 @@
 	"buttons":{
 		"edit":"Edit",
 		"done":"Done",
-		"close":"Close"
+		"close":"Закрыть"
 	},
 	"editSkin":{
 		"short":"Edit",

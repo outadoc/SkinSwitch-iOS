@@ -1,28 +1,29 @@
 {
 	"main":{
-		"searchHint":"Finden eine Skin...",
-		"skinList":"Skins Liste",
-		"addSkin":"fügen Sie eine Haut",
-		"editSettings":"editieren Einstellung",
+		"skinList":"Skins-Liste",
+		"addSkin":"Ein Skin anzufügen",
+		"editSettings":"Einstellungen bearbeiten",
 		"skinDetails":{
 			"title":"Skins Einzelheiten",
 			"description":"Beschreibung",
-			"creation":"Datum der Schöpfung",
-			"wear":"Tragen diesen Skin",
+			"creation":"Datum der Erstellung",
+			"wear":"Dieses Skin zu tragen",
 			"close":"Schliessen"
 		},
 		"noSelectedSkin":"Keine Skin  ausgewählt.",
-		"noContent":{
-			"title":"Keine Haut wurde noch hinzugefügt.",
-			"help":"Um einen Skin hinzufügen, schreiben \"+\"."
+		"skinDelete":{
+			"title":"Bestätigen Sie den Löschvorgang",
+			"message":"Môchten Sie wirklich \"%s\" löschen?",
+			"cancel":"Neeeeeein!",
+			"okay":"Sicher!"
 		},
-		"skins":"%s skins",
 		"progressBar":{
-			"login":"Sich anmelden...",
+			"login":"Einloggen...",
 			"upload":"Hochladen Skin...",
 			"loginFail":"Fehler bei der Einloggund",
 			"uploadFail":"Hochladen fehlgeschlagen",
-			"success":"Laden Sie komplett!"
+			"challengeFail":"Challenge failed",
+			"success":"Hochladen fertig!"
 		},
 		"skinUpload":{
 			"confirm":{
@@ -33,19 +34,20 @@
 			},
 			"error":{
 				"title":"Hochladen Fehler",
-				"login":"Konnte keine Verbindung zum minecraft.net anzumelden. Bitte überprüfen Sie Ihren Benutzernamen und Passwort in den Einstellungen.",
-				"server":"Nicht erreichen konnte minecraft.net. Die Website ist außer Betrieb. Prüfen http:\/\/help.mojang.com und später wiederholen.",
-				"upload":"Das Hochladen des Haut minecraft.net. Bitte versuchen Sie es später erneut."
+				"login":"Konnte nicht auf minecraft.net einloggen. Bitte überprüfen Sie Ihr Login und Passwort in den Einstellungen.",
+				"server":"Minecraft.net konnte nicht erreicht werden. Die Website kann zerstört sein. Überprüfen Sie http:\/\/help.mojang.com und wiederholen später.",
+				"upload":"Das Skin konnte auf minecraft.net nicht hochgeladen werden. Bitte versuchen Sie es später erneut.",
+				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
 			}
 		}
 	},
 	"settings":{
 		"title":"Einstellungen",
 		"username":"Benutzername",
-		"password":"Kennwort",
+		"password":"Passwort",
 		"header":"Minecraft.net Anmeldeinformationen",
 		"footer":{
-			"migratedAccount":"Wenn Ihr Konto zu einem Mojang Konto migriert wurde, müssen Sie Ihre E-Mail-Adresse anstelle Ihres Minecraft Benutzernamen verwenden.",
+			"migratedAccount":"Wenn Ihr Konto zu einem Mojang Konto migriert wurde, müssen Sie Ihre E-Mail-Adresse als Ihr Minecraft-Benutzernamen benutzen.",
 			"privacy":"Bemerkung: Wir werden nie Ihre Informationen speichern oder benutzen. Wir wechseln nur Ihres SKin. Ihren Konteinformationen sind auch in Sicherheit mit dem iOS Kaychain speichern."
 		}
 	},
@@ -56,11 +58,9 @@
 			"name":"Skins Name",
 			"nameHint":"Mein wunderschönes Skin",
 			"description":"Beschreibung",
-			"error":{
-				"name":"Sie mussen ein Name für dieses Skin auswählen."
-			},
 			"method":{
 				"title":"Dieses Skin hinzufügen...",
+				"search":"By searching the Web",
 				"pseudo":"Von ein bestehender Spieler",
 				"url":"Von eine URL",
 				"cancel":"Abbrechen"
@@ -69,8 +69,19 @@
 		"urlSelect":{
 			"urlTitle":"Einfügen Sie oder tippen Sie die SkinURL (Muss ein PNG File sein):",
 			"pseudoTitle":"Tippen Sie das Minecraft Username hier (Groß-\/Kleinschreibung beachten):",
-			"blankField":"Dieses Feld darf nicht leer sein.",
 			"invalidUrl":"Diese URL ist ungültig (Muss ein PNG-File sein)."
+		},
+		"search":{
+			"select":"Select this skin",
+			"searchHint":"Search on MC Network...",
+			"indicator":{
+				"searchResults":"Search Results for: %s",
+				"noResults":"No results for: %s",
+				"random":"Random Skins"
+			},
+			"error":{
+				"network":"Couldn't load your search results. Check your connexion, and retry later."
+			}
 		},
 		"process":{
 			"title":"Verarbeitung...",
@@ -90,6 +101,13 @@
 					"cancel":"Abbrechen",
 					"ok":"Weiter"
 				}
+			},
+			"challenge":{
+				"title":"Identity Confirmation",
+				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+				"cancel":"Abbrechen",
+				"continue":"Weiter",
+				"hint":"Answer"
 			}
 		},
 		"next":"Nächste"

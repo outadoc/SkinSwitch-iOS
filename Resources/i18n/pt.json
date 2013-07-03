@@ -1,8 +1,7 @@
 {
 	"main":{
-		"searchHint":"Encontre uma Skin...",
 		"skinList":"Lista de Skins",
-		"addSkin":"Adicionar uma Skin",
+		"addSkin":"Add a Skin",
 		"editSettings":"Editar Configurações",
 		"skinDetails":{
 			"title":"Detalhes da Skin",
@@ -12,16 +11,18 @@
 			"close":"Fechar"
 		},
 		"noSelectedSkin":"Nenhuma skin selecionada.",
-		"noContent":{
-			"title":"Nenhuma skin foi adicionada ainda.",
-			"help":"Para adicionar uma skin, aperte \"+\"."
+		"skinDelete":{
+			"title":"Confirm Deletion",
+			"message":"Do you really want to delete \"%s\"?",
+			"cancel":"Nooooooo!",
+			"okay":"Sure!"
 		},
-		"skins":"%s skins",
 		"progressBar":{
 			"login":"Logando...",
 			"upload":"Transferindo skin...",
 			"loginFail":"Falha no login",
 			"uploadFail":"Falha na transferência",
+			"challengeFail":"Challenge failed",
 			"success":"Transferência completa!"
 		},
 		"skinUpload":{
@@ -35,7 +36,8 @@
 				"title":"Erro de transferência",
 				"login":"Não foi possível conectar a minecraft.net. Por favor verifique seu login e senha nas configurações.",
 				"server":"Não foi possível conectar a minecraft.net. O site deve estar desligado. Verifique http:\/\/help.mojang.com e tente novamente mais tarde.",
-				"upload":"Não foi possível fazer o upload da skin para minecraft.net. Tente novamente mais tarde."
+				"upload":"Não foi possível fazer o upload da skin para minecraft.net. Tente novamente mais tarde.",
+				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
 			}
 		}
 	},
@@ -56,11 +58,9 @@
 			"name":"Nome da skin",
 			"nameHint":"Minha Incrível Skin",
 			"description":"Descrição",
-			"error":{
-				"name":"Você deve especificar um nome para sua skin."
-			},
 			"method":{
 				"title":"Adicionar a skin...",
+				"search":"By searching the Web",
 				"pseudo":"De um usuário existente",
 				"url":"De uma URL",
 				"cancel":"Cancelar"
@@ -69,8 +69,19 @@
 		"urlSelect":{
 			"urlTitle":"Digite a URL da skin aqui (deve ser um arquivo PNG):",
 			"pseudoTitle":"Digite aqui  o nome de usuário (sensível a maiúscula):",
-			"blankField":"Este campo não pode ficar em branco.",
 			"invalidUrl":"Esta URL é invalida (tem de ser um arquivo PNG)."
+		},
+		"search":{
+			"select":"Select this skin",
+			"searchHint":"Search on MC Network...",
+			"indicator":{
+				"searchResults":"Search Results for: %s",
+				"noResults":"No results for: %s",
+				"random":"Random Skins"
+			},
+			"error":{
+				"network":"Couldn't load your search results. Check your connexion, and retry later."
+			}
 		},
 		"process":{
 			"title":"Processando...",
@@ -90,6 +101,13 @@
 					"cancel":"Cancelar",
 					"ok":"Continuar"
 				}
+			},
+			"challenge":{
+				"title":"Identity Confirmation",
+				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+				"cancel":"Cancelar",
+				"continue":"Continuar",
+				"hint":"Answer"
 			}
 		},
 		"next":"Próximo"

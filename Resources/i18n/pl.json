@@ -1,8 +1,7 @@
 {
 	"main":{
-		"searchHint":"Znajdź skórkę...",
 		"skinList":"Lista skórek",
-		"addSkin":"Dodaj skórkę",
+		"addSkin":"Add a Skin",
 		"editSettings":"Zmień ustawienia",
 		"skinDetails":{
 			"title":"Szczegóły skórki",
@@ -12,16 +11,18 @@
 			"close":"Zamknij"
 		},
 		"noSelectedSkin":"Nie wybrano skórki",
-		"noContent":{
-			"title":"Nie dodano skórki.",
-			"help":"By dodać skórkę, kliknij \"+\"."
+		"skinDelete":{
+			"title":"Confirm Deletion",
+			"message":"Do you really want to delete \"%s\"?",
+			"cancel":"Nooooooo!",
+			"okay":"Sure!"
 		},
-		"skins":"%s skórek",
 		"progressBar":{
 			"login":"Logowanie...",
 			"upload":"Przesyłanie skórki...",
 			"loginFail":"Logowanie nie powiodło się",
 			"uploadFail":"Błąd przesyłania",
+			"challengeFail":"Challenge failed",
 			"success":"Przesyłanie zakończone!"
 		},
 		"skinUpload":{
@@ -35,7 +36,8 @@
 				"title":"Błąd",
 				"login":"Nie można zalogować się na minecraft.net. Proszę, sprawdź swój login i hasło w ustawieniach.",
 				"server":"Nie można osiągnąć połączenia z minecraft.net. Strona może być wyłączona. Sprawdź http:\/\/help.mojang.com i spróbuj ponownie później.",
-				"upload":"Nie można przesłać skórki na minecraft.net. Prosimy spróbować później."
+				"upload":"Nie można przesłać skórki na minecraft.net. Prosimy spróbować później.",
+				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
 			}
 		}
 	},
@@ -56,11 +58,9 @@
 			"name":"Nazwa skórki",
 			"nameHint":"Moja niesamowita skórka",
 			"description":"Opis",
-			"error":{
-				"name":"Musisz nazwać swoją skórkę."
-			},
 			"method":{
 				"title":"Dodaj skórkę...",
+				"search":"By searching the Web",
 				"pseudo":"Od istniejącego użytkownika",
 				"url":"Z adresu URL",
 				"cancel":"Anuluj"
@@ -69,8 +69,19 @@
 		"urlSelect":{
 			"urlTitle":"Wklej, lub wpisz tutaj adres URL skórki (musi być w pliku .png):",
 			"pseudoTitle":"Wpisz nazwę użytkownika Minecraft tutaj:",
-			"blankField":"To pole nie może pozostać puste.",
 			"invalidUrl":"Adres URL jest nieprawidłowy (musi być w pliku .png)."
+		},
+		"search":{
+			"select":"Select this skin",
+			"searchHint":"Search on MC Network...",
+			"indicator":{
+				"searchResults":"Search Results for: %s",
+				"noResults":"No results for: %s",
+				"random":"Random Skins"
+			},
+			"error":{
+				"network":"Couldn't load your search results. Check your connexion, and retry later."
+			}
 		},
 		"process":{
 			"title":"Przetwarzanie...",
@@ -87,9 +98,16 @@
 				"preview":{
 					"title":"Network Error",
 					"message":"Error while downloading the preview. There will be no preview for this skin. Continue anyway?",
-					"cancel":"Cancel",
+					"cancel":"Anuluj",
 					"ok":"Continue"
 				}
+			},
+			"challenge":{
+				"title":"Identity Confirmation",
+				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+				"cancel":"Anuluj",
+				"continue":"Continue",
+				"hint":"Answer"
 			}
 		},
 		"next":"Next"
@@ -105,7 +123,7 @@
 	"buttons":{
 		"edit":"Edit",
 		"done":"Done",
-		"close":"Close"
+		"close":"Zamknij"
 	},
 	"editSkin":{
 		"short":"Edit",

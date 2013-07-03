@@ -1,8 +1,7 @@
 {
 	"main":{
-		"searchHint":"Găsește un skin...",
 		"skinList":"Lista skinurilor",
-		"addSkin":"Adaugă un skin",
+		"addSkin":"Adauga un skin",
 		"editSettings":"Editați Setarile",
 		"skinDetails":{
 			"title":"Detaliile Skinurilor",
@@ -12,16 +11,18 @@
 			"close":"Închide"
 		},
 		"noSelectedSkin":"Nici un skin selectat.",
-		"noContent":{
-			"title":"Nici un skin nu a fost adăugat încă.",
-			"help":"Ca să adaugi un skin, apasă pe \"+\"."
+		"skinDelete":{
+			"title":"Confirma stergerea",
+			"message":"Chiar vrei sa stergi \"%s\"?",
+			"cancel":"Nuuuuuuu!",
+			"okay":"Desigur!"
 		},
-		"skins":"%s skinuri",
 		"progressBar":{
 			"login":"În proces de autentificare...",
 			"upload":"Încărcare skin...",
 			"loginFail":"Autentificare eșuată",
 			"uploadFail":"Încărcare eșuată",
+			"challengeFail":"Provocarea a esuat",
 			"success":"Încărcare completă!"
 		},
 		"skinUpload":{
@@ -35,7 +36,8 @@
 				"title":"Eroare la încărcare",
 				"login":"Nu am putut să te autentificam pe minecraft.net. Te rugăm să verifici numele și parola în setări.",
 				"server":"Nu am putut să stabilim legătura cu minecraft.net. Site-ul ar putea fi la pământ. Verifică http:\/\/help.mojang.com și încearcă mai târziu.",
-				"upload":"Nu a putut încărca skinul de minecraft.net. Vă rugăm să încercați din nou mai târziu."
+				"upload":"Nu a putut încărca skinul de minecraft.net. Vă rugăm să încercați din nou mai târziu.",
+				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
 			}
 		}
 	},
@@ -56,11 +58,9 @@
 			"name":"Numele skinului",
 			"nameHint":"Skinul meu grozav",
 			"description":"Descripție",
-			"error":{
-				"name":"Trebuie să îi pui un nume skinului."
-			},
 			"method":{
 				"title":"Adaugă un skin...",
+				"search":"By searching the Web",
 				"pseudo":"De la un utilizator existent",
 				"url":"De pe un site, codul URL",
 				"cancel":"Revocare"
@@ -69,8 +69,19 @@
 		"urlSelect":{
 			"urlTitle":"Lipiţi sau tastaţi URL-ul skinului  aici (trebuie să fie un fişier PNG):",
 			"pseudoTitle":"Introduceţi numele de utilizator Minecraft aici (caz-senzitiv):",
-			"blankField":"Acest câmp nu poate fi necompletat.",
 			"invalidUrl":"Acest URL nu este valid (TREBUIE să fie un fişier PNG)."
+		},
+		"search":{
+			"select":"Select this skin",
+			"searchHint":"Search on MC Network...",
+			"indicator":{
+				"searchResults":"Search Results for: %s",
+				"noResults":"No results for: %s",
+				"random":"Random Skins"
+			},
+			"error":{
+				"network":"Couldn't load your search results. Check your connexion, and retry later."
+			}
 		},
 		"process":{
 			"title":"Procesare...",
@@ -90,6 +101,13 @@
 					"cancel":"Revocare",
 					"ok":"Continuă"
 				}
+			},
+			"challenge":{
+				"title":"Confirmarea identitatii",
+				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+				"cancel":"Revocare",
+				"continue":"Continuă",
+				"hint":"Raspuns"
 			}
 		},
 		"next":"Următorul"

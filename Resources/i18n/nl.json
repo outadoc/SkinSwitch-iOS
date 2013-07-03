@@ -1,8 +1,7 @@
 {
 	"main":{
-		"searchHint":"Zoek een skin...",
 		"skinList":"Lijst met skins",
-		"addSkin":"Voeg een skin toe",
+		"addSkin":"Add a Skin",
 		"editSettings":"Instellingen bewerken",
 		"skinDetails":{
 			"title":"Skin Details",
@@ -12,16 +11,18 @@
 			"close":"Sluiten"
 		},
 		"noSelectedSkin":"Geen skin geselecteerd.",
-		"noContent":{
-			"title":"Nog geen skin toegevoegd.",
-			"help":"Om een skin toe te voegen, klik op \"+\"."
+		"skinDelete":{
+			"title":"Confirm Deletion",
+			"message":"Do you really want to delete \"%s\"?",
+			"cancel":"Nooooooo!",
+			"okay":"Sure!"
 		},
-		"skins":"%s skins",
 		"progressBar":{
 			"login":"Bezig met inloggen...",
 			"upload":"Bezig met uploaden skin...",
 			"loginFail":"Aanmelden mislukt",
 			"uploadFail":"Uploaden mislukt",
+			"challengeFail":"Challenge failed",
 			"success":"Upload voltooid!"
 		},
 		"skinUpload":{
@@ -35,7 +36,8 @@
 				"title":"Upload fout",
 				"login":"Kan niet inloggen op minecraft.net. Controleer uw gebruikersnaam en wachtwoord in de instellingen.",
 				"server":"Kan Minecraft.net niet bereiken. De site kan eruit liggen. Controleer http:\/\/help.mojang.com en probeer later opnieuw.",
-				"upload":"Kan de skin niet uploaden naar minecraft.net. Probeer later opnieuw."
+				"upload":"Kan de skin niet uploaden naar minecraft.net. Probeer later opnieuw.",
+				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
 			}
 		}
 	},
@@ -56,11 +58,9 @@
 			"name":"Skin naam",
 			"nameHint":"Mijn vette skin",
 			"description":"Omschrijving",
-			"error":{
-				"name":"U moet een naam voor deze skin opgeven."
-			},
 			"method":{
 				"title":"Voeg de skin toe...",
+				"search":"By searching the Web",
 				"pseudo":"Van een bestaande gebruiker",
 				"url":"Vanaf een URL",
 				"cancel":"Annuleren"
@@ -69,8 +69,19 @@
 		"urlSelect":{
 			"urlTitle":"Plak op type hier de URL van de skin (moet een PNG-bstand zijn):",
 			"pseudoTitle":"Typ de gebruikersnaam van Minecraft hier (hoofdlettergevoelig):",
-			"blankField":"Dit veld mag niet leeg zijn.",
 			"invalidUrl":"Deze URL is ongeldig (moet een PNG-bestand zijn)."
+		},
+		"search":{
+			"select":"Select this skin",
+			"searchHint":"Search on MC Network...",
+			"indicator":{
+				"searchResults":"Search Results for: %s",
+				"noResults":"No results for: %s",
+				"random":"Random Skins"
+			},
+			"error":{
+				"network":"Couldn't load your search results. Check your connexion, and retry later."
+			}
 		},
 		"process":{
 			"title":"Wordt verwerkt...",
@@ -90,6 +101,13 @@
 					"cancel":"Annuleren",
 					"ok":"verder gaan"
 				}
+			},
+			"challenge":{
+				"title":"Identity Confirmation",
+				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+				"cancel":"Annuleren",
+				"continue":"verder gaan",
+				"hint":"Answer"
 			}
 		},
 		"next":"Volgende"
@@ -113,7 +131,7 @@
 	},
 	"restoreDatabase":{
 		"title":"Uh oh...",
-		"message":"We konden om \u00e9\u00e9n of andere reden uw bestand met skins niet openen. Gelukkig is er een backup van %s. Wilt u het herstellen?",
+		"message":"We konden om één of andere reden uw bestand met skins niet openen. Gelukkig is er een backup van %s. Wilt u het herstellen?",
 		"no":"Nee dank je.",
 		"yes":"Laten we dit doen!"
 	}

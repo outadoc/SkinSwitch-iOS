@@ -1,6 +1,5 @@
 {
 	"main":{
-		"searchHint":"Trovare un skin...",
 		"skinList":"Lista degli skins",
 		"addSkin":"Aggiungere un skin",
 		"editSettings":"Modificare le impostazioni",
@@ -12,16 +11,18 @@
 			"close":"Chiudere"
 		},
 		"noSelectedSkin":"Nessuno skin selezionato.",
-		"noContent":{
-			"title":"Nessuno skin \u00e8 stato aggiunto ancora.",
-			"help":"Per aggiungere uno skin, premere \"+\"."
+		"skinDelete":{
+			"title":"Confermare la soppressione",
+			"message":"Vuoi davvero sopprimere \"%s\" ?",
+			"cancel":"Nooooooo !",
+			"okay":"Sicuro !"
 		},
-		"skins":"%s skins",
 		"progressBar":{
 			"login":"Connessione in corso...",
 			"upload":"Caricamento dello skin...",
 			"loginFail":"Insuccesso della connessione",
 			"uploadFail":"Insuccesso del caricamento",
+			"challengeFail":"Challenge failed",
 			"success":"Caricamento successo !"
 		},
 		"skinUpload":{
@@ -34,8 +35,9 @@
 			"error":{
 				"title":"Errore nel caricamento",
 				"login":"Non riusce a accedere a minecraft.net. Per favore verifica il login e la password nelle impostazioni.",
-				"server":"Non riusce a accedere a minecraft.net. Il sito pu\u00f2 essere indisponibile. Controlla http:\/\/help.mojang.com e riprova pi\u00f9 tardi.",
-				"upload":"Non riusce a caricare lo skin verso minecraft.net. Per favore riprovare pi\u00f9 tardi."
+				"server":"Non riusce a accedere a minecraft.net. Il sito può essere indisponibile. Controlla http:\/\/help.mojang.com e riprova più tardi.",
+				"upload":"Non riusce a caricare lo skin verso minecraft.net. Per favore riprovare più tardi.",
+				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
 			}
 		}
 	},
@@ -45,7 +47,7 @@
 		"password":"Password",
 		"header":"Identificativi minecraft.net",
 		"footer":{
-			"migratedAccount":"Se il tuo conto \u00e8 stato migrato in un conto Mojang, devi utilizzare il tou indirizzo email anzich\u00e9 il tuo nome utente di Minecraft.",
+			"migratedAccount":"Se il tuo conto è stato migrato in un conto Mojang, devi utilizzare il tou indirizzo email anziché il tuo nome utente di Minecraft.",
 			"privacy":"Nota : non immagazzinaremmo o utilizzaremmo MAI le tue informazioni per altre cose che lo cambiamento del tuo Minecraft skin. Le informazioni del tuo conto sono immagazzinate in modo sicuro nel portachiavi iOS."
 		}
 	},
@@ -56,11 +58,9 @@
 			"name":"Nome dello skin",
 			"nameHint":"Il mio geniale skin",
 			"description":"Descrizione",
-			"error":{
-				"name":"Devi specificare un nome per questo skin."
-			},
 			"method":{
 				"title":"Aggiungere lo skin...",
+				"search":"By searching the Web",
 				"pseudo":"Da un utente esistente",
 				"url":"Da un URL",
 				"cancel":"Cancellare"
@@ -69,8 +69,19 @@
 		"urlSelect":{
 			"urlTitle":"Incollare o introdurre da tastiera il URL dello skin qui (deve essere un PNG file) :",
 			"pseudoTitle":"Scrivere qui il nome utente Minecraft (attenzione alle maiuscole e minuscole) :",
-			"blankField":"Questo campo non pu\u00f2 essere vuoto.",
-			"invalidUrl":"Questo URL \u00e8 invalido (DEVE essere un PNG file)."
+			"invalidUrl":"Questo URL è invalido (DEVE essere un PNG file)."
+		},
+		"search":{
+			"select":"Select this skin",
+			"searchHint":"Search on MC Network...",
+			"indicator":{
+				"searchResults":"Search Results for: %s",
+				"noResults":"No results for: %s",
+				"random":"Random Skins"
+			},
+			"error":{
+				"network":"Couldn't load your search results. Check your connexion, and retry later."
+			}
 		},
 		"process":{
 			"title":"Caricamento in corso...",
@@ -86,10 +97,17 @@
 				"skin":"Errore durante il caricamento. Abbandono.",
 				"preview":{
 					"title":"Errore della rete",
-					"message":"Errore durante il caricamento della previsualizzazione. Ci sar\u00e0 nessuna previsualizzazione per questo skin. Continuare comunque ?",
+					"message":"Errore durante il caricamento della previsualizzazione. Ci sarà nessuna previsualizzazione per questo skin. Continuare comunque ?",
 					"cancel":"Cancellare",
 					"ok":"Continua"
 				}
+			},
+			"challenge":{
+				"title":"Identity Confirmation",
+				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+				"cancel":"Cancellare",
+				"continue":"Continua",
+				"hint":"Answer"
 			}
 		},
 		"next":"Seguente"
@@ -113,7 +131,7 @@
 	},
 	"restoreDatabase":{
 		"title":"Oh oh...",
-		"message":"Siamo incapaci di aprire il file contenendo i tui skins. Per fortuna, c'\u00e8 una backup, datata del %s. Vuoi restaurarla ?",
+		"message":"Siamo incapaci di aprire il file contenendo i tui skins. Per fortuna, c'è una backup, datata del %s. Vuoi restaurarla ?",
 		"no":"No, grazie.",
 		"yes":"Andiamo !"
 	}

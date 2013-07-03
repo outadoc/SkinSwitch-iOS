@@ -1,0 +1,138 @@
+{
+	"main":{
+		"skinList":"スキン",
+		"addSkin":"追加",
+		"editSettings":"設定",
+		"skinDetails":{
+			"title":"スキンの詳細",
+			"description":"説明",
+			"creation":"作成日",
+			"wear":"スキンを登録する",
+			"close":"キャンセル"
+		},
+		"noSelectedSkin":"スキンが選ばれていません。",
+		"skinDelete":{
+			"title":"削除を確認する",
+			"message":"\"%S\"を削除してよろしいですか？",
+			"cancel":"いいえ!!!!!!",
+			"okay":"はい!"
+		},
+		"progressBar":{
+			"login":"ログイン中...",
+			"upload":"スキンのアップロード中...",
+			"loginFail":"ログインに失敗しました。",
+			"uploadFail":"アップロードに失敗しました。",
+			"challengeFail":"チャレンジに失敗しました。",
+			"success":"アップロードが完了しました!"
+		},
+		"skinUpload":{
+			"confirm":{
+				"title":"スキンを変更しますか？",
+				"message":"本当にあなたのスキンを\"%s\"に変更しますか?",
+				"cancel":"いいえ",
+				"okay":"はい"
+			},
+			"error":{
+				"title":"アップロードエラー",
+				"login":"Minecraft.net にログインできませんでした。あなたのユーザー名とパスワードを確認してください。",
+				"server":"Minecraft.net に接続できませんでした。サイトがダウンしている可能性があります。http:\/\/help.mojang.com を確認し、後で再試行してください。",
+				"upload":"スキンをminecraft.netにアップロードできませんでした。もう一度やり直してください。",
+				"challenge":"このデバイスからアカウントにアクセスするにはセキュリティ質問に回答する必要があります。\n残念ながら、それを読み込むことができませんでした。接続を確認して、もう一度やり直してください。"
+			}
+		}
+	},
+	"settings":{
+		"title":"設定",
+		"username":"ユーザー名",
+		"password":"パスワード",
+		"header":"Minecraft.net ログイン情報",
+		"footer":{
+			"migratedAccount":"アカウントを新しくMojangアカウントに移行されている場合は、あなたのMinecraftユーザー名ではなくあなたのメールアドレスを使用してください。",
+			"privacy":"注:決してあなたの情報をMinecraftのスキンを切り替える用途以外に使用いたしません。あなたのアカウント情報は安全のためiOSキーチェーンに保存されます。"
+		}
+	},
+	"addProcess":{
+		"skinInfo":{
+			"title":"スキンの情報",
+			"shortTitle":"スキンの情報",
+			"name":"スキン名",
+			"nameHint":"私のすばらしいスキン",
+			"description":"説明",
+			"method":{
+				"title":"スキン追加...",
+				"search":"By searching the Web",
+				"pseudo":"既存のユーザーから",
+				"url":"URLから",
+				"cancel":"キャンセル"
+			}
+		},
+		"urlSelect":{
+			"urlTitle":"スキンを貼り付けるかURLを入力してください。(pngファイルのみ)",
+			"pseudoTitle":"ここにMinecraftユーザー名を入力してください(大文字小文字を区別)：",
+			"invalidUrl":"この URL は無効です (PNGファイルである必要があります)。"
+		},
+		"search":{
+			"select":"Select this skin",
+			"searchHint":"Search on MC Network...",
+			"indicator":{
+				"searchResults":"Search Results for: %s",
+				"noResults":"No results for: %s",
+				"random":"Random Skins"
+			},
+			"error":{
+				"network":"Couldn't load your search results. Check your connexion, and retry later."
+			}
+		},
+		"process":{
+			"title":"処理中...",
+			"progress":{
+				"initial":"Reticulating Splines...",
+				"skin":"スキンのダウンロード中...",
+				"preview":"スキンプレビューをダウンロード中...",
+				"database":"スキンをデータベースに登録しています...",
+				"success":"スキンを正常に追加しました! :)",
+				"fail":"失敗しました・・・:("
+			},
+			"error":{
+				"skin":"スキンのダウンロードにエラーが発生しました。中止します。",
+				"preview":{
+					"title":"ネットワークエラー",
+					"message":"プレビューをダウンロード中にエラーが発生しました。このスキンのプレビューはできません。続行しますか？",
+					"cancel":"キャンセル",
+					"ok":"続ける"
+				}
+			},
+			"challenge":{
+				"title":"本人確認",
+				"help":"Mojangアカウントを別の場所からアクセスしようとしているのでこの質問に答える必要があります。\nもし答えを忘れてしまった場合は、このウィンドウを閉じて、もう一度開き別の質問に答えることを試せます(ランダム)。\n本当に思い出すことができない場合は、help.mojang.comの[resetting your questions.]をご覧ください。",
+				"cancel":"キャンセル",
+				"continue":"続ける",
+				"hint":"答え"
+			}
+		},
+		"next":"次"
+	},
+	"credits":{
+		"title":"謝辞",
+		"developer":"開発者:",
+		"platform":"プラットホーム:",
+		"translators":"翻訳者:",
+		"thanks":"スペシャルサンクス:",
+		"modules":"モジュール:"
+	},
+	"buttons":{
+		"edit":"編集",
+		"done":"完了",
+		"close":"キャンセル"
+	},
+	"editSkin":{
+		"short":"編集",
+		"title":"スキン情報の編集"
+	},
+	"restoreDatabase":{
+		"title":"お、おう...",
+		"message":"何らかの理由であなたのスキンを含むファイルを開くことができませんでした。幸いなことに、バックアップ %sがあります。そこからそれを復元しますか？",
+		"no":"いいえ",
+		"yes":"はい"
+	}
+}
