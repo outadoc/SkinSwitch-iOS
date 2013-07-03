@@ -78,6 +78,9 @@
 				"searchResults":"Search Results for: %s",
 				"noResults":"No results for: %s",
 				"random":"Random Skins"
+			},
+			"error":{
+				"network":"Couldn't load your search results. Check your connexion, and retry later."
 			}
 		},
 		"process":{

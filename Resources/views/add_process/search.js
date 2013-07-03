@@ -110,7 +110,7 @@ function getRequestResults(params) {
 				resultArray = JSON.parse(this.responseText);
 				
 				if(resultArray.error != null) {
-					alert(resultArray.error);
+					alert(I('addProcess.search.indicator.error.network'));
 				} else {
 					containerView.setViews([]);
 					
@@ -130,8 +130,11 @@ function getRequestResults(params) {
 					}
 				}
 			} catch(e) {
-				alert('Couldn\'t parse result :s\n' + e);
+				alert(I('addProcess.search.indicator.error.network'));
 			}
+		},
+		onerror: function(e) {
+			alert(I('addProcess.search.indicator.error.network'));
 		}
 	});
 	
