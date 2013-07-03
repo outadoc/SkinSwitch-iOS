@@ -107,7 +107,7 @@ function getSingleSkinCell(skinData) {
 		left: 10,
 		right: 10,
 		top: 10,
-		height: 30,
+		height: 20,
 		color: '#4f4f4f',
 		textAlign: 'center',
 		font: {
@@ -116,11 +116,22 @@ function getSingleSkinCell(skinData) {
 	});
 	
 	view.add(lbl_title);
-	view.add(Ui.getHorizontalSeparator('gray'));
 	
+	var lbl_author = Ti.UI.createLabel({
+		text: 'by #' + skinData.owner,
+		color: '9f9f9f',
+		height: 20,
+		top: 5,
+		font: {
+			fontSize: 17
+		},
+		textAlign: 'center',
+	});
+	
+	view.add(lbl_author);
+		
 	var view_skin = Ti.UI.createImageView({
-		top: 15,
-		bottom: 15,
+		top: 20,
 		height: height,
 		width: width
 	});
@@ -164,6 +175,24 @@ function getSingleSkinCell(skinData) {
 	});
 	
 	view.add(view_skin);
+	
+	var scrollView_desc = Ti.UI.createLabel({
+		top: 10,
+		bottom: 10,
+		left: 20,
+		right: 20
+	});
+	
+	var lbl_description = Ti.UI.createLabel({
+		text: skinData.description,
+		color: '5f5f5f',
+		font: {
+			fontSize: 16
+		}
+	});
+	
+	scrollView_desc.add(lbl_description);
+	view.add(scrollView_desc);
 	
 	loadSkinPreview({
 		view: view
