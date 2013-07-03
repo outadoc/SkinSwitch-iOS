@@ -1,6 +1,7 @@
 var win = Ti.UI.currentWindow;
 
 var Utils = require('/includes/utils');
+var Ui = require('/includes/ui');
 
 var searchBar = Ti.UI.createSearchBar({
 	barColor: Utils.getNavColor(),
@@ -70,14 +71,14 @@ function getRequestResults(params) {
 				if(resultArray.error != null) {
 					alert(resultArray.error);
 				} else {
+					containerView.setViews([]);
+					
 					for(var i = 0; i < resultArray.length; i++) {
-						Ti.API.info(resultArray[i]);
-						
 						containerView.addView(getSingleSkinCell(resultArray[i]));
 					}
 				}
 			} catch(e) {
-				alert('Couldn\'t parse result :s');
+				alert('Couldn\'t parse result :s\n' + e);
 			}
 		}
 	});
@@ -87,6 +88,9 @@ function getRequestResults(params) {
 }
 
 function getSingleSkinCell(skinData) {
+	var height = 170,
+		width = 85;
+	
 	var view = Ti.UI.createView({
 		left: 10,
 		right: 10,
@@ -102,7 +106,7 @@ function getSingleSkinCell(skinData) {
 		text: skinData.title,
 		left: 10,
 		right: 10,
-		top: 5,
+		top: 10,
 		height: 30,
 		color: '#4f4f4f',
 		textAlign: 'center',
@@ -112,13 +116,54 @@ function getSingleSkinCell(skinData) {
 	});
 	
 	view.add(lbl_title);
+	view.add(Ui.getHorizontalSeparator('gray'));
 	
-	var img = Ti.UI.createImageView({
-		top: 20
+	var view_skin = Ti.UI.createImageView({
+		top: 15,
+		bottom: 15,
+		height: height,
+		width: width
+	});
+
+	var img_skin_front = Ti.UI.createImageView({
+		defaultImage: '/img/char_front.png',
+		height: height,
+		width: width,
+		top: 0,
+		left: 0
 	});
 	
-	view.img = img;
-	view.add(img);
+	view.frontImg = img_skin_front;
+	view_skin.add(img_skin_front);
+
+	var img_skin_back = Ti.UI.createImageView({
+		defaultImage: '/img/char_back.png',
+		height: height,
+		width: width,
+		top: 0,
+		left: 0
+	});
+	
+	view.backImg = img_skin_back;
+	
+	//fix bug where you wouldn't be able to click?
+	view_skin.addEventListener('click', function(e) {});
+	
+	img_skin_front.addEventListener('click', function() {
+		view_skin.animate({
+			view: img_skin_back,
+			transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
+		});
+	});
+
+	img_skin_back.addEventListener('click', function() {
+		view_skin.animate({
+			view: img_skin_front,
+			transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+		});
+	});
+	
+	view.add(view_skin);
 	
 	loadSkinPreview({
 		view: view
@@ -130,17 +175,31 @@ function getSingleSkinCell(skinData) {
 containerView.addEventListener('scrollend', loadSkinPreview);
 
 function loadSkinPreview(e) {
-	if(e.view.img.image == null) {
-		var xhr = Ti.Network.createHTTPClient({
+	if(e.view.frontImg.image == null) {
+		var xhr_front = Ti.Network.createHTTPClient({
 			onload: function() {
 				if(this.getResponseData() != null && this.responseText.error == null) {
-					e.view.img.setImage(this.getResponseData());
+					e.view.frontImg.setImage(this.getResponseData());
+				}
+				
+				if(e.view.backImg.image == null) {
+					var xhr_back = Ti.Network.createHTTPClient({
+						onload: function() {
+							if(this.getResponseData() != null && this.responseText.error == null) {
+								e.view.backImg.setImage(this.getResponseData());
+							}
+						},
+						cache: true
+					});
+					
+					xhr_back.open('GET', 'http://apps.outadoc.fr/skinswitch/skinpreview.php?side=back&url=' + encodeURIComponent('http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=false'));
+					xhr_back.send();
 				}
 			},
 			cache: true
 		});
 		
-		xhr.open('GET', 'http://apps.outadoc.fr/skinswitch/skinpreview.php?url=' + encodeURIComponent('http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=false'));
-		xhr.send();
+		xhr_front.open('GET', 'http://apps.outadoc.fr/skinswitch/skinpreview.php?url=' + encodeURIComponent('http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=false'));
+		xhr_front.send();
 	}
 }
