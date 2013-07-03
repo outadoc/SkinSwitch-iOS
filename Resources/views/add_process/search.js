@@ -81,7 +81,14 @@ function getRequestResults(params) {
 					containerView.setViews([]);
 					
 					for(var i = 0; i < resultArray.length; i++) {
-						containerView.addView(Ui.getSingleSearchResult(resultArray[i]));
+						var currentSkinResult = Ui.getSingleSearchResult(resultArray[i]);
+						containerView.addView(currentSkinResult);
+						
+						if(i == 0) {
+							loadSkinPreview({
+								view: currentSkinResult
+							});
+						}
 					}
 				}
 			} catch(e) {

@@ -752,10 +752,6 @@
 		scrollView_desc.add(lbl_description);
 		view.add(scrollView_desc);
 		
-		loadSkinPreview({
-			view: view
-		});
-		
 		return view;
 	}
 	
