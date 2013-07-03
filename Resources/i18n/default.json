@@ -73,7 +73,12 @@
 		},
 		"search":{
 			"select":"Select this skin",
-			"searchHint":"Search on MC Network"
+			"searchHint":"Search on MC Network...",
+			"indicator":{
+				"searchResults":"Search Results for: %s",
+				"noResults":"No results for: %s",
+				"random":"Random Skins"
+			}
 		},
 		"process":{
 			"title":"Processing...",

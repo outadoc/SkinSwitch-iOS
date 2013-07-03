@@ -22,10 +22,29 @@ var darkenView = Ti.UI.createView({
 
 darkenView.addEventListener('click', function() {
 	searchBar.blur();
+	
+	if(searchBar.getValue() == '') {
+		getRandomSkins();
+	}
 });
 
+var lbl_indicator = Ti.UI.createLabel({
+	top: 20,
+	left: 25,
+	right: 20,
+	font: {
+		fontSize: 19,
+		fontFamily: 'HelveticaNeue-Italic'
+	},
+	height: 20,
+	color: 'white'
+});
+
+win.add(lbl_indicator);
+
 var containerView = Ti.UI.createScrollableView({
-	height: Ti.UI.FILL,
+	top: 10,
+	bottom: 0,
 	width: 270,
 	clipViews: false,
 	disableBounce: false
@@ -66,13 +85,17 @@ searchBar.addEventListener('cancel', function(e) {
 getRandomSkins();
 
 function getSkinsFromSearch(match) {
+	lbl_indicator.setText(I('addProcess.search.indicator.searchResults', match));
+	
 	getRequestResults({
 		method: 'searchSkinByName',
 		match: searchBar.getValue()
 	});
 }
 
-function getRandomSkins(match) {
+function getRandomSkins() {
+	lbl_indicator.setText(I('addProcess.search.indicator.random'));
+	
 	getRequestResults({
 		method: 'getRandomSkins'
 	});
@@ -90,6 +113,10 @@ function getRequestResults(params) {
 					alert(resultArray.error);
 				} else {
 					containerView.setViews([]);
+					
+					if(resultArray.length == 0 && params.match != null) {
+						lbl_indicator.setText(I('addProcess.search.indicator.noResults', params.match));
+					}
 					
 					for(var i = 0; i < resultArray.length; i++) {
 						var currentSkinResult = Ui.getSingleSearchResult(resultArray[i], selectSkin);
