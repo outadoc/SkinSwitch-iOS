@@ -6,7 +6,7 @@ var Ui = require('/includes/ui');
 
 var searchBar = Ti.UI.createSearchBar({
 	barColor: Utils.getNavColor(),
-	hintText: 'Search on MC Network',
+	hintText: I('addProcess.search.searchHint'),
 	width: Ti.UI.FILL
 });
 

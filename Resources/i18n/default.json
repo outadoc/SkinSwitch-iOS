@@ -58,11 +58,9 @@
 			"name":"Skin Name",
 			"nameHint":"My Awesome Skin",
 			"description":"Description",
-			"error":{
-				"name":"You must specify a name for this skin."
-			},
 			"method":{
 				"title":"Add the skin...",
+				"search":"By searching the Web",
 				"pseudo":"From an existing user",
 				"url":"From an URL",
 				"cancel":"Cancel"
@@ -71,8 +69,11 @@
 		"urlSelect":{
 			"urlTitle":"Paste or type the skin URL here (must be a PNG file):",
 			"pseudoTitle":"Type the Minecraft username here (case-sensitive):",
-			"blankField":"This field cannot be blank.",
 			"invalidUrl":"This URL is invalid (MUST be a PNG file)."
+		},
+		"search":{
+			"select":"Select this skin",
+			"searchHint":"Search on MC Network"
 		},
 		"process":{
 			"title":"Processing...",

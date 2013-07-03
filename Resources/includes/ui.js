@@ -742,7 +742,7 @@
 		view.add(view_skin);
 		
 		var b_add = Ti.UI.createButton({
-			title: 'Select this skin',
+			title: I('addProcess.search.select'),
 			left: 30,
 			right: 30,
 			height: 35,
