@@ -52,50 +52,55 @@ if(win.from == 'url') {
 	txtfield_url.setHintText('Notch');
 }
 
+txtfield_url.addEventListener('change', function(e) {
+	if(e.value == '' || e.value == 'http://') {
+		b_next.setEnabled(false);
+	} else {
+		b_next.setEnabled(true);
+	}
+})
+
 view.add(txtfield_url);
 
 var b_next = Ti.UI.createButton({
-	title: I('addProcess.next')
+	title: I('addProcess.next'),
+	enabled: false
 });
 
 b_next.addEventListener('click', function(e) {
 	var url = txtfield_url.getValue();
 
-	if(url == '' || url == 'http://') {
-		alert(I('addProcess.urlSelect.blankField'));
-	} else {
-		if(win.from == 'url') {
-			if(url.substring(0, 7) != 'http://') {
-				url = 'http://' + url;
-			}
-		} else if(win.from == 'pseudo') {
-			url = 'http://s3.amazonaws.com/MinecraftSkins/' + url + '.png';
+	if(win.from == 'url') {
+		if(url.substring(0, 7) != 'http://') {
+			url = 'http://' + url;
 		}
+	} else if(win.from == 'pseudo') {
+		url = 'http://s3.amazonaws.com/MinecraftSkins/' + url + '.png';
+	}
 
-		if(url != null && url.split('.').pop().toLowerCase() == 'png') {
-			var win_process = Ti.UI.createWindow({
-				title: I('addProcess.process.title'),
-				url: 'processing.js',
-				backgroundImage: Utils.getBGImage(),
-				barColor: Utils.getNavColor(),
-				backgroundRepeat: true,
+	if(url != null && url.split('.').pop().toLowerCase() == 'png') {
+		var win_process = Ti.UI.createWindow({
+			title: I('addProcess.process.title'),
+			url: 'processing.js',
+			backgroundImage: Utils.getBGImage(),
+			barColor: Utils.getNavColor(),
+			backgroundRepeat: true,
 
-				skinUrl: url,
-				skinName: win.skinName,
-				skinDesc: win.skinDesc,
-				from: win.from
-			});
-			if(Utils.isiPad()) {
-				win_process.masterGroup = win.masterGroup;
-				win_process.prevWins = [win.prevWins[0], win];
-				win.masterGroup.open(win_process);
-			} else {
-				win_process.container = win.container;
-				win.navGroup.open(win_process);
-			}
+			skinUrl: url,
+			skinName: win.skinName,
+			skinDesc: win.skinDesc,
+			from: win.from
+		});
+		if(Utils.isiPad()) {
+			win_process.masterGroup = win.masterGroup;
+			win_process.prevWins = [win.prevWins[0], win];
+			win.masterGroup.open(win_process);
 		} else {
-			alert(I('addProcess.urlSelect.invalidUrl'));
+			win_process.container = win.container;
+			win.navGroup.open(win_process);
 		}
+	} else {
+		alert(I('addProcess.urlSelect.invalidUrl'));
 	}
 });
 
