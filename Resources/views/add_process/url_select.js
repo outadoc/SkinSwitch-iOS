@@ -4,7 +4,9 @@ var win = Ti.UI.currentWindow;
 var Utils = require('/includes/utils');
 
 var view = Ti.UI.createView({
-	height: Ti.UI.SIZE
+	height: Ti.UI.SIZE,
+	top: 50,
+	layout: 'vertical'
 });
 
 win.add(view);
@@ -33,7 +35,7 @@ view.add(lbl_url);
 
 var txtfield_url = Ti.UI.createTextField({
 	height: 35,
-	top: 10,
+	top: 15,
 	left: 20,
 	width: 280,
 	autocorrect: false,
