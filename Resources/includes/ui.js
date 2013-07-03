@@ -645,7 +645,7 @@
 		return view_skin;
 	}
 	
-	exports.getSingleSearchResult = function(skinData) {
+	exports.getSingleSearchResult = function(skinData, btnCallback) {
 		var view = Ti.UI.createView({
 			left: 10,
 			right: 10,
@@ -754,6 +754,10 @@
 			borderRadius: 8,
 			color: 'gray',
 			selectedColor: 'lightGray'
+		});
+		
+		b_add.addEventListener('click', function() {
+			btnCallback(skinData);
 		});
 		
 		view.add(b_add);

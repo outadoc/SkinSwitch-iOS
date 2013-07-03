@@ -105,7 +105,7 @@ function downloadPreview(side) {
 	});
 
 	var output = Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/' + side + '.png');
-	xhr.open('GET', 'http://apps.outadoc.fr/skinswitch/skinpreview.php?side=' + side + '&url=' + encodeURI(win.skinUrl));
+	xhr.open('GET', 'http://apps.outadoc.fr/skinswitch/skinpreview.php?side=' + side + '&url=' + encodeURIComponent(win.skinUrl));
 	xhr.setFile(output);
 	xhr.send();
 	progBar.setMessage(I('addProcess.process.progress.preview'));

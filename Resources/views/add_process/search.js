@@ -1,5 +1,6 @@
-var win = Ti.UI.currentWindow;
+Ti.include('/includes/lib/json.i18n.js');
 
+var win = Ti.UI.currentWindow;
 var Utils = require('/includes/utils');
 var Ui = require('/includes/ui');
 
@@ -91,7 +92,7 @@ function getRequestResults(params) {
 					containerView.setViews([]);
 					
 					for(var i = 0; i < resultArray.length; i++) {
-						var currentSkinResult = Ui.getSingleSearchResult(resultArray[i]);
+						var currentSkinResult = Ui.getSingleSearchResult(resultArray[i], selectSkin);
 						containerView.addView(currentSkinResult);
 						
 						if(i == 0) {
@@ -152,5 +153,28 @@ function loadSkinPreview(e) {
 		
 		xhr_front.open('GET', 'http://apps.outadoc.fr/skinswitch/skinpreview.php?url=' + encodeURIComponent('http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=false'));
 		xhr_front.send();
+	}
+}
+
+function selectSkin(skinData) {
+	var win_process = Ti.UI.createWindow({
+		title: I('addProcess.process.title'),
+		url: 'processing.js',
+		backgroundImage: Utils.getBGImage(),
+		barColor: Utils.getNavColor(),
+		backgroundRepeat: true,
+
+		skinUrl: 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(skinData.id) + '&base64=false',
+		skinName: win.skinName,
+		skinDesc: win.skinDesc
+	});
+	
+	if(Utils.isiPad()) {
+		win_process.masterGroup = win.masterGroup;
+		win_process.prevWins = [win.prevWins[0], win];
+		win.masterGroup.open(win_process);
+	} else {
+		win_process.container = win.container;
+		win.navGroup.open(win_process);
 	}
 }
