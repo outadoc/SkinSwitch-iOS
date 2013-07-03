@@ -675,8 +675,8 @@
 		view.add(lbl_title);
 		
 		var lbl_author = Ti.UI.createLabel({
-			text: 'by #' + skinData.owner,
-			color: '9f9f9f',
+			text: 'by ' + skinData.owner_username,
+			color: '#9f9f9f',
 			height: 20,
 			left: 10,
 			right: 10,
