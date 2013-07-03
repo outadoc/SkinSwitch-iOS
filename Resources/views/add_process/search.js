@@ -59,10 +59,10 @@ searchBar.addEventListener('blur', function(e) {
 
 searchBar.addEventListener('cancel', function(e) {
 	e.source.blur();
-	getLatestSkins();
+	getRandomSkins();
 });
 
-getLatestSkins();
+getRandomSkins();
 
 function getSkinsFromSearch(match) {
 	getRequestResults({
@@ -71,7 +71,7 @@ function getSkinsFromSearch(match) {
 	});
 }
 
-function getLatestSkins(match) {
+function getRandomSkins(match) {
 	getRequestResults({
 		method: 'getRandomSkins'
 	});
