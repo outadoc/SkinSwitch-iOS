@@ -11,12 +11,25 @@ var searchBar = Ti.UI.createSearchBar({
 
 win.setTitleControl(searchBar);
 
+var darkenView = Ti.UI.createView({
+	backgroundColor: 'black',
+	top: 0,
+	bottom: 0,
+	left: 0,
+	right: 0
+});
+
+darkenView.addEventListener('click', function() {
+	searchBar.blur();
+});
+
 var containerView = Ti.UI.createScrollableView({
 	height: Ti.UI.FILL,
 	width: '80%',
 	showPagingControl: true,
 	clipViews: false,
-	pagingControlColor: 'transparent'
+	pagingControlColor: 'transparent',
+	disableBounce: false
 });
 
 win.add(containerView);
@@ -27,11 +40,23 @@ searchBar.addEventListener('return', function(e) {
 });
 
 searchBar.addEventListener('focus', function(e) {
-	e.source.setShowCancel(true);
+	darkenView.setOpacity(0);
+	
+	win.add(darkenView);
+	
+	darkenView.animate({
+		opacity: 0.6,
+		duration: 200
+	});
 });
 
 searchBar.addEventListener('blur', function(e) {
-	e.source.setShowCancel(false);
+	darkenView.animate({
+		opacity: 0,
+		duration: 200
+	}, function(e) {
+		win.remove(darkenView);
+	});
 });
 
 searchBar.addEventListener('cancel', function(e) {
