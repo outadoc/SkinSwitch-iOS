@@ -646,14 +646,10 @@
 	}
 	
 	exports.getSingleSearchResult = function(skinData) {
-		var height = 170,
-			width = 85;
-		
 		var view = Ti.UI.createView({
 			left: 10,
 			right: 10,
-			top: 30,
-			bottom: 30,
+			height: Ti.UI.SIZE,
 			borderRadius: 7,
 			backgroundColor: 'white',
 			skinData: skinData,
@@ -664,12 +660,12 @@
 			text: skinData.title,
 			left: 10,
 			right: 10,
-			top: 10,
+			top: 20,
 			height: 20,
 			color: '#4f4f4f',
 			textAlign: 'center',
 			font: {
-				fontSize: 19
+				fontSize: 18
 			}
 		});
 		
@@ -679,14 +675,18 @@
 			text: 'by #' + skinData.owner,
 			color: '9f9f9f',
 			height: 20,
-			top: 5,
+			left: 10,
+			right: 10,
 			font: {
-				fontSize: 17
+				fontSize: 16
 			},
 			textAlign: 'center',
 		});
 		
 		view.add(lbl_author);
+		
+		var height = 160,
+			width = 80;
 			
 		var view_skin = Ti.UI.createImageView({
 			top: 20,
@@ -738,23 +738,16 @@
 		
 		view.add(view_skin);
 		
-		var scrollView_desc = Ti.UI.createLabel({
-			top: 10,
-			bottom: 10,
+		var b_add = Ti.UI.createButton({
+			title: 'Select this skin',
 			left: 20,
-			right: 20
+			right: 20,
+			height: 30,
+			top: 20,
+			bottom: 20
 		});
 		
-		var lbl_description = Ti.UI.createLabel({
-			text: skinData.description,
-			color: '5f5f5f',
-			font: {
-				fontSize: 16
-			}
-		});
-		
-		scrollView_desc.add(lbl_description);
-		view.add(scrollView_desc);
+		view.add(b_add);
 		
 		return view;
 	}
