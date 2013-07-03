@@ -696,6 +696,8 @@
 	
 		var img_skin_front = Ti.UI.createImageView({
 			defaultImage: '/img/char_front.png',
+			image: '/img/char_front.png',
+			isLoaded: false,
 			height: height,
 			width: width,
 			top: 0,
@@ -707,6 +709,8 @@
 	
 		var img_skin_back = Ti.UI.createImageView({
 			defaultImage: '/img/char_back.png',
+			image: '/img/char_back.png',
+			isLoaded: false,
 			height: height,
 			width: width,
 			top: 0,

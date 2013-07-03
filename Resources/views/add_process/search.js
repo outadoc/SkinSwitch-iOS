@@ -42,10 +42,6 @@ searchBar.addEventListener('cancel', function(e) {
 getLatestSkins();
 
 function getSkinsFromSearch(match) {
-	if(match == '.') {
-		match = '\.';
-	}
-	
 	getRequestResults({
 		method: 'searchSkinByName',
 		match: searchBar.getValue()
@@ -95,18 +91,30 @@ function getRequestResults(params) {
 containerView.addEventListener('scrollend', loadSkinPreview);
 
 function loadSkinPreview(e) {
-	if(e.view.frontImg.image == null) {
+	if(!e.view.frontImg.isLoaded) {
 		var xhr_front = Ti.Network.createHTTPClient({
 			onload: function() {
 				if(this.getResponseData() != null && this.responseText.error == null) {
-					e.view.frontImg.setImage(this.getResponseData());
+					e.view.frontImg.animate({
+						opacity: 0,
+						duration: 100
+					}, function() {
+						e.view.frontImg.setImage(xhr_front.getResponseData());
+						e.view.frontImg.isLoaded = true;
+						
+						e.view.frontImg.animate({
+							opacity: 1,
+							duration: 100
+						});
+					});
 				}
 				
-				if(e.view.backImg.image == null) {
+				if(!e.view.backImg.isLoaded) {
 					var xhr_back = Ti.Network.createHTTPClient({
 						onload: function() {
 							if(this.getResponseData() != null && this.responseText.error == null) {
 								e.view.backImg.setImage(this.getResponseData());
+								e.view.backImg.isLoaded = true;
 							}
 						},
 						cache: true
