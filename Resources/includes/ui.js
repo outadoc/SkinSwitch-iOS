@@ -678,15 +678,15 @@
 			left: 10,
 			right: 10,
 			font: {
-				fontSize: 16
+				fontSize: 15
 			},
 			textAlign: 'center',
 		});
 		
 		view.add(lbl_author);
 		
-		var height = 160,
-			width = 80;
+		var height = (Titanium.Platform.displayCaps.platformHeight <= 480) ? 160 : 200,
+			width = (Titanium.Platform.displayCaps.platformHeight <= 480) ? 80 : 100;
 			
 		var view_skin = Ti.UI.createImageView({
 			top: 20,

@@ -25,7 +25,7 @@ darkenView.addEventListener('click', function() {
 
 var containerView = Ti.UI.createScrollableView({
 	height: Ti.UI.FILL,
-	width: '80%',
+	width: 270,
 	showPagingControl: true,
 	clipViews: false,
 	pagingControlColor: 'transparent',
