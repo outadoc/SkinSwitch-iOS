@@ -42,28 +42,19 @@ searchBar.addEventListener('cancel', function(e) {
 getLatestSkins();
 
 function getSkinsFromSearch(match) {
+	if(match == '.') {
+		match = '\.';
+	}
+	
 	getRequestResults({
 		method: 'searchSkinByName',
-		match: searchBar.getValue(),
-		max: 10,
-		start: 0
+		match: searchBar.getValue()
 	});
 }
 
 function getLatestSkins(match) {
 	getRequestResults({
-		method: 'getRandomSkins',
-		max: 10,
-		start: 0
-	});
-}
-
-function getSkin(match) {
-	getRequestResults({
-		method: 'getSkin',
-		base64: false,
-		max: 10,
-		start: 0
+		method: 'getRandomSkins'
 	});
 }
 
