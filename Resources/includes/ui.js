@@ -651,7 +651,10 @@
 			right: 10,
 			height: Ti.UI.SIZE,
 			borderRadius: 7,
-			backgroundColor: 'white',
+			backgroundGradient: {
+				type: 'linear',
+				colors: ['#eeeeee', '#e5e5e5']
+			},
 			skinData: skinData,
 			layout: 'vertical'
 		});
@@ -740,11 +743,17 @@
 		
 		var b_add = Ti.UI.createButton({
 			title: 'Select this skin',
-			left: 20,
-			right: 20,
-			height: 30,
+			left: 30,
+			right: 30,
+			height: 35,
 			top: 20,
-			bottom: 20
+			bottom: 20,
+			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
+			backgroundColor: '#ffffff',
+			borderColor: 'lightGray',
+			borderRadius: 8,
+			color: 'gray',
+			selectedColor: 'lightGray'
 		});
 		
 		view.add(b_add);
