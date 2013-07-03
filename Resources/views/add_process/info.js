@@ -26,74 +26,80 @@ view.add(tableView);
 tableView.data[0].rows[0].children[1].addEventListener('return', function(e) {
 	tableView.data[0].rows[1].children[1].focus();
 });
+
+tableView.data[0].rows[0].children[1].addEventListener('change', function(e) {
+	if(e.value == '') {
+		b_next.setEnabled(false);
+	} else {
+		b_next.setEnabled(true);
+	}
+});
+
 var b_next = Ti.UI.createButton({
-	title: I('addProcess.next')
+	title: I('addProcess.next'),
+	enabled: false
 });
 
 b_next.addEventListener('click', function(e) {
-	if(tableView.data[0].rows[0].children[0].getValue() == '') {
-		alert(I('addProcess.skinInfo.error.name'));
-	} else {
-		if(win.skinIDToEdit == null) {
-			//if we're adding a new skin to the database, ask for more info
-			var optionDialog = Ti.UI.createOptionDialog({
-				title: I('addProcess.skinInfo.method.title'),
-				options: [I('addProcess.skinInfo.method.search'), I('addProcess.skinInfo.method.pseudo'), I('addProcess.skinInfo.method.url'), I('addProcess.skinInfo.method.cancel')],
-				cancel: 3
+	if(win.skinIDToEdit == null) {
+		//if we're adding a new skin to the database, ask for more info
+		var optionDialog = Ti.UI.createOptionDialog({
+			title: I('addProcess.skinInfo.method.title'),
+			options: [I('addProcess.skinInfo.method.search'), I('addProcess.skinInfo.method.pseudo'), I('addProcess.skinInfo.method.url'), I('addProcess.skinInfo.method.cancel')],
+			cancel: 3
+		});
+
+		optionDialog.addEventListener('click', function(e) {
+			var win_next = Ti.UI.createWindow({
+				skinName: tableView.data[0].rows[0].children[1].getValue(),
+				skinDesc: tableView.data[0].rows[1].children[1].getValue(),
+				backButtonTitle: I('addProcess.skinInfo.shortTitle'),
+				backgroundImage: Utils.getBGImage(),
+				barColor: Utils.getNavColor(),
+				backgroundRepeat: true
 			});
 
-			optionDialog.addEventListener('click', function(e) {
-				var win_next = Ti.UI.createWindow({
-					skinName: tableView.data[0].rows[0].children[1].getValue(),
-					skinDesc: tableView.data[0].rows[1].children[1].getValue(),
-					backButtonTitle: I('addProcess.skinInfo.shortTitle'),
-					backgroundImage: Utils.getBGImage(),
-					barColor: Utils.getNavColor(),
-					backgroundRepeat: true
-				});
+			if(e.index == 0 || e.index == 1 || e.index == 2) {
+				if(e.index == 0) {
+					win_next.setUrl('search.js');
+				} else if(e.index == 1) {
+					win_next.from = 'pseudo';
+					win_next.setTitle(I('addProcess.skinInfo.method.pseudo'));
+					win_next.setUrl('url_select.js');
+				} else if(e.index == 2) {
+					win_next.from = 'url';
+					win_next.setTitle(I('addProcess.skinInfo.method.url'));
+					win_next.setUrl('url_select.js');
+				} 
 
-				if(e.index == 0 || e.index == 1 || e.index == 2) {
-					if(e.index == 0) {
-						win_next.setUrl('search.js');
-					} else if(e.index == 1) {
-						win_next.from = 'pseudo';
-						win_next.setTitle(I('addProcess.skinInfo.method.pseudo'));
-						win_next.setUrl('url_select.js');
-					} else if(e.index == 2) {
-						win_next.from = 'url';
-						win_next.setTitle(I('addProcess.skinInfo.method.url'));
-						win_next.setUrl('url_select.js');
-					} 
-
-					if(Utils.isiPad()) {
-						win_next.masterGroup = win.masterGroup;
-						win_next.prevWins = [win];
-						win.masterGroup.open(win_next);
-					} else {
-						win_next.navGroup = win.navGroup;
-						win_next.container = win.container;
-						win.navGroup.open(win_next);
-					}					
-				}
-			});
-
-			optionDialog.show();
-		} else {
-			//if we're only updating an existing skin, just update its info in db
-			var db = Ti.Database.open('skins');
-			db.execute('UPDATE skins SET name=?, description=? WHERE id=?', tableView.data[0].rows[0].children[1].getValue(), tableView.data[0].rows[1].children[1].getValue(), win.skinIDToEdit);
-			db.close();
-			
-			if(Utils.isiPad()) {
-				win.updateSkinsList();
-				win.masterGroup.close(win, {
-					animated: true
-				});
-			} else {
-				win.close(win, {
-					animated: true
-				});
+				if(Utils.isiPad()) {
+					win_next.masterGroup = win.masterGroup;
+					win_next.prevWins = [win];
+					win.masterGroup.open(win_next);
+				} else {
+					win_next.navGroup = win.navGroup;
+					win_next.container = win.container;
+					win.navGroup.open(win_next);
+				}					
 			}
+		});
+
+		optionDialog.show();
+	} else {
+		//if we're only updating an existing skin, just update its info in db
+		var db = Ti.Database.open('skins');
+		db.execute('UPDATE skins SET name=?, description=? WHERE id=?', tableView.data[0].rows[0].children[1].getValue(), tableView.data[0].rows[1].children[1].getValue(), win.skinIDToEdit);
+		db.close();
+		
+		if(Utils.isiPad()) {
+			win.updateSkinsList();
+			win.masterGroup.close(win, {
+				animated: true
+			});
+		} else {
+			win.close(win, {
+				animated: true
+			});
 		}
 	}
 });
