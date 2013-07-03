@@ -55,8 +55,6 @@ b_next.addEventListener('click', function(e) {
 
 				if(e.index == 0 || e.index == 1) {
 					if(e.index == 0) {
-						win_next.from = 'search';
-						win_next.setTitle(I('addProcess.skinInfo.method.search'));
 						win_next.setUrl('search.js');
 					} else if(e.index == 1) {
 						win_next.from = 'pseudo';
