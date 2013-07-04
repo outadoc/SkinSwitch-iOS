@@ -749,11 +749,10 @@
 			top: 20,
 			bottom: 20,
 			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
-			backgroundColor: '#ffffff',
-			borderColor: 'lightGray',
+			backgroundColor: '#bfbfbf',
 			borderRadius: 8,
-			color: 'gray',
-			selectedColor: 'lightGray'
+			color: '#ffffff',
+			selectedColor: '#555555'
 		});
 		
 		b_add.addEventListener('click', function() {

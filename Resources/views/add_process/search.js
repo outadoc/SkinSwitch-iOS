@@ -151,14 +151,14 @@ function loadSkinPreview(e) {
 				if(this.getResponseData() != null && this.responseText.error == null) {
 					e.view.frontImg.animate({
 						opacity: 0,
-						duration: 100
+						duration: 60
 					}, function() {
 						e.view.frontImg.setImage(xhr_front.getResponseData());
 						e.view.frontImg.isLoaded = true;
 						
 						e.view.frontImg.animate({
 							opacity: 1,
-							duration: 100
+							duration: 60
 						});
 					});
 				}
