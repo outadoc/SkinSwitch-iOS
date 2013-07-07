@@ -1,14 +1,14 @@
-var win = Ti.UI.currentWindow;
-
-var Utils = require('/includes/utils');
+var win = Ti.UI.currentWindow,
+	Utils = require('/includes/utils');
+	
 Ti.include('/includes/lib/json.i18n.js');
 
 var container = Ti.UI.createView({
 	layout: 'vertical',
 	height: Ti.UI.FILL
-});
+}),
 
-var lbl_question = Ti.UI.createLabel({
+lbl_question = Ti.UI.createLabel({
 	text: '- ' + win.question,
 	color: 'white',
 	top: 30,
@@ -18,9 +18,9 @@ var lbl_question = Ti.UI.createLabel({
 		fontWeight: 'bold',
 		fontSize: 19
 	}
-});
+}),
 
-var txtfield_answer = Ti.UI.createTextField({
+txtfield_answer = Ti.UI.createTextField({
 	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
 	autocorrect: false,
@@ -29,9 +29,9 @@ var txtfield_answer = Ti.UI.createTextField({
 	top: 20,
 	left: 10,
 	right: 10
-});
+}),
 
-var lbl_info = Ti.UI.createLabel({
+lbl_info = Ti.UI.createLabel({
 	text: I('addProcess.process.challenge.help'),
 	left: (Utils.isiPad()) ? '7%' : 15,
 	right: (Utils.isiPad()) ? '7%' : 15,
@@ -56,6 +56,10 @@ win.add(container);
 var b_cancel = Ti.UI.createButton({
 	title: I('addProcess.process.challenge.cancel'),
 	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
+}),
+
+b_continue = Ti.UI.createButton({
+	title: I('addProcess.process.challenge.continue')
 });
 
 b_cancel.addEventListener('click', function() {
@@ -67,10 +71,6 @@ b_cancel.addEventListener('click', function() {
 });
 
 win.setLeftNavButton(b_cancel);
-
-var b_continue = Ti.UI.createButton({
-	title: I('addProcess.process.challenge.continue')
-});
 
 b_continue.addEventListener('click', function() {
 	var xhr_answer = Ti.Network.createHTTPClient({

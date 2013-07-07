@@ -35,22 +35,21 @@
 			height: Ti.UI.FILL,
 			left: 0,
 			top: 0
-		});
-
-		var view = Ti.UI.createView({
+		}),
+		
+		view = Ti.UI.createView({
 			height: 60,
 			width: 60,
 			borderRadius: 10,
 			backgroundColor: 'black',
 			opacity: 0.6
-		});
-
-		win.add(view);
-
-		var spinWheel = Ti.UI.createActivityIndicator({
+		}),
+		
+		spinWheel = Ti.UI.createActivityIndicator({
 			style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG
 		});
 
+		win.add(view);
 		view.add(spinWheel);
 		spinWheel.show();
 
@@ -60,9 +59,9 @@
 	exports.getTextFieldRow = function(text, hint) {
 		var row = Ti.UI.createTableViewRow({
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
-		});
+		}),
 		
-		var rowText = Ti.UI.createLabel({
+		rowText = Ti.UI.createLabel({
 			text: text,
 			left: 10,
 			width: 120,
@@ -71,11 +70,9 @@
 				fontWeight: 'bold',
 				fontSize: 17
 			}
-		});
+		}),
 		
-		row.add(rowText);
-
-		var textfield = Ti.UI.createTextField({
+		textfield = Ti.UI.createTextField({
 			hintText: hint,
 			color: '#336699',
 			height: 30,
@@ -86,6 +83,7 @@
 			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
 		});
 		
+		row.add(rowText);
 		row.add(textfield);
 		return row;
 	}
@@ -94,9 +92,9 @@
 		var row = Ti.UI.createTableViewRow({
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
 			height: 100
-		});
+		}),
 		
-		var rowText = Ti.UI.createLabel({
+		rowText = Ti.UI.createLabel({
 			text: text,
 			left: 10,
 			width: 120,
@@ -105,11 +103,9 @@
 				fontWeight: 'bold',
 				fontSize: 17
 			}
-		});
+		}),
 		
-		row.add(rowText);
-
-		var textarea = Ti.UI.createTextArea({
+		textarea = Ti.UI.createTextArea({
 			color: '#336699',
 			height: 98,
 			right: 10,
@@ -121,7 +117,8 @@
 				fontSize: 15
 			}
 		});
-
+		
+		row.add(rowText);
 		row.add(textarea);
 		return row;
 	}

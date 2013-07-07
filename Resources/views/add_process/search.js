@@ -1,13 +1,35 @@
 Ti.include('/includes/lib/json.i18n.js');
 
-var win = Ti.UI.currentWindow;
-var Utils = require('/includes/utils');
-var Ui = require('/includes/ui');
+var win = Ti.UI.currentWindow,
+	Utils = require('/includes/utils'),
+	Ui = require('/includes/ui'),
 
-var searchBar = Ti.UI.createSearchBar({
+searchBar = Ti.UI.createSearchBar({
 	barColor: Utils.getNavColor(),
 	hintText: I('addProcess.search.searchHint'),
 	width: Ti.UI.FILL
+}),
+
+darkenView = Ti.UI.createView({
+	backgroundColor: 'black',
+	top: 0,
+	bottom: 0,
+	left: 0,
+	right: 0
+}),
+
+containerView = null,
+
+lbl_indicator = Ti.UI.createLabel({
+	top: 20,
+	left: 25,
+	right: 20,
+	font: {
+		fontSize: 19,
+		fontFamily: 'HelveticaNeue-Italic'
+	},
+	height: 20,
+	color: 'white'
 });
 
 searchBar.addEventListener('return', function(e) {
@@ -37,14 +59,6 @@ searchBar.addEventListener('blur', function(e) {
 
 win.setTitleControl(searchBar);
 
-var darkenView = Ti.UI.createView({
-	backgroundColor: 'black',
-	top: 0,
-	bottom: 0,
-	left: 0,
-	right: 0
-});
-
 darkenView.addEventListener('click', function() {
 	searchBar.blur();
 	
@@ -53,7 +67,9 @@ darkenView.addEventListener('click', function() {
 	}
 });
 
-var containerView;
+if(!Utils.isiPad()) {
+	win.add(lbl_indicator);
+}
 
 if(Utils.isiPad()) {
 	containerView = Ti.UI.createScrollView({
@@ -78,22 +94,6 @@ if(Utils.isiPad()) {
 
 win.add(containerView);
 
-var lbl_indicator = Ti.UI.createLabel({
-	top: 20,
-	left: 25,
-	right: 20,
-	font: {
-		fontSize: 19,
-		fontFamily: 'HelveticaNeue-Italic'
-	},
-	height: 20,
-	color: 'white'
-});
-
-if(!Utils.isiPad()) {
-	win.add(lbl_indicator);
-}
-
 getRandomSkins();
 
 function getSkinsFromSearch(match) {
@@ -116,7 +116,7 @@ function getRandomSkins() {
 function getRequestResults(params) {
 	var xhr = Ti.Network.createHTTPClient({
 		onload: function(e) {
-			var resultArray = [];
+			var resultArray = [], i, currentSkinResult;
 			
 			try {
 				resultArray = JSON.parse(this.responseText);
@@ -135,8 +135,8 @@ function getRequestResults(params) {
 						lbl_indicator.setText(I('addProcess.search.indicator.noResults', params.match));
 					}
 					
-					for(var i = 0; i < resultArray.length; i++) {
-						var currentSkinResult = Ui.getSingleSearchResult(resultArray[i], selectSkin);
+					for(i = 0; i < resultArray.length; i++) {
+						currentSkinResult = Ui.getSingleSearchResult(resultArray[i], selectSkin);
 						
 						if(Utils.isiPad()) {
 							containerView.add(currentSkinResult);

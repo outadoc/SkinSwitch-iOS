@@ -1,16 +1,16 @@
 Ti.include('/includes/lib/json.i18n.js');
 
-var win = Ti.UI.currentWindow;
-var Utils = require('/includes/utils');
-var Keychain = require('clearlyinnovative.keychain');
+var win = Ti.UI.currentWindow,
+	Utils = require('/includes/utils'),
+	Keychain = require('clearlyinnovative.keychain');
 
 function getTextFieldRow(text, hint, isPassword) {
 	var row = Ti.UI.createTableViewRow({
 		selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
 		layout: 'horizontal'
-	});
+	}),
 	
-	var rowText = Ti.UI.createLabel({
+	rowText = Ti.UI.createLabel({
 		text: text,
 		left: 10,
 		width: Ti.UI.SIZE,
@@ -21,17 +21,9 @@ function getTextFieldRow(text, hint, isPassword) {
 			fontWeight: 'bold',
 			fontSize: 17
 		}
-	});
-	
-	row.add(rowText);
-	
-	rowText.addEventListener('postlayout', function() {
-		if(rowText.rect.width >= 140) {
-			rowText.width = 140;
-		}
-	});
+	}),
 
-	var textfield = Ti.UI.createTextField({
+	textfield = Ti.UI.createTextField({
 		color: '#336699',
 		right: 10,
 		left: 5,
@@ -48,7 +40,15 @@ function getTextFieldRow(text, hint, isPassword) {
 		autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
 		clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
 	});
-
+	
+	row.add(rowText);
+	
+	rowText.addEventListener('postlayout', function() {
+		if(rowText.rect.width >= 140) {
+			rowText.width = 140;
+		}
+	});
+	
 	row.add(textfield);
 	return row;
 }
@@ -104,11 +104,9 @@ var lbl_header = Ti.UI.createLabel({
 	top: 15,
 	left: 15,
 	height: Ti.UI.SIZE
-});
+}),
 
-win.add(lbl_header);
-
-var tableView = Ti.UI.createTableView({
+tableView = Ti.UI.createTableView({
 	data: [getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●', true)],
 	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundColor: 'transparent',
@@ -116,11 +114,9 @@ var tableView = Ti.UI.createTableView({
 	scrollable: false,
 	rowHeight: 45,
 	height: 120
-});
+}),
 
-win.add(tableView);
-
-var lbl_footer = Ti.UI.createLabel({
+lbl_footer = Ti.UI.createLabel({
 	text: I('settings.footer.migratedAccount') + '\n\n' + I('settings.footer.privacy'),
 	color: '#F8F8F8',
 	font: {
@@ -137,6 +133,8 @@ var lbl_footer = Ti.UI.createLabel({
 	height: Ti.UI.SIZE
 });
 
+win.add(lbl_header);
+win.add(tableView);
 win.add(lbl_footer);
 
 win.addEventListener('focus', function() {

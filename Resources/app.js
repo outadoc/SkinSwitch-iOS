@@ -1,5 +1,5 @@
-var Utils = require('/includes/utils');
-var Database = require('/includes/db');
+var Utils = require('/includes/utils'),
+	Database = require('/includes/db');
 
 try {
 	//if the skins db exists
@@ -43,12 +43,10 @@ function startApp() {
 			title: I('main.skinDetails.title'),
 			barColor: Utils.getNavColor(),
 			backgroundColor: '#eeeeee'
-		});
+		}),
 
-		var initialInfoView = getInitialInfoView();
-		var content = initialInfoView;
-		
-		detailWin.add(content);
+		initialInfoView = getInitialInfoView(),
+		content = initialInfoView;
 
 		var masterWin = Ti.UI.createWindow({
 			url: 'views/main.js',
@@ -59,9 +57,9 @@ function startApp() {
 			detailWin: detailWin,
 			detailContent: content,
 			initialInfoView: initialInfoView
-		});
+		}),
 
-		var splitWin = Ti.UI.iPad.createSplitWindow({
+		splitWin = Ti.UI.iPad.createSplitWindow({
 			detailView: Ti.UI.iPhone.createNavigationGroup({
 				window: detailWin
 			}),
@@ -69,9 +67,9 @@ function startApp() {
 				window: masterWin
 			}),
 			showMasterInPortrait: true
-		});
+		}),
 		
-		var adView = Ti.UI.iOS.createAdView({
+		adView = Ti.UI.iOS.createAdView({
 			height: Ti.UI.SIZE,
 			width: Ti.UI.FILL,
 			bottom: 0
@@ -97,6 +95,7 @@ function startApp() {
 			masterWin.animate(anim);
 		});
 	
+		detailWin.add(content);
 		splitWin.add(adView);
 
 		splitWin.open();
@@ -111,9 +110,9 @@ function startApp() {
 			var view = Ti.UI.createView({
 				height: Ti.UI.SIZE,
 				width: Ti.UI.FILL
-			});
+			}),
 
-			var lbl_noskin = Ti.UI.createLabel({
+			lbl_noskin = Ti.UI.createLabel({
 				text: I('main.noSelectedSkin'),
 				width: Ti.UI.FILL,
 				textAlign: 'center',
@@ -137,13 +136,13 @@ function startApp() {
 			backgroundImage: Utils.getBGImage(),
 			barColor: Utils.getNavColor(),
 			backgroundRepeat: true
-		});
+		}),
 
-		var navGroup = Ti.UI.iPhone.createNavigationGroup({
+		navGroup = Ti.UI.iPhone.createNavigationGroup({
 			window: mainWin
-		});
+		}),
 
-		var container = Ti.UI.createWindow({
+		container = Ti.UI.createWindow({
 			navBarHidden: true
 		});
 

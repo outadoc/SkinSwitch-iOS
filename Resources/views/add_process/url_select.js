@@ -1,17 +1,15 @@
 Ti.include('/includes/lib/json.i18n.js');
 
-var win = Ti.UI.currentWindow;
-var Utils = require('/includes/utils');
+var win = Ti.UI.currentWindow,
+	Utils = require('/includes/utils'),
 
-var view = Ti.UI.createView({
+view = Ti.UI.createView({
 	height: Ti.UI.SIZE,
 	top: 50,
 	layout: 'vertical'
-});
+}),
 
-win.add(view);
-
-var lbl_url = Ti.UI.createLabel({
+lbl_url = Ti.UI.createLabel({
 	left: 20,
 	width: 280,
 	color: 'white',
@@ -23,17 +21,9 @@ var lbl_url = Ti.UI.createLabel({
 	font: {
 		fontSize: 18
 	}
-});
+}),
 
-if(win.from == 'url') {
-	lbl_url.setText(I('addProcess.urlSelect.urlTitle'));
-} else if(win.from == 'pseudo') {
-	lbl_url.setText(I('addProcess.urlSelect.pseudoTitle'));
-}
-
-view.add(lbl_url);
-
-var txtfield_url = Ti.UI.createTextField({
+txtfield_url = Ti.UI.createTextField({
 	height: 35,
 	top: 15,
 	left: 20,
@@ -44,11 +34,18 @@ var txtfield_url = Ti.UI.createTextField({
 	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
 	clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
+}),
+
+b_next = Ti.UI.createButton({
+	title: I('addProcess.next'),
+	enabled: false
 });
 
 if(win.from == 'url') {
+	lbl_url.setText(I('addProcess.urlSelect.urlTitle'));
 	txtfield_url.setValue('http://');
 } else if(win.from == 'pseudo') {
+	lbl_url.setText(I('addProcess.urlSelect.pseudoTitle'));
 	txtfield_url.setHintText('Notch');
 }
 
@@ -58,13 +55,6 @@ txtfield_url.addEventListener('change', function(e) {
 	} else {
 		b_next.setEnabled(true);
 	}
-})
-
-view.add(txtfield_url);
-
-var b_next = Ti.UI.createButton({
-	title: I('addProcess.next'),
-	enabled: false
 });
 
 b_next.addEventListener('click', function(e) {
@@ -103,6 +93,10 @@ b_next.addEventListener('click', function(e) {
 		alert(I('addProcess.urlSelect.invalidUrl'));
 	}
 });
+
+win.add(view);
+view.add(lbl_url);
+view.add(txtfield_url);
 
 win.setRightNavButton(b_next);
 txtfield_url.focus();

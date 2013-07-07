@@ -2,15 +2,14 @@
 
 	Ti.include('/includes/lib/json.i18n.js');
 	
-	var Network = require('/includes/network');
-	var Ui = require('/includes/ui');
+	var Network = require('/includes/network'),
+		Ui = require('/includes/ui');
 
 	exports.getSkins = function() {
-		var skins = [];
-		var db = Ti.Database.open(exports.getDbName());
-		var skinsFromDB;
-		
-		var orderBy = Ti.App.Properties.getString('orderBy', 'name');
+		var skins = [],
+			db = Ti.Database.open(exports.getDbName()),
+			skinsFromDB,
+			orderBy = Ti.App.Properties.getString('orderBy', 'name');
 		
 		if(orderBy == 'date') {
 			skinsFromDB = db.execute('SELECT * FROM skins ORDER BY timestamp');
@@ -35,9 +34,10 @@
 	}
 
 	exports.getSkinCount = function() {
-		var rows = [];
-		var db = Ti.Database.open(exports.getDbName());
-		var rowCount = db.execute('SELECT * FROM skins').getRowCount();
+		var rows = [],
+			db = Ti.Database.open(exports.getDbName()),
+			rowCount = db.execute('SELECT * FROM skins').getRowCount();
+		
 		db.close();
 		return rowCount;
 	}
@@ -78,8 +78,8 @@
 
 	exports.backupDatabase = function() {
 		try {
-			var db = exports.getDatabaseFile();
-			var backup = exports.getDatabaseBackupFile();
+			var db = exports.getDatabaseFile(),
+				backup = exports.getDatabaseBackupFile();
 
 			if(backup != null) {
 				backup.deleteFile();
@@ -93,8 +93,8 @@
 
 	exports.restoreDatabase = function() {
 		try {
-			var db = exports.getDatabaseFile();
-			var backup = exports.getDatabaseBackupFile();
+			var db = exports.getDatabaseFile(),
+				backup = exports.getDatabaseBackupFile();
 
 			if(backup != null) {
 				db.deleteFile();
@@ -113,8 +113,8 @@
 	}
 
 	exports.askForDatabaseRestore = function(reason, successCallback) {
-		var backupTime = new Date(exports.getDatabaseBackupFile().modificationTimestamp());
-		var alert_restore = Ti.UI.createAlertDialog({
+		var backupTime = new Date(exports.getDatabaseBackupFile().modificationTimestamp()),
+		alert_restore = Ti.UI.createAlertDialog({
 			title: I('restoreDatabase.title'),
 			message: I('restoreDatabase.message', reason, backupTime.toUTCString()),
 			buttonNames: [I('restoreDatabase.no'), I('restoreDatabase.yes')],

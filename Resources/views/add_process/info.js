@@ -1,17 +1,15 @@
 Ti.include('/includes/lib/json.i18n.js');
 
-var win = Ti.UI.currentWindow;
-var Utils = require('/includes/utils');
-var Database = require('/includes/db');
+var win = Ti.UI.currentWindow,
+	Utils = require('/includes/utils'),
+	Database = require('/includes/db'),
 
-var view = Ti.UI.createView({
+view = Ti.UI.createView({
 	height: Ti.UI.SIZE,
 	top: (Utils.isiPad()) ? 30 : (((Ti.Platform.displayCaps.platformHeight - 70 - 215) / 2) - (180 / 2))
-});
+}),
 
-win.add(view);
-
-var tableView = Ti.UI.createTableView({
+tableView = Ti.UI.createTableView({
 	data: [Utils.getTextFieldRow(I('addProcess.skinInfo.name'), I('addProcess.skinInfo.nameHint')), Utils.getTextAreaRow(I('addProcess.skinInfo.description'))],
 	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundColor: 'transparent',
@@ -19,9 +17,12 @@ var tableView = Ti.UI.createTableView({
 	scrollable: false,
 	height: 180,
 	rowHeight: 45
-});
+}),
 
-view.add(tableView);
+b_next = Ti.UI.createButton({
+	title: I('addProcess.next'),
+	enabled: false
+});
 
 //when returning on the name field
 tableView.data[0].rows[0].children[1].addEventListener('return', function(e) {
@@ -39,11 +40,6 @@ tableView.data[0].rows[0].children[1].addEventListener('change', function(e) {
 	} else {
 		b_next.setEnabled(true);
 	}
-});
-
-var b_next = Ti.UI.createButton({
-	title: I('addProcess.next'),
-	enabled: false
 });
 
 b_next.addEventListener('click', function(e) {
@@ -110,8 +106,6 @@ b_next.addEventListener('click', function(e) {
 	}
 });
 
-win.setRightNavButton(b_next);
-
 if(Utils.isiPhone()) {
 	var b_close = Ti.UI.createButton({
 		title: I('buttons.close'),
@@ -141,5 +135,10 @@ if(win.skinIDToEdit != null) {
 
 	db.close();
 }
+
+win.add(view);
+view.add(tableView);
+
+win.setRightNavButton(b_next);
 
 tableView.data[0].rows[0].children[1].focus();

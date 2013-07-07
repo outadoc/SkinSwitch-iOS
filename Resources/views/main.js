@@ -1,16 +1,16 @@
 Ti.include('/includes/lib/json.i18n.js');
 
-var Database = require('/includes/db');
-var Utils = require('/includes/utils');
-var Ui = require('/includes/ui');
-var Network = require('/includes/network');
+var Database = require('/includes/db'),
+	Utils = require('/includes/utils'),
+	Ui = require('/includes/ui'),
+	Network = require('/includes/network'),
 
-var win = Ti.UI.currentWindow;
-var loadingWin = Utils.createLoadingWindow();
+win = Ti.UI.currentWindow,
+loadingWin = Utils.createLoadingWindow(),
 
-var adLoaded = false;
+adLoaded = false,
 
-var skinsShowcase = Ti.UI.createScrollView({
+skinsShowcase = Ti.UI.createScrollView({
 	contentWidth: Ti.UI.FILL,
   	contentHeight: Ti.UI.SIZE,
   	verticalBounce: true,
@@ -77,13 +77,13 @@ b_add.addEventListener('click', function(e) {
 			backgroundImage: Utils.getBGImage(),
 			barColor: Utils.getNavColor(),
 			backgroundRepeat: true
-		});
+		}),
 	
-		var container = Ti.UI.createWindow({
+		container = Ti.UI.createWindow({
 			navBarHidden: true
-		});
-		
-		var navGroup = Ti.UI.iPhone.createNavigationGroup({
+		}),
+	
+		navGroup = Ti.UI.iPhone.createNavigationGroup({
 			window: win_add
 		});
 	
@@ -137,13 +137,13 @@ b_settings.addEventListener('click', function() {
 			backgroundRepeat: true,
 			url: 'settings.js',
 			layout: 'vertical'
-		});
+		}),
 	
-		var container = Ti.UI.createWindow({
+		container = Ti.UI.createWindow({
 			navBarHidden: true
-		});
+		}),
 		
-		var navGroup = Ti.UI.iPhone.createNavigationGroup({
+		navGroup = Ti.UI.iPhone.createNavigationGroup({
 			window: win_settings
 		});
 	

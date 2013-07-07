@@ -1,24 +1,21 @@
-var win = Ti.UI.currentWindow;
 Ti.include('/includes/lib/json.i18n.js');
 
-var scrollView = Ti.UI.createScrollView({
+var win = Ti.UI.currentWindow,
+
+scrollView = Ti.UI.createScrollView({
 	height: Ti.UI.FILL,
 	width: Ti.UI.FILL,
 	layout: 'vertical',
 	contentHeight: 'auto'
-});
+}),
 
-win.add(scrollView);
-
-var img_logo = Ti.UI.createImageView({
+img_logo = Ti.UI.createImageView({
 	image: '/img/icon-large.png',
 	top: 10,
 	width: 130
-});
+}),
 
-scrollView.add(img_logo);
-
-var lbl_app = Ti.UI.createLabel({
+lbl_app = Ti.UI.createLabel({
 	text: Ti.App.getName() + ' v' + Ti.App.getVersion(),
 	top: 5,
 	color: '#F8F8F8',
@@ -31,11 +28,9 @@ var lbl_app = Ti.UI.createLabel({
 		x: 0,
 		y: 1
 	}
-});
+}),
 
-scrollView.add(lbl_app);
-
-var lbl_credits = Ti.UI.createLabel({
+lbl_credits = Ti.UI.createLabel({
 	text: '\u2713 ' + I('credits.developer') 	+ '\nBaptiste Candellier (outadoc)\nfor outa[dev]\n\n' + 
 		  '\u2713 ' + I('credits.platform') 	+ '\nAppcelerator Titanium\n\n' + 
 		  '\u2713 ' + I('credits.modules') 		+ '\nKeychain module by ClearlyInnovative\n\n' + 
@@ -54,19 +49,15 @@ var lbl_credits = Ti.UI.createLabel({
 	top: 15,
 	height: Ti.UI.SIZE,
 	textAlign: 'center'
-});
+}),
 
-scrollView.add(lbl_credits);
-
-var lbl_skinmanager_intro = Ti.UI.createLabel({
+lbl_skinmanager_intro = Ti.UI.createLabel({
 	text: 'This app uses',
 	color: 'white',
 	top: 30
-});
+}),
 
-scrollView.add(lbl_skinmanager_intro);
-
-var lbl_skinmanager = Ti.UI.createLabel({
+lbl_skinmanager = Ti.UI.createLabel({
 	text: 'Skin Manager',
 	color: 'white',
 	top: 0,
@@ -74,23 +65,29 @@ var lbl_skinmanager = Ti.UI.createLabel({
 		fontSize: 20,
 		fontFamily: 'Minecraftia'
 	}
-});
+}),
 
-lbl_skinmanager.addEventListener('click', function(e) {
-	Ti.Platform.openURL('http://skinmanager.fr.nf/');
-});
-
-scrollView.add(lbl_skinmanager);
-
-var img_outadev = Ti.UI.createImageView({
+img_outadev = Ti.UI.createImageView({
 	image: '/img/outadev.png',
 	top: 30,
 	bottom: 20,
 	height: Ti.UI.SIZE
 });
 
+lbl_skinmanager.addEventListener('click', function(e) {
+	Ti.Platform.openURL('http://skinmanager.fr.nf/');
+});
+
 img_outadev.addEventListener('click', function(e) {
 	Ti.Platform.openURL('http://dev.outadoc.fr');
 });
+
+win.add(scrollView);
+
+scrollView.add(img_logo);
+scrollView.add(lbl_app);
+scrollView.add(lbl_credits);
+scrollView.add(lbl_skinmanager_intro);
+scrollView.add(lbl_skinmanager);
 
 scrollView.add(img_outadev);

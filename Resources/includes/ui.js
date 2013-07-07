@@ -9,25 +9,25 @@
 			height: 100,
 			skinData: skinData,
 			layout: 'vertical'
-		});
+		}),
 		
-		var backgroundFrame = Ti.UI.createImageView({
+		backgroundFrame = Ti.UI.createImageView({
 			image: '/img/itemframe.png',
 			width: 72,
 			height: 72
-		});
+		}),
 		
-		var headPreview = Ti.UI.createImageView({
+		headPreview = Ti.UI.createImageView({
 			image: (skinData == null) ? '/img/plus_sign.png' : exports.getHeadFromSkinID(skinData.id),
 			top: 15,
 			left: 15,
 			right: 15,
 			bottom: 15
-		});
+		}),
 		
-		backgroundFrame.add(headPreview);
 		
-		var title = Ti.UI.createLabel({
+		
+		title = Ti.UI.createLabel({
 			text: (skinData == null) ? I('main.addSkin') : skinData.name,
 			top: 3,
 			width: 75,
@@ -40,22 +40,23 @@
 			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 		});
 		
+		backgroundFrame.add(headPreview);
 		view.add(backgroundFrame);
 		view.add(title);
 		
 		if(skinData != null) {
-			var startTimestamp = 0;
-			var wasCanceled = false;
+			var startTimestamp = 0,
+				wasCanceled = false,
 			
-			var anim_normal = Ti.UI.createAnimation({
+			anim_normal = Ti.UI.createAnimation({
 				transform: Ti.UI.create2DMatrix({
 					rotate: 0,
 					scale: 1
 				}),
 				duration: 300
-			});
+			}),
 			
-			var anim_maxout = Ti.UI.createAnimation({
+			anim_maxout = Ti.UI.createAnimation({
 				transform: Ti.UI.create2DMatrix({
 					rotate: 180,
 					scale: 1.5
@@ -88,9 +89,9 @@
 					if(Utils.isiPad()) {
 						exports.getiPadDetailWindow(skinData, ipad_win);
 					} else {
-						var win = exports.getiPhoneDetailWindow(skinData);
+						var win = exports.getiPhoneDetailWindow(skinData),
 		
-						var anim = Ti.UI.createAnimation({
+						anim = Ti.UI.createAnimation({
 							transform: Ti.UI.create2DMatrix({
 								scale: 1.1
 							}),
@@ -136,9 +137,9 @@
 				} else {
 					var container = Ti.UI.createWindow({
 						navBarHidden: true
-					});
+					}),
 				
-					var info_win = Ti.UI.createWindow({
+					info_win = Ti.UI.createWindow({
 						url: 'add_process/info.js',
 						title: I('addProcess.skinInfo.title'),
 						backgroundImage: Utils.getBGImage(),
@@ -146,9 +147,9 @@
 						backgroundRepeat: true,
 						container: container
 						
-					});
+					}),
 				
-					var group = Ti.UI.iPhone.createNavigationGroup({
+					group = Ti.UI.iPhone.createNavigationGroup({
 						window: info_win
 					});
 				
@@ -182,7 +183,7 @@
 		  	bottom: 13,
 		  	right: 13,
 		  	height: Ti.UI.FILL
-		});
+		}), i;
 				
 		if(Utils.isiPad()) {
 			container.addEventListener('click', function(e) {
@@ -196,7 +197,7 @@
 			container.add(exports.getSkinFrame(null, ipad_win));
 		}
 		
-		for(var i = 0; i < skins.length; i ++) {
+		for(i = 0; i < skins.length; i ++) {
 			container.add(exports.getSkinFrame(skins[i], ipad_win));
 		}
 		
@@ -237,22 +238,18 @@
 			borderColor: 'gray',
 			borderRadius: 10,
 			layout: 'vertical'
-		});
+		}),
 		
-		win.add(containerView);
-		
-		var skinInfoView = Ti.UI.createScrollView({
+		skinInfoView = Ti.UI.createScrollView({
 			width: Ti.UI.FILL,
 			height: containerView.height - 45,
 			contentWidth: Ti.UI.FILL,
 		  	contentHeight: Ti.UI.SIZE,
 		  	showVerticalScrollIndicator: true,
 		  	layout: 'vertical'
-		});
+		}),
 		
-		containerView.add(skinInfoView);
-		
-		var skinTitle = Ti.UI.createLabel({
+		skinTitle = Ti.UI.createLabel({
 			text: skinData.name,
 			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 			font: {
@@ -264,16 +261,11 @@
 			left: 20,
 			right: 20,
 			height: 25
-		});
+		}),
 		
-		skinInfoView.add(skinTitle);
+		skinView = exports.getSkinPreview(skinData.id),
 		
-		skinInfoView.add(exports.getHorizontalSeparator('lightGray'));
-		
-		var skinView = exports.getSkinPreview(skinData.id);
-		skinInfoView.add(skinView);
-		
-		var descriptionTitle = Ti.UI.createLabel({
+		descriptionTitle = Ti.UI.createLabel({
 			text: I('main.skinDetails.description'),
 			font: {
 				fontSize: 17,
@@ -283,11 +275,9 @@
 			left: 20,
 			right: 20,
 			height: 20
-		});
+		}),
 		
-		skinInfoView.add(descriptionTitle);
-		
-		var skinDescription = Ti.UI.createLabel({
+		skinDescription = Ti.UI.createLabel({
 			text: skinData.desc,
 			font: {
 				fontSize: 15,
@@ -296,11 +286,9 @@
 			top: 5,
 			left: 20,
 			right: 20
-		});
+		}),
 		
-		skinInfoView.add(skinDescription);
-		
-		var timestampTitle = Ti.UI.createLabel({
+		timestampTitle = Ti.UI.createLabel({
 			text: I('main.skinDetails.creation'),
 			font: {
 				fontSize: 17,
@@ -310,11 +298,9 @@
 			left: 20,
 			right: 20,
 			height: 20
-		});
+		}),
 		
-		skinInfoView.add(timestampTitle);
-		
-		var skinTimestamp = Ti.UI.createLabel({
+		skinTimestamp = Ti.UI.createLabel({
 			text: (new Date(skinData.time)).toLocaleDateString(),
 			font: {
 				fontSize: 15,
@@ -325,11 +311,9 @@
 			left: 20,
 			right: 20,
 			height: 20
-		});
+		}),
 		
-		skinInfoView.add(skinTimestamp);
-		
-		var actionView = Ti.UI.createView({
+		actionView = Ti.UI.createView({
 			bottom: 0,
 			top: 0,
 			height: 44,
@@ -337,11 +321,9 @@
 			layout: 'horizontal',
 			borderColor: 'lightGray',
 			borderWidth: 1,
-		});
+		}),
 		
-		containerView.add(actionView);
-		
-		var b_delete = Ti.UI.createButton({
+		b_delete = Ti.UI.createButton({
 			image : '/img/delete_grey.png',
 			width: 44,
 			height: Ti.UI.FILL,
@@ -351,12 +333,9 @@
 			font: {
 				fontSize: 17
 			}
-		});
+		}),
 		
-		actionView.add(b_delete);
-		actionView.add(exports.getVerticalSeparator('lightGray'));
-		
-		var b_edit = Ti.UI.createButton({
+		b_edit = Ti.UI.createButton({
 			image : '/img/edit_grey.png',
 			width: 44,
 			height: Ti.UI.FILL,
@@ -366,12 +345,9 @@
 			font: {
 				fontSize: 17
 			}
-		});
+		}),
 		
-		actionView.add(b_edit);
-		actionView.add(exports.getVerticalSeparator('lightGray'));
-		
-		var b_wear = Ti.UI.createButton({
+		b_wear = Ti.UI.createButton({
 			title: I('main.skinDetails.wear'),
 			width: 120,
 			height: Ti.UI.FILL,
@@ -381,12 +357,9 @@
 			font: {
 				fontSize: 17
 			}
-		});
+		}),
 		
-		actionView.add(b_wear);
-		actionView.add(exports.getVerticalSeparator('lightGray'));
-		
-		var b_close = Ti.UI.createButton({
+		b_close = Ti.UI.createButton({
 			title: I('buttons.close'),
 			width: 89,
 			height: Ti.UI.FILL,
@@ -397,8 +370,6 @@
 				fontSize: 17
 			}
 		});
-		
-		actionView.add(b_close);
 		
 		b_close.addEventListener('click', function(e) {
 			closeDetailWin();
@@ -432,6 +403,27 @@
 			closeDetailWin();
 			Network.uploadSkin(skinData.id, skinData.name);
 		});
+		
+		win.add(containerView);
+		containerView.add(skinInfoView);
+		
+		skinInfoView.add(skinTitle);
+		skinInfoView.add(exports.getHorizontalSeparator('lightGray'));
+		skinInfoView.add(skinView);
+		skinInfoView.add(descriptionTitle);
+		skinInfoView.add(skinDescription);
+		skinInfoView.add(timestampTitle);
+		skinInfoView.add(skinTimestamp);
+		
+		containerView.add(actionView);
+		
+		actionView.add(b_delete);
+		actionView.add(exports.getVerticalSeparator('lightGray'));
+		actionView.add(b_edit);
+		actionView.add(exports.getVerticalSeparator('lightGray'));
+		actionView.add(b_wear);
+		actionView.add(exports.getVerticalSeparator('lightGray'));
+		actionView.add(b_close);
 
 		return win;
 	}

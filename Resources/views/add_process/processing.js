@@ -1,12 +1,12 @@
 Ti.include('/includes/lib/json.i18n.js');
 
-var win = Ti.UI.currentWindow;
-var Utils = require('/includes/utils');
-var Database = require('/includes/db');
+var win = Ti.UI.currentWindow,
+	Utils = require('/includes/utils'),
+	Database = require('/includes/db'),
 
-var skinID = Utils.getRandomID();
+skinID = Utils.getRandomID(),
 
-var progBar = Ti.UI.createProgressBar({
+progBar = Ti.UI.createProgressBar({
 	min: 0,
 	max: 100,
 	value: 0,
@@ -14,15 +14,15 @@ var progBar = Ti.UI.createProgressBar({
 	message: I('addProcess.process.progress.initial'),
 	style: Ti.UI.iPhone.ProgressBarStyle.BAR,
 	color: 'white'
+}),
+
+b_done = Ti.UI.createButton({
+	title: I('buttons.done'),
+	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
 });
 
 progBar.show();
 win.add(progBar);
-
-var b_done = Ti.UI.createButton({
-	title: I('buttons.done'),
-	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
-});
 
 b_done.addEventListener('click', function(e) {
 	if(Utils.isiPhone()) {
@@ -104,9 +104,8 @@ function downloadPreview(side) {
 		}
 	});
 
-	var output = Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/' + side + '.png');
 	xhr.open('GET', 'http://apps.outadoc.fr/skinswitch/skinpreview.php?side=' + side + '&url=' + encodeURIComponent(win.skinUrl));
-	xhr.setFile(output);
+	xhr.setFile(Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/' + side + '.png'));
 	xhr.send();
 	progBar.setMessage(I('addProcess.process.progress.preview'));
 }
