@@ -649,6 +649,8 @@
 		var view = Ti.UI.createView({
 			left: 10,
 			right: 10,
+			top: (Utils.isiPad()) ? 10 : undefined,
+			bottom: (Utils.isiPad()) ? 10 : undefined,
 			height: Ti.UI.SIZE,
 			borderRadius: 7,
 			backgroundGradient: {

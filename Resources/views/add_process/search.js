@@ -10,48 +10,6 @@ var searchBar = Ti.UI.createSearchBar({
 	width: Ti.UI.FILL
 });
 
-win.setTitleControl(searchBar);
-
-var darkenView = Ti.UI.createView({
-	backgroundColor: 'black',
-	top: 0,
-	bottom: 0,
-	left: 0,
-	right: 0
-});
-
-darkenView.addEventListener('click', function() {
-	searchBar.blur();
-	
-	if(searchBar.getValue() == '') {
-		getRandomSkins();
-	}
-});
-
-var lbl_indicator = Ti.UI.createLabel({
-	top: 20,
-	left: 25,
-	right: 20,
-	font: {
-		fontSize: 19,
-		fontFamily: 'HelveticaNeue-Italic'
-	},
-	height: 20,
-	color: 'white'
-});
-
-win.add(lbl_indicator);
-
-var containerView = Ti.UI.createScrollableView({
-	top: 10,
-	bottom: 0,
-	width: 270,
-	clipViews: false,
-	disableBounce: false
-});
-
-win.add(containerView);
-
 searchBar.addEventListener('return', function(e) {
 	e.source.blur();
 	getSkinsFromSearch(e.source.getValue());
@@ -77,10 +35,64 @@ searchBar.addEventListener('blur', function(e) {
 	});
 });
 
-searchBar.addEventListener('cancel', function(e) {
-	e.source.blur();
-	getRandomSkins();
+win.setTitleControl(searchBar);
+
+var darkenView = Ti.UI.createView({
+	backgroundColor: 'black',
+	top: 0,
+	bottom: 0,
+	left: 0,
+	right: 0
 });
+
+darkenView.addEventListener('click', function() {
+	searchBar.blur();
+	
+	if(searchBar.getValue() == '') {
+		getRandomSkins();
+	}
+});
+
+var containerView;
+
+if(Utils.isiPad()) {
+	containerView = Ti.UI.createScrollView({
+		layout: 'horizontal',
+	  	left: 5,
+	  	top: 0,
+	  	bottom: 0,
+	  	right: 5,
+	  	contentWidth: 290
+	});
+} else {
+	containerView = Ti.UI.createScrollableView({
+		top: 10,
+		bottom: 0,
+		width: 270,
+		clipViews: false,
+		disableBounce: false
+	});
+	
+	containerView.addEventListener('scrollend', loadSkinPreview);
+}
+
+win.add(containerView);
+
+var lbl_indicator = Ti.UI.createLabel({
+	top: 20,
+	left: 25,
+	right: 20,
+	font: {
+		fontSize: 19,
+		fontFamily: 'HelveticaNeue-Italic'
+	},
+	height: 20,
+	color: 'white'
+});
+
+if(!Utils.isiPad()) {
+	win.add(lbl_indicator);
+}
 
 getRandomSkins();
 
@@ -112,7 +124,12 @@ function getRequestResults(params) {
 				if(resultArray.error != null) {
 					alert(I('addProcess.search.indicator.error.network'));
 				} else {
-					containerView.setViews([]);
+					if(Utils.isiPad()) {
+						containerView.removeAllChildren();
+						containerView.add(lbl_indicator);
+					} else {
+						containerView.setViews([]);
+					}
 					
 					if(resultArray.length == 0 && params.match != null) {
 						lbl_indicator.setText(I('addProcess.search.indicator.noResults', params.match));
@@ -120,9 +137,14 @@ function getRequestResults(params) {
 					
 					for(var i = 0; i < resultArray.length; i++) {
 						var currentSkinResult = Ui.getSingleSearchResult(resultArray[i], selectSkin);
-						containerView.addView(currentSkinResult);
 						
-						if(i == 0) {
+						if(Utils.isiPad()) {
+							containerView.add(currentSkinResult);
+						} else {
+							containerView.addView(currentSkinResult);
+						}
+						
+						if(i == 0 || Utils.isiPad()) {
 							loadSkinPreview({
 								view: currentSkinResult
 							});
@@ -141,8 +163,6 @@ function getRequestResults(params) {
 	xhr.open('POST', 'http://skinmanager.fr.nf/json/');
 	xhr.send(params);
 }
-
-containerView.addEventListener('scrollend', loadSkinPreview);
 
 function loadSkinPreview(e) {
 	if(!e.view.frontImg.isLoaded) {
