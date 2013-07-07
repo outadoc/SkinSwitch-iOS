@@ -3,6 +3,7 @@ Ti.include('/includes/lib/json.i18n.js');
 var Database = require('/includes/db');
 var Utils = require('/includes/utils');
 var Ui = require('/includes/ui');
+var Network = require('/includes/network');
 
 var win = Ti.UI.currentWindow;
 var loadingWin = Utils.createLoadingWindow();
