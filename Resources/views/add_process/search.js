@@ -120,49 +120,49 @@ function getRequestResults(params) {
 			
 			try {
 				resultArray = JSON.parse(this.responseText);
-				
-				if(resultArray.error != null) {
-					alert(I('addProcess.search.error.network'));
-				} else {
-					//resetting the list
-					if(Utils.isiPad()) {
-						if(containerView.children[0] != null) {
-							var i, currentSkin,
-								childrenArray = containerView.children;
-							
-							for(i = 0; i < childrenArray.length; i++) {
-								containerView.remove(childrenArray[i]);
-								childrenArray[i] = null;
-							}
-						}
-
-						containerView.add(lbl_indicator);
-					} else {
-						containerView.setViews([]);
-					}
-					
-					if(resultArray.length == 0 && params.match != null) {
-						lbl_indicator.setText(I('addProcess.search.indicator.noResults', params.match));
-					}
-					
-					for(i = 0; i < resultArray.length; i++) {
-						currentSkinResult = Ui.getSingleSearchResult(resultArray[i], selectSkin);
-						
-						if(Utils.isiPad()) {
-							containerView.add(currentSkinResult);
-						} else {
-							containerView.addView(currentSkinResult);
-						}
-						
-						if(i == 0 || Utils.isiPad()) {
-							loadSkinPreview({
-								view: currentSkinResult
-							});
-						}
-					}
-				}
 			} catch(e) {
 				alert(I('addProcess.search.indicator.error.network'));
+			}
+			
+			if(resultArray.error != null) {
+				alert(I('addProcess.search.error.network'));
+			} else {
+				//resetting the list
+				if(Utils.isiPad()) {
+					if(containerView.children[0] != null) {
+						var i, currentSkin,
+							childrenArray = containerView.children;
+						
+						for(i = 0; i < childrenArray.length; i++) {
+							containerView.remove(childrenArray[i]);
+							childrenArray[i] = null;
+						}
+					}
+
+					containerView.add(lbl_indicator);
+				} else {
+					containerView.setViews([]);
+				}
+				
+				if(resultArray.length == 0 && params.match != null) {
+					lbl_indicator.setText(I('addProcess.search.indicator.noResults', params.match));
+				}
+				
+				for(i = 0; i < resultArray.length; i++) {
+					currentSkinResult = Ui.getSingleSearchResult(resultArray[i], selectSkin);
+					
+					if(Utils.isiPad()) {
+						containerView.add(currentSkinResult);
+					} else {
+						containerView.addView(currentSkinResult);
+					}
+					
+					if(i == 0 || Utils.isiPad()) {
+						loadSkinPreview({
+							view: currentSkinResult
+						});
+					}
+				}
 			}
 		},
 		onerror: function(e) {
