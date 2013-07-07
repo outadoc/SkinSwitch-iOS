@@ -12,14 +12,15 @@ win.add(scrollView);
 
 var img_logo = Ti.UI.createImageView({
 	image: '/img/icon-large.png',
-	top: 10
+	top: 10,
+	width: 130
 });
 
 scrollView.add(img_logo);
 
 var lbl_app = Ti.UI.createLabel({
 	text: Ti.App.getName() + ' v' + Ti.App.getVersion(),
-	top: 0,
+	top: 5,
 	color: '#F8F8F8',
 	font: {
 		fontSize: 20,
@@ -57,9 +58,33 @@ var lbl_credits = Ti.UI.createLabel({
 
 scrollView.add(lbl_credits);
 
+var lbl_skinmanager_intro = Ti.UI.createLabel({
+	text: 'This app uses',
+	color: 'white',
+	top: 30
+});
+
+scrollView.add(lbl_skinmanager_intro);
+
+var lbl_skinmanager = Ti.UI.createLabel({
+	text: 'Skin Manager',
+	color: 'white',
+	top: 0,
+	font: {
+		fontSize: 20,
+		fontFamily: 'Minecraftia'
+	}
+});
+
+lbl_skinmanager.addEventListener('click', function(e) {
+	Ti.Platform.openURL('http://skinmanager.fr.nf/');
+});
+
+scrollView.add(lbl_skinmanager);
+
 var img_outadev = Ti.UI.createImageView({
 	image: '/img/outadev.png',
-	top: 20,
+	top: 30,
 	bottom: 20,
 	height: Ti.UI.SIZE
 });
