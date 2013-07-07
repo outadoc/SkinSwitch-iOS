@@ -23,8 +23,14 @@ var tableView = Ti.UI.createTableView({
 
 view.add(tableView);
 
+//when returning on the name field
 tableView.data[0].rows[0].children[1].addEventListener('return', function(e) {
 	tableView.data[0].rows[1].children[1].focus();
+});
+
+//when returning on the description field
+tableView.data[0].rows[1].children[1].addEventListener('return', function(e) {
+	b_next.fireEvent('click', {});
 });
 
 tableView.data[0].rows[0].children[1].addEventListener('change', function(e) {
