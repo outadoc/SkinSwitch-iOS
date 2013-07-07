@@ -28,8 +28,11 @@ function updateSkinsList() {
 		duration: 100,
 		curve: Ti.UI.ANIMATION_CURVE_EASE_OUT
 	}, function() {
-		if(skinsShowcase.children[0] != null) {
-			skinsShowcase.remove(skinsShowcase.children[0]);
+		var view = skinsShowcase.children[0];
+		
+		if(view != null) {
+			skinsShowcase.remove(view);
+			view = null;
 		}
 
 		if(adLoaded) {

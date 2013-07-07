@@ -124,7 +124,10 @@
 	}
 	
 	exports.closeiPadSkinDetails = function(ipad_win) {
-		ipad_win.detailWin.remove(ipad_win.detailContent);
+		var detail = ipad_win.detailContent;
+		
+		ipad_win.detailWin.remove(detail);
+		detail = null;
 		
 		ipad_win.detailWin.setRightNavButton(null, {animated: true});
 		ipad_win.detailWin.setLeftNavButton(null, {animated: true});

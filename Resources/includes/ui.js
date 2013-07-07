@@ -431,9 +431,9 @@
 			height: Ti.UI.SIZE,
 			width: Ti.UI.FILL,
 			layout: 'vertical'
-		});
+		}),
 
-		var skinTitle = Ti.UI.createLabel({
+		skinTitle = Ti.UI.createLabel({
 			text: skinData.name,
 			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 			font: {
@@ -445,17 +445,11 @@
 			left: 20,
 			right: 20,
 			height: 25
-		});
+		}),
 		
-		skinInfoView.add(skinTitle);
+		skinView = exports.getSkinPreview(skinData.id),
 		
-		skinInfoView.add(exports.getHorizontalSeparator('lightGray'));
-		
-		var skinView = exports.getSkinPreview(skinData.id);
-		skinView.top = 30;
-		skinInfoView.add(skinView);
-		
-		var descriptionTitle = Ti.UI.createLabel({
+		descriptionTitle = Ti.UI.createLabel({
 			text: I('main.skinDetails.description'),
 			font: {
 				fontSize: 22,
@@ -466,11 +460,9 @@
 			left: 20,
 			right: 20,
 			height: 20
-		});
+		}),
 		
-		skinInfoView.add(descriptionTitle);
-		
-		var skinDescription = Ti.UI.createLabel({
+		skinDescription = Ti.UI.createLabel({
 			text: skinData.desc,
 			font: {
 				fontSize: 20,
@@ -480,11 +472,9 @@
 			top: 5,
 			left: 20,
 			right: 20
-		});
+		}),
 		
-		skinInfoView.add(skinDescription);
-		
-		var timestampTitle = Ti.UI.createLabel({
+		timestampTitle = Ti.UI.createLabel({
 			text: I('main.skinDetails.creation'),
 			font: {
 				fontSize: 22,
@@ -495,11 +485,9 @@
 			left: 20,
 			right: 20,
 			height: 20
-		});
+		}),
 		
-		skinInfoView.add(timestampTitle);
-		
-		var skinTimestamp = Ti.UI.createLabel({
+		skinTimestamp = Ti.UI.createLabel({
 			text: (new Date(skinData.time)).toLocaleDateString(),
 			font: {
 				fontSize: 20,
@@ -511,23 +499,23 @@
 			left: 20,
 			right: 20,
 			height: 20
-		});
+		}),
 		
-		skinInfoView.add(skinTimestamp);
-		
-		//buttons
-		
-		var b_delete = Ti.UI.createButton({
+		b_delete = Ti.UI.createButton({
 			image: '/img/delete.png'
-		});
-
+		}),
+		
+		b_edit = Ti.UI.createButton({
+			image: '/img/edit.png',
+		}),
+		
+		detail = win.detailContent;
+		
+		skinView.top = 30;
+		
 		b_delete.addEventListener('click', function() {
 			Utils.closeiPadSkinDetails(win);
 			Database.deleteSkin(skinData);
-		});
-
-		var b_edit = Ti.UI.createButton({
-			image: '/img/edit.png',
 		});
 
 		b_edit.addEventListener('click', function() {
@@ -545,8 +533,18 @@
 			Utils.closeiPadSkinDetails(win);
 			win.masterGroup.open(win_info);
 		});
+		
+		skinInfoView.add(skinTitle);
+		skinInfoView.add(exports.getHorizontalSeparator('lightGray'));
+		skinInfoView.add(skinView);
+		skinInfoView.add(descriptionTitle);
+		skinInfoView.add(skinDescription);
+		skinInfoView.add(timestampTitle);
+		skinInfoView.add(skinTimestamp);
 
-		win.detailWin.remove(win.detailContent);
+		win.detailWin.remove(detail);
+		detail = null;
+		
 		win.detailContent = Ti.UI.createView({
 			layout: 'vertical',
 			opacity: 0,
@@ -586,27 +584,25 @@
 	
 	exports.getSkinPreview = function(skinID) {
 		var height = (Utils.isiPad()) ? 300 : 170,
-			width = (Utils.isiPad()) ? 150 : 85;
+			width = (Utils.isiPad()) ? 150 : 85,
 		
-		var view_skin = Ti.UI.createImageView({
+		view_skin = Ti.UI.createImageView({
 			height: height,
 			width: width,
 			top: 15,
 			bottom: 15
-		});
+		}),
 
-		var img_skin_front = Ti.UI.createImageView({
+		img_skin_front = Ti.UI.createImageView({
 			defaultImage: '/img/char_front.png',
 			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/front.png').getNativePath(),
 			height: height,
 			width: width,
 			top: 0,
 			left: 0
-		});
+		}),
 
-		view_skin.add(img_skin_front);
-
-		var img_skin_back = Ti.UI.createImageView({
+		img_skin_back = Ti.UI.createImageView({
 			defaultImage: '/img/char_back.png',
 			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/back.png').getNativePath(),
 			height: height,
@@ -614,6 +610,8 @@
 			top: 0,
 			left: 0
 		});
+		
+		view_skin.add(img_skin_front);
 		
 		//fix bug where you wouldn't be able to click?
 		view_skin.addEventListener('click', function(e) {});
@@ -649,9 +647,9 @@
 			},
 			skinData: skinData,
 			layout: 'vertical'
-		});
+		}),
 		
-		var lbl_title = Ti.UI.createLabel({
+		lbl_title = Ti.UI.createLabel({
 			text: skinData.title,
 			left: 10,
 			right: 10,
@@ -662,11 +660,9 @@
 			font: {
 				fontSize: 18
 			}
-		});
+		}),
 		
-		view.add(lbl_title);
-		
-		var lbl_author = Ti.UI.createLabel({
+		lbl_author = Ti.UI.createLabel({
 			text: 'by ' + skinData.owner_username,
 			color: '#9f9f9f',
 			height: 20,
@@ -676,20 +672,18 @@
 				fontSize: 15
 			},
 			textAlign: 'center',
-		});
+		}),
 		
-		view.add(lbl_author);
-		
-		var height = (Titanium.Platform.displayCaps.platformHeight <= 480) ? 160 : 200,
-			width = (Titanium.Platform.displayCaps.platformHeight <= 480) ? 80 : 100;
+		height = (Titanium.Platform.displayCaps.platformHeight <= 480) ? 160 : 200,
+		width = (Titanium.Platform.displayCaps.platformHeight <= 480) ? 80 : 100,
 			
-		var view_skin = Ti.UI.createImageView({
+		view_skin = Ti.UI.createImageView({
 			top: 20,
 			height: height,
 			width: width
-		});
+		}),
 	
-		var img_skin_front = Ti.UI.createImageView({
+		img_skin_front = Ti.UI.createImageView({
 			defaultImage: '/img/char_front.png',
 			image: '/img/char_front.png',
 			isLoaded: false,
@@ -697,12 +691,9 @@
 			width: width,
 			top: 0,
 			left: 0
-		});
-		
-		view.frontImg = img_skin_front;
-		view_skin.add(img_skin_front);
-	
-		var img_skin_back = Ti.UI.createImageView({
+		}),
+
+		img_skin_back = Ti.UI.createImageView({
 			defaultImage: '/img/char_back.png',
 			image: '/img/char_back.png',
 			isLoaded: false,
@@ -710,9 +701,21 @@
 			width: width,
 			top: 0,
 			left: 0
-		});
+		}),
 		
-		view.backImg = img_skin_back;
+		b_add = Ti.UI.createButton({
+			title: I('addProcess.search.select'),
+			left: 30,
+			right: 30,
+			height: 35,
+			top: 20,
+			bottom: 20,
+			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
+			backgroundColor: '#bfbfbf',
+			borderRadius: 8,
+			color: '#ffffff',
+			selectedColor: '#555555'
+		});
 		
 		//fix bug where you wouldn't be able to click?
 		view_skin.addEventListener('click', function(e) {});
@@ -731,26 +734,17 @@
 			});
 		});
 		
-		view.add(view_skin);
-		
-		var b_add = Ti.UI.createButton({
-			title: I('addProcess.search.select'),
-			left: 30,
-			right: 30,
-			height: 35,
-			top: 20,
-			bottom: 20,
-			style: Ti.UI.iPhone.SystemButtonStyle.PLAIN,
-			backgroundColor: '#bfbfbf',
-			borderRadius: 8,
-			color: '#ffffff',
-			selectedColor: '#555555'
-		});
-		
 		b_add.addEventListener('click', function() {
 			btnCallback(skinData);
 		});
 		
+		view.frontImg = img_skin_front;
+		view.backImg = img_skin_back;
+		
+		view.add(lbl_title);
+		view.add(lbl_author);
+		view_skin.add(img_skin_front);
+		view.add(view_skin);
 		view.add(b_add);
 		
 		return view;

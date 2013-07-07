@@ -124,8 +124,18 @@ function getRequestResults(params) {
 				if(resultArray.error != null) {
 					alert(I('addProcess.search.indicator.error.network'));
 				} else {
+					//resetting the list
 					if(Utils.isiPad()) {
-						containerView.removeAllChildren();
+						if(containerView.children[0] != null) {
+							var i, currentSkin;
+							
+							for(i = 0; i < containerView.children.length; i++) {
+								currentSkin = containerView.children[i];
+								containerView.remove(currentSkin);
+								currentSkin = null;
+							}
+						}
+						
 						containerView.add(lbl_indicator);
 					} else {
 						containerView.setViews([]);
