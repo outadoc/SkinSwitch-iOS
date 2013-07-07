@@ -122,20 +122,20 @@ function getRequestResults(params) {
 				resultArray = JSON.parse(this.responseText);
 				
 				if(resultArray.error != null) {
-					alert(I('addProcess.search.indicator.error.network'));
+					alert(I('addProcess.search.error.network'));
 				} else {
 					//resetting the list
 					if(Utils.isiPad()) {
 						if(containerView.children[0] != null) {
-							var i, currentSkin;
+							var i, currentSkin,
+								childrenArray = containerView.children;
 							
-							for(i = 0; i < containerView.children.length; i++) {
-								currentSkin = containerView.children[i];
-								containerView.remove(currentSkin);
-								currentSkin = null;
+							for(i = 0; i < childrenArray.length; i++) {
+								containerView.remove(childrenArray[i]);
+								childrenArray[i] = null;
 							}
 						}
-						
+
 						containerView.add(lbl_indicator);
 					} else {
 						containerView.setViews([]);
@@ -166,7 +166,7 @@ function getRequestResults(params) {
 			}
 		},
 		onerror: function(e) {
-			alert(I('addProcess.search.indicator.error.network'));
+			alert(I('addProcess.search.error.network'));
 		}
 	});
 	
