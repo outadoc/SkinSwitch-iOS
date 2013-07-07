@@ -25,8 +25,6 @@
 			bottom: 15
 		}),
 		
-		
-		
 		title = Ti.UI.createLabel({
 			text: (skinData == null) ? I('main.addSkin') : skinData.name,
 			top: 3,
