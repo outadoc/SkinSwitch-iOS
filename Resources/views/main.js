@@ -101,9 +101,7 @@ b_settings.addEventListener('click', function() {
 	
 		container.add(navGroup);
 		
-		container.addEventListener('close', function() {
-			updateSkinsList();
-			
+		container.addEventListener('close', function() {			
 			container = null;
 			navGroup = null;
 			win_settings = null;
