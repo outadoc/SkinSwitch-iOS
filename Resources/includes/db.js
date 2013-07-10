@@ -152,7 +152,7 @@
 				} else if(e.index == 1) {
 					win_next.setTitle(I('addProcess.skinInfo.method.pseudo'));
 					win_next.setUrl('add_process/url_select.js');
-					win_next.from = 'pseudo';
+					win_next.from = 'username';
 				} else if(e.index == 2) {
 					win_next.setTitle(I('addProcess.skinInfo.method.url'));
 					win_next.setUrl('add_process/url_select.js');

@@ -61,7 +61,7 @@ if(Utils.isiPhone() && win.skinIDToEdit != null) {
 if(win.from == 'url') {
 	lbl_url.setText(I('addProcess.urlSelect.urlTitle'));
 	txtfield_url.setValue('http://');
-} else if(win.from == 'pseudo') {
+} else if(win.from == 'username') {
 	lbl_url.setText(I('addProcess.urlSelect.pseudoTitle'));
 	txtfield_url.setHintText('Notch');
 }
@@ -81,7 +81,7 @@ b_next.addEventListener('click', function(e) {
 		if(url.substring(0, 7) != 'http://') {
 			url = 'http://' + url;
 		}
-	} else if(win.from == 'pseudo') {
+	} else if(win.from == 'username') {
 		url = 'http://s3.amazonaws.com/MinecraftSkins/' + url + '.png';
 	}
 
