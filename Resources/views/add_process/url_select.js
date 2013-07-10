@@ -41,7 +41,7 @@ b_next = Ti.UI.createButton({
 	enabled: false
 });
 
-if(Utils.isiPhone() && win.skinIDToEdit != null) {
+if(Utils.isiPhone()) {
 	var b_close = Ti.UI.createButton({
 		title: I('buttons.close'),
 		style: Titanium.UI.iPhone.SystemButtonStyle.DONE
