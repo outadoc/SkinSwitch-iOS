@@ -8,7 +8,7 @@ var Database = require('/includes/db'),
 win = Ti.UI.currentWindow,
 loadingWin = Utils.createLoadingWindow(),
 
-adLoaded = false,
+adLoaded = true,
 
 skinsShowcase = Ti.UI.createScrollView({
 	contentWidth: Ti.UI.FILL,
