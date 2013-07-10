@@ -120,44 +120,7 @@
 			});
 		} else {
 			backgroundFrame.addEventListener('click', function(e) {
-				if(Utils.isiPad()) {
-					var info_win = Ti.UI.createWindow({
-						url: 'add_process/info.js',
-						title: I('addProcess.skinInfo.title'),
-						backgroundImage: Utils.getBGImage(),
-						barColor: Utils.getNavColor(),
-						backgroundRepeat: true,
-						masterGroup: win.masterGroup
-					});
-			
-					info_win.addEventListener('close', updateSkinsList);
-					ipad_win.masterGroup.open(info_win);
-				} else {
-					var container = Ti.UI.createWindow({
-						navBarHidden: true
-					}),
-				
-					info_win = Ti.UI.createWindow({
-						url: 'add_process/info.js',
-						title: I('addProcess.skinInfo.title'),
-						backgroundImage: Utils.getBGImage(),
-						barColor: Utils.getNavColor(),
-						backgroundRepeat: true,
-						container: container
-						
-					}),
-				
-					group = Ti.UI.iPhone.createNavigationGroup({
-						window: info_win
-					});
-				
-					info_win.navGroup = group;
-					container.add(group);
-					container.addEventListener('close', updateSkinsList);
-					container.open({
-						modal: true
-					});
-				}
+				Database.beginSkinAdditionProcess();
 			});
 		}
 		

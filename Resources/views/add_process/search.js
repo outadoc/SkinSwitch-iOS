@@ -59,6 +59,23 @@ searchBar.addEventListener('blur', function(e) {
 
 win.setTitleControl(searchBar);
 
+if(Utils.isiPhone() && win.skinIDToEdit != null) {
+	var b_close = Ti.UI.createButton({
+		title: I('buttons.close'),
+		style: Titanium.UI.iPhone.SystemButtonStyle.DONE
+	});
+
+	b_close.addEventListener('click', function(e) {
+		if(win.container != null) {
+			win.container.close();
+		} else {
+			win.close();
+		}
+	});
+
+	win.setLeftNavButton(b_close);
+}
+
 darkenView.addEventListener('click', function() {
 	searchBar.blur();
 	
@@ -217,24 +234,25 @@ function loadSkinPreview(e) {
 }
 
 function selectSkin(skinData) {
-	var win_process = Ti.UI.createWindow({
-		title: I('addProcess.process.title'),
-		url: 'processing.js',
+	var win_info = Ti.UI.createWindow({
+		title: I('addProcess.info.title'),
+		url: 'info.js',
 		backgroundImage: Utils.getBGImage(),
 		barColor: Utils.getNavColor(),
 		backgroundRepeat: true,
 
 		skinUrl: 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(skinData.id) + '&base64=false',
-		skinName: win.skinName,
-		skinDesc: win.skinDesc
+		defaultSkinName: skinData.title,
+		defaultSkinDesc: skinData.description
 	});
 	
 	if(Utils.isiPad()) {
-		win_process.masterGroup = win.masterGroup;
-		win_process.prevWins = [win.prevWins[0], win];
-		win.masterGroup.open(win_process);
+		win_info.masterGroup = win.masterGroup;
+		win_info.prevWins = [win];
+		win.masterGroup.open(win_info);
 	} else {
-		win_process.container = win.container;
-		win.navGroup.open(win_process);
+		win_info.container = win.container;
+		win_info.navGroup = win.navGroup;
+		win.navGroup.open(win_info);
 	}
 }

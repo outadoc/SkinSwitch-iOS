@@ -56,57 +56,7 @@ var b_add = Ti.UI.createButton({
 });
 
 b_add.addEventListener('click', function(e) {
-	if(Utils.isiPad()) {
-		var info_win = Ti.UI.createWindow({
-			url: 'add_process/info.js',
-			title: I('addProcess.skinInfo.title'),
-			backgroundImage: Utils.getBGImage(),
-			barColor: Utils.getNavColor(),
-			backgroundRepeat: true,
-			masterGroup: win.masterGroup
-		});
-
-		info_win.addEventListener('close', function() {
-			updateSkinsList();
-			info_win = null;
-		});
-		
-		Utils.closeiPadSkinDetails(win);
-		win.masterGroup.open(info_win);
-	} else {
-		var win_add = Ti.UI.createWindow({
-			url: 'add_process/info.js',
-			title: I('addProcess.skinInfo.title'),
-			backgroundImage: Utils.getBGImage(),
-			barColor: Utils.getNavColor(),
-			backgroundRepeat: true
-		}),
-	
-		container = Ti.UI.createWindow({
-			navBarHidden: true
-		}),
-	
-		navGroup = Ti.UI.iPhone.createNavigationGroup({
-			window: win_add
-		});
-	
-		container.add(navGroup);
-		
-		container.addEventListener('close', function() {
-			updateSkinsList();
-			
-			container = null;
-			navGroup = null;
-			win_add = null;
-		});
-	
-		win_add.navGroup = navGroup;
-		win_add.container = container;
-	
-		container.open({
-			modal: true
-		});
-	}
+	Database.beginSkinAdditionProcess();
 });
 
 var b_settings = Ti.UI.createButton({

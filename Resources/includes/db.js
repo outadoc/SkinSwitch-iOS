@@ -131,4 +131,72 @@
 		alert_restore.show();
 	}
 	
+	exports.beginSkinAdditionProcess = function() {
+		//if we're adding a new skin to the database, ask for more info
+		var optionDialog = Ti.UI.createOptionDialog({
+			title: I('addProcess.skinInfo.method.title'),
+			options: [I('addProcess.skinInfo.method.search'), I('addProcess.skinInfo.method.pseudo'), I('addProcess.skinInfo.method.url'), I('addProcess.skinInfo.method.cancel')],
+			cancel: 3
+		});
+
+		optionDialog.addEventListener('click', function(e) {
+			if(e.index == 0 || e.index == 1 || e.index == 2) {
+				var win_next = Ti.UI.createWindow({
+					backgroundImage: Utils.getBGImage(),
+					barColor: Utils.getNavColor(),
+					backgroundRepeat: true
+				});
+				
+				if(e.index == 0) {
+					win_next.setUrl('add_process/search.js');
+				} else if(e.index == 1) {
+					win_next.setTitle(I('addProcess.skinInfo.method.pseudo'));
+					win_next.setUrl('add_process/url_select.js');
+					win_next.from = 'pseudo';
+				} else if(e.index == 2) {
+					win_next.setTitle(I('addProcess.skinInfo.method.url'));
+					win_next.setUrl('add_process/url_select.js');
+					win_next.from = 'url';
+				} 
+				
+				if(Utils.isiPad()) {
+					win_next.addEventListener('close', function() {
+						updateSkinsList();
+						info_win = null;
+					});
+					
+					win_next.masterGroup = win.masterGroup;
+					Utils.closeiPadSkinDetails(win);
+					win.masterGroup.open(win_next);
+				} else {
+					container = Ti.UI.createWindow({
+						navBarHidden: true
+					}),
+				
+					navGroup = Ti.UI.iPhone.createNavigationGroup({
+						window: win_next
+					});
+				
+					container.add(navGroup);
+					
+					container.addEventListener('close', function() {
+						updateSkinsList();
+						
+						container = null;
+						navGroup = null;
+					});
+				
+					win_next.navGroup = navGroup;
+					win_next.container = container;
+				
+					container.open({
+						modal: true
+					});
+				}
+			}			
+		});
+
+		optionDialog.show();
+	}
+	
 })();
