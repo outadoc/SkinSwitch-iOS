@@ -235,7 +235,7 @@ function loadSkinPreview(e) {
 
 function selectSkin(skinData) {
 	var win_info = Ti.UI.createWindow({
-		title: I('addProcess.info.title'),
+		title: I('addProcess.skinInfo.title'),
 		url: 'info.js',
 		backgroundImage: Utils.getBGImage(),
 		barColor: Utils.getNavColor(),

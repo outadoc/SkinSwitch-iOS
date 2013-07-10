@@ -87,7 +87,7 @@ b_next.addEventListener('click', function(e) {
 
 	if(url != null && url.split('.').pop().toLowerCase() == 'png') {
 		var win_info = Ti.UI.createWindow({
-			title: I('addProcess.info.title'),
+			title: I('addProcess.skinInfo.title'),
 			url: 'info.js',
 			backgroundImage: Utils.getBGImage(),
 			barColor: Utils.getNavColor(),
