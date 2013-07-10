@@ -9,6 +9,8 @@
 	<key>date</key>
 	<string>Date d'ajout</string>
     <key>icloud</key>
-    <string>Sync to iCloud</string>
+    <string>Sync. iCloud</string>
+    <key>forceEn</key>
+    <string>Force English</string>
 </dict>
 </plist>

@@ -167,7 +167,11 @@ var i18n = (function() {
 
   /* load up the localized resources */
   function init() {
-    setupLocalisedData(deviceLanguage, deviceCountry);
+    if(Ti.App.Properties.getBool('forceEn', false)) {
+    	setupLocalisedData('en', deviceCountry);
+    } else {
+    	setupLocalisedData(deviceLanguage, deviceCountry);
+    }
   }
 
   /*

@@ -10,5 +10,7 @@
 	<string>Date of Creation</string>
 	<key>icloud</key>
 	<string>Sync to iCloud</string>
+	<key>forceEn</key>
+    <string>Force English</string>
 </dict>
 </plist>
