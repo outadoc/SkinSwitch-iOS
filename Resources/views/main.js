@@ -35,7 +35,7 @@ function updateSkinsList() {
 			view = null;
 		}
 
-		if(adLoaded) {
+		if(adLoaded && !Utils.isiPad()) {
 			skinsShowcase.setBottom(50);
 		}
 		
