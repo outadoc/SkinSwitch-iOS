@@ -58,14 +58,17 @@
 
 	exports.getTextFieldRow = function(text, hint) {
 		var row = Ti.UI.createTableViewRow({
-			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
+			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
+			layout: 'horizontal'
 		}),
 		
 		rowText = Ti.UI.createLabel({
 			text: text,
 			left: 10,
-			width: 120,
-			height: 20,
+			width: Ti.UI.SIZE,
+			top: 5,
+			bottom: 5,
+			height: 30,
 			font: {
 				fontWeight: 'bold',
 				fontSize: 17
@@ -75,15 +78,26 @@
 		textfield = Ti.UI.createTextField({
 			hintText: hint,
 			color: '#336699',
+			right: 10,
+			left: 5,
+			top: 5,
+			bottom: 5,
 			height: 30,
-			width: 160,
-			right: 5,
+			width: Ti.UI.FILL,
+			textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
 			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
 		});
 		
 		row.add(rowText);
+		
+		rowText.addEventListener('postlayout', function() {
+			if(rowText.rect.width >= 140) {
+				rowText.width = 140;
+			}
+		});
+		
 		row.add(textfield);
 		return row;
 	}
