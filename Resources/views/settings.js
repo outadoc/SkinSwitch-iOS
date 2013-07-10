@@ -7,6 +7,7 @@ var win = Ti.UI.currentWindow,
 function getTextFieldRow(text, hint, isPassword) {
 	var row = Ti.UI.createTableViewRow({
 		selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
+		height: 35,
 		layout: 'horizontal'
 	}),
 	
@@ -26,11 +27,10 @@ function getTextFieldRow(text, hint, isPassword) {
 	textfield = Ti.UI.createTextField({
 		color: '#336699',
 		right: 10,
-		left: 5,
+		left: 10,
 		top: 5,
 		bottom: 5,
 		height: 30,
-		width: Ti.UI.FILL,
 		textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 		autocorrect: false,
 		borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
@@ -47,6 +47,8 @@ function getTextFieldRow(text, hint, isPassword) {
 		if(rowText.rect.width >= 140) {
 			rowText.width = 140;
 		}
+		
+		textfield.width = 270 - rowText.rect.width;
 	});
 	
 	row.add(textfield);

@@ -59,7 +59,8 @@
 	exports.getTextFieldRow = function(text, hint) {
 		var row = Ti.UI.createTableViewRow({
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
-			layout: 'horizontal'
+			layout: 'horizontal',
+			height: 35
 		}),
 		
 		rowText = Ti.UI.createLabel({
@@ -83,7 +84,6 @@
 			top: 5,
 			bottom: 5,
 			height: 30,
-			width: Ti.UI.FILL,
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
 			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
@@ -95,6 +95,8 @@
 			if(rowText.rect.width >= 140) {
 				rowText.width = 140;
 			}
+			
+			textfield.width = 270 - rowText.rect.width;
 		});
 		
 		row.add(textfield);
