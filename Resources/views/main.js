@@ -76,7 +76,6 @@ b_settings.addEventListener('click', function() {
 		});
 
 		win_settings.addEventListener('close', function() {
-			updateSkinsList();
 			win_settings = null;
 		});
 		
