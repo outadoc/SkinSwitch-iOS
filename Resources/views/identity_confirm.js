@@ -88,7 +88,7 @@ b_continue.addEventListener('click', function() {
 				alert(responseObj.error);
 			}
 			
-			b_cancel.fireEvent('click', null);
+			b_cancel.fireEvent('click', {});
 		},
 		onerror: function(e) {
 			win.triggerError('challenge');
