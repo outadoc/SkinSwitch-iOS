@@ -21,7 +21,7 @@ tableView = Ti.UI.createTableView({
 
 b_next = Ti.UI.createButton({
 	title: I('addProcess.next'),
-	enabled: false
+	enabled: (win.skinIDToEdit == null) ? false : true
 });
 
 //when returning on the name field
@@ -141,4 +141,6 @@ view.add(tableView);
 
 win.setRightNavButton(b_next);
 
-tableView.data[0].rows[0].children[1].focus();
+try {
+	tableView.data[0].rows[0].children[1].focus();
+} catch(e) {}
