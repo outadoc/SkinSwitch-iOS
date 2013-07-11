@@ -516,8 +516,8 @@
 
 		win.detailContent.add(skinInfoView);
 
-		win.detailWin.setRightNavButton(b_edit, {animated: true});
-		win.detailWin.setLeftNavButton(b_delete, {animated: true});
+		win.detailWin.setLeftNavButton(b_edit, {animated: true});
+		win.detailWin.setRightNavButton(b_delete, {animated: true});
 
 		win.detailWin.add(win.detailContent);
 		win.detailContent.animate({
