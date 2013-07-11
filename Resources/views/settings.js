@@ -137,20 +137,18 @@ win.add(lbl_header);
 win.add(tableView);
 win.add(lbl_footer);
 
-win.addEventListener('focus', function() {
-	Keychain.getForKey({
-		key: 'username',
-		serviceName: Ti.App.getId()
-	}, function(data) {
-		tableView.getData()[0].getRows()[0].getChildren()[1].setValue(data.value);
-	});
+Keychain.getForKey({
+	key: 'username',
+	serviceName: Ti.App.getId()
+}, function(data) {
+	tableView.getData()[0].getRows()[0].getChildren()[1].setValue(data.value);
+});
 
-	Keychain.getForKey({
-		key: 'password',
-		serviceName: Ti.App.getId()
-	}, function(data) {
-		tableView.getData()[0].getRows()[1].getChildren()[1].setValue(data.value);
-	});
+Keychain.getForKey({
+	key: 'password',
+	serviceName: Ti.App.getId()
+}, function(data) {
+	tableView.getData()[0].getRows()[1].getChildren()[1].setValue(data.value);
 });
 
 function saveCredentials() {
