@@ -158,40 +158,30 @@
 					win_next.from = 'url';
 				} 
 				
-				if(Utils.isiPad()) {
-					win_next.addEventListener('close', function() {
-						updateSkinsList();
-						info_win = null;
-					});
+				container = Ti.UI.createWindow({
+					navBarHidden: true
+				}),
+			
+				navGroup = Ti.UI.iPhone.createNavigationGroup({
+					window: win_next
+				});
+			
+				container.add(navGroup);
+				
+				container.addEventListener('close', function() {
+					updateSkinsList();
 					
-					win_next.masterGroup = win.masterGroup;
-					Utils.closeiPadSkinDetails(win);
-					win.masterGroup.open(win_next);
-				} else {
-					container = Ti.UI.createWindow({
-						navBarHidden: true
-					}),
-				
-					navGroup = Ti.UI.iPhone.createNavigationGroup({
-						window: win_next
-					});
-				
-					container.add(navGroup);
-					
-					container.addEventListener('close', function() {
-						updateSkinsList();
-						
-						container = null;
-						navGroup = null;
-					});
-				
-					win_next.navGroup = navGroup;
-					win_next.container = container;
-				
-					container.open({
-						modal: true
-					});
-				}
+					container = null;
+					navGroup = null;
+				});
+			
+				win_next.navGroup = navGroup;
+				win_next.container = container;
+			
+				container.open({
+					modal: true,
+					modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
+				});
 			}			
 		});
 

@@ -25,20 +25,7 @@ progBar.show();
 win.add(progBar);
 
 b_done.addEventListener('click', function(e) {
-	if(Utils.isiPhone()) {
-		win.container.close();
-	} else if(Utils.isiPad()) {
-		win.masterGroup.close(win, {
-			animated: false
-		});
-		win.masterGroup.close(win.prevWins[1], {
-			animated: false
-		});
-		win.prevWins[0].fireEvent('close', {});
-		win.masterGroup.close(win.prevWins[0], {
-			animated: false
-		});
-	}
+	win.container.close();
 });
 
 Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID).createDirectory();

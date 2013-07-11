@@ -68,28 +68,20 @@ b_credits.addEventListener('click', function() {
 		backgroundImage: Utils.getBGImage()
 	});
 	
-	if(Utils.isiPad()) {
-		win.masterGroup.open(credits_win);
-	} else {
-		win.navGroup.open(credits_win);
-	}
+	win.navGroup.open(credits_win);
 });
 
-if(Utils.isiPhone()) {
-	var b_close = Ti.UI.createButton({
-		title: I('buttons.close'),
-		style: Titanium.UI.iPhone.SystemButtonStyle.DONE
-	});
+var b_close = Ti.UI.createButton({
+	title: I('buttons.close'),
+	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
+});
 
-	b_close.addEventListener('click', function() {
-		win.container.close();
-	});
-	
-	win.setRightNavButton(b_credits);
-	win.setLeftNavButton(b_close);
-} else {
-	win.setRightNavButton(b_credits);
-}
+b_close.addEventListener('click', function() {
+	win.container.close();
+});
+
+win.setRightNavButton(b_credits);
+win.setLeftNavButton(b_close);
 
 var lbl_header = Ti.UI.createLabel({
 	text: I('settings.header'),

@@ -63,11 +63,7 @@ b_continue = Ti.UI.createButton({
 });
 
 b_cancel.addEventListener('click', function() {
-	if(Utils.isiPad()) {
-		win.ipad_win.masterGroup.close(win);
-	} else {
-		win.close();
-	}
+	win.close();
 });
 
 win.setLeftNavButton(b_cancel);
@@ -88,7 +84,7 @@ b_continue.addEventListener('click', function() {
 				alert(responseObj.error);
 			}
 			
-			b_cancel.fireEvent('click', {});
+			win.close();
 		},
 		onerror: function(e) {
 			win.triggerError('challenge');

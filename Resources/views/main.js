@@ -64,56 +64,38 @@ var b_settings = Ti.UI.createButton({
 });
 
 b_settings.addEventListener('click', function() {
-	if(Utils.isiPad()) {
-		var win_settings = Ti.UI.createWindow({
-			title: I('settings.title'),
-			backgroundImage: Utils.getBGImage(),
-			barColor: Utils.getNavColor(),
-			backgroundRepeat: true,
-			layout: 'vertical',
-			url: 'settings.js',
-			masterGroup: win.masterGroup
-		});
+	var win_settings = Ti.UI.createWindow({
+		title: I('settings.title'),
+		barColor: Utils.getNavColor(),
+		backgroundImage: Utils.getBGImage(),
+		backgroundRepeat: true,
+		url: 'settings.js',
+		layout: 'vertical'
+	}),
 
-		win_settings.addEventListener('close', function() {
-			win_settings = null;
-		});
-		
-		Utils.closeiPadSkinDetails(win);
-		win.masterGroup.open(win_settings);
-	} else {
-		var win_settings = Ti.UI.createWindow({
-			title: I('settings.title'),
-			barColor: Utils.getNavColor(),
-			backgroundImage: Utils.getBGImage(),
-			backgroundRepeat: true,
-			url: 'settings.js',
-			layout: 'vertical'
-		}),
+	container = Ti.UI.createWindow({
+		navBarHidden: true
+	}),
 	
-		container = Ti.UI.createWindow({
-			navBarHidden: true
-		}),
-		
-		navGroup = Ti.UI.iPhone.createNavigationGroup({
-			window: win_settings
-		});
+	navGroup = Ti.UI.iPhone.createNavigationGroup({
+		window: win_settings
+	});
+
+	container.add(navGroup);
 	
-		container.add(navGroup);
-		
-		container.addEventListener('close', function() {			
-			container = null;
-			navGroup = null;
-			win_settings = null;
-		});
-	
-		win_settings.navGroup = navGroup;
-		win_settings.container = container;
-	
-		container.open({
-			modal: true
-		});
-	}
+	container.addEventListener('close', function() {			
+		container = null;
+		navGroup = null;
+		win_settings = null;
+	});
+
+	win_settings.navGroup = navGroup;
+	win_settings.container = container;
+
+	container.open({
+		modal: true,
+		modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
+	});
 });
 
 win.setLeftNavButton(b_settings);

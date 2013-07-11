@@ -52,7 +52,6 @@
 														question: question,
 														questionID: questionID,
 														triggerError: exports.triggerError,
-														ipad_win: ipad_win,
 														title: I('addProcess.process.challenge.title'),
 														backgroundImage: Utils.getBGImage(),
 														backgroundRepeat: true,
@@ -66,13 +65,10 @@
 														win_answer = null;
 													});
 													
-													if(Utils.isiPad()) {
-														ipad_win.masterGroup.open(win_answer);
-													} else {
-														win_answer.open({
-															modal: true
-														});
-													}
+													win_answer.open({
+														modal: true,
+														modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
+													});
 												} catch(e) {
 													exports.triggerError('challenge');
 												}

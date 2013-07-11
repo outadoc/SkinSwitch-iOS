@@ -41,22 +41,20 @@ b_next = Ti.UI.createButton({
 	enabled: false
 });
 
-if(Utils.isiPhone()) {
-	var b_close = Ti.UI.createButton({
-		title: I('buttons.close'),
-		style: Titanium.UI.iPhone.SystemButtonStyle.DONE
-	});
+var b_close = Ti.UI.createButton({
+	title: I('buttons.close'),
+	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
+});
 
-	b_close.addEventListener('click', function(e) {
-		if(win.container != null) {
-			win.container.close();
-		} else {
-			win.close();
-		}
-	});
+b_close.addEventListener('click', function(e) {
+	if(win.container != null) {
+		win.container.close();
+	} else {
+		win.close();
+	}
+});
 
-	win.setLeftNavButton(b_close);
-}
+win.setLeftNavButton(b_close);
 
 if(win.from == 'url') {
 	lbl_url.setText(I('addProcess.urlSelect.urlTitle'));
@@ -95,15 +93,9 @@ b_next.addEventListener('click', function(e) {
 			skinUrl: url,
 		});
 		
-		if(Utils.isiPad()) {
-			win_info.masterGroup = win.masterGroup;
-			win_info.prevWins = [win];
-			win.masterGroup.open(win_info);
-		} else {
-			win_info.container = win.container;
-			win_info.navGroup = win.navGroup;
-			win.navGroup.open(win_info);
-		}
+		win_info.container = win.container;
+		win_info.navGroup = win.navGroup;
+		win.navGroup.open(win_info);
 	} else {
 		alert(I('addProcess.urlSelect.invalidUrl'));
 	}

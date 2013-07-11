@@ -59,22 +59,20 @@ searchBar.addEventListener('blur', function(e) {
 
 win.setTitleControl(searchBar);
 
-if(Utils.isiPhone()) {
-	var b_close = Ti.UI.createButton({
-		title: I('buttons.close'),
-		style: Titanium.UI.iPhone.SystemButtonStyle.DONE
-	});
+var b_close = Ti.UI.createButton({
+	title: I('buttons.close'),
+	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
+});
 
-	b_close.addEventListener('click', function(e) {
-		if(win.container != null) {
-			win.container.close();
-		} else {
-			win.close();
-		}
-	});
+b_close.addEventListener('click', function(e) {
+	if(win.container != null) {
+		win.container.close();
+	} else {
+		win.close();
+	}
+});
 
-	win.setLeftNavButton(b_close);
-}
+win.setLeftNavButton(b_close);
 
 darkenView.addEventListener('click', function() {
 	searchBar.blur();
@@ -84,31 +82,17 @@ darkenView.addEventListener('click', function() {
 	}
 });
 
-if(!Utils.isiPad()) {
-	win.add(lbl_indicator);
-}
+win.add(lbl_indicator);
 
-if(Utils.isiPad()) {
-	containerView = Ti.UI.createScrollView({
-		layout: 'horizontal',
-	  	left: 5,
-	  	top: 0,
-	  	bottom: 0,
-	  	right: 5,
-	  	contentWidth: 290,
-  		showVerticalScrollIndicator: true
-	});
-} else {
-	containerView = Ti.UI.createScrollableView({
-		top: 10,
-		bottom: 0,
-		width: 270,
-		clipViews: false,
-		disableBounce: false
-	});
-	
-	containerView.addEventListener('scrollend', loadSkinPreview);
-}
+containerView = Ti.UI.createScrollableView({
+	top: 10,
+	bottom: 0,
+	width: 270,
+	clipViews: false,
+	disableBounce: false
+});
+
+containerView.addEventListener('scrollend', loadSkinPreview);
 
 win.add(containerView);
 
@@ -146,21 +130,7 @@ function getRequestResults(params) {
 				alert(I('addProcess.search.error.network'));
 			} else {
 				//resetting the list
-				if(Utils.isiPad()) {
-					if(containerView.children[0] != null) {
-						var i, currentSkin,
-							childrenArray = containerView.children;
-						
-						for(i = 0; i < childrenArray.length; i++) {
-							containerView.remove(childrenArray[i]);
-							childrenArray[i] = null;
-						}
-					}
-
-					containerView.add(lbl_indicator);
-				} else {
-					containerView.setViews([]);
-				}
+				containerView.setViews([]);
 				
 				if(resultArray.length == 0 && params.match != null) {
 					lbl_indicator.setText(I('addProcess.search.indicator.noResults', params.match));
@@ -168,13 +138,8 @@ function getRequestResults(params) {
 				
 				for(i = 0; i < resultArray.length; i++) {
 					currentSkinResult = Ui.getSingleSearchResult(resultArray[i], selectSkin);
-					
-					if(Utils.isiPad()) {
-						containerView.add(currentSkinResult);
-					} else {
-						containerView.addView(currentSkinResult);
-					}
-					
+					containerView.addView(currentSkinResult);	
+									
 					if(i == 0 || Utils.isiPad()) {
 						loadSkinPreview({
 							view: currentSkinResult
@@ -247,13 +212,7 @@ function selectSkin(skinData) {
 		defaultSkinDesc: skinData.description
 	});
 	
-	if(Utils.isiPad()) {
-		win_info.masterGroup = win.masterGroup;
-		win_info.prevWins = [win];
-		win.masterGroup.open(win_info);
-	} else {
-		win_info.container = win.container;
-		win_info.navGroup = win.navGroup;
-		win.navGroup.open(win_info);
-	}
+	win_info.container = win.container;
+	win_info.navGroup = win.navGroup;
+	win.navGroup.open(win_info);
 }

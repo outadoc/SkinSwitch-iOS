@@ -6,7 +6,7 @@ var win = Ti.UI.currentWindow,
 
 view = Ti.UI.createView({
 	height: Ti.UI.SIZE,
-	top: (Utils.isiPad()) ? 30 : (((Ti.Platform.displayCaps.platformHeight - 70 - 215) / 2) - (180 / 2))
+	top: 20
 }),
 
 tableView = Ti.UI.createTableView({
@@ -50,35 +50,22 @@ b_next.addEventListener('click', function(e) {
 			skinName: tableView.data[0].rows[0].children[1].getValue(),
 			skinDesc: tableView.data[0].rows[1].children[1].getValue()
 		});
-		
-		if(Utils.isiPad()) {
-			win_process.masterGroup = win.masterGroup;
-			win_process.prevWins = [win.prevWins[0], win];
-			win.masterGroup.open(win_process);
-		} else {
-			win_process.container = win.container;
-			win.navGroup.open(win_process);
-		}
+			
+		win_process.container = win.container;
+		win.navGroup.open(win_process);
 	} else {
 		//if we're only updating an existing skin, just update its info in db
 		var db = Database.getDatabaseHandle();
 		db.execute('UPDATE skins SET name=?, description=? WHERE id=?', tableView.data[0].rows[0].children[1].getValue(), tableView.data[0].rows[1].children[1].getValue(), win.skinIDToEdit);
 		db.close();
 		
-		if(Utils.isiPad()) {
-			win.updateSkinsList();
-			win.masterGroup.close(win, {
-				animated: true
-			});
-		} else {
-			win.close(win, {
-				animated: true
-			});
-		}
+		win.close(win, {
+			animated: true
+		});
 	}
 });
 
-if(Utils.isiPhone() && win.skinIDToEdit != null) {
+if(win.skinIDToEdit != null) {
 	var b_close = Ti.UI.createButton({
 		title: I('buttons.close'),
 		style: Titanium.UI.iPhone.SystemButtonStyle.DONE
