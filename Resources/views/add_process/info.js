@@ -111,8 +111,8 @@ if(win.skinIDToEdit != null) {
 		tableView.data[0].rows[0].children[1].setValue(win.defaultSkinName);
 	}
 	
-	if(win.defaultSkinDescription != null) {
-		tableView.data[0].rows[1].children[1].setValue(win.defaultSkinDescription);
+	if(win.defaultSkinDesc != null) {
+		tableView.data[0].rows[1].children[1].setValue(win.defaultSkinDesc);
 	}
 }
 
