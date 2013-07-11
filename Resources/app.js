@@ -52,7 +52,6 @@ function startApp() {
 			url: 'views/main.js',
 			backgroundImage: Utils.getListBackgroundImage(),
 			barColor: Utils.getNavColor(),
-			backgroundRepeat: true,
 			title: I('main.skinList'),
 			detailWin: detailWin,
 			detailContent: content,
@@ -135,8 +134,7 @@ function startApp() {
 			tabBarHidden: true,
 			title: Ti.App.getName(),
 			backgroundImage: Utils.getListBackgroundImage(),
-			barColor: Utils.getNavColor(),
-			backgroundRepeat: true
+			barColor: Utils.getNavColor()
 		}),
 
 		navGroup = Ti.UI.iPhone.createNavigationGroup({

@@ -340,8 +340,7 @@
 				skinIDToEdit: skinData.id,
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getModalBackgroundImage(),
-				barColor: Utils.getNavColor(),
-				backgroundRepeat: true
+				barColor: Utils.getNavColor()
 			});
 
 			edit_win.addEventListener('close', updateSkinsList);
@@ -485,11 +484,11 @@
 				skinIDToEdit: skinData.id,
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getModalBackgroundImage(),
-				barColor: Utils.getNavColor(),
-				backgroundRepeat: true
+				barColor: Utils.getNavColor()
 			});
 
 			edit_win.addEventListener('close', updateSkinsList);
+			Utils.closeiPadSkinDetails(win);
 			
 			edit_win.open({
 				modal: true,

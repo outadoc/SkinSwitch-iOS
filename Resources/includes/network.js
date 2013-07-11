@@ -54,7 +54,6 @@
 														triggerError: exports.triggerError,
 														title: I('addProcess.process.challenge.title'),
 														backgroundImage: Utils.getModalBackgroundImage(),
-														backgroundRepeat: true,
 														barColor: Utils.getNavColor()
 													});
 													

@@ -68,7 +68,6 @@ b_settings.addEventListener('click', function() {
 		title: I('settings.title'),
 		barColor: Utils.getNavColor(),
 		backgroundImage: Utils.getModalBackgroundImage(),
-		backgroundRepeat: true,
 		url: 'settings.js',
 		layout: 'vertical'
 	}),

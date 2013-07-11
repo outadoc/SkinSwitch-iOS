@@ -44,7 +44,6 @@ b_next.addEventListener('click', function(e) {
 			url: 'processing.js',
 			backgroundImage: Utils.getModalBackgroundImage(),
 			barColor: Utils.getNavColor(),
-			backgroundRepeat: true,
 	
 			skinUrl: win.skinUrl,
 			skinName: tableView.data[0].rows[0].children[1].getValue(),

@@ -142,8 +142,7 @@
 			if(e.index == 0 || e.index == 1 || e.index == 2) {
 				var win_next = Ti.UI.createWindow({
 					backgroundImage: Utils.getModalBackgroundImage(),
-					barColor: Utils.getNavColor(),
-					backgroundRepeat: true
+					barColor: Utils.getNavColor()
 				});
 				
 				if(e.index == 0) {

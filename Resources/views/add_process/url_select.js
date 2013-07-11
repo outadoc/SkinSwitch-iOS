@@ -87,8 +87,7 @@ b_next.addEventListener('click', function(e) {
 			url: 'info.js',
 			backgroundImage: Utils.getModalBackgroundImage(),
 			barColor: Utils.getNavColor(),
-			backgroundRepeat: true,
-			skinUrl: url,
+			skinUrl: url
 		});
 		
 		win_info.container = win.container;
