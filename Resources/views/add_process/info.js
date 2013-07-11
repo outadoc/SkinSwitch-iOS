@@ -42,7 +42,7 @@ b_next.addEventListener('click', function(e) {
 		var win_process = Ti.UI.createWindow({
 			title: I('addProcess.process.title'),
 			url: 'processing.js',
-			backgroundImage: Utils.getBGImage(),
+			backgroundImage: Utils.getModalBackgroundImage(),
 			barColor: Utils.getNavColor(),
 			backgroundRepeat: true,
 	

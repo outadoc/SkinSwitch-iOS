@@ -9,9 +9,17 @@
 		return Ti.Filesystem.getApplicationDataDirectory() + 'skins/';
 	}
 
-	exports.getBGImage = function() {
+	exports.getModalBackgroundImage = function() {
 		if(exports.isiPad()) {
-			return '/img/bg_ipad.png';
+			return '/img/bg_ipad_modal.png';
+		} else {
+			return '/img/bg.png';
+		}
+	}
+	
+	exports.getListBackgroundImage = function() {
+		if(exports.isiPad()) {
+			return '/img/bg_ipad_tall.png';
 		} else {
 			return '/img/bg.png';
 		}

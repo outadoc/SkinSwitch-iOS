@@ -67,7 +67,7 @@ b_settings.addEventListener('click', function() {
 	var win_settings = Ti.UI.createWindow({
 		title: I('settings.title'),
 		barColor: Utils.getNavColor(),
-		backgroundImage: Utils.getBGImage(),
+		backgroundImage: Utils.getModalBackgroundImage(),
 		backgroundRepeat: true,
 		url: 'settings.js',
 		layout: 'vertical'

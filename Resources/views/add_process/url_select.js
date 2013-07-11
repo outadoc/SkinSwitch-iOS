@@ -85,7 +85,7 @@ b_next.addEventListener('click', function(e) {
 		var win_info = Ti.UI.createWindow({
 			title: I('addProcess.skinInfo.title'),
 			url: 'info.js',
-			backgroundImage: Utils.getBGImage(),
+			backgroundImage: Utils.getModalBackgroundImage(),
 			barColor: Utils.getNavColor(),
 			backgroundRepeat: true,
 			skinUrl: url,

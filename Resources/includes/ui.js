@@ -339,7 +339,7 @@
 				url: '/views/add_process/info.js',
 				skinIDToEdit: skinData.id,
 				title: I('editSkin.title'),
-				backgroundImage: Utils.getBGImage(),
+				backgroundImage: Utils.getModalBackgroundImage(),
 				barColor: Utils.getNavColor(),
 				backgroundRepeat: true
 			});
@@ -483,7 +483,7 @@
 			var win_info = Ti.UI.createWindow({
 				url: '/views/add_process/info.js',
 				title: I('editSkin.title'),
-				backgroundImage: Utils.getBGImage(),
+				backgroundImage: Utils.getModalBackgroundImage(),
 				barColor: Utils.getNavColor(),
 				backgroundRepeat: true,
 				masterGroup: win.masterGroup,

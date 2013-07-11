@@ -50,7 +50,7 @@ function startApp() {
 
 		var masterWin = Ti.UI.createWindow({
 			url: 'views/main.js',
-			backgroundImage: Utils.getBGImage(),
+			backgroundImage: Utils.getListBackgroundImage(),
 			barColor: Utils.getNavColor(),
 			backgroundRepeat: true,
 			title: I('main.skinList'),
@@ -134,7 +134,7 @@ function startApp() {
 			url: 'views/main.js',
 			tabBarHidden: true,
 			title: Ti.App.getName(),
-			backgroundImage: Utils.getBGImage(),
+			backgroundImage: Utils.getListBackgroundImage(),
 			barColor: Utils.getNavColor(),
 			backgroundRepeat: true
 		}),

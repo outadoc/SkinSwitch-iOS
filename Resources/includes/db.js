@@ -141,7 +141,7 @@
 		optionDialog.addEventListener('click', function(e) {
 			if(e.index == 0 || e.index == 1 || e.index == 2) {
 				var win_next = Ti.UI.createWindow({
-					backgroundImage: Utils.getBGImage(),
+					backgroundImage: Utils.getModalBackgroundImage(),
 					barColor: Utils.getNavColor(),
 					backgroundRepeat: true
 				});

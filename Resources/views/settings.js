@@ -65,7 +65,7 @@ b_credits.addEventListener('click', function() {
 		title: I('credits.title'),
 		backgroundRepeat: true,
 		barColor: Utils.getNavColor(),
-		backgroundImage: Utils.getBGImage()
+		backgroundImage: Utils.getModalBackgroundImage()
 	});
 	
 	win.navGroup.open(credits_win);

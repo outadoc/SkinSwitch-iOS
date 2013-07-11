@@ -53,7 +53,7 @@
 														questionID: questionID,
 														triggerError: exports.triggerError,
 														title: I('addProcess.process.challenge.title'),
-														backgroundImage: Utils.getBGImage(),
+														backgroundImage: Utils.getModalBackgroundImage(),
 														backgroundRepeat: true,
 														barColor: Utils.getNavColor()
 													});
