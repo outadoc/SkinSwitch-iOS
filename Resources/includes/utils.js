@@ -106,14 +106,16 @@
 	exports.getTextAreaRow = function(text) {
 		var row = Ti.UI.createTableViewRow({
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
+			layout: 'horizontal',
 			height: 100
 		}),
 		
 		rowText = Ti.UI.createLabel({
 			text: text,
 			left: 10,
-			width: 120,
-			height: 20,
+			width: Ti.UI.SIZE,
+			top: 5,
+			bottom: 5,
 			font: {
 				fontWeight: 'bold',
 				fontSize: 17
@@ -122,19 +124,31 @@
 		
 		textarea = Ti.UI.createTextArea({
 			color: '#336699',
-			height: 98,
 			right: 10,
-			width: 160,
+			left: 10,
+			top: 5,
+			bottom: 5,
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
 			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS,
 			font: {
-				fontSize: 15
+				fontSize: 16
 			}
+		});
+		
+		rowText.addEventListener('postlayout', function() {
+			if(rowText.rect.width >= 140) {
+				rowText.width = 140;
+			}
+		});
+		
+		rowText.addEventListener('click', function() {
+			textarea.focus();
 		});
 		
 		row.add(rowText);
 		row.add(textarea);
+		
 		return row;
 	}
 	
