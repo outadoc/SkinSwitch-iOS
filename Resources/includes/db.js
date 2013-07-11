@@ -1,7 +1,4 @@
 (function() {
-	
-	var Network = require('/includes/network'),
-		Ui = require('/includes/ui');
 
 	exports.getSkins = function() {
 		var skins = [],
