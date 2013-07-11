@@ -480,19 +480,21 @@
 		});
 
 		b_edit.addEventListener('click', function() {
-			var win_info = Ti.UI.createWindow({
+			var edit_win = Ti.UI.createWindow({
 				url: '/views/add_process/info.js',
+				skinIDToEdit: skinData.id,
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getModalBackgroundImage(),
 				barColor: Utils.getNavColor(),
-				backgroundRepeat: true,
-				masterGroup: win.masterGroup,
-				skinIDToEdit: skinData.id,
-				updateSkinsList: updateSkinsList
+				backgroundRepeat: true
 			});
+
+			edit_win.addEventListener('close', updateSkinsList);
 			
-			Utils.closeiPadSkinDetails(win);
-			win.masterGroup.open(win_info);
+			edit_win.open({
+				modal: true,
+				modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
+			});
 		});
 		
 		skinInfoView.add(skinTitle);
