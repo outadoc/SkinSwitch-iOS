@@ -10,8 +10,7 @@ view = Ti.UI.createView({
 }),
 
 lbl_url = Ti.UI.createLabel({
-	left: 20,
-	width: 280,
+	width: '90%',
 	color: 'white',
 	shadowColor: 'darkGray',
 	shadowOffset: {
@@ -26,8 +25,7 @@ lbl_url = Ti.UI.createLabel({
 txtfield_url = Ti.UI.createTextField({
 	height: 35,
 	top: 15,
-	left: 20,
-	width: 280,
+	width: '90%',
 	autocorrect: false,
 	keyboardType: Ti.UI.KEYBOARD_URL,
 	returnKeyType: Ti.UI.RETURNKEY_DONE,
