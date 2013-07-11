@@ -72,7 +72,8 @@ function startApp() {
 		adView = Ti.UI.iOS.createAdView({
 			height: Ti.UI.SIZE,
 			width: Ti.UI.FILL,
-			bottom: 0
+			bottom: 0,
+			backgroundColor: 'transparent'
 		});
 		
 		adView.addEventListener('load', function(e) {
