@@ -61,7 +61,7 @@ b_next.addEventListener('click', function(e) {
 		}
 	} else {
 		//if we're only updating an existing skin, just update its info in db
-		var db = Ti.Database.open('skins');
+		var db = Database.getDatabaseHandle();
 		db.execute('UPDATE skins SET name=?, description=? WHERE id=?', tableView.data[0].rows[0].children[1].getValue(), tableView.data[0].rows[1].children[1].getValue(), win.skinIDToEdit);
 		db.close();
 		
@@ -97,7 +97,7 @@ if(Utils.isiPhone() && win.skinIDToEdit != null) {
 
 //if we're editing a skin and not actually creating a new one
 if(win.skinIDToEdit != null) {
-	var db = Ti.Database.open(Database.getDbName());
+	var db = Database.getDatabaseHandle();
 	var skin = db.execute('SELECT * FROM skins WHERE id=?', win.skinIDToEdit);
 
 	if(skin.rowCount != 0) {

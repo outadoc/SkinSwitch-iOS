@@ -2,7 +2,7 @@
 
 	exports.getSkins = function() {
 		var skins = [],
-			db = Ti.Database.open(exports.getDbName()),
+			db = exports.getDatabaseHandle(),
 			skinsFromDB,
 			orderBy = Ti.App.Properties.getString('orderBy', 'name');
 		
@@ -30,7 +30,7 @@
 
 	exports.getSkinCount = function() {
 		var rows = [],
-			db = Ti.Database.open(exports.getDbName()),
+			db = exports.getDatabaseHandle(),
 			rowCount = db.execute('SELECT * FROM skins').getRowCount();
 		
 		db.close();
@@ -49,7 +49,7 @@
 
 		confirm.addEventListener('click', function(e) {
 			if(e.index == 1) {
-				var db = Ti.Database.open(exports.getDbName());
+				var db = exports.getDatabaseHandle();
 				db.execute('DELETE FROM skins WHERE id=?', skinData.id);
 				db.close();
 			
@@ -59,16 +59,20 @@
 		});
 	}
 
-	exports.getDbName = function() {
+	exports.getDatabaseHandle = function() {
+		return Ti.Database.open(exports.getDatabaseName());
+	}
+	
+	exports.getDatabaseName = function() {
 		return 'skins';
 	}
 	
 	exports.getDatabaseFile = function() {
-		return Ti.Filesystem.getFile(Ti.Filesystem.applicationSupportDirectory, '../Private Documents/' + exports.getDbName() + '.sql');
+		return Ti.Filesystem.getFile(Ti.Filesystem.applicationSupportDirectory, '../Private Documents/' + exports.getDatabaseName() + '.sql');
 	}
 	
 	exports.getDatabaseBackupFile = function() {
-		return Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, exports.getDbName() + '.sql.bck');
+		return Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, exports.getDatabaseName() + '.sql.bck');
 	}
 
 	exports.backupDatabase = function() {
@@ -101,7 +105,7 @@
 	}
 
 	exports.initializeDatabase = function() {
-		var db = Ti.Database.open(exports.getDbName());
+		var db = exports.getDatabaseHandle();
 		db.execute('CREATE TABLE IF NOT EXISTS skins (id VARCHAR(16) PRIMARY KEY, name VARCHAR(16) NOT NULL, description TEXT NOT NULL, timestamp VARCHAR(16) NOT NULL)');
 		db.file.setRemoteBackup(Ti.App.Properties.getBool('syncToCloud', true));
 		db.close();

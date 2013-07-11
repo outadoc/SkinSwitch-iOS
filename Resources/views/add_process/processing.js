@@ -111,23 +111,21 @@ function downloadPreview(side) {
 }
 
 function registerSkinToDatabase() {
-	progBar.setMessage(I('addProcess.process.progress.database'));
 	progBar.setValue(90);
+	progBar.setMessage(I('addProcess.process.progress.database'));
 
-	var db = Ti.Database.open(Database.getDbName());
+	var db = Database.getDatabaseHandle();
 
 	try {
 		db.execute('INSERT INTO skins (id, name, description, timestamp) VALUES (?, ?, ?, ?)', skinID, win.skinName, win.skinDesc, String(new Date().getTime()));
+		progBar.setValue(100);
+		progBar.setMessage(I('addProcess.process.progress.success'));
 	} catch(e) {
+		Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID).deleteDirectory(true);
 		progBar.setValue(0);
 		progBar.setMessage(I('addProcess.process.progress.fail'));
-		Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID).deleteDirectory(true);
-		win.setRightNavButton(b_done);
 	}
 	
 	db.close();
-	
-	progBar.setMessage(I('addProcess.process.progress.success'));
-	progBar.setValue(100);
 	win.setRightNavButton(b_done);
 }

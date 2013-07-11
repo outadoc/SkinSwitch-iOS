@@ -143,7 +143,7 @@
 		  	right: 13,
 		  	height: Ti.UI.FILL
 		}), i;
-				
+		
 		if(Utils.isiPad()) {
 			container.addEventListener('click', function(e) {
 				if(e.source == container) {
