@@ -60,7 +60,8 @@
 		var row = Ti.UI.createTableViewRow({
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
 			layout: 'horizontal',
-			height: 35
+			height: 35,
+			width: 320
 		}),
 		
 		rowText = Ti.UI.createLabel({
@@ -79,25 +80,28 @@
 		textfield = Ti.UI.createTextField({
 			hintText: hint,
 			color: '#336699',
-			right: 10,
+			right: (exports.isiPad()) ? 20 : 10,
 			left: 10,
 			top: 5,
 			bottom: 5,
 			height: 30,
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
-			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
+			textAlign: (exports.isiPad()) ? Ti.UI.TEXT_ALIGNMENT_RIGHT : Ti.UI.TEXT_ALIGNMENT_LEFT,
+			clearButtonMode: (exports.isiPad()) ? Ti.UI.INPUT_BUTTONMODE_NEVER : Ti.UI.INPUT_BUTTONMODE_ONFOCUS
 		});
 		
 		row.add(rowText);
 		
-		rowText.addEventListener('postlayout', function() {
-			if(rowText.rect.width >= 140) {
-				rowText.width = 140;
-			}
-			
-			textfield.width = 270 - rowText.rect.width;
-		});
+		if(!exports.isiPad()) {
+			rowText.addEventListener('postlayout', function() {
+				if(rowText.rect.width >= 140) {
+					rowText.width = 140;
+				}
+				
+				textfield.width = 270 - rowText.rect.width;
+			});
+		}
 		
 		row.add(textfield);
 		return row;
@@ -124,13 +128,13 @@
 		
 		textarea = Ti.UI.createTextArea({
 			color: '#336699',
-			right: 10,
-			left: 10,
+			right: (exports.isiPad()) ? 15 : 10,
+			left: (exports.isiPad()) ? 50 : 10,
 			top: 5,
 			bottom: 5,
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
+			textAlign: (exports.isiPad()) ? Ti.UI.TEXT_ALIGNMENT_RIGHT : Ti.UI.TEXT_ALIGNMENT_LEFT,
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
-			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS,
 			font: {
 				fontSize: 16
 			}

@@ -18,7 +18,11 @@ darkenView = Ti.UI.createView({
 	right: 0
 }),
 
-containerView = null,
+containerView = Ti.UI.createScrollableView({
+	width: (Utils.isiPad()) ? '70%' : '90%',
+	clipViews: false,
+	disableBounce: false
+}),
 
 lbl_indicator = Ti.UI.createLabel({
 	top: 20,
@@ -65,11 +69,7 @@ var b_close = Ti.UI.createButton({
 });
 
 b_close.addEventListener('click', function(e) {
-	if(win.container != null) {
-		win.container.close();
-	} else {
-		win.close();
-	}
+	win.container.close();
 });
 
 win.setLeftNavButton(b_close);
@@ -82,18 +82,10 @@ darkenView.addEventListener('click', function() {
 	}
 });
 
-win.add(lbl_indicator);
-
-containerView = Ti.UI.createScrollableView({
-	top: 10,
-	bottom: 0,
-	width: 270,
-	clipViews: false,
-	disableBounce: false
-});
 
 containerView.addEventListener('scrollend', loadSkinPreview);
 
+win.add(lbl_indicator);
 win.add(containerView);
 
 getRandomSkins();
