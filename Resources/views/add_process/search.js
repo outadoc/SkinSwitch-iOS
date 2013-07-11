@@ -132,7 +132,7 @@ function getRequestResults(params) {
 					currentSkinResult = Ui.getSingleSearchResult(resultArray[i], selectSkin);
 					containerView.addView(currentSkinResult);	
 									
-					if(i == 0 || Utils.isiPad()) {
+					if(i == 0) {
 						loadSkinPreview({
 							view: currentSkinResult
 						});
