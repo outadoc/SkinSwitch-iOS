@@ -1,6 +1,4 @@
 (function() {
-
-	Ti.include('/includes/lib/json.i18n.js');
 	
 	var Network = require('/includes/network'),
 		Ui = require('/includes/ui');

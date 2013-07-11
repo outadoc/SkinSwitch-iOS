@@ -1,7 +1,5 @@
 (function() {
-	
-	Ti.include('/includes/lib/json.i18n.js');
-	
+		
 	exports.getSkinFrame = function(skinData, ipad_win) {
 		var view = Ti.UI.createView({
 			top: 10,
