@@ -95,7 +95,8 @@ if(Utils.isiPad()) {
 	  	top: 0,
 	  	bottom: 0,
 	  	right: 5,
-	  	contentWidth: 290
+	  	contentWidth: 290,
+  		showVerticalScrollIndicator: true
 	});
 } else {
 	containerView = Ti.UI.createScrollableView({
