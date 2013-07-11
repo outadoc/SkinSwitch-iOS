@@ -79,12 +79,11 @@
 			hintText: hint,
 			color: '#336699',
 			right: 10,
-			left: 5,
+			left: 10,
 			top: 5,
 			bottom: 5,
 			height: 30,
 			width: Ti.UI.FILL,
-			textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
 			clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
