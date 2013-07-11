@@ -5,7 +5,7 @@ var win = Ti.UI.currentWindow,
 
 view = Ti.UI.createView({
 	height: Ti.UI.SIZE,
-	top: 50,
+	top: (Utils.isiPad()) ? '20%' : 50,
 	layout: 'vertical'
 }),
 
