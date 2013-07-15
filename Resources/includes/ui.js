@@ -368,8 +368,12 @@
 		skinInfoView.add(skinTitle);
 		skinInfoView.add(exports.getHorizontalSeparator('lightGray'));
 		skinInfoView.add(skinView);
-		skinInfoView.add(descriptionTitle);
-		skinInfoView.add(skinDescription);
+		
+		if(skinData.desc != '') {
+			skinInfoView.add(descriptionTitle);
+			skinInfoView.add(skinDescription);
+		}
+		
 		skinInfoView.add(timestampTitle);
 		skinInfoView.add(skinTimestamp);
 		
@@ -499,8 +503,12 @@
 		skinInfoView.add(skinTitle);
 		skinInfoView.add(exports.getHorizontalSeparator('lightGray'));
 		skinInfoView.add(skinView);
-		skinInfoView.add(descriptionTitle);
-		skinInfoView.add(skinDescription);
+		
+		if(skinData.desc != '') {
+			skinInfoView.add(descriptionTitle);
+			skinInfoView.add(skinDescription);
+		}
+		
 		skinInfoView.add(timestampTitle);
 		skinInfoView.add(skinTimestamp);
 
