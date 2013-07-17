@@ -137,9 +137,13 @@
 			options: [I('addProcess.skinInfo.method.search'), I('addProcess.skinInfo.method.pseudo'), I('addProcess.skinInfo.method.url'), I('addProcess.skinInfo.method.cancel')],
 			cancel: 3
 		});
+		
+		button.setEnabled(false);
 
 		optionDialog.addEventListener('click', function(e) {
-			if(e.index == 0 || e.index == 1 || e.index == 2) {
+			button.setEnabled(true);
+			
+			if(e.index == 0 || e.index == 1 || e.index == 2) {				
 				var win_next = Ti.UI.createWindow({
 					backgroundImage: Utils.getModalBackgroundImage(),
 					barColor: Utils.getNavColor()
