@@ -8,7 +8,7 @@ var Database = require('/includes/db'),
 win = Ti.UI.currentWindow,
 loadingWin = Utils.createLoadingWindow(),
 
-adLoaded = true,
+adLoaded = false,
 
 skinsShowcase = Ti.UI.createScrollView({
 	contentWidth: Ti.UI.FILL,
@@ -107,12 +107,14 @@ if(!Utils.isiPad()) {
 		adSize: Ti.UI.iOS.AD_SIZE_PORTRAIT,
 		height: Ti.UI.SIZE,
 		width: Ti.UI.FILL,
-		bottom: 0,
-		backgroundColor: 'transparent'
+		bottom: 0
 	});
+	
+	adView.hide();
 	
 	adView.addEventListener('load', function(e) {
 		adLoaded = true;
+		adView.show();
 		
 		if(skinsShowcase != null) {
 			skinsShowcase.animate({
@@ -124,6 +126,7 @@ if(!Utils.isiPad()) {
 	
 	adView.addEventListener('error', function(e) {
 		adLoaded = false;
+		adView.hide();
 		
 		if(skinsShowcase != null) {
 			skinsShowcase.animate({

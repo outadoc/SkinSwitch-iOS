@@ -71,9 +71,10 @@ function startApp() {
 		adView = Ti.UI.iOS.createAdView({
 			height: Ti.UI.SIZE,
 			width: Ti.UI.FILL,
-			bottom: 0,
-			backgroundColor: 'transparent'
+			bottom: 0
 		});
+		
+		adView.hide();
 		
 		adView.addEventListener('load', function(e) {
 			var anim = {
@@ -81,6 +82,7 @@ function startApp() {
 				duration: 200
 			}
 			
+			adView.show();
 			detailWin.animate(anim);
 			masterWin.animate(anim);
 		});
@@ -91,6 +93,7 @@ function startApp() {
 				duration: 200
 			}
 			
+			adView.hide();
 			detailWin.animate(anim);
 			masterWin.animate(anim);
 		});
