@@ -144,6 +144,33 @@
 		  	height: Ti.UI.FILL
 		}), i;
 		
+		if(skins.length > 0 && !Ti.App.Properties.getBool('hasShownWearTip', false)) {
+			var view_longpress_tip = Ti.UI.createView({
+				height: Ti.UI.SIZE,
+				width: Ti.UI.FILL,
+				top: 0,
+				bottom: 10,
+				left: 10,
+				right: 10
+			}),
+			
+			lbl_tip_text = Ti.UI.createLabel({
+				text: '\u21B3' + I('main.tips.wear'),
+				color: 'white',
+				font: {
+					fontSize: 16,
+					fontFamily: 'Helvetica Neue'
+				},
+				width: Ti.UI.FILL,
+				height: Ti.UI.SIZE
+			});
+			
+			view_longpress_tip.add(lbl_tip_text);
+			container.add(view_longpress_tip);
+			
+			Ti.App.Properties.setBool('hasShownWearTip', true);
+		}
+		
 		if(Utils.isiPad()) {
 			container.addEventListener('click', function(e) {
 				if(e.source == container) {
