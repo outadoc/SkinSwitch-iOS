@@ -130,7 +130,7 @@
 		alert_restore.show();
 	}
 	
-	exports.beginSkinAdditionProcess = function() {
+	exports.beginSkinAdditionProcess = function(button) {
 		//if we're adding a new skin to the database, ask for more info
 		var optionDialog = Ti.UI.createOptionDialog({
 			title: I('addProcess.skinInfo.method.title'),
@@ -184,7 +184,10 @@
 			}			
 		});
 
-		optionDialog.show();
+		optionDialog.show({
+			animated: true,
+			view: button
+		});
 	}
 	
 })();
