@@ -64,7 +64,7 @@
 		return win;
 	}
 
-	exports.getTextFieldRow = function(text, hint) {
+	exports.getTextFieldRow = function(text, hint, isPassword) {
 		var row = Ti.UI.createTableViewRow({
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
 			layout: 'horizontal',
@@ -95,6 +95,7 @@
 			height: 30,
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
+			passwordMask: isPassword,
 			textAlign: (exports.isiPad()) ? Ti.UI.TEXT_ALIGNMENT_RIGHT : Ti.UI.TEXT_ALIGNMENT_LEFT,
 			clearButtonMode: (exports.isiPad()) ? Ti.UI.INPUT_BUTTONMODE_NEVER : Ti.UI.INPUT_BUTTONMODE_ONFOCUS
 		});

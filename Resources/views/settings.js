@@ -4,57 +4,6 @@ var win = Ti.UI.currentWindow,
 	Utils = require('/includes/utils'),
 	Keychain = require('clearlyinnovative.keychain');
 
-function getTextFieldRow(text, hint, isPassword) {
-	var row = Ti.UI.createTableViewRow({
-		selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
-		height: 35,
-		layout: 'horizontal'
-	}),
-	
-	rowText = Ti.UI.createLabel({
-		text: text,
-		left: 10,
-		width: Ti.UI.SIZE,
-		top: 5,
-		bottom: 5,
-		height: 30,
-		font: {
-			fontWeight: 'bold',
-			fontSize: 17
-		}
-	}),
-
-	textfield = Ti.UI.createTextField({
-		color: '#336699',
-		right: 10,
-		left: 10,
-		top: 5,
-		bottom: 5,
-		height: 30,
-		textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
-		autocorrect: false,
-		borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
-		returnKeyType: Ti.UI.RETURNKEY_NEXT,
-		hintText: hint,
-		passwordMask: isPassword,
-		autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
-		clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ONFOCUS
-	});
-	
-	row.add(rowText);
-	
-	rowText.addEventListener('postlayout', function() {
-		if(rowText.rect.width >= 140) {
-			rowText.width = 140;
-		}
-		
-		textfield.width = 270 - rowText.rect.width;
-	});
-	
-	row.add(textfield);
-	return row;
-}
-
 var b_credits = Ti.UI.createButton({
 	title: I('credits.title')
 });
@@ -100,7 +49,7 @@ var lbl_header = Ti.UI.createLabel({
 }),
 
 tableView = Ti.UI.createTableView({
-	data: [getTextFieldRow(I('settings.username'), 'Notch', false), getTextFieldRow(I('settings.password'), '●●●●●●●●●●●', true)],
+	data: [Utils.getTextFieldRow(I('settings.username'), 'Notch', false), Utils.getTextFieldRow(I('settings.password'), '●●●●●●●●●●●', true)],
 	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundColor: 'transparent',
 	rowBackgroundColor: 'white',
