@@ -36,12 +36,12 @@ txtfield_url = Ti.UI.createTextField({
 
 b_next = Ti.UI.createButton({
 	title: I('addProcess.next'),
-	enabled: false
+	enabled: false,
+	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
 });
 
 var b_close = Ti.UI.createButton({
-	title: I('buttons.close'),
-	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
+	title: I('buttons.close')
 });
 
 b_close.addEventListener('click', function(e) {

@@ -64,8 +64,7 @@ searchBar.addEventListener('blur', function(e) {
 win.setTitleControl(searchBar);
 
 var b_close = Ti.UI.createButton({
-	title: I('buttons.close'),
-	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
+	title: I('buttons.close')
 });
 
 b_close.addEventListener('click', function(e) {

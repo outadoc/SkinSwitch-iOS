@@ -54,12 +54,12 @@ container.add(lbl_info);
 win.add(container);
 
 var b_cancel = Ti.UI.createButton({
-	title: I('addProcess.process.challenge.cancel'),
-	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
+	title: I('addProcess.process.challenge.cancel')
 }),
 
 b_continue = Ti.UI.createButton({
-	title: I('addProcess.process.challenge.continue')
+	title: I('addProcess.process.challenge.continue'),
+	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
 });
 
 b_cancel.addEventListener('click', function() {

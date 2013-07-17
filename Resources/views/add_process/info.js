@@ -21,7 +21,8 @@ tableView = Ti.UI.createTableView({
 
 b_next = Ti.UI.createButton({
 	title: I('addProcess.next'),
-	enabled: (win.skinIDToEdit != null || win.defaultSkinName != null)
+	enabled: (win.skinIDToEdit != null || win.defaultSkinName != null),
+	style: Titanium.UI.iPhone.SystemButtonStyle.DONE
 });
 
 //when returning on the name field
@@ -66,8 +67,7 @@ b_next.addEventListener('click', function(e) {
 
 if(win.skinIDToEdit != null) {
 	var b_close = Ti.UI.createButton({
-		title: I('buttons.close'),
-		style: Titanium.UI.iPhone.SystemButtonStyle.DONE
+		title: I('buttons.close')
 	});
 
 	b_close.addEventListener('click', function(e) {
