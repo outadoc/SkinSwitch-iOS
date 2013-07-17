@@ -36,6 +36,11 @@
 	exports.isiPad = function() {
 		return (Ti.Platform.getOsname() === 'ipad');
 	}
+	
+	exports.getMajorOsVersion = function() {
+		var version = Titanium.Platform.version.split(".");
+		return parseInt(version[0]);
+	}
 
 	exports.createLoadingWindow = function() {
 		var win = Ti.UI.createWindow({
@@ -87,7 +92,7 @@
 		
 		textfield = Ti.UI.createTextField({
 			hintText: hint,
-			color: '#336699',
+			color: (exports.getMajorOsVersion() < 7) ? '#336699' : '#8f8f8f',
 			right: (exports.isiPad()) ? 20 : 10,
 			left: 10,
 			top: 5,
@@ -136,7 +141,7 @@
 		}),
 		
 		textarea = Ti.UI.createTextArea({
-			color: '#336699',
+			color: (exports.getMajorOsVersion() < 7) ? '#336699' : '#8f8f8f',
 			right: (exports.isiPad()) ? 15 : 10,
 			left: (exports.isiPad()) ? 50 : 10,
 			top: 5,
