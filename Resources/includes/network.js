@@ -16,14 +16,14 @@
 		var dialog_wear = Ti.UI.createAlertDialog({
 			title: I('main.skinUpload.confirm.title'),
 			message: I('main.skinUpload.confirm.message', skinData.name),
-			buttonNames: [I('main.skinUpload.confirm.cancel'), I('main.skinUpload.confirm.okay')],
-			cancel: 0
+			buttonNames: [I('main.skinUpload.confirm.okay'), I('main.skinUpload.confirm.cancel')],
+			cancel: 1
 		});
 
 		dialog_wear.show();
 
 		dialog_wear.addEventListener('click', function(e) {
-			if(e.index == 1) {
+			if(e.index == 0) {
 				prog_upload.show();
 				win.setTitleControl(prog_upload);
 

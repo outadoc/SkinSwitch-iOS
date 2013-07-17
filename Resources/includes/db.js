@@ -41,14 +41,14 @@
 		var confirm = Ti.UI.createAlertDialog({
 			title: I('main.skinDelete.title'),
 			message: I('main.skinDelete.message', skinData.name),
-			buttonNames: [I('main.skinDelete.cancel'), I('main.skinDelete.okay')],
-			cancel: 0
+			buttonNames: [I('main.skinDelete.okay'), I('main.skinDelete.cancel')],
+			cancel: 1
 		});
 
 		confirm.show();
 
 		confirm.addEventListener('click', function(e) {
-			if(e.index == 1) {
+			if(e.index == 0) {
 				var db = exports.getDatabaseHandle();
 				db.execute('DELETE FROM skins WHERE id=?', skinData.id);
 				db.close();
