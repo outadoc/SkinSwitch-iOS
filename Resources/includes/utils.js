@@ -101,8 +101,7 @@
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
 			passwordMask: isPassword,
-			textAlign: (exports.isiPad()) ? Ti.UI.TEXT_ALIGNMENT_RIGHT : Ti.UI.TEXT_ALIGNMENT_LEFT,
-			clearButtonMode: (exports.isiPad()) ? Ti.UI.INPUT_BUTTONMODE_NEVER : Ti.UI.INPUT_BUTTONMODE_ONFOCUS
+			textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
 		});
 		
 		row.add(rowText);
@@ -147,7 +146,7 @@
 			top: 5,
 			bottom: 5,
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
-			textAlign: (exports.isiPad()) ? Ti.UI.TEXT_ALIGNMENT_RIGHT : Ti.UI.TEXT_ALIGNMENT_LEFT,
+			textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
 			font: {
 				fontSize: 16
