@@ -56,7 +56,9 @@ var b_add = Ti.UI.createButton({
 });
 
 b_add.addEventListener('click', function(e) {
-	Database.beginSkinAdditionProcess(e.source);
+	if(!e.source.isShowingPrompt) {
+		Database.beginSkinAdditionProcess(e.source);
+	}
 });
 
 var b_settings = Ti.UI.createButton({

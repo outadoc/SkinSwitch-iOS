@@ -138,10 +138,10 @@
 			cancel: 3
 		});
 		
-		button.setEnabled(false);
+		button.isShowingPrompt = true;
 
 		optionDialog.addEventListener('click', function(e) {
-			button.setEnabled(true);
+			button.isShowingPrompt = false;
 			
 			if(e.index == 0 || e.index == 1 || e.index == 2) {				
 				var win_next = Ti.UI.createWindow({
