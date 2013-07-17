@@ -11,7 +11,7 @@ scrollView = Ti.UI.createScrollView({
 
 img_logo = Ti.UI.createImageView({
 	image: '/img/icon-large.png',
-	top: 10,
+	top: 20,
 	width: 130
 }),
 
@@ -46,7 +46,7 @@ lbl_credits = Ti.UI.createLabel({
 		y: 1
 	},
 	width: 280,
-	top: 15,
+	top: 30,
 	height: Ti.UI.SIZE,
 	textAlign: 'center'
 }),
