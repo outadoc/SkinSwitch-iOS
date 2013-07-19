@@ -42,33 +42,6 @@
 		return parseInt(version[0]);
 	}
 
-	exports.createLoadingWindow = function() {
-		var win = Ti.UI.createWindow({
-			width: 320,
-			height: Ti.UI.FILL,
-			left: 0,
-			top: 0
-		}),
-		
-		view = Ti.UI.createView({
-			height: 60,
-			width: 60,
-			borderRadius: 10,
-			backgroundColor: 'black',
-			opacity: 0.6
-		}),
-		
-		spinWheel = Ti.UI.createActivityIndicator({
-			style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG
-		});
-
-		win.add(view);
-		view.add(spinWheel);
-		spinWheel.show();
-
-		return win;
-	}
-
 	exports.getTextFieldRow = function(text, hint, isPassword) {
 		var row = Ti.UI.createTableViewRow({
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,

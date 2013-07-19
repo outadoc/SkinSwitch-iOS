@@ -1,6 +1,6 @@
 (function() {
 		
-	exports.getSkinFrame = function(skinData, ipad_win) {
+	exports.createSkinFrame = function(skinData, ipad_win) {
 		var view = Ti.UI.createView({
 			top: 10,
 			width: 98,
@@ -83,9 +83,9 @@
 				
 				if((new Date).getTime() - startTimestamp < 300) {
 					if(Utils.isiPad()) {
-						exports.getiPadDetailWindow(skinData, ipad_win);
+						exports.displayiPadSkinDetails(skinData, ipad_win);
 					} else {
-						var win = exports.getiPhoneDetailWindow(skinData),
+						var win = exports.createiPhoneDetailWindow(skinData),
 		
 						anim = Ti.UI.createAnimation({
 							transform: Ti.UI.create2DMatrix({
@@ -134,7 +134,7 @@
 		});
 	}
 	
-	exports.getSkinsShowcaseView = function(skins, ipad_win) {
+	exports.createSkinsShowcaseView = function(skins, ipad_win) {
 		var container = Ti.UI.createView({
 			layout: 'horizontal',
 		  	left: 13,
@@ -180,17 +180,17 @@
 		}
 		
 		if(skins == null || skins.length == 0) {
-			container.add(exports.getSkinFrame(null, ipad_win));
+			container.add(exports.createSkinFrame(null, ipad_win));
 		}
 		
 		for(i = 0; i < skins.length; i ++) {
-			container.add(exports.getSkinFrame(skins[i], ipad_win));
+			container.add(exports.createSkinFrame(skins[i], ipad_win));
 		}
 		
 		return container;
 	}
 	
-	exports.getiPhoneDetailWindow = function(skinData) {
+	exports.createiPhoneDetailWindow = function(skinData) {
 		var win = Ti.UI.createWindow({
 			transform: Ti.UI.create2DMatrix({
 				scale: 0
@@ -249,7 +249,7 @@
 			height: 25
 		}),
 		
-		skinView = exports.getSkinPreview(skinData.id),
+		skinView = exports.createSkinPreview(skinData.id),
 		
 		descriptionTitle = Ti.UI.createLabel({
 			text: I('main.skinDetails.description'),
@@ -393,7 +393,7 @@
 		containerView.add(skinInfoView);
 		
 		skinInfoView.add(skinTitle);
-		skinInfoView.add(exports.getHorizontalSeparator('lightGray'));
+		skinInfoView.add(exports.createHorizontalSeparator('lightGray'));
 		skinInfoView.add(skinView);
 		
 		if(skinData.desc != '') {
@@ -407,17 +407,17 @@
 		containerView.add(actionView);
 		
 		actionView.add(b_delete);
-		actionView.add(exports.getVerticalSeparator('lightGray'));
+		actionView.add(exports.createVerticalSeparator('lightGray'));
 		actionView.add(b_edit);
-		actionView.add(exports.getVerticalSeparator('lightGray'));
+		actionView.add(exports.createVerticalSeparator('lightGray'));
 		actionView.add(b_wear);
-		actionView.add(exports.getVerticalSeparator('lightGray'));
+		actionView.add(exports.createVerticalSeparator('lightGray'));
 		actionView.add(b_close);
 
 		return win;
 	}
 	
-	exports.getiPadDetailWindow = function(skinData, win) {
+	exports.displayiPadSkinDetails = function(skinData, win) {
 		var skinInfoView = Ti.UI.createView({
 			height: Ti.UI.SIZE,
 			width: Ti.UI.FILL,
@@ -438,7 +438,7 @@
 			height: 25
 		}),
 		
-		skinView = exports.getSkinPreview(skinData.id),
+		skinView = exports.createSkinPreview(skinData.id),
 		
 		descriptionTitle = Ti.UI.createLabel({
 			text: I('main.skinDetails.description'),
@@ -528,7 +528,7 @@
 		});
 		
 		skinInfoView.add(skinTitle);
-		skinInfoView.add(exports.getHorizontalSeparator('lightGray'));
+		skinInfoView.add(exports.createHorizontalSeparator('lightGray'));
 		skinInfoView.add(skinView);
 		
 		if(skinData.desc != '') {
@@ -562,7 +562,7 @@
 		});
 	}
 	
-	exports.getVerticalSeparator = function(color) {
+	exports.createVerticalSeparator = function(color) {
 		return Ti.UI.createView({
 			width: 1,
 			height: Ti.UI.FILL,
@@ -570,7 +570,7 @@
 		});
 	}
 	
-	exports.getHorizontalSeparator = function(color) {
+	exports.createHorizontalSeparator = function(color) {
 		return Ti.UI.createView({
 			height: 1,
 			width: '80%',
@@ -579,7 +579,7 @@
 		});
 	}
 	
-	exports.getSkinPreview = function(skinID) {
+	exports.createSkinPreview = function(skinID) {
 		var height = (Utils.isiPad()) ? 300 : 170,
 			width = (Utils.isiPad()) ? 150 : 85,
 		
@@ -630,7 +630,7 @@
 		return view_skin;
 	}
 	
-	exports.getSingleSearchResult = function(skinData, btnCallback) {
+	exports.createSingleSearchResult = function(skinData, btnCallback) {
 		var view = Ti.UI.createView({
 			left: (Utils.isiPad()) ? 20 : 10,
 			right: (Utils.isiPad()) ? 20 : 10,
@@ -743,6 +743,33 @@
 		view.add(b_add);
 		
 		return view;
+	}
+	
+	exports.createLoadingWindow = function() {
+		var win = Ti.UI.createWindow({
+			width: 320,
+			height: Ti.UI.FILL,
+			left: 0,
+			top: 0
+		}),
+		
+		view = Ti.UI.createView({
+			height: 60,
+			width: 60,
+			borderRadius: 10,
+			backgroundColor: 'black',
+			opacity: 0.6
+		}),
+		
+		spinWheel = Ti.UI.createActivityIndicator({
+			style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG
+		});
+
+		win.add(view);
+		view.add(spinWheel);
+		spinWheel.show();
+
+		return win;
 	}
 	
 })();

@@ -128,7 +128,7 @@ function getRequestResults(params) {
 				}
 				
 				for(i = 0; i < resultArray.length; i++) {
-					currentSkinResult = Ui.getSingleSearchResult(resultArray[i], selectSkin);
+					currentSkinResult = Ui.createSingleSearchResult(resultArray[i], selectSkin);
 					containerView.addView(currentSkinResult);	
 									
 					if(i == 0) {

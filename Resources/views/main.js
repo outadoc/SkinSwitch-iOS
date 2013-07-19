@@ -6,7 +6,7 @@ var Database = require('/includes/db'),
 	Network = require('/includes/network'),
 
 win = Ti.UI.currentWindow,
-loadingWin = Utils.createLoadingWindow(),
+loadingWin = Ui.createLoadingWindow(),
 
 adLoaded = false,
 
@@ -39,7 +39,7 @@ function updateSkinsList() {
 			skinsShowcase.setBottom(50);
 		}
 		
-		skinsShowcase.add(Ui.getSkinsShowcaseView(Database.getSkins(), win));
+		skinsShowcase.add(Ui.createSkinsShowcaseView(Database.getSkins(), win));
 		
 		skinsShowcase.animate({
 			opacity: 1,
