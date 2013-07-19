@@ -71,22 +71,25 @@ txtfield_url.addEventListener('change', function(e) {
 });
 
 b_next.addEventListener('click', function(e) {
-	var url = txtfield_url.getValue();
+	var url;
 
 	if(win.from == 'url') {
-		if(url.substring(0, 7) != 'http://') {
-			url = 'http://' + url;
+		if(txtfield_url.getValue().substring(0, 7) != 'http://' && txtfield_url.getValue().substring(0, 7) != 'https://') {
+			url = 'http://' + txtfield_url.getValue();
+		} else {
+			url = txtfield_url.getValue();
 		}
 	} else if(win.from == 'username') {
-		url = 'http://s3.amazonaws.com/MinecraftSkins/' + url + '.png';
+		url = 'http://s3.amazonaws.com/MinecraftSkins/' + txtfield_url.getValue() + '.png';
 	}
-
-	if(url != null && url.split('.').pop().toLowerCase() == 'png') {
+	
+	if(url != null && url.match(/https?:\/\/(.)+.png/) != null) {
 		var win_info = Ti.UI.createWindow({
 			title: I('addProcess.skinInfo.title'),
 			url: 'info.js',
 			backgroundImage: Utils.getModalBackgroundImage(),
 			barColor: Utils.getNavColor(),
+			defaultSkinName: (win.from == 'username') ? txtfield_url.getValue() : undefined,
 			skinUrl: url
 		});
 		
