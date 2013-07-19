@@ -386,7 +386,7 @@
 		
 		b_wear.addEventListener('click', function(e) {
 			closeDetailWin();
-			Network.uploadSkin(skinData.id, skinData.name);
+			Network.uploadSkin(skinData);
 		});
 		
 		win.add(containerView);
