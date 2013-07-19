@@ -36,6 +36,17 @@ lbl_indicator = Ti.UI.createLabel({
 	},
 	height: 20,
 	color: 'white'
+}),
+
+lbl_page_indicator = Ti.UI.createLabel({
+	bottom: 10,
+	font: {
+		fontSize: 16,
+		fontFamily: 'Helvetica Neue'
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	height: 16,
+	color: 'white'
 });
 
 loadingWin.open();
@@ -86,10 +97,14 @@ darkenView.addEventListener('click', function() {
 });
 
 
-containerView.addEventListener('scrollend', loadSkinPreview);
+containerView.addEventListener('scrollend', function(e) {
+	lbl_page_indicator.setText((e.currentPage + 1) + " / " + e.source.views.length);
+	loadSkinPreview(e);
+});
 
 win.add(lbl_indicator);
 win.add(containerView);
+win.add(lbl_page_indicator);
 
 getRandomSkins();
 
@@ -126,6 +141,7 @@ function getRequestResults(params) {
 			} else {
 				//resetting the list
 				containerView.setViews([]);
+				lbl_page_indicator.setText(null);
 				containerView.setOpacity(0);
 				
 				if(resultArray.length == 0 && params.match != null) {
@@ -141,6 +157,10 @@ function getRequestResults(params) {
 							view: currentSkinResult
 						});
 					}
+				}
+				
+				if(resultArray != 0) {
+					lbl_page_indicator.setText("1 / " + resultArray.length);
 				}
 			}
 			
