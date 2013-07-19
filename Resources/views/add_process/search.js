@@ -126,6 +126,7 @@ function getRequestResults(params) {
 			} else {
 				//resetting the list
 				containerView.setViews([]);
+				containerView.setOpacity(0);
 				
 				if(resultArray.length == 0 && params.match != null) {
 					lbl_indicator.setText(I('addProcess.search.indicator.noResults', params.match));
@@ -144,6 +145,10 @@ function getRequestResults(params) {
 			}
 			
 			loadingWin.close();
+			containerView.animate({
+				opacity: 1,
+				duration: 300
+			});
 		},
 		onerror: function(e) {
 			loadingWin.close();
