@@ -651,7 +651,7 @@
 			top: 20,
 			height: 20,
 			color: '#4f4f4f',
-			textAlign: 'center',
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 			font: {
 				fontSize: 18
 			}
