@@ -31,14 +31,18 @@
 					onload: function() {
 						//when login xhr loaded
 						if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
-							exports.triggerError('login', this);
+							exports.triggerError('login');
 						} else {
 							var xhr_skin = Ti.Network.createHTTPClient({
 								onload: function() {
-									//when skin upload xhr loaded
-									if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
+									var serverSideError = (xhr_skin.getResponseHeader('Set-Cookie')).match(/PLAY_ERRORS=(%00skin%3A)?([a-zA-Z0-9+.]*)%00;(Path=.*),/);
+									
+									if(serverSideError != null && serverSideError[2] !== undefined) {
+										//the server didn't want our skin :(
+										exports.triggerError('upload', serverSideError[2].replace(/\+/g, " "));
+									} else if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
 										//login error
-										exports.triggerError('login', this);
+										exports.triggerError('login');
 									} else if(this.getResponseHeader('Location').indexOf('minecraft.net/challenge') != -1) {
 										//identity check
 										var xhr_challenge = Ti.Network.createHTTPClient({
@@ -91,7 +95,7 @@
 									}
 								},
 								onerror: function() {
-									exports.triggerError('upload', this);
+									exports.triggerError('upload');
 								},
 								autoRedirect: false
 							});
@@ -109,7 +113,7 @@
 						}
 					},
 					onerror: function(e) {
-						exports.triggerError('server', this);
+						exports.triggerError('server');
 						Ti.API.info(e);
 					},
 					autoRedirect: false,
@@ -145,11 +149,15 @@
 		});
 	}
 	
-	exports.triggerError = function(type, xhr) {
+	exports.triggerError = function(type, complement) {
 		var alert_error = Ti.UI.createAlertDialog({
 			title: I('main.skinUpload.error.title'),
 			message: I('main.skinUpload.error.' + type)
 		});
+		
+		if(complement != null) {
+			alert_error.message += '\n(' + complement + ')';
+		}
 
 		alert_error.show();
 
