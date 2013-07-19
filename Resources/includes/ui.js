@@ -217,7 +217,7 @@
 		});
 		
 		var containerView = Ti.UI.createView({
-			height: 355,
+			height: (Ti.Platform.displayCaps.platformHeight >= 568) ? 426 : 355,
 			width: 300,
 			backgroundColor: '#f2f2f2',
 			borderWidth: 2,
