@@ -4,6 +4,8 @@ var win = Ti.UI.currentWindow,
 	Utils = require('/includes/utils'),
 	Ui = require('/includes/ui'),
 
+loadingWin = Ui.createLoadingWindow(),
+
 searchBar = Ti.UI.createSearchBar({
 	barColor: Utils.getNavColor(),
 	hintText: I('addProcess.search.searchHint'),
@@ -35,6 +37,8 @@ lbl_indicator = Ti.UI.createLabel({
 	height: 20,
 	color: 'white'
 });
+
+loadingWin.open();
 
 searchBar.addEventListener('return', function(e) {
 	e.source.blur();
@@ -138,13 +142,17 @@ function getRequestResults(params) {
 					}
 				}
 			}
+			
+			loadingWin.close();
 		},
 		onerror: function(e) {
+			loadingWin.close();
 			alert(I('addProcess.search.error.network'));
 		}
 	});
 	
 	xhr.open('POST', 'http://skinmanager.fr.nf/json/');
+	loadingWin.open();
 	xhr.send(params);
 }
 
