@@ -264,7 +264,7 @@
 		}),
 		
 		skinDescription = Ti.UI.createLabel({
-			text: skinData.desc,
+			text: (skinData.desc != '') ? skinData.desc : '-',
 			font: {
 				fontSize: 15,
 			},
@@ -396,10 +396,8 @@
 		skinInfoView.add(exports.createHorizontalSeparator('lightGray'));
 		skinInfoView.add(skinView);
 		
-		if(skinData.desc != '') {
-			skinInfoView.add(descriptionTitle);
-			skinInfoView.add(skinDescription);
-		}
+		skinInfoView.add(descriptionTitle);
+		skinInfoView.add(skinDescription);
 		
 		skinInfoView.add(timestampTitle);
 		skinInfoView.add(skinTimestamp);
@@ -454,7 +452,7 @@
 		}),
 		
 		skinDescription = Ti.UI.createLabel({
-			text: skinData.desc,
+			text: (skinData.desc != '') ? skinData.desc : '-',
 			font: {
 				fontSize: 20,
 			},
@@ -531,10 +529,8 @@
 		skinInfoView.add(exports.createHorizontalSeparator('lightGray'));
 		skinInfoView.add(skinView);
 		
-		if(skinData.desc != '') {
-			skinInfoView.add(descriptionTitle);
-			skinInfoView.add(skinDescription);
-		}
+		skinInfoView.add(descriptionTitle);
+		skinInfoView.add(skinDescription);
 		
 		skinInfoView.add(timestampTitle);
 		skinInfoView.add(skinTimestamp);
