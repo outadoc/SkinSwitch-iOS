@@ -743,7 +743,7 @@
 	
 	exports.createLoadingWindow = function() {
 		var win = Ti.UI.createWindow({
-			width: 320,
+			width: Ti.UI.FILL,
 			height: Ti.UI.FILL,
 			left: 0,
 			top: 0
