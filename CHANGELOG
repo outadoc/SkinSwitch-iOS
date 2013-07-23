@@ -1,0 +1,20 @@
+--------------- v2.0 ---------------
+Main features:
++ Completely redesigned the app
++ Skins are now shown in a grid: tap and hold a skin to upload it quickly!
++ You can now search for new skins directly in the app
++ Reworked iPad version that is now fully enjoyable
++ Added a few settings to force the app in english, disable iCloud and sort skins by date
+
+Bug fixes and minor improvements:
+* Supporting security questions for Mojang accounts, this should fix issues with uploading skins
+* More accurate error messages when failing to upload a skin
+* Fix when editing a skin's info
+* Fix adding certain skins from an URL
+* Improve iAd behavior, should be less intrusive
+* Lots and lots of other improvements and bug fixes!
+
+The search function is provided by skinmanager.fr.nf: if you want to make a skin available to all the other users of SkinSwitch, check them out!
+The translations were updated as well as we could, but still not perfect: you can still freely contribute on sswitch.tr.outadoc.fr.
+
+Hope you like this update! Give us your feedback @outadev or on our website. :)
