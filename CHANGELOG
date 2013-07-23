@@ -7,7 +7,7 @@ Main features:
 + Added a few settings to force the app in english, disable iCloud and sort skins by date
 
 Bug fixes and minor improvements:
-* Supporting security questions for Mojang accounts, this should fix issues with uploading skins
+* Supporting security questions for Mojang accounts, this should fix issues with uploading skins. Also known as the anti-mojang counter-maneuver.
 * More accurate error messages when failing to upload a skin
 * Fix when editing a skin's info
 * Fix adding certain skins from an URL
