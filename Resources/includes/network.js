@@ -35,7 +35,11 @@
 						} else {
 							var xhr_skin = Ti.Network.createHTTPClient({
 								onload: function() {
-									var serverSideError = (xhr_skin.getResponseHeader('Set-Cookie')).match(/PLAY_ERRORS=(%00skin%3A)?([a-zA-Z0-9+.]*)%00;(Path=.*),/);
+									var serverSideError;
+									
+									if(xhr_skin.getResponseHeader('Set-Cookie') != null) {
+										serverSideError = (xhr_skin.getResponseHeader('Set-Cookie')).match(/PLAY_ERRORS=(%00skin%3A)?([a-zA-Z0-9+.]*)%00;(Path=.*),/);
+									}
 									
 									if(serverSideError != null && serverSideError[2] !== undefined) {
 										//the server didn't want our skin :(
