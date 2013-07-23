@@ -11,6 +11,9 @@
 			"close":"Tanca"
 		},
 		"noSelectedSkin":"Cap skin seleccionada.",
+		"tips":{
+			"wear":"Protip: To wear a skin, tap and hold its icon!"
+		},
 		"skinDelete":{
 			"title":"Confirma l'eliminació",
 			"message":"Realment vols eliminar \"%s\"?",

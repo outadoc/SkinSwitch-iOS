@@ -11,6 +11,9 @@
 			"close":"キャンセル"
 		},
 		"noSelectedSkin":"スキンが選ばれていません。",
+		"tips":{
+			"wear":"Protip: To wear a skin, tap and hold its icon!"
+		},
 		"skinDelete":{
 			"title":"削除を確認する",
 			"message":"\"%S\"を削除してよろしいですか？",
@@ -60,7 +63,7 @@
 			"description":"説明",
 			"method":{
 				"title":"スキン追加...",
-				"search":"By searching the Web",
+				"search":"Webからさがす",
 				"pseudo":"既存のユーザーから",
 				"url":"URLから",
 				"cancel":"キャンセル"
@@ -72,15 +75,15 @@
 			"invalidUrl":"この URL は無効です (PNGファイルである必要があります)。"
 		},
 		"search":{
-			"select":"Select this skin",
-			"searchHint":"Search on MC Network...",
+			"select":"このスキンを選ぶ",
+			"searchHint":"MCネットワークを探す",
 			"indicator":{
-				"searchResults":"Search Results for: %s",
-				"noResults":"No results for: %s",
-				"random":"Random Skins"
+				"searchResults":"結果検索:%s",
+				"noResults":"結果:%s",
+				"random":"スキンをランダムで選ぶ"
 			},
 			"error":{
-				"network":"Couldn't load your search results. Check your connexion, and retry later."
+				"network":"検索結果を読み込めませんでした。インターネット接続を確認し、後で再試行してください。"
 			}
 		},
 		"process":{

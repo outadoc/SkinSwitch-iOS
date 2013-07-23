@@ -11,8 +11,8 @@
 			"close":"Close"
 		},
 		"noSelectedSkin":"No skin selected.",
-		"tips": {
-			"wear": "Protip: To wear a skin, tap and hold its icon!"
+		"tips":{
+			"wear":"Protip: To wear a skin, tap and hold its icon!"
 		},
 		"skinDelete":{
 			"title":"Confirm Deletion",

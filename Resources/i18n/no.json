@@ -11,6 +11,9 @@
 			"close":"Lukk"
 		},
 		"noSelectedSkin":"Ingen skin er valgt.",
+		"tips":{
+			"wear":"Protip: To wear a skin, tap and hold its icon!"
+		},
 		"skinDelete":{
 			"title":"Confirm Deletion",
 			"message":"Do you really want to delete \"%s\"?",

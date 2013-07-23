@@ -11,6 +11,9 @@
 			"close":"Chiudere"
 		},
 		"noSelectedSkin":"Nessuno skin selezionato.",
+		"tips":{
+			"wear":"Protip: To wear a skin, tap and hold its icon!"
+		},
 		"skinDelete":{
 			"title":"Confermare la soppressione",
 			"message":"Vuoi davvero sopprimere \"%s\" ?",

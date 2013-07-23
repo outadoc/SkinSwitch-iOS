@@ -11,6 +11,9 @@
 			"close":"Închide"
 		},
 		"noSelectedSkin":"Nici un skin selectat.",
+		"tips":{
+			"wear":"Protip: To wear a skin, tap and hold its icon!"
+		},
 		"skinDelete":{
 			"title":"Confirma stergerea",
 			"message":"Chiar vrei sa stergi \"%s\"?",

@@ -11,6 +11,9 @@
 			"close":"Cerrar"
 		},
 		"noSelectedSkin":"No skin seleccionado.",
+		"tips":{
+			"wear":"Protip: ¡Para usar este skin, toca y mantenga su icono!"
+		},
 		"skinDelete":{
 			"title":"Confirmar eliminación",
 			"message":"¿Realmente desas eliminar \"%s\"?",
@@ -22,7 +25,7 @@
 			"upload":"Subiendo skin...",
 			"loginFail":"Error de inicio",
 			"uploadFail":"Envío imposible",
-			"challengeFail":"Challenge failed",
+			"challengeFail":"Desafío fallado",
 			"success":"¡Envío completo!"
 		},
 		"skinUpload":{
@@ -37,7 +40,7 @@
 				"login":"Error de inicio de sesión en minecraft.net. Por favor comproba a tu nombre de usuario y contraseña.",
 				"server":"No se pudo conectar a minecraft.net. El sitio web podría no estar disponible. Comproba http:\/\/help.mojang.com y inténte de nuevo más tarde.",
 				"upload":"No se pudo enviar el skin en minecraft.net. Por favor inténte de nuevo más tarde.",
-				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
+				"challenge":"Deberá responder a una pregunta de seguridad para acceder a tu cuenta desde este dispositivo.\nDesafortunadamente, no pudimos cargarlo. Por favor, compruebe tu conexión e inténtelo de nuevo más tarde."
 			}
 		}
 	},
@@ -60,7 +63,7 @@
 			"description":"Descripción",
 			"method":{
 				"title":"Añadir este skin...",
-				"search":"By searching the Web",
+				"search":"Buscando en el web",
 				"pseudo":"Desde un usuario existente",
 				"url":"Desde un enlace",
 				"cancel":"Cancelar"
@@ -72,15 +75,15 @@
 			"invalidUrl":"Este enlace es inválida (DEBE ser un PNG archivo)."
 		},
 		"search":{
-			"select":"Select this skin",
-			"searchHint":"Search on MC Network...",
+			"select":"Seleccionar este skin",
+			"searchHint":"Buscar en MC Network...",
 			"indicator":{
-				"searchResults":"Search Results for: %s",
-				"noResults":"No results for: %s",
-				"random":"Random Skins"
+				"searchResults":"Resultados de búsqueda para: %s",
+				"noResults":"No resultados para: %s",
+				"random":"Skins aleatorios"
 			},
 			"error":{
-				"network":"Couldn't load your search results. Check your connexion, and retry later."
+				"network":"No podía cargar los resultados de la búsqueda. Compruebe su conexión e inténtelo de nuevo más tarde."
 			}
 		},
 		"process":{
@@ -103,11 +106,11 @@
 				}
 			},
 			"challenge":{
-				"title":"Identity Confirmation",
-				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+				"title":"Confirmación de la identidad",
+				"help":"Debes contestar esta pregunta, porque estás intentando acceder a tu cuenta Mojang desde un lugar diferente.\n\nSi has olvidado la respuesta, puedes intentar contestar una otra pregunta cerrando esta ventana y volviendo a intentarlo (es aleatorio).\n\nSi realmente no puedes recordar, visite help.mojang.com para obtener instrucciones sobre la reinicialización de tus preguntas.",
 				"cancel":"Cancelar",
 				"continue":"Seguir",
-				"hint":"Answer"
+				"hint":"Respuesta"
 			}
 		},
 		"next":"Siguiente"

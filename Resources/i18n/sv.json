@@ -1,16 +1,19 @@
 {
 	"main":{
-		"skinList":"skin lista",
+		"skinList":"Skin lista",
 		"addSkin":"Lägg till ett skin",
-		"editSettings":"ändra inställningar",
+		"editSettings":"Ändra inställningar",
 		"skinDetails":{
-			"title":"skin detaljer",
+			"title":"Skin detaljer",
 			"description":"Förklaring",
 			"creation":"Skapades den",
-			"wear":"Använd",
+			"wear":"Använd detta skin",
 			"close":"Stäng"
 		},
 		"noSelectedSkin":"Inget skin markerat.",
+		"tips":{
+			"wear":"Protip: att bära en hud, peka och håll dess ikon!"
+		},
 		"skinDelete":{
 			"title":"Bekräfta radering",
 			"message":"Vill du verkligen ta bort \"%s\"?",
@@ -22,22 +25,22 @@
 			"upload":"Laddar upp...",
 			"loginFail":"Inloggningen misslyckades",
 			"uploadFail":"Uppladdningen misslyckades",
-			"challengeFail":"Challenge failed",
+			"challengeFail":"Utmaningen misslyckades",
 			"success":"Uppladningen lyckades!"
 		},
 		"skinUpload":{
 			"confirm":{
-				"title":"byt skin?",
+				"title":"Byt skin?",
 				"message":"Vill du verkligen ersätta ditt nuvarande skin med\"%s\"?",
 				"cancel":"Nej",
-				"okay":"ja"
+				"okay":"Ja"
 			},
 			"error":{
 				"title":"Uppladningsfel...",
 				"login":"Kunde inte logga in på minecraft.net. Vänligen kontrollera ditt användarnamn och lösenord i inställningarna.",
 				"server":"Inte kunde nå minecraft.net. Hemsidan kan vara nere. Kontrollera om http:\/\/help.mojang.com fungerar och försök igen senare.",
 				"upload":"Det gick inte att ladda upp skinet till minecraft.net. Försök igen senare.",
-				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
+				"challenge":"Du måste besvara en säkerhetsfråga för att komma åt ditt konto från denna enhet. Tyvärr, vi kunde inte ladda det. Kontrollera anslutningen och försök igen senare."
 			}
 		}
 	},
@@ -60,7 +63,7 @@
 			"description":"Förklaring",
 			"method":{
 				"title":"Lägg till skinet...",
-				"search":"By searching the Web",
+				"search":"Genom att söka på webben",
 				"pseudo":"Från en minecraft figur",
 				"url":"Från en länk",
 				"cancel":"Avbryt"
@@ -72,15 +75,15 @@
 			"invalidUrl":"Länken är ogiltig (det måste vara en PNG-fil)."
 		},
 		"search":{
-			"select":"Select this skin",
-			"searchHint":"Search on MC Network...",
+			"select":"Välj det här skinet",
+			"searchHint":"Sök på MC nätverket...",
 			"indicator":{
-				"searchResults":"Search Results for: %s",
-				"noResults":"No results for: %s",
-				"random":"Random Skins"
+				"searchResults":"Sökresultat för: %s",
+				"noResults":"Inga resultat för: %s",
+				"random":"Slumpmässiga skin"
 			},
 			"error":{
-				"network":"Couldn't load your search results. Check your connexion, and retry later."
+				"network":"Kunde inte ladda dina sökresultat. Kontrollera din anslutning, och försök igen senare."
 			}
 		},
 		"process":{
@@ -103,11 +106,11 @@
 				}
 			},
 			"challenge":{
-				"title":"Identity Confirmation",
-				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+				"title":"Identitets bekräftelse",
+				"help":"Du måste svara på denna fråga eftersom du försöker till Mojang kontot från en annan plats. \n\nOm du glömt svaret, kan du försöka besvara en fråga genom att stänga det här fönstret och försöka igen (det är slumpmässigt). \n\nOm du inte kommer ihåg, vänligen besök help.mojang.com för anvisningar hur man återställer dina säkerhets frågor.",
 				"cancel":"Avbryt",
 				"continue":"Fortsätt",
-				"hint":"Answer"
+				"hint":"Svar"
 			}
 		},
 		"next":"Nästa"
