@@ -182,43 +182,43 @@ function getRequestResults(params) {
 }
 
 function loadSkinPreview(e) {
-	if(!e.view.frontImg.isLoaded) {
+	if(!e.view.frontWeb.isLoaded) {
 		var xhr_front = Ti.Network.createHTTPClient({
 			onload: function() {
-				if(this.getResponseData() != null && this.responseText.error == null) {
-					e.view.frontImg.animate({
+				if(this.responseText != null && this.responseText.error == null) {
+					e.view.frontWeb.animate({
 						opacity: 0,
 						duration: 60
 					}, function() {
-						e.view.frontImg.setImage(xhr_front.getResponseData());
-						e.view.frontImg.isLoaded = true;
+						e.view.frontWeb.html = Utils.getHtmlForPreview(xhr_front.responseText, 'front');
+						e.view.frontWeb.isLoaded = true;
 						
-						e.view.frontImg.animate({
+						e.view.frontWeb.animate({
 							opacity: 1,
 							duration: 60
 						});
 					});
 				}
 				
-				if(!e.view.backImg.isLoaded) {
+				if(!e.view.backWeb.isLoaded) {
 					var xhr_back = Ti.Network.createHTTPClient({
 						onload: function() {
-							if(this.getResponseData() != null && this.responseText.error == null) {
-								e.view.backImg.setImage(this.getResponseData());
-								e.view.backImg.isLoaded = true;
+							if(this.responseText != null && this.responseText.error == null) {
+								e.view.backWeb.html = Utils.getHtmlForPreview(xhr_back.responseText, 'back');
+								e.view.backWeb.isLoaded = true;
 							}
 						},
 						cache: true
 					});
 					
-					xhr_back.open('GET', 'http://apps.outadoc.fr/skinswitch/skinpreview.php?side=back&url=' + encodeURIComponent('http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=false'));
+					xhr_back.open('GET', 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=true');
 					xhr_back.send();
 				}
 			},
 			cache: true
 		});
 		
-		xhr_front.open('GET', 'http://apps.outadoc.fr/skinswitch/skinpreview.php?url=' + encodeURIComponent('http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=false'));
+		xhr_front.open('GET', 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=true');
 		xhr_front.send();
 	}
 }
@@ -230,7 +230,7 @@ function selectSkin(skinData) {
 		backgroundImage: Utils.getModalBackgroundImage(),
 		barColor: Utils.getNavColor(),
 
-		skinUrl: 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(skinData.id) + '&base64=false',
+		skinUrl: 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(skinData.id) + '&base64=true',
 		defaultSkinName: skinData.title,
 		defaultSkinDesc: skinData.description
 	});

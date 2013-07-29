@@ -41,6 +41,10 @@
 		var version = Titanium.Platform.version.split(".");
 		return parseInt(version[0]);
 	}
+	
+	exports.getHtmlForPreview = function(base64, side) {
+		return '<!DOCTYPE html><html><head></head><body style="margin: 0;" onload="getPreviewFromSkin(\'data:image/png;base64,' + base64 + '\', \'' + side + '\', 6);" style="margin: 0;"><canvas id="skinpreview" height="192" width="96"></canvas><script type="text/javascript" src="includes/lib/skinpreview.js"></script></body></html>';
+	}
 
 	exports.getTextFieldRow = function(text, hint, isPassword) {
 		var row = Ti.UI.createTableViewRow({

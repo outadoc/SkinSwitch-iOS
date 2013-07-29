@@ -626,7 +626,7 @@
 		return view_skin;
 	}
 	
-	exports.createSingleSearchResult = function(skinData, btnCallback) {
+	exports.createSingleSearchResult = function(skinData, btnCallback) {		
 		var view = Ti.UI.createView({
 			left: (Utils.isiPad()) ? 20 : 10,
 			right: (Utils.isiPad()) ? 20 : 10,
@@ -673,26 +673,6 @@
 			height: height,
 			width: width
 		}),
-	
-		img_skin_front = Ti.UI.createImageView({
-			defaultImage: '/img/char_front.png',
-			image: '/img/char_front.png',
-			isLoaded: false,
-			height: height,
-			width: width,
-			top: 0,
-			left: 0
-		}),
-
-		img_skin_back = Ti.UI.createImageView({
-			defaultImage: '/img/char_back.png',
-			image: '/img/char_back.png',
-			isLoaded: false,
-			height: height,
-			width: width,
-			top: 0,
-			left: 0
-		}),
 		
 		b_add = Ti.UI.createButton({
 			title: I('addProcess.search.select'),
@@ -711,16 +691,32 @@
 		//fix bug where you wouldn't be able to click?
 		view_skin.addEventListener('click', function(e) {});
 		
-		img_skin_front.addEventListener('click', function() {
+		var web_skin_front = Ti.UI.createWebView({
+			height: height,
+			width: width,
+			backgroundColor: 'transparent',
+			top: 0,
+			left: 0
+		});
+		
+		var web_skin_back = Ti.UI.createWebView({
+			height: height,
+			width: width,
+			backgroundColor: 'transparent',
+			top: 0,
+			left: 0
+		});
+		
+		web_skin_front.addEventListener('click', function() {
 			view_skin.animate({
-				view: img_skin_back,
+				view: web_skin_back,
 				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
 			});
 		});
 	
-		img_skin_back.addEventListener('click', function() {
+		web_skin_back.addEventListener('click', function() {
 			view_skin.animate({
-				view: img_skin_front,
+				view: web_skin_front,
 				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
 			});
 		});
@@ -729,12 +725,12 @@
 			btnCallback(skinData);
 		});
 		
-		view.frontImg = img_skin_front;
-		view.backImg = img_skin_back;
+		view.frontWeb = web_skin_front;
+		view.backWeb = web_skin_back;
 		
 		view.add(lbl_title);
 		view.add(lbl_author);
-		view_skin.add(img_skin_front);
+		view_skin.add(web_skin_front);
 		view.add(view_skin);
 		view.add(b_add);
 		
