@@ -182,30 +182,62 @@ function getRequestResults(params) {
 }
 
 function loadSkinPreview(e) {
-	if(!e.view.frontWeb.isLoaded) {
+	if(e.view.frontWeb === undefined || e.view.frontWeb.isLoaded === undefined || !e.view.frontWeb.isLoaded) {
 		var xhr_front = Ti.Network.createHTTPClient({
 			onload: function() {
 				if(this.responseText != null && this.responseText.error == null) {
-					e.view.frontWeb.animate({
-						opacity: 0,
-						duration: 60
-					}, function() {
-						e.view.frontWeb.html = Utils.getHtmlForPreview(xhr_front.responseText, 'front');
-						e.view.frontWeb.isLoaded = true;
-						
-						e.view.frontWeb.animate({
-							opacity: 1,
-							duration: 60
-						});
+					var web_skin_front = Ti.UI.createWebView({
+						height: e.view.view_skin.height,
+						width: e.view.view_skin.width,
+						backgroundColor: 'transparent',
+						top: 0,
+						left: 0
+					});
+					
+					e.view.view_skin.setOpacity(0);
+					
+					web_skin_front.html = Utils.getHtmlForPreview(xhr_front.responseText, 'front');
+					web_skin_front.isLoaded = true;
+					e.view.frontWeb = web_skin_front;
+
+					e.view.view_skin.add(web_skin_front);
+					
+					e.view.view_skin.animate({
+						opacity: 1,
+						duration: 200
 					});
 				}
 				
-				if(!e.view.backWeb.isLoaded) {
+				if(e.view.backWeb === undefined || e.view.backWeb.isLoaded === undefined || !e.view.backWeb.isLoaded) {
 					var xhr_back = Ti.Network.createHTTPClient({
 						onload: function() {
 							if(this.responseText != null && this.responseText.error == null) {
-								e.view.backWeb.html = Utils.getHtmlForPreview(xhr_back.responseText, 'back');
-								e.view.backWeb.isLoaded = true;
+								var web_skin_back = Ti.UI.createWebView({
+									height: e.view.view_skin.height,
+									width: e.view.view_skin.width,
+									backgroundColor: 'transparent',
+									top: 0,
+									left: 0
+								});
+								
+								e.view.backWeb = web_skin_back;
+
+								e.view.frontWeb.addEventListener('click', function() {
+									e.view.view_skin.animate({
+										view: e.view.backWeb,
+										transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
+									});
+								});
+							
+								web_skin_back.addEventListener('click', function() {
+									e.view.view_skin.animate({
+										view: e.view.frontWeb,
+										transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+									});
+								});
+								
+								web_skin_back.html = Utils.getHtmlForPreview(xhr_back.responseText, 'back');
+								web_skin_back.isLoaded = true;
 							}
 						},
 						cache: true

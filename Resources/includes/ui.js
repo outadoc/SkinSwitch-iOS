@@ -690,47 +690,15 @@
 		
 		//fix bug where you wouldn't be able to click?
 		view_skin.addEventListener('click', function(e) {});
-		
-		var web_skin_front = Ti.UI.createWebView({
-			height: height,
-			width: width,
-			backgroundColor: 'transparent',
-			top: 0,
-			left: 0
-		});
-		
-		var web_skin_back = Ti.UI.createWebView({
-			height: height,
-			width: width,
-			backgroundColor: 'transparent',
-			top: 0,
-			left: 0
-		});
-		
-		web_skin_front.addEventListener('click', function() {
-			view_skin.animate({
-				view: web_skin_back,
-				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
-			});
-		});
-	
-		web_skin_back.addEventListener('click', function() {
-			view_skin.animate({
-				view: web_skin_front,
-				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
-			});
-		});
+				
+		view.view_skin = view_skin;
 		
 		b_add.addEventListener('click', function() {
 			btnCallback(skinData);
 		});
 		
-		view.frontWeb = web_skin_front;
-		view.backWeb = web_skin_back;
-		
 		view.add(lbl_title);
 		view.add(lbl_author);
-		view_skin.add(web_skin_front);
 		view.add(view_skin);
 		view.add(b_add);
 		
