@@ -43,7 +43,15 @@
 	}
 	
 	exports.getHtmlForPreview = function(base64, side) {
-		return '<!DOCTYPE html><html><head></head><body style="margin: 0;" onload="getPreviewFromSkin(\'data:image/png;base64,' + base64 + '\', \'' + side + '\', 6);" style="margin: 0;"><canvas id="skinpreview" height="192" width="96"></canvas><script type="text/javascript" src="includes/lib/skinpreview.js"></script></body></html>';
+		var zoom;
+		
+		if(Titanium.Platform.displayCaps.platformHeight > 480) {
+			zoom = 6;
+		} else {
+			zoom = 5;
+		}
+
+		return '<!DOCTYPE html><html><head></head><body style="margin: 0;" onload="getPreviewFromSkin(\'data:image/png;base64,' + base64 + '\', \'' + side + '\', ' + zoom + ');" style="margin: 0;"><canvas id="skinpreview" height="192" width="96"></canvas><script type="text/javascript" src="includes/lib/skinpreview.js"></script></body></html>';
 	}
 
 	exports.getTextFieldRow = function(text, hint, isPassword) {
