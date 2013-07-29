@@ -51,7 +51,7 @@
 			zoom = 5;
 		}
 
-		return '<!DOCTYPE html><html><head></head><body style="margin: 0;" onload="getPreviewFromSkin(\'data:image/png;base64,' + base64 + '\', \'' + side + '\', ' + zoom + ');" style="margin: 0;"><canvas id="skinpreview" height="192" width="96"></canvas><script type="text/javascript" src="includes/lib/skinpreview.js"></script></body></html>';
+		return '<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body style="margin: 0;" onload="getPreviewFromSkin(\'data:image/png;base64,' + base64 + '\', \'' + side + '\', ' + zoom + ');" style="margin: 0;"><canvas id="skinpreview" height="192" width="96"></canvas><script type="text/javascript" src="includes/lib/skinpreview.js"></script></body></html>';
 	}
 
 	exports.getTextFieldRow = function(text, hint, isPassword) {

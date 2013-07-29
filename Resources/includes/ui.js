@@ -668,7 +668,7 @@
 		height = (Titanium.Platform.displayCaps.platformHeight <= 480) ? 160 : 200,
 		width = (Titanium.Platform.displayCaps.platformHeight <= 480) ? 80 : 100,
 			
-		view_skin = Ti.UI.createImageView({
+		view_skin = Ti.UI.createView({
 			top: 20,
 			height: height,
 			width: width

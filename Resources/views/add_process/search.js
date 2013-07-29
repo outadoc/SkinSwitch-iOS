@@ -182,72 +182,68 @@ function getRequestResults(params) {
 }
 
 function loadSkinPreview(e) {
-	if(e.view.frontWeb === undefined) {
-		var xhr_front = Ti.Network.createHTTPClient({
-			onload: function() {
-				if(this.responseText != null && this.responseText.error == null) {
-					var web_skin_front = Ti.UI.createWebView({
-						height: e.view.view_skin.height,
-						width: e.view.view_skin.width,
-						backgroundColor: 'transparent',
-						html: Utils.getHtmlForPreview(xhr_front.responseText, 'front'),
-						top: 0,
-						left: 0
-					});
-					
-					e.view.view_skin.setOpacity(0);
-					e.view.frontWeb = web_skin_front;
-					e.view.view_skin.add(web_skin_front);
-					
-					e.view.view_skin.animate({
-						opacity: 1,
-						duration: 200
-					});
-				}
+	var xhr_front = Ti.Network.createHTTPClient({
+		onload: function() {
+			if(this.responseText != null && this.responseText.error == null) {
+				var web_skin_front = Ti.UI.createWebView({
+					height: e.view.view_skin.height,
+					width: e.view.view_skin.width,
+					backgroundColor: 'transparent',
+					html: Utils.getHtmlForPreview(xhr_front.responseText, 'front'),
+					top: 0,
+					left: 0
+				});
 				
-				if(e.view.backWeb === undefined) {
-					var xhr_back = Ti.Network.createHTTPClient({
-						onload: function() {
-							if(this.responseText != null && this.responseText.error == null) {
-								var web_skin_back = Ti.UI.createWebView({
-									height: e.view.view_skin.height,
-									width: e.view.view_skin.width,
-									backgroundColor: 'transparent',
-									html: Utils.getHtmlForPreview(xhr_back.responseText, 'back'),
-									top: 0,
-									left: 0
-								});
-								
-								e.view.backWeb = web_skin_back;
+				e.view.view_skin.setOpacity(0);
+				e.view.frontWeb = web_skin_front;
+				e.view.view_skin.add(web_skin_front);
+				
+				e.view.view_skin.animate({
+					opacity: 1,
+					duration: 200
+				});
+			}
+			
+			var xhr_back = Ti.Network.createHTTPClient({
+				onload: function() {
+					if(this.responseText != null && this.responseText.error == null) {
+						var web_skin_back = Ti.UI.createWebView({
+							height: e.view.view_skin.height,
+							width: e.view.view_skin.width,
+							backgroundColor: 'transparent',
+							html: Utils.getHtmlForPreview(xhr_back.responseText, 'back'),
+							top: 0,
+							left: 0
+						});
+						
+						e.view.backWeb = web_skin_back;
 
-								e.view.frontWeb.addEventListener('click', function() {
-									e.view.view_skin.animate({
-										view: e.view.backWeb,
-										transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
-									});
-								});
-							
-								web_skin_back.addEventListener('click', function() {
-									e.view.view_skin.animate({
-										view: e.view.frontWeb,
-										transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
-									});
-								});
-							}
-						},
-						cache: true
-					});
+						e.view.frontWeb.addEventListener('click', function() {
+							e.view.view_skin.animate({
+								view: e.view.backWeb,
+								transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
+							});
+						});
 					
-					xhr_back.open('GET', 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=true');
-					xhr_back.send();
-				}
-			},
-			cache: true
-		});
-		
-		xhr_front.open('GET', 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=true');
-		xhr_front.send();
-	}
+						web_skin_back.addEventListener('click', function() {
+							e.view.view_skin.animate({
+								view: e.view.frontWeb,
+								transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+							});
+						});
+					}
+				},
+				cache: true
+			});
+			
+			xhr_back.open('GET', 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=true');
+			xhr_back.send();
+		},
+		cache: true
+	});
+	
+	xhr_front.open('GET', 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=true');
+	xhr_front.send();
 }
 
 function selectSkin(skinData) {
