@@ -1,31 +1,31 @@
 {
 	"main":{
-		"skinList":"Skins List",
-		"addSkin":"Add a Skin",
-		"editSettings":"Edit Settings",
+		"skinList":"Список скинов",
+		"addSkin":"Добавить скин",
+		"editSettings":"Изменить Настройки",
 		"skinDetails":{
-			"title":"Skins Details",
-			"description":"Description",
-			"creation":"Date of Creation",
-			"wear":"Wear this skin",
+			"title":"Информация о скине",
+			"description":"Описание",
+			"creation":"Дата Создания",
+			"wear":"Использовать этот скин",
 			"close":"Закрыть"
 		},
 		"noSelectedSkin":"Не выбран скин.",
 		"tips":{
-			"wear":"Protip: To wear a skin, tap and hold its icon!"
+			"wear":"Подсказка: Чтобы использовать скин, нажми и удерживай его иконку!"
 		},
 		"skinDelete":{
-			"title":"Confirm Deletion",
-			"message":"Do you really want to delete \"%s\"?",
-			"cancel":"Nooooooo!",
-			"okay":"Sure!"
+			"title":"Подтвердить Удаление",
+			"message":"Вы действительно хотите удалить \"%s\"?",
+			"cancel":"НЕЕЕЕЕЕТ!",
+			"okay":"Точно!"
 		},
 		"progressBar":{
 			"login":"Вхожу...",
 			"upload":"Загружаю скин...",
 			"loginFail":"Не удалось войти",
 			"uploadFail":"Не удалось загрузить",
-			"challengeFail":"Challenge failed",
+			"challengeFail":"Не удалось",
 			"success":"Загрузка завершена!"
 		},
 		"skinUpload":{
@@ -38,104 +38,104 @@
 			"error":{
 				"title":"Ошибка отправки",
 				"login":"Не удается войти в minecraft.net. Пожалуйста, проверьте ваш логин и пароль в настройках.",
-				"server":"Could not reach minecraft.net. The site may be down. Check http:\/\/help.mojang.com and retry later.",
-				"upload":"Could not upload the skin to minecraft.net. Please try again later.",
-				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
+				"server":"Не удалось подключиться к minecraft.net. Сайт может быть недоступен. Проверьте на http:\/\/help.mojang.com и повторите попытку позже.",
+				"upload":"Не удаётся загрузить скин на minecraft.net. Повторите попытку позже.",
+				"challenge":"Вы должны ответить на секретный вопрос, чтобы получить доступ к своей учётной записи с этого устройства.\nК сожалению, мы не смогли загрузит его. Пожалуйста, проверьте соединение с интернетом и повторите попытку позже."
 			}
 		}
 	},
 	"settings":{
 		"title":"Настройки",
-		"username":"Username",
-		"password":"Password",
-		"header":"Minecraft.net Login Credentials",
+		"username":"Имя пользователя",
+		"password":"Пароль",
+		"header":"Данные учётной записи Minecraft.net",
 		"footer":{
-			"migratedAccount":"If your account has been migrated to a Mojang account, you have to use your email address instead of your Minecraft username.",
-			"privacy":"Note: we will NEVER store or use any of your informations for anything else than switching your Minecraft skins. Your account info is stored securely in the iOS keychain."
+			"migratedAccount":"Если вы пользуетесь учётной записью Mojang, то используйте адрес электронной почты вместо Имени пользователя Minecraft.",
+			"privacy":"Примечание: мы НЕ БУДЕМ хранить или использовать вашу информацию кроме того, чтобы менять скины Minecraft. Информация о вашей учётной записи надёжно хранится в связке ключей iOS."
 		}
 	},
 	"addProcess":{
 		"skinInfo":{
-			"title":"Skin Information",
-			"shortTitle":"Skin Info",
-			"name":"Skin Name",
-			"nameHint":"My Awesome Skin",
-			"description":"Description",
+			"title":"Информация о скине",
+			"shortTitle":"О скине",
+			"name":"Название скина",
+			"nameHint":"Мой Суперский Скин",
+			"description":"Описание",
 			"method":{
 				"title":"Добавить скин...",
-				"search":"By searching the Web",
-				"pseudo":"From an existing user",
-				"url":"From an URL",
+				"search":"С помощью поиска в Интернете",
+				"pseudo":"Из существующего пользователя",
+				"url":"Из URL-адреса",
 				"cancel":"Отмена"
 			}
 		},
 		"urlSelect":{
-			"urlTitle":"Paste or type the skin URL here (must be a PNG file):",
-			"pseudoTitle":"Type the Minecraft username here (case-sensitive):",
-			"invalidUrl":"This URL is invalid (MUST be a PNG file)."
+			"urlTitle":"Вставьте или введите URL-адрес скина (в формате PNG) сюда:",
+			"pseudoTitle":"Введите имя пользователя Minecraft здесь (с учётом регистра):",
+			"invalidUrl":"Недопустимый URL-адрес (скин должен быть в формате PNG)."
 		},
 		"search":{
-			"select":"Select this skin",
-			"searchHint":"Search on MC Network...",
+			"select":"Выбрать этот скин",
+			"searchHint":"Искать в MC Network...",
 			"indicator":{
-				"searchResults":"Search Results for: %s",
-				"noResults":"No results for: %s",
-				"random":"Random Skins"
+				"searchResults":"Результаты поиска для: %s",
+				"noResults":"Нет результатов для: %s",
+				"random":"Случайные скины"
 			},
 			"error":{
-				"network":"Couldn't load your search results. Check your connexion, and retry later."
+				"network":"Не удалось загрузить результаты поиска. Проверьте интернет-соединение и повторите попытку позже."
 			}
 		},
 		"process":{
-			"title":"Processing...",
+			"title":"Обработка...",
 			"progress":{
 				"initial":"Reticulating Splines...",
-				"skin":"Downloading Skin...",
-				"preview":"Downloading skin preview...",
-				"database":"Registering skin to database...",
-				"success":"Successfully added the skin! :)",
-				"fail":"Fail :("
+				"skin":"Загрузка скина...",
+				"preview":"Загрузка предварительного просмотра скина...",
+				"database":"Регистрация скина в базе данных...",
+				"success":"Скин успешно добавлен! :)",
+				"fail":"Не удалось :("
 			},
 			"error":{
-				"skin":"Error while downloading the skin. Aborting.",
+				"skin":"Ошибка при загрузке скина. Прерываю операцию.",
 				"preview":{
-					"title":"Network Error",
-					"message":"Error while downloading the preview. There will be no preview for this skin. Continue anyway?",
+					"title":"Ошибка сети",
+					"message":"Ошибка при загрузке предварительного просмотра. Скин будет без предварительного просмотра. Все равно продолжить?",
 					"cancel":"Отмена",
-					"ok":"Continue"
+					"ok":"Продолжить"
 				}
 			},
 			"challenge":{
-				"title":"Identity Confirmation",
-				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+				"title":"Подтверждение личности",
+				"help":"Вам нужно ответить на этот вопрос потому, что вы пытаетесь получить доступ к учетной записи Mojang из другого местоположения.\n\n Если вы забыли ответ, вы можете попробовать ответить на другой вопрос, закрыв это окно и открыв его снова. (вопрос выбирается случайным образом).\n\nЕсли вы действительно не можете вспомнить пароль, пожалуйста, посетите help.mojang.com для получения инструкций о сбросе ваших вопросов.",
 				"cancel":"Отмена",
-				"continue":"Continue",
-				"hint":"Answer"
+				"continue":"Продолжить",
+				"hint":"Ответ"
 			}
 		},
-		"next":"Next"
+		"next":"Дальше"
 	},
 	"credits":{
-		"title":"Credits",
-		"developer":"Developer:",
-		"platform":"Platform:",
-		"translators":"Translators:",
-		"thanks":"Special thanks to:",
-		"modules":"Modules:"
+		"title":"Авторы",
+		"developer":"Разработчик:",
+		"platform":"Платформа:",
+		"translators":"Переводчики:",
+		"thanks":"Особая благодарность:",
+		"modules":"Модули:"
 	},
 	"buttons":{
-		"edit":"Edit",
-		"done":"Done",
+		"edit":"Изменить",
+		"done":"Готово",
 		"close":"Закрыть"
 	},
 	"editSkin":{
-		"short":"Edit",
-		"title":"Edit Skin Info"
+		"short":"Изменить",
+		"title":"Изменить описание скина"
 	},
 	"restoreDatabase":{
-		"title":"Uh oh...",
-		"message":"We were unable to open the file containing your skins, for some reason.\nFortunately, there's a backup from %s.\nWould you like to restore it?",
-		"no":"No, thanks.",
-		"yes":"Let's do this!"
+		"title":"Ой-ой-ой...",
+		"message":"По некоторым причинам, мы не смогли открыть файл, содержащий ваши скины. К счастью, есть резервная копия от %s.\nХотите восстановить его?",
+		"no":"Нет, спасибо.",
+		"yes":"Давай!"
 	}
 }

@@ -1,7 +1,7 @@
 {
 	"main":{
 		"skinList":"Lijst met skins",
-		"addSkin":"Add a Skin",
+		"addSkin":"Voeg een skin toe",
 		"editSettings":"Instellingen bewerken",
 		"skinDetails":{
 			"title":"Skin Details",
@@ -12,20 +12,20 @@
 		},
 		"noSelectedSkin":"Geen skin geselecteerd.",
 		"tips":{
-			"wear":"Protip: To wear a skin, tap and hold its icon!"
+			"wear":"Supertip: Om een skin te dragen, tik en houd het pictogram vast!"
 		},
 		"skinDelete":{
-			"title":"Confirm Deletion",
-			"message":"Do you really want to delete \"%s\"?",
-			"cancel":"Nooooooo!",
-			"okay":"Sure!"
+			"title":"Bevestig verwijdering",
+			"message":"Weet je zeker dat je %s wilt verwijderen?",
+			"cancel":"Neeeeeeeee!",
+			"okay":"Tuurlijk!"
 		},
 		"progressBar":{
 			"login":"Bezig met inloggen...",
 			"upload":"Bezig met uploaden skin...",
 			"loginFail":"Aanmelden mislukt",
 			"uploadFail":"Uploaden mislukt",
-			"challengeFail":"Challenge failed",
+			"challengeFail":"Opdracht gefaald",
 			"success":"Upload voltooid!"
 		},
 		"skinUpload":{
@@ -40,7 +40,7 @@
 				"login":"Kan niet inloggen op minecraft.net. Controleer uw gebruikersnaam en wachtwoord in de instellingen.",
 				"server":"Kan Minecraft.net niet bereiken. De site kan eruit liggen. Controleer http:\/\/help.mojang.com en probeer later opnieuw.",
 				"upload":"Kan de skin niet uploaden naar minecraft.net. Probeer later opnieuw.",
-				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
+				"challenge":"Je moet antwoord geven op de beveiliging's vraag om toegang te krijgen tot je account vanaf dit apparaat.\nJammer genoeg kan het niet geladen worden. Check je connectie en probeer opnieuw later."
 			}
 		}
 	},
@@ -63,7 +63,7 @@
 			"description":"Omschrijving",
 			"method":{
 				"title":"Voeg de skin toe...",
-				"search":"By searching the Web",
+				"search":"Door op het web te zoeken",
 				"pseudo":"Van een bestaande gebruiker",
 				"url":"Vanaf een URL",
 				"cancel":"Annuleren"
@@ -75,15 +75,15 @@
 			"invalidUrl":"Deze URL is ongeldig (moet een PNG-bestand zijn)."
 		},
 		"search":{
-			"select":"Select this skin",
-			"searchHint":"Search on MC Network...",
+			"select":"Selecteer deze skin",
+			"searchHint":"Zoek op MC Network...",
 			"indicator":{
-				"searchResults":"Search Results for: %s",
-				"noResults":"No results for: %s",
-				"random":"Random Skins"
+				"searchResults":"Zoek resultaten voor: %s",
+				"noResults":"Geen resultaten voor %s",
+				"random":"Willekeurige skins"
 			},
 			"error":{
-				"network":"Couldn't load your search results. Check your connexion, and retry later."
+				"network":"Je zoekresultaten konden niet worden geladen. Check je connectie, en probeer het later nog een keer."
 			}
 		},
 		"process":{
@@ -106,11 +106,11 @@
 				}
 			},
 			"challenge":{
-				"title":"Identity Confirmation",
-				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+				"title":"Bevestig je identiteit",
+				"help":"Je moet deze vraag beantwoorden omdat je toegang probeert te krijgen tot je Mojang account via een andere locatie.\n\nAls je het antwoord bent vergeten, Kan je proberen om een andere vraag te beantwoorden door dit venster te sluiten en opnieuw te proberen (Het is willekeurig)\n\nAls je het nog steeds niet weet, Bezoek help.mojang.com voor instructies om je vragen te resetten.",
 				"cancel":"Annuleren",
 				"continue":"verder gaan",
-				"hint":"Answer"
+				"hint":"Antwoord"
 			}
 		},
 		"next":"Volgende"
