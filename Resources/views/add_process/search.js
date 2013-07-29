@@ -182,7 +182,7 @@ function getRequestResults(params) {
 }
 
 function loadSkinPreview(e) {
-	if(e.view.frontWeb === undefined || e.view.frontWeb.isLoaded === undefined || !e.view.frontWeb.isLoaded) {
+	if(e.view.frontWeb === undefined) {
 		var xhr_front = Ti.Network.createHTTPClient({
 			onload: function() {
 				if(this.responseText != null && this.responseText.error == null) {
@@ -190,16 +190,13 @@ function loadSkinPreview(e) {
 						height: e.view.view_skin.height,
 						width: e.view.view_skin.width,
 						backgroundColor: 'transparent',
+						html: Utils.getHtmlForPreview(xhr_front.responseText, 'front'),
 						top: 0,
 						left: 0
 					});
 					
 					e.view.view_skin.setOpacity(0);
-					
-					web_skin_front.html = Utils.getHtmlForPreview(xhr_front.responseText, 'front');
-					web_skin_front.isLoaded = true;
 					e.view.frontWeb = web_skin_front;
-
 					e.view.view_skin.add(web_skin_front);
 					
 					e.view.view_skin.animate({
@@ -208,7 +205,7 @@ function loadSkinPreview(e) {
 					});
 				}
 				
-				if(e.view.backWeb === undefined || e.view.backWeb.isLoaded === undefined || !e.view.backWeb.isLoaded) {
+				if(e.view.backWeb === undefined) {
 					var xhr_back = Ti.Network.createHTTPClient({
 						onload: function() {
 							if(this.responseText != null && this.responseText.error == null) {
@@ -216,6 +213,7 @@ function loadSkinPreview(e) {
 									height: e.view.view_skin.height,
 									width: e.view.view_skin.width,
 									backgroundColor: 'transparent',
+									html: Utils.getHtmlForPreview(xhr_back.responseText, 'back'),
 									top: 0,
 									left: 0
 								});
@@ -235,9 +233,6 @@ function loadSkinPreview(e) {
 										transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
 									});
 								});
-								
-								web_skin_back.html = Utils.getHtmlForPreview(xhr_back.responseText, 'back');
-								web_skin_back.isLoaded = true;
 							}
 						},
 						cache: true
