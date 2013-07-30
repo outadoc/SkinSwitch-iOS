@@ -667,8 +667,9 @@
 					
 		view_skin = Ti.UI.createView({
 			top: 20,
-			height: (Ti.Platform.displayCaps.platformHeight > 480) ? 200 : 160,
-			width: (Ti.Platform.displayCaps.platformHeight > 480) ? 100 : 80
+			backgroundImage: '/img/char_front.png',
+			height: (Ti.Platform.displayCaps.platformHeight > 480) ? 192 : 160,
+			width: (Ti.Platform.displayCaps.platformHeight > 480) ? 96 : 80
 		}),
 		
 		b_add = Ti.UI.createButton({
