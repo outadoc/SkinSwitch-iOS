@@ -189,7 +189,7 @@ function loadSkinPreview(e) {
 					height: e.view.view_skin.height,
 					width: e.view.view_skin.width,
 					backgroundColor: 'transparent',
-					html: Utils.getHtmlForPreview(xhr_front.responseText, 'front'),
+					html: Utils.getHtmlForPreview('data:image/png;base64,' + xhr_front.responseText, 'front'),
 					top: 0,
 					left: 0
 				});
@@ -205,7 +205,7 @@ function loadSkinPreview(e) {
 							height: e.view.view_skin.height,
 							width: e.view.view_skin.width,
 							backgroundColor: 'transparent',
-							html: Utils.getHtmlForPreview(xhr_back.responseText, 'back'),
+							html: Utils.getHtmlForPreview('data:image/png;base64,' + xhr_back.responseText, 'back'),
 							top: 0,
 							left: 0
 						});
