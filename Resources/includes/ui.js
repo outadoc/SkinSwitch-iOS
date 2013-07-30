@@ -126,12 +126,25 @@
 	}
 	
 	exports.getHeadFromSkinID = function(skinID) {
-		return Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/front.png').read().imageAsCropped({
-			height: 42,
-			width: 42,
-			x: 21,
-			y: 0
-		});
+		var croppedHead;
+		
+		try {
+			croppedHead = Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/front.png').read().imageAsCropped({
+				height: 42,
+				width: 42,
+				x: 21,
+				y: 0
+			});
+		} catch(e) {
+			croppedHead = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + '/img/char_front.png').read().imageAsCropped({
+				height: 42,
+				width: 42,
+				x: 21,
+				y: 0
+			});
+		}
+		
+		return croppedHead;
 	}
 	
 	exports.createSkinsShowcaseView = function(skins, ipad_win) {

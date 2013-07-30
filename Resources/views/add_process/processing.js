@@ -55,8 +55,10 @@ function downloadSkin(url) {
 }
 
 function downloadPreview(side) {
-	var xhr = Ti.Network.createHTTPClient({
-		onload: function() {
+	progBar.setMessage(I('addProcess.process.progress.preview'));
+
+	Utils.getSkinPreview(Utils.getSkinsDir() + skinID + '/skin.png', side, skinID, function(success) {
+		if(success) {
 			if(side == 'front') {
 				progBar.setValue(60);
 				downloadPreview('back');
@@ -64,8 +66,7 @@ function downloadPreview(side) {
 				progBar.setValue(90);
 				registerSkinToDatabase();
 			}
-		},
-		onerror: function() {
+		} else {
 			var dialog_continue = Ti.UI.createAlertDialog({
 				title: I('addProcess.process.error.preview.title'),
 				message: I('addProcess.process.error.preview.message'),
@@ -85,16 +86,8 @@ function downloadPreview(side) {
 			});
 
 			dialog_continue.show();
-		},
-		ondatastream: function(e) {
-			progBar.setMessage(I('addProcess.process.progress.preview'));
 		}
 	});
-
-	xhr.open('GET', 'http://apps.outadoc.fr/skinswitch/skinpreview.php?side=' + side + '&url=' + encodeURIComponent(win.skinUrl));
-	xhr.setFile(Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/' + side + '.png'));
-	xhr.send();
-	progBar.setMessage(I('addProcess.process.progress.preview'));
 }
 
 function registerSkinToDatabase() {

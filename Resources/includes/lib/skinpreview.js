@@ -52,7 +52,15 @@ function getPreviewFromSkin(path, side, zoom) {
 		ctx_tmp.putImageData(flipImage(leg_right), 8, 20, 0, 0, 4, 16);
 
 		resizeImage(ctx_tmp.getImageData(0, 0, 16, 40), ctx_prev, (zoom !== undefined) ? zoom : 6);
+		
+		Ti.App.fireEvent('skinPreviewLoaded', {
+			base64: document.getElementById("skinpreview").toDataURL().replace('data:image/png;base64,', '')
+		});
 	});
+	
+	img_orig.addEventListener('error', function(e) {
+		Ti.App.fireEvent('skinPreviewFailed', {});
+	})
 }
 
 function allPixelsAreSameColor(image) {

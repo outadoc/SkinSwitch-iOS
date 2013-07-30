@@ -247,7 +247,7 @@ function selectSkin(skinData) {
 		backgroundImage: Utils.getModalBackgroundImage(),
 		barColor: Utils.getNavColor(),
 
-		skinUrl: 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(skinData.id) + '&base64=true',
+		skinUrl: 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(skinData.id) + '&base64=false',
 		defaultSkinName: skinData.title,
 		defaultSkinDesc: skinData.description
 	});

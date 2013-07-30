@@ -53,7 +53,36 @@
 			}
 		}
 
-		return '<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body style="margin: 0;" onload="getPreviewFromSkin(\'' + path + '\', \'' + side + '\', ' + zoom + ');" style="margin: 0;"><canvas id="skinpreview" height="500" width="500"></canvas><script type="text/javascript" src="includes/lib/skinpreview.js"></script></body></html>';
+		return '<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body style="margin: 0;" onload="getPreviewFromSkin(\'' + path + '\', \'' + side + '\', ' + zoom + ');" style="margin: 0;"><canvas id="skinpreview" height="192" width="96"></canvas><script type="text/javascript" src="includes/lib/skinpreview.js"></script></body></html>';
+	}
+	
+	exports.getSkinPreview = function(path, side, skinID, callback) {		
+		function onLoad(e) {
+			Ti.App.removeEventListener('skinPreviewLoaded', onLoad);
+			Ti.App.removeEventListener('skinPreviewFailed', onError);
+			
+			var image = Ti.Utils.base64decode(e.base64);
+			Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/' + side + '.png').write(image);
+			
+			callback(true);
+		}
+		
+		function onError(e) {
+			Ti.App.removeEventListener('skinPreviewLoaded', onLoad);
+			Ti.App.removeEventListener('skinPreviewFailed', onError);
+			
+			callback(false);
+		}
+		
+		Ti.App.addEventListener('skinPreviewLoaded', onLoad);
+		Ti.App.addEventListener('skinPreviewFailed', onError);
+		
+		var web_preview = Ti.UI.createWebView({
+			html: exports.getHtmlForPreview(path, side, 6),
+			visible: false
+		});
+		
+		win.add(web_preview);
 	}
 
 	exports.getTextFieldRow = function(text, hint, isPassword) {
