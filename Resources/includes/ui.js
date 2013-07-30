@@ -118,7 +118,7 @@
 			});
 		} else {
 			backgroundFrame.addEventListener('click', function(e) {
-				Database.beginSkinAdditionProcess();
+				Database.beginSkinAdditionProcess(e.source);
 			});
 		}
 		
