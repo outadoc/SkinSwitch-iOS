@@ -45,7 +45,7 @@
 	exports.getHtmlForPreview = function(base64, side) {
 		var zoom;
 		
-		if(Titanium.Platform.displayCaps.platformHeight > 480) {
+		if(Ti.Platform.displayCaps.platformHeight > 480) {
 			zoom = 6;
 		} else {
 			zoom = 5;

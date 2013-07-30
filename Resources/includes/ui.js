@@ -664,14 +664,11 @@
 			},
 			textAlign: 'center',
 		}),
-		
-		height = (Titanium.Platform.displayCaps.platformHeight <= 480) ? 160 : 200,
-		width = (Titanium.Platform.displayCaps.platformHeight <= 480) ? 80 : 100,
-			
+					
 		view_skin = Ti.UI.createView({
 			top: 20,
-			height: height,
-			width: width
+			height: (Ti.Platform.displayCaps.platformHeight > 480) ? 200 : 160,
+			width: (Ti.Platform.displayCaps.platformHeight > 480) ? 100 : 80
 		}),
 		
 		b_add = Ti.UI.createButton({
