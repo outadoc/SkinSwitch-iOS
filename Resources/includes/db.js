@@ -138,10 +138,14 @@
 			cancel: 3
 		});
 		
-		button.isShowingPrompt = true;
-
+		if(button != null) {
+			button.isShowingPrompt = true;
+		}
+		
 		optionDialog.addEventListener('click', function(e) {
-			button.isShowingPrompt = false;
+			if(button != null) {
+				button.isShowingPrompt = true;
+			}
 			
 			if(e.index == 0 || e.index == 1 || e.index == 2) {				
 				var win_next = Ti.UI.createWindow({
