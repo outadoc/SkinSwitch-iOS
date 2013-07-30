@@ -47,7 +47,12 @@ lbl_page_indicator = Ti.UI.createLabel({
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	height: 16,
 	color: 'white'
+}),
+
+b_close = Ti.UI.createButton({
+	title: I('buttons.close')
 });
+
 
 loadingWin.open();
 
@@ -76,17 +81,9 @@ searchBar.addEventListener('blur', function(e) {
 	});
 });
 
-win.setTitleControl(searchBar);
-
-var b_close = Ti.UI.createButton({
-	title: I('buttons.close')
-});
-
 b_close.addEventListener('click', function(e) {
 	win.container.close();
 });
-
-win.setLeftNavButton(b_close);
 
 darkenView.addEventListener('click', function() {
 	searchBar.blur();
@@ -101,6 +98,9 @@ containerView.addEventListener('scrollend', function(e) {
 	lbl_page_indicator.setText((e.currentPage + 1) + " / " + e.source.views.length);
 	loadSkinPreview(e);
 });
+
+win.setLeftNavButton(b_close);
+win.setTitleControl(searchBar);
 
 win.add(lbl_indicator);
 win.add(containerView);
@@ -194,14 +194,8 @@ function loadSkinPreview(e) {
 					left: 0
 				});
 				
-				e.view.view_skin.setOpacity(0);
 				e.view.frontWeb = web_skin_front;
 				e.view.view_skin.add(web_skin_front);
-				
-				e.view.view_skin.animate({
-					opacity: 1,
-					duration: 200
-				});
 			}
 			
 			var xhr_back = Ti.Network.createHTTPClient({
