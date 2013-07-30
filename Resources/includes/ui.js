@@ -576,49 +576,48 @@
 	}
 	
 	exports.createSkinPreview = function(skinID) {
-		var height = (Utils.isiPad()) ? 300 : 170,
-			width = (Utils.isiPad()) ? 150 : 85,
+		var skinPath = Utils.getSkinsDir() + skinID + '/skin.png',
+			zoom = (Utils.isiPad()) ? 9 : 5,
 		
-		view_skin = Ti.UI.createImageView({
-			height: height,
-			width: width,
-			top: 15,
-			bottom: 15
+		view_skin = Ti.UI.createView({
+			top: 20,
+			height: (Utils.isiPad()) ? 288 : 170,
+			width: (Utils.isiPad()) ? 144 : 85
 		}),
 
-		img_skin_front = Ti.UI.createImageView({
-			defaultImage: '/img/char_front.png',
-			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/front.png').getNativePath(),
-			height: height,
-			width: width,
+		web_skin_front = Ti.UI.createWebView({
+			height: view_skin.height,
+			width: view_skin.width,
+			backgroundColor: 'transparent',
+			html: Utils.getHtmlForPreview(skinPath, 'front', zoom),
 			top: 0,
 			left: 0
 		}),
 
-		img_skin_back = Ti.UI.createImageView({
-			defaultImage: '/img/char_back.png',
-			image: Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/back.png').getNativePath(),
-			height: height,
-			width: width,
+		web_skin_back = Ti.UI.createWebView({
+			height: view_skin.height,
+			width: view_skin.width,
+			backgroundColor: 'transparent',
+			html: Utils.getHtmlForPreview(skinPath, 'back', zoom),
 			top: 0,
 			left: 0
 		});
 		
-		view_skin.add(img_skin_front);
+		view_skin.add(web_skin_front);
 		
 		//fix bug where you wouldn't be able to click?
 		view_skin.addEventListener('click', function(e) {});
 		
-		img_skin_front.addEventListener('click', function() {
+		web_skin_front.addEventListener('click', function() {
 			view_skin.animate({
-				view: img_skin_back,
+				view: web_skin_back,
 				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
 			});
 		});
 
-		img_skin_back.addEventListener('click', function() {
+		web_skin_back.addEventListener('click', function() {
 			view_skin.animate({
-				view: img_skin_front,
+				view: web_skin_front,
 				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
 			});
 		});
