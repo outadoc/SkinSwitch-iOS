@@ -131,6 +131,8 @@
 	}
 	
 	exports.beginSkinAdditionProcess = function(button) {
+		if(button === undefined) button = {};
+		
 		//if we're adding a new skin to the database, ask for more info
 		var optionDialog = Ti.UI.createOptionDialog({
 			title: I('addProcess.skinInfo.method.title'),
@@ -138,14 +140,10 @@
 			cancel: 3
 		});
 		
-		if(button != null) {
-			button.isShowingPrompt = true;
-		}
+		button.isShowingPrompt = true;
 		
 		optionDialog.addEventListener('click', function(e) {
-			if(button != null) {
-				button.isShowingPrompt = true;
-			}
+			button.isShowingPrompt = false;
 			
 			if(e.index == 0 || e.index == 1 || e.index == 2) {				
 				var win_next = Ti.UI.createWindow({
