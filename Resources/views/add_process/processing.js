@@ -57,8 +57,10 @@ function downloadSkin(url) {
 function downloadPreview(side) {
 	progBar.setMessage(I('addProcess.process.progress.preview'));
 
-	Utils.getSkinPreview(Utils.getSkinsDir() + skinID + '/skin.png', side, skinID, function(success) {
-		if(success) {
+	Utils.getSkinPreview(Utils.getSkinsDir() + skinID + '/skin.png', side, function(success) {
+		if(success, preview) {
+			Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/' + side + '.png').write(preview);
+			
 			if(side == 'front') {
 				progBar.setValue(60);
 				downloadPreview('back');

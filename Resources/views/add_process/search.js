@@ -182,62 +182,45 @@ function getRequestResults(params) {
 }
 
 function loadSkinPreview(e) {
-	var xhr_front = Ti.Network.createHTTPClient({
-		onload: function() {
-			if(this.responseText != null && this.responseText.error == null) {
-				var web_skin_front = Ti.UI.createWebView({
-					height: e.view.view_skin.height,
-					width: e.view.view_skin.width,
-					backgroundColor: 'transparent',
-					html: Utils.getHtmlForPreview('data:image/png;base64,' + xhr_front.responseText, 'front'),
-					top: 0,
-					left: 0
-				});
-				
-				e.view.frontWeb = web_skin_front;
-				e.view.view_skin.add(web_skin_front);
-			}
-			
-			var xhr_back = Ti.Network.createHTTPClient({
-				onload: function() {
-					if(this.responseText != null && this.responseText.error == null) {
-						var web_skin_back = Ti.UI.createWebView({
-							height: e.view.view_skin.height,
-							width: e.view.view_skin.width,
-							backgroundColor: 'transparent',
-							html: Utils.getHtmlForPreview('data:image/png;base64,' + xhr_back.responseText, 'back'),
-							top: 0,
-							left: 0
-						});
-						
-						e.view.backWeb = web_skin_back;
-
-						e.view.frontWeb.addEventListener('click', function() {
-							e.view.view_skin.animate({
-								view: e.view.backWeb,
-								transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
+	if(!e.view.frontImg.isLoaded) {
+		var xhr_front = Ti.Network.createHTTPClient({
+			onload: function() {
+				if(this.responseText != null && this.responseText.error == null) {
+					Utils.getSkinPreview('data:image/png;base64,' + xhr_front.responseText, 'front', function(success, preview) {
+						if(success && preview != null) {
+							e.view.frontImg.animate({
+								opacity: 0,
+								duration: 60
+							}, function() {
+								e.view.frontImg.setImage(preview);
+								e.view.frontImg.isLoaded = true;
+		
+								e.view.frontImg.animate({
+									opacity: 1,
+									duration: 60
+								});
 							});
-						});
+						}
+					});
 					
-						web_skin_back.addEventListener('click', function() {
-							e.view.view_skin.animate({
-								view: e.view.frontWeb,
-								transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+					if(!e.view.backImg.isLoaded) {
+						setTimeout(function() {
+							Utils.getSkinPreview('data:image/png;base64,' + xhr_front.responseText, 'back', function(success, preview) {
+								if(success && preview != null) {
+									e.view.backImg.setImage(preview);
+									e.view.backImg.isLoaded = true;
+								}
 							});
-						});
+						}, 500);
 					}
-				},
-				cache: true
-			});
-			
-			xhr_back.open('GET', 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=true');
-			xhr_back.send();
-		},
-		cache: true
-	});
-	
-	xhr_front.open('GET', 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=true');
-	xhr_front.send();
+				}
+			},
+			cache: true
+		});
+		
+		xhr_front.open('GET', 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=true');
+		xhr_front.send();
+	}
 }
 
 function selectSkin(skinData) {

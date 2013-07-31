@@ -738,9 +738,28 @@
 					
 		view_skin = Ti.UI.createView({
 			top: 20,
-			backgroundImage: '/img/char_front.png',
 			height: (Ti.Platform.displayCaps.platformHeight > 480) ? 192 : 160,
 			width: (Ti.Platform.displayCaps.platformHeight > 480) ? 96 : 80
+		}),
+		
+		img_skin_front = Ti.UI.createImageView({
+			defaultImage: '/img/char_front.png',
+			image: '/img/char_front.png',
+			isLoaded: false,
+			height: view_skin.height,
+			width: view_skin.width,
+			top: 0,
+			left: 0
+		}),
+
+		img_skin_back = Ti.UI.createImageView({
+			defaultImage: '/img/char_back.png',
+			image: '/img/char_back.png',
+			isLoaded: false,
+			height: view_skin.height,
+			width: view_skin.width,
+			top: 0,
+			left: 0
 		}),
 		
 		b_add = Ti.UI.createButton({
@@ -760,14 +779,30 @@
 		//fix bug where you wouldn't be able to click?
 		view_skin.addEventListener('click', function(e) {});
 				
-		view.view_skin = view_skin;
-		
+		img_skin_front.addEventListener('click', function() {
+			view_skin.animate({
+				view: img_skin_back,
+				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
+			});
+		});
+
+		img_skin_back.addEventListener('click', function() {
+			view_skin.animate({
+				view: img_skin_front,
+				transition: Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+			});
+		});
+
 		b_add.addEventListener('click', function() {
 			btnCallback(skinData);
 		});
+
+		view.frontImg = img_skin_front;
+		view.backImg = img_skin_back;
 		
 		view.add(lbl_title);
 		view.add(lbl_author);
+		view_skin.add(img_skin_front);
 		view.add(view_skin);
 		view.add(b_add);
 		
