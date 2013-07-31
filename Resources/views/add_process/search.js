@@ -194,6 +194,12 @@ function loadSkinPreview(e) {
 							}, function() {
 								e.view.frontImg.setImage(preview);
 								e.view.frontImg.isLoaded = true;
+								
+								Utils.getSkinPreview('data:image/png;base64,' + xhr_front.responseText, 'back', function(success, preview) {
+									if(success && preview != null) {
+										e.view.backImg.setImage(preview);
+									}
+								});
 		
 								e.view.frontImg.animate({
 									opacity: 1,
@@ -202,17 +208,6 @@ function loadSkinPreview(e) {
 							});
 						}
 					});
-					
-					if(!e.view.backImg.isLoaded) {
-						setTimeout(function() {
-							Utils.getSkinPreview('data:image/png;base64,' + xhr_front.responseText, 'back', function(success, preview) {
-								if(success && preview != null) {
-									e.view.backImg.setImage(preview);
-									e.view.backImg.isLoaded = true;
-								}
-							});
-						}, 500);
-					}
 				}
 			},
 			cache: true

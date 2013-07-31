@@ -755,7 +755,6 @@
 		img_skin_back = Ti.UI.createImageView({
 			defaultImage: '/img/char_back.png',
 			image: '/img/char_back.png',
-			isLoaded: false,
 			height: view_skin.height,
 			width: view_skin.width,
 			top: 0,
