@@ -126,23 +126,29 @@
 	}
 	
 	exports.getHeadFromSkinID = function(skinID) {
-		var croppedHead;
+		var source;
 		
 		try {
-			croppedHead = Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/front.png').read().imageAsCropped({
-				height: 42,
-				width: 42,
-				x: 21,
-				y: 0
-			});
+			source = Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID + '/front.png').read();
 		} catch(e) {
-			croppedHead = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + '/img/char_front.png').read().imageAsCropped({
-				height: 42,
-				width: 42,
-				x: 21,
-				y: 0
-			});
+			source = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + '/img/char_front.png').read();
 		}
+			
+		var tmp = Ti.UI.createImageView({
+	  		image: source,
+	 		height: Ti.UI.SIZE,
+	 		width: Ti.UI.SIZE
+		});
+		
+		imageSize = tmp.toImage();
+		tmp = null;
+				
+		var croppedHead = source.imageAsCropped({
+			x: 1/4 * imageSize.width,
+			y: 0,
+			width: 1/2 * imageSize.width,
+			height: 1/2 * imageSize.width - 1,
+		});
 		
 		return croppedHead;
 	}
