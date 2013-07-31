@@ -61,13 +61,18 @@
 			Ti.App.removeEventListener('skinPreviewLoaded', onLoad);
 			Ti.App.removeEventListener('skinPreviewFailed', onError);
 			
-			var image = Ti.Utils.base64decode(e.base64);
-			callback(true, image);
+			win.remove(web_preview);
+			web_preview = null;
+			
+			callback(true, Ti.Utils.base64decode(e.base64));
 		}
 		
 		function onError(e) {
 			Ti.App.removeEventListener('skinPreviewLoaded', onLoad);
 			Ti.App.removeEventListener('skinPreviewFailed', onError);
+			
+			win.remove(web_preview);
+			web_preview = null;
 			
 			callback(false);
 		}

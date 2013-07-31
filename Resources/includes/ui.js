@@ -133,7 +133,7 @@
 		} catch(e) {
 			source = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + '/img/char_front.png').read();
 		}
-			
+		
 		var tmp = Ti.UI.createImageView({
 	  		image: source,
 	 		height: Ti.UI.SIZE,
