@@ -10,6 +10,14 @@ loadingWin = Ui.createLoadingWindow(),
 
 adLoaded = false,
 
+searchBar = Ti.UI.createSearchBar({
+	top: 0,
+	width: Ti.UI.FILL,
+	barColor: Utils.getNavColor(),
+	hintText: 'Search in your skins...',
+	showCancel: true
+}),
+
 skinsShowcase = Ti.UI.createScrollView({
 	contentWidth: Ti.UI.FILL,
   	contentHeight: Ti.UI.SIZE,
@@ -17,6 +25,7 @@ skinsShowcase = Ti.UI.createScrollView({
   	showVerticalScrollIndicator: true
 });
 
+win.add(searchBar);
 win.add(skinsShowcase);
 loadingWin.open();
 
@@ -39,7 +48,7 @@ function updateSkinsList() {
 			skinsShowcase.setBottom(50);
 		}
 		
-		skinsShowcase.add(Ui.createSkinsShowcaseView(Database.getSkins(), win));
+		skinsShowcase.add(Ui.createSkinsShowcaseView(Database.getSkins((searchBar.value != null) ? searchBar.value : ''), win));
 		
 		skinsShowcase.animate({
 			opacity: 1,
@@ -103,6 +112,16 @@ win.setLeftNavButton(b_settings);
 win.setRightNavButton(b_add);
 
 updateSkinsList();
+
+searchBar.addEventListener('return', function(e) {
+	updateSkinsList();
+});
+
+searchBar.addEventListener('cancel', function(e) {
+	e.source.value = '';
+	updateSkinsList();
+	e.source.blur();
+});
 
 if(!Utils.isiPad()) {
 	var adView = Ti.UI.iOS.createAdView({

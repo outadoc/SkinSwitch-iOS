@@ -1,15 +1,17 @@
 (function() {
 
-	exports.getSkins = function() {
+	exports.getSkins = function(searchPattern) {
 		var skins = [],
 			db = exports.getDatabaseHandle(),
 			skinsFromDB,
 			orderBy = Ti.App.Properties.getString('orderBy', 'name');
+			
+		searchPattern = '%' + searchPattern + '%';
 		
 		if(orderBy == 'date') {
-			skinsFromDB = db.execute('SELECT * FROM skins ORDER BY timestamp');
+			skinsFromDB = db.execute('SELECT * FROM skins WHERE upper(name) LIKE upper(?) ORDER BY timestamp', [searchPattern]);
 		} else {
-			skinsFromDB = db.execute('SELECT * FROM skins ORDER BY name');
+			skinsFromDB = db.execute('SELECT * FROM skins WHERE upper(name) LIKE upper(?) ORDER BY name', [searchPattern]);
 		}
 
 		while(skinsFromDB.isValidRow()) {

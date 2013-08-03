@@ -136,6 +136,7 @@ function startApp() {
 			url: 'views/main.js',
 			tabBarHidden: true,
 			title: Ti.App.getName(),
+			layout: 'vertical',
 			backgroundImage: Utils.getListBackgroundImage(),
 			barColor: Utils.getNavColor()
 		}),
