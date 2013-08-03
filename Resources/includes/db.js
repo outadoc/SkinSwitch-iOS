@@ -4,15 +4,18 @@
 		var skins = [],
 			db = exports.getDatabaseHandle(),
 			skinsFromDB,
-			orderBy = Ti.App.Properties.getString('orderBy', 'name');
+			orderBy = Ti.App.Properties.getString('orderBy', 'name'),
+			request = 'SELECT * FROM skins WHERE upper(name) LIKE upper(?)';
 			
 		searchPattern = '%' + searchPattern + '%';
 		
 		if(orderBy == 'date') {
-			skinsFromDB = db.execute('SELECT * FROM skins WHERE upper(name) LIKE upper(?) ORDER BY timestamp', [searchPattern]);
+			request += ' ORDER BY timestamp';
 		} else {
-			skinsFromDB = db.execute('SELECT * FROM skins WHERE upper(name) LIKE upper(?) ORDER BY name', [searchPattern]);
+			request += ' ORDER BY name';
 		}
+		
+		skinsFromDB = db.execute(request, [searchPattern]);
 
 		while(skinsFromDB.isValidRow()) {
 			skins.push({
