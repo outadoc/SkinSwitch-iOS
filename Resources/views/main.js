@@ -123,6 +123,12 @@ searchBar.addEventListener('cancel', function(e) {
 	e.source.blur();
 });
 
+searchBar.addEventListener('change', function(e) {
+	if(e.source.value == '') {
+		updateSkinsList();
+	}
+});
+
 if(!Utils.isiPad()) {
 	var adView = Ti.UI.iOS.createAdView({
 		adSize: Ti.UI.iOS.AD_SIZE_PORTRAIT,
