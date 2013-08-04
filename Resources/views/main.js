@@ -14,7 +14,7 @@ searchBar = Ti.UI.createSearchBar({
 	top: 0,
 	width: Ti.UI.FILL,
 	barColor: Utils.getNavColor(),
-	hintText: 'Search in your skins...'
+	hintText: I('main.search')
 }),
 
 skinsShowcase = Ti.UI.createScrollView({
