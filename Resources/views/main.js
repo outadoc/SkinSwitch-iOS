@@ -14,8 +14,7 @@ searchBar = Ti.UI.createSearchBar({
 	top: 0,
 	width: Ti.UI.FILL,
 	barColor: Utils.getNavColor(),
-	hintText: 'Search in your skins...',
-	showCancel: true
+	hintText: 'Search in your skins...'
 }),
 
 skinsShowcase = Ti.UI.createScrollView({
@@ -116,6 +115,7 @@ updateSkinsList();
 
 searchBar.addEventListener('return', function(e) {
 	updateSkinsList();
+	e.source.blur();
 });
 
 searchBar.addEventListener('cancel', function(e) {
@@ -124,8 +124,18 @@ searchBar.addEventListener('cancel', function(e) {
 	e.source.blur();
 });
 
+searchBar.addEventListener('blur', function(e) {
+	e.source.isFocused = false;
+	e.source.showCancel = false;
+});
+
+searchBar.addEventListener('focus', function(e) {
+	e.source.isFocused = true;
+	e.source.showCancel = true;
+});
+
 searchBar.addEventListener('change', function(e) {
-	if(e.source.value == '') {
+	if(e.source.value == '' && !e.source.isFocused) {
 		updateSkinsList();
 	}
 });
