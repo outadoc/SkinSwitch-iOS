@@ -53,7 +53,6 @@ function startApp() {
 			backgroundImage: Utils.getListBackgroundImage(),
 			barColor: Utils.getNavColor(),
 			title: I('main.skinList'),
-			layout: 'vertical',
 			detailWin: detailWin,
 			detailContent: content,
 			initialInfoView: initialInfoView
@@ -137,7 +136,6 @@ function startApp() {
 			url: 'views/main.js',
 			tabBarHidden: true,
 			title: Ti.App.getName(),
-			layout: 'vertical',
 			backgroundImage: Utils.getListBackgroundImage(),
 			barColor: Utils.getNavColor()
 		}),
