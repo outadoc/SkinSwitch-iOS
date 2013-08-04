@@ -37,7 +37,8 @@ function updateSkinsList() {
 		duration: 100,
 		curve: Ti.UI.ANIMATION_CURVE_EASE_OUT
 	}, function() {
-		var view = skinsShowcase.children[0];
+		var view = skinsShowcase.children[0],
+			searchPattern = (searchBar.value != null) ? searchBar.value : '';
 		
 		if(view != null) {
 			skinsShowcase.remove(view);
@@ -48,7 +49,7 @@ function updateSkinsList() {
 			skinsShowcase.setBottom(50);
 		}
 		
-		skinsShowcase.add(Ui.createSkinsShowcaseView(Database.getSkins((searchBar.value != null) ? searchBar.value : ''), win));
+		skinsShowcase.add(Ui.createSkinsShowcaseView(Database.getSkins(searchPattern), win, searchPattern));
 		
 		skinsShowcase.animate({
 			opacity: 1,

@@ -153,7 +153,7 @@
 		return croppedHead;
 	}
 	
-	exports.createSkinsShowcaseView = function(skins, ipad_win) {
+	exports.createSkinsShowcaseView = function(skins, ipad_win, searchPattern) {
 		var container = Ti.UI.createView({
 			layout: 'horizontal',
 		  	left: 13,
@@ -199,7 +199,18 @@
 		}
 		
 		if(skins == null || skins.length == 0) {
-			container.add(exports.createSkinFrame(null, ipad_win));
+			if(Database.getSkinCount() == 0) {
+				container.add(exports.createSkinFrame(null, ipad_win));
+			} else {
+				container.add(Ti.UI.createLabel({
+					color: 'white',
+					text: I('addProcess.search.indicator.noResults', searchPattern),
+					font: {
+						fontSize: 19,
+						fontFamily: 'HelveticaNeue-Italic'
+					}
+				}));
+			}
 		}
 		
 		for(i = 0; i < skins.length; i ++) {
