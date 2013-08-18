@@ -123,7 +123,7 @@
 		}
 		
 		return view;
-	}
+	};
 	
 	exports.getHeadFromSkinID = function(skinID) {
 		var source;
@@ -151,7 +151,7 @@
 		});
 		
 		return croppedHead;
-	}
+	};
 	
 	exports.createSkinsShowcaseView = function(skins, ipad_win, searchPattern) {
 		var container = Ti.UI.createView({
@@ -218,7 +218,7 @@
 		}
 		
 		return container;
-	}
+	};
 	
 	exports.createiPhoneDetailWindow = function(skinData) {
 		var win = Ti.UI.createWindow({
@@ -443,7 +443,7 @@
 		actionView.add(b_close);
 
 		return win;
-	}
+	};
 	
 	exports.displayiPadSkinDetails = function(skinData, win) {
 		var skinInfoView = Ti.UI.createView({
@@ -586,7 +586,7 @@
 			duration: 300,
 			curve: Ti.UI.ANIMATION_CURVE_EASE_IN
 		});
-	}
+	};
 	
 	exports.createVerticalSeparator = function(color) {
 		return Ti.UI.createView({
@@ -594,7 +594,7 @@
 			height: Ti.UI.FILL,
 			backgroundColor: color
 		});
-	}
+	};
 	
 	exports.createHorizontalSeparator = function(color) {
 		return Ti.UI.createView({
@@ -603,7 +603,7 @@
 			top: 10,
 			backgroundColor: color
 		});
-	}
+	};
 	
 	exports.createSkinPreview = function(skinID) {
 		var height = (Utils.isiPad()) ? 300 : 170,
@@ -654,7 +654,7 @@
 		});
 		
 		return view_skin;
-	}
+	};
 	
 	exports.createSingleSearchResult = function(skinData, btnCallback) {		
 		var view = Ti.UI.createView({
@@ -675,7 +675,7 @@
 			left: 10,
 			right: 10,
 			top: 20,
-			height: 20,
+			height: 22,
 			color: '#4f4f4f',
 			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 			font: {
@@ -765,7 +765,7 @@
 		view.add(b_add);
 		
 		return view;
-	}
+	};
 	
 	exports.createLoadingWindow = function() {
 		var win = Ti.UI.createWindow({
@@ -792,6 +792,6 @@
 		spinWheel.show();
 
 		return win;
-	}
+	};
 	
 })();
