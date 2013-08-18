@@ -2,12 +2,12 @@
 
 	exports.getRandomID = function() {
 		return String(Math.floor(Math.random() * 98765862));
-	}
+	};
 
 	exports.getSkinsDir = function() {
 		Ti.Filesystem.getFile(Ti.Filesystem.getApplicationDataDirectory() + 'skins/').createDirectory();
 		return Ti.Filesystem.getApplicationDataDirectory() + 'skins/';
-	}
+	};
 
 	exports.getModalBackgroundImage = function() {
 		if(exports.isiPad()) {
@@ -15,7 +15,7 @@
 		} else {
 			return '/img/bg.png';
 		}
-	}
+	};
 	
 	exports.getListBackgroundImage = function() {
 		if(exports.isiPad()) {
@@ -23,24 +23,24 @@
 		} else {
 			return '/img/bg.png';
 		}
-	}
+	};
 
 	exports.getNavColor = function() {
 		return '#6d482b';
-	}
+	};
 	
 	exports.isiPhone = function() {
 		return (Ti.Platform.getOsname() === 'iphone');
-	}
+	};
 	
 	exports.isiPad = function() {
 		return (Ti.Platform.getOsname() === 'ipad');
-	}
+	};
 	
 	exports.getMajorOsVersion = function() {
 		var version = Titanium.Platform.version.split(".");
 		return parseInt(version[0]);
-	}
+	};
 	
 	exports.getHtmlForPreview = function(path, side, zoom) {
 		var zoom;
@@ -54,7 +54,7 @@
 		}
 
 		return '<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body style="margin: 0;" onload="getPreviewFromSkin(\'' + path + '\', \'' + side + '\', ' + zoom + ');" style="margin: 0;"><canvas id="skinpreview" height="192" width="96"></canvas><script type="text/javascript" src="includes/lib/skinpreview.js"></script></body></html>';
-	}
+	};
 	
 	exports.getSkinPreview = function(path, side, callback) {		
 		function onLoad(e) {
@@ -86,7 +86,7 @@
 		});
 		
 		win.add(web_preview);
-	}
+	};
 
 	exports.getTextFieldRow = function(text, hint, isPassword) {
 		var row = Ti.UI.createTableViewRow({
@@ -137,7 +137,7 @@
 		
 		row.add(textfield);
 		return row;
-	}
+	};
 	
 	exports.getTextAreaRow = function(text) {
 		var row = Ti.UI.createTableViewRow({
@@ -186,7 +186,7 @@
 		row.add(textarea);
 		
 		return row;
-	}
+	};
 	
 	exports.closeiPadSkinDetails = function(ipad_win) {
 		var detail = ipad_win.detailContent;
@@ -206,6 +206,6 @@
 			duration: 300,
 			curve: Ti.UI.ANIMATION_CURVE_EASE_IN
 		});
-	}
+	};
 	
 })();

@@ -151,7 +151,7 @@
 				});
 			}
 		});
-	}
+	};
 	
 	exports.triggerError = function(type, complement) {
 		var alert_error = Ti.UI.createAlertDialog({
@@ -171,6 +171,6 @@
 		setTimeout(function() {
 			win.setTitleControl(null);
 		}, 1000);
-	}
+	};
 
 })(); 

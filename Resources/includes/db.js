@@ -31,7 +31,7 @@
 		skinsFromDB.close();
 		db.close();
 		return skins;
-	}
+	};
 
 	exports.getSkinCount = function() {
 		var rows = [],
@@ -40,7 +40,7 @@
 		
 		db.close();
 		return rowCount;
-	}
+	};
 	
 	exports.deleteSkin = function(skinData) {
 		var confirm = Ti.UI.createAlertDialog({
@@ -62,23 +62,23 @@
 				updateSkinsList();
 			}
 		});
-	}
+	};
 
 	exports.getDatabaseHandle = function() {
 		return Ti.Database.open(exports.getDatabaseName());
-	}
+	};
 	
 	exports.getDatabaseName = function() {
 		return 'skins';
-	}
+	};
 	
 	exports.getDatabaseFile = function() {
 		return Ti.Filesystem.getFile(Ti.Filesystem.applicationSupportDirectory, '../Private Documents/' + exports.getDatabaseName() + '.sql');
-	}
+	};
 	
 	exports.getDatabaseBackupFile = function() {
 		return Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, exports.getDatabaseName() + '.sql.bck');
-	}
+	};
 
 	exports.backupDatabase = function() {
 		try {
@@ -93,7 +93,7 @@
 		} catch(e) {
 			Ti.API.info('Error making a backup of the database: ' + e);
 		}
-	}
+	};
 
 	exports.restoreDatabase = function() {
 		try {
@@ -107,14 +107,14 @@
 		} catch(e) {
 			Ti.API.info('Error restoring a backup of the database: ' + e);
 		}
-	}
+	};
 
 	exports.initializeDatabase = function() {
 		var db = exports.getDatabaseHandle();
 		db.execute('CREATE TABLE IF NOT EXISTS skins (id VARCHAR(16) PRIMARY KEY, name VARCHAR(16) NOT NULL, description TEXT NOT NULL, timestamp VARCHAR(16) NOT NULL)');
 		db.file.setRemoteBackup(Ti.App.Properties.getBool('syncToCloud', true));
 		db.close();
-	}
+	};
 
 	exports.askForDatabaseRestore = function(reason, successCallback) {
 		var backupTime = new Date(exports.getDatabaseBackupFile().modificationTimestamp()),
@@ -133,7 +133,7 @@
 		});
 
 		alert_restore.show();
-	}
+	};
 	
 	exports.beginSkinAdditionProcess = function(button) {
 		if(button === undefined) button = {};
@@ -199,6 +199,6 @@
 			animated: true,
 			view: button
 		});
-	}
+	};
 	
 })();

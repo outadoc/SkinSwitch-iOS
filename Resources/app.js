@@ -82,7 +82,7 @@ function startApp() {
 			var anim = {
 				bottom: 65,
 				duration: 200
-			}
+			};
 			
 			adView.show();
 			detailWin.animate(anim);
@@ -93,7 +93,7 @@ function startApp() {
 			var anim = {
 				bottom: 0,
 				duration: 200
-			}
+			};
 			
 			adView.hide();
 			detailWin.animate(anim);
