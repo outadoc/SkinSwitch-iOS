@@ -89,6 +89,7 @@ b_next.addEventListener('click', function(e) {
 			url: 'info.js',
 			backgroundImage: Utils.getModalBackgroundImage(),
 			barColor: Utils.getNavColor(),
+			translucent: false,
 			defaultSkinName: (win.from == 'username') ? txtfield_url.getValue() : undefined,
 			skinUrl: url
 		});

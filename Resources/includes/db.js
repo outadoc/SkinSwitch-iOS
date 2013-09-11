@@ -153,7 +153,8 @@
 			if(e.index == 0 || e.index == 1 || e.index == 2) {				
 				var win_next = Ti.UI.createWindow({
 					backgroundImage: Utils.getModalBackgroundImage(),
-					barColor: Utils.getNavColor()
+					barColor: Utils.getNavColor(),
+					translucent: false
 				});
 				
 				if(e.index == 0) {
@@ -173,7 +174,8 @@
 				}),
 			
 				navGroup = Ti.UI.iPhone.createNavigationGroup({
-					window: win_next
+					window: win_next,
+					tintColor: Utils.getBarTintColor()
 				});
 			
 				container.add(navGroup);

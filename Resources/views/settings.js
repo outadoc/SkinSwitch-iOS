@@ -13,7 +13,8 @@ b_credits.addEventListener('click', function() {
 		url: 'credits.js',
 		title: I('credits.title'),
 		barColor: Utils.getNavColor(),
-		backgroundImage: Utils.getModalBackgroundImage()
+		backgroundImage: Utils.getModalBackgroundImage(),
+		translucent: false
 	});
 	
 	win.navGroup.open(credits_win);

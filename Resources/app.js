@@ -44,7 +44,8 @@ function startApp() {
 		var detailWin = Ti.UI.createWindow({
 			title: I('main.skinDetails.title'),
 			barColor: Utils.getNavColor(),
-			backgroundColor: '#eeeeee'
+			backgroundColor: '#eeeeee',
+			translucent: false
 		}),
 
 		initialInfoView = getInitialInfoView(),
@@ -57,15 +58,18 @@ function startApp() {
 			title: I('main.skinList'),
 			detailWin: detailWin,
 			detailContent: content,
-			initialInfoView: initialInfoView
+			initialInfoView: initialInfoView,
+			translucent: false
 		}),
 
 		splitWin = Ti.UI.iPad.createSplitWindow({
 			detailView: Ti.UI.iPhone.createNavigationGroup({
-				window: detailWin
+				window: detailWin,
+				tintColor: Utils.getBarTintColor()
 			}),
 			masterView: Ti.UI.iPhone.createNavigationGroup({
-				window: masterWin
+				window: masterWin,
+				tintColor: Utils.getBarTintColor()
 			}),
 			showMasterInPortrait: true
 		}),
@@ -139,11 +143,13 @@ function startApp() {
 			tabBarHidden: true,
 			title: Ti.App.getName(),
 			backgroundImage: Utils.getListBackgroundImage(),
-			barColor: Utils.getNavColor()
+			barColor: Utils.getNavColor(),
+			translucent: false
 		}),
 
 		navGroup = Ti.UI.iPhone.createNavigationGroup({
-			window: mainWin
+			window: mainWin,
+			tintColor: Utils.getBarTintColor()
 		}),
 
 		container = Ti.UI.createWindow({

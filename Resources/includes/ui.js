@@ -397,7 +397,9 @@
 				skinIDToEdit: skinData.id,
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getModalBackgroundImage(),
-				barColor: Utils.getNavColor()
+				barColor: Utils.getNavColor(),
+				translucent: false,
+				tintColor: Utils.getBarTintColor()
 			});
 
 			edit_win.addEventListener('close', updateSkinsList);
@@ -543,7 +545,9 @@
 				skinIDToEdit: skinData.id,
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getModalBackgroundImage(),
-				barColor: Utils.getNavColor()
+				barColor: Utils.getNavColor(),
+				translucent: false,
+				tintColor: Utils.getBarTintColor()
 			});
 
 			edit_win.addEventListener('close', updateSkinsList);

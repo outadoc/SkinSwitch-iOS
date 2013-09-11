@@ -26,7 +26,15 @@
 	};
 
 	exports.getNavColor = function() {
-		return '#6d482b';
+		if(exports.getMajorOsVersion() < 7) {
+			return '#6d482b';
+		} else {
+			return '#916032';
+		}
+	};
+	
+	exports.getBarTintColor = function() {
+		return '#e4c4a6';
 	};
 	
 	exports.isiPhone = function() {

@@ -18,14 +18,17 @@ searchBar = Ti.UI.createSearchBar({
 }),
 
 skinsShowcase = Ti.UI.createScrollView({
-	top: 44,
+	top: (!Ti.App.Properties.getBool('hideSearch', false)) ? 44 : 0,
 	contentWidth: Ti.UI.FILL,
   	contentHeight: Ti.UI.SIZE,
   	verticalBounce: true,
   	showVerticalScrollIndicator: true
 });
 
-win.add(searchBar);
+if(!Ti.App.Properties.getBool('hideSearch', false)) {
+	win.add(searchBar);
+}
+
 win.add(skinsShowcase);
 loadingWin.open();
 
@@ -81,7 +84,8 @@ b_settings.addEventListener('click', function() {
 		barColor: Utils.getNavColor(),
 		backgroundImage: Utils.getModalBackgroundImage(),
 		url: 'settings.js',
-		layout: 'vertical'
+		layout: 'vertical',
+		translucent: false
 	}),
 
 	container = Ti.UI.createWindow({
@@ -89,7 +93,8 @@ b_settings.addEventListener('click', function() {
 	}),
 	
 	navGroup = Ti.UI.iPhone.createNavigationGroup({
-		window: win_settings
+		window: win_settings,
+		tintColor: Utils.getBarTintColor()
 	});
 
 	container.add(navGroup);

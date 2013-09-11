@@ -62,7 +62,9 @@
 														triggerError: exports.triggerError,
 														title: I('addProcess.process.challenge.title'),
 														backgroundImage: Utils.getModalBackgroundImage(),
-														barColor: Utils.getNavColor()
+														barColor: Utils.getNavColor(),
+														translucent: false,
+														tintColor: Utils.getBarTintColor()
 													});
 													
 													win.setTitleControl(null);
