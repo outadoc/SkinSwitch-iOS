@@ -50,7 +50,7 @@ var lbl_header = Ti.UI.createLabel({
 }),
 
 tableView = Ti.UI.createTableView({
-	data: [Utils.getTextFieldRow(I('settings.username'), 'Notch', false), Utils.getTextFieldRow(I('settings.password'), '●●●●●●●●●●●', true)],
+	data: [Utils.getTextFieldRow(I('settings.username'), 'Notch', false, true), Utils.getTextFieldRow(I('settings.password'), '●●●●●●●●●●●', true)],
 	style: Ti.UI.iPhone.TableViewStyle.GROUPED,
 	backgroundColor: 'transparent',
 	rowBackgroundColor: 'white',

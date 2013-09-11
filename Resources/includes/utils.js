@@ -96,7 +96,7 @@
 		win.add(web_preview);
 	};
 
-	exports.getTextFieldRow = function(text, hint, isPassword) {
+	exports.getTextFieldRow = function(text, hint, isPassword, isEmail) {
 		var row = Ti.UI.createTableViewRow({
 			selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
 			layout: 'horizontal',
@@ -119,7 +119,7 @@
 		
 		textfield = Ti.UI.createTextField({
 			hintText: hint,
-			color: (exports.getMajorOsVersion() < 7) ? '#336699' : '#8f8f8f',
+			color: (exports.getMajorOsVersion() < 7) ? '#336699' : '#000000',
 			right: (exports.isiPad()) ? 20 : 10,
 			left: 10,
 			top: 5,
@@ -128,7 +128,10 @@
 			borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
 			returnKeyType: Ti.UI.RETURNKEY_NEXT,
 			passwordMask: isPassword,
-			textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
+			textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+			autocorrect: (!isEmail),
+			autocapitalization: (isEmail) ? Ti.UI.TEXT_AUTOCAPITALIZATION_NONE : undefined,
+			keyboardType: (isEmail) ? Ti.UI.KEYBOARD_EMAIL : undefined
 		});
 		
 		row.add(rowText);
@@ -167,7 +170,7 @@
 		}),
 		
 		textarea = Ti.UI.createTextArea({
-			color: (exports.getMajorOsVersion() < 7) ? '#336699' : '#8f8f8f',
+			color: (exports.getMajorOsVersion() < 7) ? '#336699' : '#000000',
 			right: (exports.isiPad()) ? 15 : 10,
 			left: (exports.isiPad()) ? 50 : 10,
 			top: 5,
