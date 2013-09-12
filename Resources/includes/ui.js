@@ -476,7 +476,7 @@
 			top: 10,
 			left: 20,
 			right: 20,
-			height: 25
+			height: 33
 		}),
 		
 		skinView = exports.createSkinPreview(skinData.id),
