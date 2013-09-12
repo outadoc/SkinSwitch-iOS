@@ -194,7 +194,7 @@
 					modal: true,
 					modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
 				});
-			}			
+			}
 		});
 
 		optionDialog.show({

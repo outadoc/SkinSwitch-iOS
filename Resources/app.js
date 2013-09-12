@@ -149,18 +149,11 @@ function startApp() {
 			top: (Utils.getMajorOsVersion() >= 7) ? 15 : undefined
 		}),
 
-		navGroup = Ti.UI.iPhone.createNavigationGroup({
+		container = Ti.UI.iOS.createNavigationWindow({
 			window: mainWin,
 			tintColor: Utils.getBarTintColor()
-		}),
-
-		container = Ti.UI.createWindow({
-			navBarHidden: true
 		});
 
-		container.add(navGroup);
-		container.open({
-			modal: false
-		});
+		container.open();
 	}
 }
