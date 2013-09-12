@@ -1,6 +1,6 @@
 var Utils = require('/includes/utils'),
 	Database = require('/includes/db');
-	
+
 Ti.UI.setBackgroundColor(Utils.getNavColor());
 
 try {
@@ -146,7 +146,8 @@ function startApp() {
 			backgroundImage: Utils.getListBackgroundImage(),
 			barColor: Utils.getNavColor(),
 			extendEdges:[Ti.UI.EXTEND_EDGE_TOP],
-			top: (Utils.getMajorOsVersion() >= 7) ? 15 : undefined
+			top: (Utils.getMajorOsVersion() >= 7) ? 15 : undefined,
+			statusBarStyle: (Utils.getMajorOsVersion() < 7) ? Ti.UI.iPhone.StatusBar.DEFAULT : undefined
 		}),
 
 		container = Ti.UI.iOS.createNavigationWindow({

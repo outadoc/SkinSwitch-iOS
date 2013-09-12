@@ -14,12 +14,12 @@
     <version>2.0.1</version>
     <publisher>Baptiste Candellier</publisher>
     <url>http://dev.outadoc.fr</url>
-    <description>Manage all your Minecraft skins, with one touch.</description>
+    <description>Manage all your Minecraft skins, with one tap.</description>
     <copyright>2012-2013 Baptiste Candellier</copyright>
     <icon>Icon.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
-    <statusbar-style>default</statusbar-style>
+    <statusbar-style>translucent_black</statusbar-style>
     <statusbar-hidden>false</statusbar-hidden>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
