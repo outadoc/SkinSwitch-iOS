@@ -59,8 +59,7 @@ function startApp() {
 			detailWin: detailWin,
 			detailContent: content,
 			initialInfoView: initialInfoView,
-			extendEdges:[Ti.UI.EXTEND_EDGE_TOP],
-			top: (Utils.getMajorOsVersion() >= 7) ? 15 : undefined
+			extendEdges:[Ti.UI.EXTEND_EDGE_TOP]
 		}),
 
 		splitWin = Ti.UI.iPad.createSplitWindow({
@@ -146,7 +145,6 @@ function startApp() {
 			backgroundImage: Utils.getListBackgroundImage(),
 			barColor: Utils.getNavColor(),
 			extendEdges:[Ti.UI.EXTEND_EDGE_TOP],
-			top: (Utils.getMajorOsVersion() >= 7) ? 15 : undefined,
 			statusBarStyle: (Utils.getMajorOsVersion() < 7) ? Ti.UI.iPhone.StatusBar.DEFAULT : undefined
 		}),
 

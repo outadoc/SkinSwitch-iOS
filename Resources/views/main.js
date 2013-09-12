@@ -18,7 +18,7 @@ searchBar = Ti.UI.createSearchBar({
 }),
 
 skinsShowcase = Ti.UI.createScrollView({
-	top: (!Ti.App.Properties.getBool('hideSearch', false)) ? 44 : 0,
+	top: (!Ti.App.Properties.getBool('hideSearch', false)  && Utils.getMajorOsVersion() < 7) ? 44 : 0,
 	contentWidth: Ti.UI.FILL,
   	contentHeight: Ti.UI.SIZE,
   	verticalBounce: true,

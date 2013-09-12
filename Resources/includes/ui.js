@@ -157,12 +157,12 @@
 		var container = Ti.UI.createView({
 			layout: 'horizontal',
 		  	left: 13,
-		  	top: 13,
+		  	top: (Utils.getMajorOsVersion() < 7) ? 13 : 78,
 		  	bottom: 13,
 		  	right: 13,
 		  	height: Ti.UI.FILL
 		}), i;
-		
+
 		if(skins.length > 0 && !Ti.App.Properties.getBool('hasShownWearTip', false)) {
 			var view_longpress_tip = Ti.UI.createView({
 				height: Ti.UI.SIZE,
