@@ -59,7 +59,8 @@ function startApp() {
 			detailWin: detailWin,
 			detailContent: content,
 			initialInfoView: initialInfoView,
-			translucent: false
+			extendEdges:[Ti.UI.EXTEND_EDGE_TOP],
+			top: (Utils.getMajorOsVersion() >= 7) ? 15 : undefined
 		}),
 
 		splitWin = Ti.UI.iPad.createSplitWindow({
@@ -144,7 +145,8 @@ function startApp() {
 			title: Ti.App.getName(),
 			backgroundImage: Utils.getListBackgroundImage(),
 			barColor: Utils.getNavColor(),
-			translucent: false
+			extendEdges:[Ti.UI.EXTEND_EDGE_TOP],
+			top: (Utils.getMajorOsVersion() >= 7) ? 15 : undefined
 		}),
 
 		navGroup = Ti.UI.iPhone.createNavigationGroup({

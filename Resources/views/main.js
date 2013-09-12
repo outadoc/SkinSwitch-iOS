@@ -25,7 +25,7 @@ skinsShowcase = Ti.UI.createScrollView({
   	showVerticalScrollIndicator: true
 });
 
-if(!Ti.App.Properties.getBool('hideSearch', false)) {
+if(!Ti.App.Properties.getBool('hideSearch', false) && Utils.getMajorOsVersion() < 7) {
 	win.add(searchBar);
 }
 
