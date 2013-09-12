@@ -5,33 +5,34 @@
 		"editSettings":"Instellingen bewerken",
 		"skinDetails":{
 			"title":"Skin Details",
-			"description":"Omschrijving",
-			"creation":"Datum van creatie",
+			"description":"Beschrijving",
+			"creation":"Aanmaak Datum",
 			"wear":"Draag deze skin",
-			"close":"Sluiten"
+			"close":"Sluit"
 		},
 		"noSelectedSkin":"Geen skin geselecteerd.",
+		"search":"Zoek tussen je skins...",
 		"tips":{
 			"wear":"Supertip: Om een skin te dragen, tik en houd het pictogram vast!"
 		},
 		"skinDelete":{
 			"title":"Bevestig verwijdering",
-			"message":"Weet je zeker dat je %s wilt verwijderen?",
+			"message":"Weet je zeker dat je \"%s\" wilt verwijderen?",
 			"cancel":"Neeeeeeeee!",
-			"okay":"Tuurlijk!"
+			"okay":"Zeker!"
 		},
 		"progressBar":{
-			"login":"Bezig met inloggen...",
-			"upload":"Bezig met uploaden skin...",
+			"login":"Aanmelden...",
+			"upload":"Skin aan het uploaden...",
 			"loginFail":"Aanmelden mislukt",
 			"uploadFail":"Uploaden mislukt",
-			"challengeFail":"Opdracht gefaald",
+			"challengeFail":"Opdracht mislukt",
 			"success":"Upload voltooid!"
 		},
 		"skinUpload":{
 			"confirm":{
 				"title":"Vervang skin?",
-				"message":"Wilt u echt uw skin veranderen door \"%s\"?",
+				"message":"Wilt u echt uw skin veranderen in \"%s\"?",
 				"cancel":"Nee",
 				"okay":"Ja"
 			},
@@ -40,7 +41,7 @@
 				"login":"Kan niet inloggen op minecraft.net. Controleer uw gebruikersnaam en wachtwoord in de instellingen.",
 				"server":"Kan Minecraft.net niet bereiken. De site kan eruit liggen. Controleer http:\/\/help.mojang.com en probeer later opnieuw.",
 				"upload":"Kan de skin niet uploaden naar minecraft.net. Probeer later opnieuw.",
-				"challenge":"Je moet antwoord geven op de beveiliging's vraag om toegang te krijgen tot je account vanaf dit apparaat.\nJammer genoeg kan het niet geladen worden. Check je connectie en probeer opnieuw later."
+				"challenge":"Je moet antwoord geven op de beveiliging's vraag om toegang te krijgen tot je account vanaf dit apparaat.\nJammer genoeg kon het niet geladen worden. Check je internet verbinding en probeer het later opnieuw."
 			}
 		}
 	},

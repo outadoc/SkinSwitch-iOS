@@ -11,8 +11,9 @@
 			"close":"Stäng"
 		},
 		"noSelectedSkin":"Inget skin markerat.",
+		"search":"Sök bland dina skins...",
 		"tips":{
-			"wear":"Protip: att bära en hud, peka och håll dess ikon!"
+			"wear":"Proffstips: För att bära ett skin, peka och håll i dess ikon!"
 		},
 		"skinDelete":{
 			"title":"Bekräfta radering",
@@ -31,7 +32,7 @@
 		"skinUpload":{
 			"confirm":{
 				"title":"Byt skin?",
-				"message":"Vill du verkligen ersätta ditt nuvarande skin med\"%s\"?",
+				"message":"Vill du verkligen ersätta ditt nuvarande skin med \"%s\"?",
 				"cancel":"Nej",
 				"okay":"Ja"
 			},
@@ -92,21 +93,21 @@
 				"initial":"Reticulating Splines...",
 				"skin":"Hämtar...",
 				"preview":"Hämtar förhandsgranskning av skin...",
-				"database":"Registrerar skinet idatabasen...",
-				"success":"Skinnet tilllagt! :)",
+				"database":"Registrerar skin i databasen...",
+				"success":"Skinnet lades till! :)",
 				"fail":"Misslyckades :("
 			},
 			"error":{
-				"skin":"Ett fel uppstod. Avbryter.",
+				"skin":"Ett fel uppstod när skinnet laddades ned. Avbryter.",
 				"preview":{
 					"title":"Nätverksfel",
-					"message":"Fel vid nedladdning av förhandsgranskning. Vill du fortsätta utan?",
+					"message":"Fel vid nedladdning av förhandsvisning. Ingen förhandsvisning visas för detta skin. Vill du fortsätta ändå?",
 					"cancel":"Avbryt",
 					"ok":"Fortsätt"
 				}
 			},
 			"challenge":{
-				"title":"Identitets bekräftelse",
+				"title":"Identitetsbekräftelse",
 				"help":"Du måste svara på denna fråga eftersom du försöker till Mojang kontot från en annan plats. \n\nOm du glömt svaret, kan du försöka besvara en fråga genom att stänga det här fönstret och försöka igen (det är slumpmässigt). \n\nOm du inte kommer ihåg, vänligen besök help.mojang.com för anvisningar hur man återställer dina säkerhets frågor.",
 				"cancel":"Avbryt",
 				"continue":"Fortsätt",
@@ -134,7 +135,7 @@
 	},
 	"restoreDatabase":{
 		"title":"Oj då...",
-		"message":"vi kunde inte öppna filen med ditt skin, av någon konstig anledning.\nSom tur är så finns det en säkerhetskopia av %s.\nVill du återställa den?",
+		"message":"Vi kunde inte öppna filen med ditt skin av någon konstig anledning. Som tur är finns det en säkerhetskopia av %s. Vill du återställa den?",
 		"no":"Nej tack.",
 		"yes":"Ja!"
 	}

@@ -1,7 +1,7 @@
 {
 	"main":{
 		"skinList":"Skinliste",
-		"addSkin":"Add a Skin",
+		"addSkin":"Legg til et skin",
 		"editSettings":"Rediger Innstillinger",
 		"skinDetails":{
 			"title":"Skin detaljer",
@@ -11,21 +11,22 @@
 			"close":"Lukk"
 		},
 		"noSelectedSkin":"Ingen skin er valgt.",
+		"search":"Search in your skins...",
 		"tips":{
-			"wear":"Protip: To wear a skin, tap and hold its icon!"
+			"wear":"Tips: får å ta på deg skinnet, trykk og hold på ikonet!"
 		},
 		"skinDelete":{
-			"title":"Confirm Deletion",
-			"message":"Do you really want to delete \"%s\"?",
-			"cancel":"Nooooooo!",
-			"okay":"Sure!"
+			"title":"Bekreft sletting",
+			"message":"Vil du virkelig slette \"%s\"?",
+			"cancel":"Neeeeeei!",
+			"okay":"Sikkert!"
 		},
 		"progressBar":{
 			"login":"Logger på...",
 			"upload":"Laster opp skinet...",
 			"loginFail":"Påloggingen mislyktes",
 			"uploadFail":"Opplastingen mislyktes",
-			"challengeFail":"Challenge failed",
+			"challengeFail":"Oppdrag feilet",
 			"success":"Opplasting fullført!"
 		},
 		"skinUpload":{
@@ -40,7 +41,7 @@
 				"login":"Kunne ikke logge på minecraft.net. Kontroller ditt brukernavn og passord i innstillingene.",
 				"server":"Kunne ikke nå minecraft.net. Nettstedet kan være nede. Sjekk http:\/\/help.mojang.com og prøv på nytt senere.",
 				"upload":"Kunne ikke laste opp skinet til minecraft.net. Prøv igjen senere.",
-				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
+				"challenge":"Du er påbudt å svare på er sikkerhet spørsmål får å få tilgang til din konto fra denne enheten.\nBeklagelig vis kunne vi ikke laste det inn. Vennligst se på din tilgang å prøv en gang til senere."
 			}
 		}
 	},
@@ -63,7 +64,7 @@
 			"description":"Beskrivelse",
 			"method":{
 				"title":"Legg til skinet...",
-				"search":"By searching the Web",
+				"search":"Ved å søke på Internett",
 				"pseudo":"Fra en eksisterende bruker",
 				"url":"Fra en URL-adresse",
 				"cancel":"Avbryt"
@@ -75,15 +76,15 @@
 			"invalidUrl":"Denne URL-adressen er ugyldig (MÅ være en PNG-fil)."
 		},
 		"search":{
-			"select":"Select this skin",
-			"searchHint":"Search on MC Network...",
+			"select":"Velg dette skinnet",
+			"searchHint":"Søk på MC nettverk...",
 			"indicator":{
-				"searchResults":"Search Results for: %s",
-				"noResults":"No results for: %s",
-				"random":"Random Skins"
+				"searchResults":"Resultater av søket: %s",
+				"noResults":"Ingen resultat for: %s",
+				"random":"Random skins"
 			},
 			"error":{
-				"network":"Couldn't load your search results. Check your connexion, and retry later."
+				"network":"Kunne ikke laste søke resultatene. Sjekk tilkoblingen, og prøv igjen senere."
 			}
 		},
 		"process":{
@@ -106,11 +107,11 @@
 				}
 			},
 			"challenge":{
-				"title":"Identity Confirmation",
+				"title":"Identitet bekreftelse",
 				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
 				"cancel":"Avbryt",
 				"continue":"Fortsett",
-				"hint":"Answer"
+				"hint":"Svar"
 			}
 		},
 		"next":"Neste"
