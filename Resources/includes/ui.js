@@ -398,14 +398,25 @@
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getModalBackgroundImage(),
 				barColor: Utils.getNavColor(),
-				translucent: false,
+				translucent: false
+			}),
+			
+			container = Ti.UI.createWindow({
+				navBarHidden: true
+			}),
+			
+			navGroup = Ti.UI.iPhone.createNavigationGroup({
+				window: edit_win,
 				tintColor: Utils.getBarTintColor()
 			});
-
-			edit_win.addEventListener('close', updateSkinsList);
 			
-			edit_win.open({
-				modal: true
+			container.add(navGroup);
+			container.addEventListener('close', updateSkinsList);			
+			edit_win.container = container;
+			
+			container.open({
+				modal: true,
+				modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
 			});
 			
 			closeDetailWin();
@@ -546,14 +557,26 @@
 				title: I('editSkin.title'),
 				backgroundImage: Utils.getModalBackgroundImage(),
 				barColor: Utils.getNavColor(),
-				translucent: false,
+				translucent: false
+			}),
+			
+			container = Ti.UI.createWindow({
+				navBarHidden: true
+			}),
+			
+			navGroup = Ti.UI.iPhone.createNavigationGroup({
+				window: edit_win,
 				tintColor: Utils.getBarTintColor()
 			});
-
-			edit_win.addEventListener('close', updateSkinsList);
+			
+			container.add(navGroup);
+			
+			container.addEventListener('close', updateSkinsList);
 			Utils.closeiPadSkinDetails(win);
 			
-			edit_win.open({
+			edit_win.container = container;
+			
+			container.open({
 				modal: true,
 				modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
 			});
