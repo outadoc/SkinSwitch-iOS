@@ -63,7 +63,7 @@ b_continue = Ti.UI.createButton({
 });
 
 b_cancel.addEventListener('click', function() {
-	win.close();
+	win.container.close();
 });
 
 win.setLeftNavButton(b_cancel);
@@ -84,7 +84,7 @@ b_continue.addEventListener('click', function() {
 				alert(responseObj.error);
 			}
 			
-			win.close();
+			win.container.close();
 		},
 		onerror: function(e) {
 			win.triggerError('challenge');

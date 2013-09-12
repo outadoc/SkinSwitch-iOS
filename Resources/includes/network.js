@@ -63,18 +63,31 @@
 														title: I('addProcess.process.challenge.title'),
 														backgroundImage: Utils.getModalBackgroundImage(),
 														barColor: Utils.getNavColor(),
-														translucent: false,
+														translucent: false
+													}),
+													
+													container = Ti.UI.createWindow({
+														navBarHidden: true
+													}),
+													
+													navGroup = Ti.UI.iPhone.createNavigationGroup({
+														window: win_answer,
 														tintColor: Utils.getBarTintColor()
 													});
+												
+													container.add(navGroup);
 													
-													win.setTitleControl(null);
-													
-													win_answer.addEventListener('close', function() {
-														//freeing the memory
+													container.addEventListener('close', function() {			
+														container = null;
+														navGroup = null;
 														win_answer = null;
 													});
+												
+													win_answer.container = container;
+												
+													win.setTitleControl(null);
 													
-													win_answer.open({
+													container.open({
 														modal: true,
 														modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
 													});
