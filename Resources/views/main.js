@@ -11,23 +11,22 @@ loadingWin = Ui.createLoadingWindow(),
 adLoaded = false,
 
 searchBar = Ti.UI.createSearchBar({
-	top: 0,
+	top: (Utils.getMajorOsVersion() < 7) ? 0 : 64,
+	zIndex: 10,
 	width: Ti.UI.FILL,
 	barColor: Utils.getNavColor(),
 	hintText: I('main.search')
 }),
 
 skinsShowcase = Ti.UI.createScrollView({
-	top: (!Ti.App.Properties.getBool('hideSearch', false)  && Utils.getMajorOsVersion() < 7) ? 44 : 0,
+	top: 44,
 	contentWidth: Ti.UI.FILL,
   	contentHeight: Ti.UI.SIZE,
   	verticalBounce: true,
   	showVerticalScrollIndicator: true
 });
 
-if(!Ti.App.Properties.getBool('hideSearch', false) && Utils.getMajorOsVersion() < 7) {
-	win.add(searchBar);
-}
+win.add(searchBar);
 
 win.add(skinsShowcase);
 loadingWin.open();
