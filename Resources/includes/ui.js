@@ -174,11 +174,12 @@
 			}),
 			
 			lbl_tip_text = Ti.UI.createLabel({
-				text: '\u21B3' + I('main.tips.wear'),
+				text: '\u2713 ' + I('main.tips.wear'),
 				color: 'white',
+				textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 				font: {
 					fontSize: 16,
-					fontFamily: 'Helvetica Neue'
+					fontWeight: 'bold'
 				},
 				width: Ti.UI.FILL,
 				height: Ti.UI.SIZE
