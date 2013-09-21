@@ -34,7 +34,7 @@
 	};
 	
 	exports.getBarTintColor = function() {
-		return '#e4c4a6';
+		return '#e9d5c2';
 	};
 	
 	exports.isiPhone = function() {
