@@ -56,7 +56,8 @@ tableView = Ti.UI.createTableView({
 	rowBackgroundColor: 'white',
 	scrollable: false,
 	rowHeight: 45,
-	height: 120
+	height: 120,
+	top: (Utils.getMajorOsVersion() < 7) ? 0 : -20
 }),
 
 lbl_footer = Ti.UI.createLabel({
