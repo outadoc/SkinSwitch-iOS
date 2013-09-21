@@ -157,7 +157,7 @@
 		var container = Ti.UI.createView({
 			layout: 'horizontal',
 		  	left: 13,
-		  	top: (Utils.getMajorOsVersion() < 7) ? 13 : 78,
+		  	top: (Utils.getMajorOsVersion() < 7) ? 55 : 120,
 		  	bottom: 13,
 		  	right: 13,
 		  	height: Ti.UI.FILL

@@ -19,7 +19,6 @@ searchBar = Ti.UI.createSearchBar({
 }),
 
 skinsShowcase = Ti.UI.createScrollView({
-	top: 44,
 	contentWidth: Ti.UI.FILL,
   	contentHeight: Ti.UI.SIZE,
   	verticalBounce: true,
