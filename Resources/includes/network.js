@@ -30,7 +30,7 @@
 				var xhr_login = Ti.Network.createHTTPClient({
 					onload: function() {
 						//when login xhr loaded
-						if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
+						if(this.getResponseHeader('Location') != null && this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
 							exports.triggerError('login');
 						} else {
 							var xhr_skin = Ti.Network.createHTTPClient({
@@ -44,10 +44,10 @@
 									if(serverSideError != null && serverSideError[2] !== undefined) {
 										//the server didn't want our skin :(
 										exports.triggerError('upload', serverSideError[2].replace(/\+/g, " "));
-									} else if(this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
+									} else if(this.getResponseHeader('Location') != null && this.getResponseHeader('Location').indexOf('minecraft.net/login') != -1) {
 										//login error
 										exports.triggerError('login');
-									} else if(this.getResponseHeader('Location').indexOf('minecraft.net/challenge') != -1) {
+									} else if(this.getResponseHeader('Location') != null && this.getResponseHeader('Location').indexOf('minecraft.net/challenge') != -1) {
 										//identity check
 										var xhr_challenge = Ti.Network.createHTTPClient({
 											onload: function(e) {
@@ -133,7 +133,6 @@
 					},
 					onerror: function(e) {
 						exports.triggerError('server');
-						Ti.API.info(e);
 					},
 					autoRedirect: false,
 					validatesSecureCertificate: false
@@ -185,7 +184,7 @@
 
 		setTimeout(function() {
 			win.setTitleControl(null);
-		}, 1000);
+		}, 2000);
 	};
 
 })(); 
