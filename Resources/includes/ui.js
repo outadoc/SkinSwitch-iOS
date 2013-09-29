@@ -247,9 +247,15 @@
 			win = null;
 		});
 		
-		var containerView = Ti.UI.createView({
-			height: (Ti.Platform.displayCaps.platformHeight >= 568) ? 400 : 355,
+		var top = (Utils.getMajorOsVersion() < 7) ? 98 : 118,
+			bottom = 60,
+			height = (Utils.getMajorOsVersion() < 7) ? Ti.Platform.displayCaps.platformHeight - top - bottom - 30 : Ti.Platform.displayCaps.platformHeight - top - bottom,
+			
+		containerView = Ti.UI.createView({
 			width: 300,
+			height: Ti.Platform.displayCaps.platformHeight - top - bottom,
+			top: top,
+			bottom: bottom,
 			backgroundColor: '#f2f2f2',
 			borderWidth: 2,
 			borderColor: 'gray',
