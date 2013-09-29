@@ -25,6 +25,7 @@
       "login":"ログイン中...",
       "upload":"スキンのアップロード中...",
       "loginFail":"ログインに失敗しました。",
+      "serverFail":"Could not reach",
       "uploadFail":"アップロードに失敗しました。",
       "challengeFail":"チャレンジに失敗しました。",
       "success":"アップロードが完了しました!"

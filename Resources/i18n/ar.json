@@ -25,6 +25,7 @@
       "login":"Logging in...",
       "upload":"Uploading skin...",
       "loginFail":"Login failed",
+      "serverFail":"Could not reach",
       "uploadFail":"Upload failed",
       "challengeFail":"Challenge failed",
       "success":"Upload complete!"

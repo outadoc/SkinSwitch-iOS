@@ -1,142 +1,143 @@
 {
-	"main":{
-		"skinList":"Llista d'Skins",
-		"addSkin":"Afegir una skin",
-		"editSettings":"Edita la configuració",
-		"skinDetails":{
-			"title":"Detalls de l'Skin",
-			"description":"Descripció",
-			"creation":"Data de creació",
-			"wear":"Porta aquesta Skin",
-			"close":"Tanca"
-		},
-		"noSelectedSkin":"Cap skin seleccionada.",
-		"search":"Search in your skins...",
-		"tips":{
-			"wear":"Protip: To wear a skin, tap and hold its icon!"
-		},
-		"skinDelete":{
-			"title":"Confirma l'eliminació",
-			"message":"Realment vols eliminar \"%s\"?",
-			"cancel":"Nooooooo!",
-			"okay":"Segur!"
-		},
-		"progressBar":{
-			"login":"Connectant-se...",
-			"upload":"Penjant skin...",
-			"loginFail":"L'inici de sessió ha fallat",
-			"uploadFail":"Ha fallat la càrrega",
-			"challengeFail":"Challenge failed",
-			"success":"Càrrega completa!"
-		},
-		"skinUpload":{
-			"confirm":{
-				"title":"Substituir l'skin?",
-				"message":"Realment vols reemplaçar la teva skin amb \"%s\"?",
-				"cancel":"No",
-				"okay":"Sí"
-			},
-			"error":{
-				"title":"Error de càrrega",
-				"login":"No s'ha pogut connectar a minecraft.net. Si us plau comprova les teves dades d'inici de sessió i contrasenya a la configuració.",
-				"server":"No s'ha pogut connectar a minecraft.net. El lloc deu estar caigut. Comprova http:\/\/help.mojang.com i prova-ho més tard.",
-				"upload":"No s'ha pogut pujar la skin a minecraft.net. Si us plau prova-ho més tard.",
-				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
-			}
-		}
-	},
-	"settings":{
-		"title":"Configuració",
-		"username":"Nom d'usuari",
-		"password":"Contrasenya",
-		"header":"Credencials de connexió de minecraft.net",
-		"footer":{
-			"migratedAccount":"Si el teu compte ha estat migrat a un compte de Mojang, has de fer servir el teu email en lloc del teu nom d'usuari de Minecraft.",
-			"privacy":"Nota: mai emmagatzemarem o utilitzarem qualsevol de les teves informacions per res més que canviar les teves skins de Minecraft. La informació del teu compte està guardada de forma segura al clauer de contrasenyes d'iOS."
-		}
-	},
-	"addProcess":{
-		"skinInfo":{
-			"title":"Informació de l'skin",
-			"shortTitle":"Informació de l'skin",
-			"name":"Nom de l'skin",
-			"nameHint":"La meva skin impressionant",
-			"description":"Descripció",
-			"method":{
-				"title":"Afegir la skin...",
-				"search":"By searching the Web",
-				"pseudo":"Des d'un usuari existent",
-				"url":"Des d'una URL",
-				"cancel":"Cancel·la"
-			}
-		},
-		"urlSelect":{
-			"urlTitle":"Enganxa o escriu l'URL de l'skin aquí (ha de ser un arxiu PNG):",
-			"pseudoTitle":"Escriu aquí el nom d'usuari de Minecraft (cas sensitiu):",
-			"invalidUrl":"Aquesta URL no és vàlida (ha de ser un arxiu PNG)."
-		},
-		"search":{
-			"select":"Select this skin",
-			"searchHint":"Search on MC Network...",
-			"indicator":{
-				"searchResults":"Search Results for: %s",
-				"noResults":"No results for: %s",
-				"random":"Random Skins"
-			},
-			"error":{
-				"network":"Couldn't load your search results. Check your connexion, and retry later."
-			}
-		},
-		"process":{
-			"title":"Processant...",
-			"progress":{
-				"initial":"Reticulating Splines...",
-				"skin":"Descarregant l'skin...",
-				"preview":"Descarregant la vista prèvia de l'skin...",
-				"database":"Registrant skin a la base de dades...",
-				"success":"Skin afegida correctament! :)",
-				"fail":"Fallat :("
-			},
-			"error":{
-				"skin":"Error mentre es descarregava l'skin. Abortant.",
-				"preview":{
-					"title":"Error de xarxa",
-					"message":"Error descarregant la vista prèvia. No hi haurà vista prèvia per a aquesta skin. Continuar de totes maneres?",
-					"cancel":"Cancel·lar",
-					"ok":"Continuar"
-				}
-			},
-			"challenge":{
-				"title":"Identity Confirmation",
-				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
-				"cancel":"Cancel·la",
-				"continue":"Continuar",
-				"hint":"Answer"
-			}
-		},
-		"next":"Següent"
-	},
-	"credits":{
-		"title":"Crèdits",
-		"developer":"Autor:",
-		"platform":"Plataforma:",
-		"translators":"Traductors:",
-		"thanks":"Agraïments especials a:",
-		"modules":"Mòduls:"
-	},
-	"buttons":{
-		"edit":"Editar",
-		"done":"Fet",
-		"close":"Tancar"
-	},
-	"editSkin":{
-		"short":"Editar",
-		"title":"Editar la informació de l'skin"
-	},
-	"restoreDatabase":{
-		"title":"Uh oh...",
-		"message":"No hem pogut obrir l'arxiu que conté les teves skins, per alguna raó. \nAfortunadament, hi ha una còpia de seguretat de %s.\nVols restaurar-la?",
-		"no":"No, gràcies.",
-		"yes":"Fem-ho!"
-	}
+  "main":{
+    "skinList":"Llista d'Skins",
+    "addSkin":"Afegir una skin",
+    "editSettings":"Edita la configuració",
+    "skinDetails":{
+      "title":"Detalls de l'Skin",
+      "description":"Descripció",
+      "creation":"Data de creació",
+      "wear":"Porta aquesta Skin",
+      "close":"Tanca"
+    },
+    "noSelectedSkin":"Cap skin seleccionada.",
+    "search":"Search in your skins...",
+    "tips":{
+      "wear":"Protip: To wear a skin, tap and hold its icon!"
+    },
+    "skinDelete":{
+      "title":"Confirma l'eliminació",
+      "message":"Realment vols eliminar \"%s\"?",
+      "cancel":"Nooooooo!",
+      "okay":"Segur!"
+    },
+    "progressBar":{
+      "login":"Connectant-se...",
+      "upload":"Penjant skin...",
+      "loginFail":"L'inici de sessió ha fallat",
+      "serverFail":"Could not reach",
+      "uploadFail":"Ha fallat la càrrega",
+      "challengeFail":"Challenge failed",
+      "success":"Càrrega completa!"
+    },
+    "skinUpload":{
+      "confirm":{
+        "title":"Substituir l'skin?",
+        "message":"Realment vols reemplaçar la teva skin amb \"%s\"?",
+        "cancel":"No",
+        "okay":"Sí"
+      },
+      "error":{
+        "title":"Error de càrrega",
+        "login":"No s'ha pogut connectar a minecraft.net. Si us plau comprova les teves dades d'inici de sessió i contrasenya a la configuració.",
+        "server":"No s'ha pogut connectar a minecraft.net. El lloc deu estar caigut. Comprova http:\/\/help.mojang.com i prova-ho més tard.",
+        "upload":"No s'ha pogut pujar la skin a minecraft.net. Si us plau prova-ho més tard.",
+        "challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
+      }
+    }
+  },
+  "settings":{
+    "title":"Configuració",
+    "username":"Nom d'usuari",
+    "password":"Contrasenya",
+    "header":"Credencials de connexió de minecraft.net",
+    "footer":{
+      "migratedAccount":"Si el teu compte ha estat migrat a un compte de Mojang, has de fer servir el teu email en lloc del teu nom d'usuari de Minecraft.",
+      "privacy":"Nota: mai emmagatzemarem o utilitzarem qualsevol de les teves informacions per res més que canviar les teves skins de Minecraft. La informació del teu compte està guardada de forma segura al clauer de contrasenyes d'iOS."
+    }
+  },
+  "addProcess":{
+    "skinInfo":{
+      "title":"Informació de l'skin",
+      "shortTitle":"Informació de l'skin",
+      "name":"Nom de l'skin",
+      "nameHint":"La meva skin impressionant",
+      "description":"Descripció",
+      "method":{
+        "title":"Afegir la skin...",
+        "search":"By searching the Web",
+        "pseudo":"Des d'un usuari existent",
+        "url":"Des d'una URL",
+        "cancel":"Cancel·la"
+      }
+    },
+    "urlSelect":{
+      "urlTitle":"Enganxa o escriu l'URL de l'skin aquí (ha de ser un arxiu PNG):",
+      "pseudoTitle":"Escriu aquí el nom d'usuari de Minecraft (cas sensitiu):",
+      "invalidUrl":"Aquesta URL no és vàlida (ha de ser un arxiu PNG)."
+    },
+    "search":{
+      "select":"Select this skin",
+      "searchHint":"Search on MC Network...",
+      "indicator":{
+        "searchResults":"Search Results for: %s",
+        "noResults":"No results for: %s",
+        "random":"Random Skins"
+      },
+      "error":{
+        "network":"Couldn't load your search results. Check your connexion, and retry later."
+      }
+    },
+    "process":{
+      "title":"Processant...",
+      "progress":{
+        "initial":"Reticulating Splines...",
+        "skin":"Descarregant l'skin...",
+        "preview":"Descarregant la vista prèvia de l'skin...",
+        "database":"Registrant skin a la base de dades...",
+        "success":"Skin afegida correctament! :)",
+        "fail":"Fallat :("
+      },
+      "error":{
+        "skin":"Error mentre es descarregava l'skin. Abortant.",
+        "preview":{
+          "title":"Error de xarxa",
+          "message":"Error descarregant la vista prèvia. No hi haurà vista prèvia per a aquesta skin. Continuar de totes maneres?",
+          "cancel":"Cancel·lar",
+          "ok":"Continuar"
+        }
+      },
+      "challenge":{
+        "title":"Identity Confirmation",
+        "help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+        "cancel":"Cancel·la",
+        "continue":"Continuar",
+        "hint":"Answer"
+      }
+    },
+    "next":"Següent"
+  },
+  "credits":{
+    "title":"Crèdits",
+    "developer":"Autor:",
+    "platform":"Plataforma:",
+    "translators":"Traductors:",
+    "thanks":"Agraïments especials a:",
+    "modules":"Mòduls:"
+  },
+  "buttons":{
+    "edit":"Editar",
+    "done":"Fet",
+    "close":"Tancar"
+  },
+  "editSkin":{
+    "short":"Editar",
+    "title":"Editar la informació de l'skin"
+  },
+  "restoreDatabase":{
+    "title":"Uh oh...",
+    "message":"No hem pogut obrir l'arxiu que conté les teves skins, per alguna raó. \nAfortunadament, hi ha una còpia de seguretat de %s.\nVols restaurar-la?",
+    "no":"No, gràcies.",
+    "yes":"Fem-ho!"
+  }
 }

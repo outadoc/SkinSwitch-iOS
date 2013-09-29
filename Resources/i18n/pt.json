@@ -1,142 +1,143 @@
 {
-	"main":{
-		"skinList":"Lista de Skins",
-		"addSkin":"Add a Skin",
-		"editSettings":"Editar Configurações",
-		"skinDetails":{
-			"title":"Detalhes da Skin",
-			"description":"Descrição",
-			"creation":"Data de Criação",
-			"wear":"Usar esta Skin",
-			"close":"Fechar"
-		},
-		"noSelectedSkin":"Nenhuma skin selecionada.",
-		"search":"Search in your skins...",
-		"tips":{
-			"wear":"Protip: To wear a skin, tap and hold its icon!"
-		},
-		"skinDelete":{
-			"title":"Confirm Deletion",
-			"message":"Do you really want to delete \"%s\"?",
-			"cancel":"Nooooooo!",
-			"okay":"Sure!"
-		},
-		"progressBar":{
-			"login":"Logando...",
-			"upload":"Transferindo skin...",
-			"loginFail":"Falha no login",
-			"uploadFail":"Falha na transferência",
-			"challengeFail":"Challenge failed",
-			"success":"Transferência completa!"
-		},
-		"skinUpload":{
-			"confirm":{
-				"title":"Substituir skin?",
-				"message":"Você realmente quer trocar sua skin por \"%s\"?",
-				"cancel":"Não",
-				"okay":"Sim"
-			},
-			"error":{
-				"title":"Erro de transferência",
-				"login":"Não foi possível conectar a minecraft.net. Por favor verifique seu login e senha nas configurações.",
-				"server":"Não foi possível conectar a minecraft.net. O site deve estar desligado. Verifique http:\/\/help.mojang.com e tente novamente mais tarde.",
-				"upload":"Não foi possível fazer o upload da skin para minecraft.net. Tente novamente mais tarde.",
-				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
-			}
-		}
-	},
-	"settings":{
-		"title":"Configurações",
-		"username":"Nome de usuário",
-		"password":"Senha",
-		"header":"Credenciais de login Minecraft.net",
-		"footer":{
-			"migratedAccount":"Se sua conta foi migrada para uma conta Mojang, você tem que usar seu e-mail ao invés de seu usuário.",
-			"privacy":"Obs: Nós não vamos nunca armazenar ou usar nenhum de seus dados para nada além de trocar sua skin no Minecraft. A informação de sua conta está guardada seguramente no banco de dados do IOS."
-		}
-	},
-	"addProcess":{
-		"skinInfo":{
-			"title":"Informação sobre sua skin",
-			"shortTitle":"Informações sobre sua skin",
-			"name":"Nome da skin",
-			"nameHint":"Minha Incrível Skin",
-			"description":"Descrição",
-			"method":{
-				"title":"Adicionar a skin...",
-				"search":"By searching the Web",
-				"pseudo":"De um usuário existente",
-				"url":"De uma URL",
-				"cancel":"Cancelar"
-			}
-		},
-		"urlSelect":{
-			"urlTitle":"Digite a URL da skin aqui (deve ser um arquivo PNG):",
-			"pseudoTitle":"Digite aqui  o nome de usuário (sensível a maiúscula):",
-			"invalidUrl":"Esta URL é invalida (tem de ser um arquivo PNG)."
-		},
-		"search":{
-			"select":"Select this skin",
-			"searchHint":"Search on MC Network...",
-			"indicator":{
-				"searchResults":"Search Results for: %s",
-				"noResults":"No results for: %s",
-				"random":"Random Skins"
-			},
-			"error":{
-				"network":"Couldn't load your search results. Check your connexion, and retry later."
-			}
-		},
-		"process":{
-			"title":"Processando...",
-			"progress":{
-				"initial":"Reticulating Splines...",
-				"skin":"Baixando a Skin...",
-				"preview":"Baixando a prévia da skin...",
-				"database":"Registrando a skin para o banco de dados...",
-				"success":"Skin adicionada com sucesso! :)",
-				"fail":"Falha :("
-			},
-			"error":{
-				"skin":"Erro enquanto baixando a skin. Abortando.",
-				"preview":{
-					"title":"Erro de conexão",
-					"message":"Erro baixando a prévia. Esta skin não vai ter prévia. Continuar mesmo assim?",
-					"cancel":"Cancelar",
-					"ok":"Continuar"
-				}
-			},
-			"challenge":{
-				"title":"Identity Confirmation",
-				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
-				"cancel":"Cancelar",
-				"continue":"Continuar",
-				"hint":"Answer"
-			}
-		},
-		"next":"Próximo"
-	},
-	"credits":{
-		"title":"Créditos",
-		"developer":"Desenvolvedor:",
-		"platform":"Plataforma:",
-		"translators":"Tradutores:",
-		"thanks":"Agradecimentos especiais para:",
-		"modules":"Módulos:"
-	},
-	"buttons":{
-		"edit":"Editar",
-		"done":"Pronto",
-		"close":"Fechar"
-	},
-	"editSkin":{
-		"short":"Editar",
-		"title":"Editar as informações da skin"
-	},
-	"restoreDatabase":{
-		"title":"Uh oh...",
-		"message":"Nós não fomos capazes de abrir o arquivo com suas skins, por alguma rasão. Felizmente temos um backup de %s.\nQuer restaura-lo?",
-		"no":"Não, obrigado.",
-		"yes":"Vamos fazer isso!"
-	}
+  "main":{
+    "skinList":"Lista de Skins",
+    "addSkin":"Add a Skin",
+    "editSettings":"Editar Configurações",
+    "skinDetails":{
+      "title":"Detalhes da Skin",
+      "description":"Descrição",
+      "creation":"Data de Criação",
+      "wear":"Usar esta Skin",
+      "close":"Fechar"
+    },
+    "noSelectedSkin":"Nenhuma skin selecionada.",
+    "search":"Search in your skins...",
+    "tips":{
+      "wear":"Protip: To wear a skin, tap and hold its icon!"
+    },
+    "skinDelete":{
+      "title":"Confirm Deletion",
+      "message":"Do you really want to delete \"%s\"?",
+      "cancel":"Nooooooo!",
+      "okay":"Sure!"
+    },
+    "progressBar":{
+      "login":"Logando...",
+      "upload":"Transferindo skin...",
+      "loginFail":"Falha no login",
+      "serverFail":"Could not reach",
+      "uploadFail":"Falha na transferência",
+      "challengeFail":"Challenge failed",
+      "success":"Transferência completa!"
+    },
+    "skinUpload":{
+      "confirm":{
+        "title":"Substituir skin?",
+        "message":"Você realmente quer trocar sua skin por \"%s\"?",
+        "cancel":"Não",
+        "okay":"Sim"
+      },
+      "error":{
+        "title":"Erro de transferência",
+        "login":"Não foi possível conectar a minecraft.net. Por favor verifique seu login e senha nas configurações.",
+        "server":"Não foi possível conectar a minecraft.net. O site deve estar desligado. Verifique http:\/\/help.mojang.com e tente novamente mais tarde.",
+        "upload":"Não foi possível fazer o upload da skin para minecraft.net. Tente novamente mais tarde.",
+        "challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
+      }
+    }
+  },
+  "settings":{
+    "title":"Configurações",
+    "username":"Nome de usuário",
+    "password":"Senha",
+    "header":"Credenciais de login Minecraft.net",
+    "footer":{
+      "migratedAccount":"Se sua conta foi migrada para uma conta Mojang, você tem que usar seu e-mail ao invés de seu usuário.",
+      "privacy":"Obs: Nós não vamos nunca armazenar ou usar nenhum de seus dados para nada além de trocar sua skin no Minecraft. A informação de sua conta está guardada seguramente no banco de dados do IOS."
+    }
+  },
+  "addProcess":{
+    "skinInfo":{
+      "title":"Informação sobre sua skin",
+      "shortTitle":"Informações sobre sua skin",
+      "name":"Nome da skin",
+      "nameHint":"Minha Incrível Skin",
+      "description":"Descrição",
+      "method":{
+        "title":"Adicionar a skin...",
+        "search":"By searching the Web",
+        "pseudo":"De um usuário existente",
+        "url":"De uma URL",
+        "cancel":"Cancelar"
+      }
+    },
+    "urlSelect":{
+      "urlTitle":"Digite a URL da skin aqui (deve ser um arquivo PNG):",
+      "pseudoTitle":"Digite aqui  o nome de usuário (sensível a maiúscula):",
+      "invalidUrl":"Esta URL é invalida (tem de ser um arquivo PNG)."
+    },
+    "search":{
+      "select":"Select this skin",
+      "searchHint":"Search on MC Network...",
+      "indicator":{
+        "searchResults":"Search Results for: %s",
+        "noResults":"No results for: %s",
+        "random":"Random Skins"
+      },
+      "error":{
+        "network":"Couldn't load your search results. Check your connexion, and retry later."
+      }
+    },
+    "process":{
+      "title":"Processando...",
+      "progress":{
+        "initial":"Reticulating Splines...",
+        "skin":"Baixando a Skin...",
+        "preview":"Baixando a prévia da skin...",
+        "database":"Registrando a skin para o banco de dados...",
+        "success":"Skin adicionada com sucesso! :)",
+        "fail":"Falha :("
+      },
+      "error":{
+        "skin":"Erro enquanto baixando a skin. Abortando.",
+        "preview":{
+          "title":"Erro de conexão",
+          "message":"Erro baixando a prévia. Esta skin não vai ter prévia. Continuar mesmo assim?",
+          "cancel":"Cancelar",
+          "ok":"Continuar"
+        }
+      },
+      "challenge":{
+        "title":"Identity Confirmation",
+        "help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+        "cancel":"Cancelar",
+        "continue":"Continuar",
+        "hint":"Answer"
+      }
+    },
+    "next":"Próximo"
+  },
+  "credits":{
+    "title":"Créditos",
+    "developer":"Desenvolvedor:",
+    "platform":"Plataforma:",
+    "translators":"Tradutores:",
+    "thanks":"Agradecimentos especiais para:",
+    "modules":"Módulos:"
+  },
+  "buttons":{
+    "edit":"Editar",
+    "done":"Pronto",
+    "close":"Fechar"
+  },
+  "editSkin":{
+    "short":"Editar",
+    "title":"Editar as informações da skin"
+  },
+  "restoreDatabase":{
+    "title":"Uh oh...",
+    "message":"Nós não fomos capazes de abrir o arquivo com suas skins, por alguma rasão. Felizmente temos um backup de %s.\nQuer restaura-lo?",
+    "no":"Não, obrigado.",
+    "yes":"Vamos fazer isso!"
+  }
 }

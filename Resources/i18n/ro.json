@@ -1,142 +1,143 @@
 {
-	"main":{
-		"skinList":"Lista skinurilor",
-		"addSkin":"Adauga un skin",
-		"editSettings":"Editați Setarile",
-		"skinDetails":{
-			"title":"Detaliile Skinurilor",
-			"description":"Descripție",
-			"creation":"Data creării",
-			"wear":"Poartă skinul",
-			"close":"Închide"
-		},
-		"noSelectedSkin":"Nici un skin selectat.",
-		"search":"Search in your skins...",
-		"tips":{
-			"wear":"Protip: To wear a skin, tap and hold its icon!"
-		},
-		"skinDelete":{
-			"title":"Confirma stergerea",
-			"message":"Chiar vrei sa stergi \"%s\"?",
-			"cancel":"Nuuuuuuu!",
-			"okay":"Desigur!"
-		},
-		"progressBar":{
-			"login":"În proces de autentificare...",
-			"upload":"Încărcare skin...",
-			"loginFail":"Autentificare eșuată",
-			"uploadFail":"Încărcare eșuată",
-			"challengeFail":"Provocarea a esuat",
-			"success":"Încărcare completă!"
-		},
-		"skinUpload":{
-			"confirm":{
-				"title":"Schimbați skinul?",
-				"message":"Chiar vrei sa îți schimbi skinul cu \"%s\"?",
-				"cancel":"Nu",
-				"okay":"Da"
-			},
-			"error":{
-				"title":"Eroare la încărcare",
-				"login":"Nu am putut să te autentificam pe minecraft.net. Te rugăm să verifici numele și parola în setări.",
-				"server":"Nu am putut să stabilim legătura cu minecraft.net. Site-ul ar putea fi la pământ. Verifică http:\/\/help.mojang.com și încearcă mai târziu.",
-				"upload":"Nu a putut încărca skinul de minecraft.net. Vă rugăm să încercați din nou mai târziu.",
-				"challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
-			}
-		}
-	},
-	"settings":{
-		"title":"Setări",
-		"username":"Nume de utilizator",
-		"password":"Parola",
-		"header":"Datele de autentificare de pe minecraft.net",
-		"footer":{
-			"migratedAccount":"În cazul în care contul dvs. a fost migrat la un cont Mojang, va trebui să utilizați adresa dvs. de e-mail în loc de numele dvs. de utilizator de Minecraft.",
-			"privacy":"Notă: Noi NU vom stoca NICIODATĂ informațiile dvs. de autentificare in scopuri proprii. Acestea sunt stocate in telefon."
-		}
-	},
-	"addProcess":{
-		"skinInfo":{
-			"title":"Informația skinului",
-			"shortTitle":"Informația skinului",
-			"name":"Numele skinului",
-			"nameHint":"Skinul meu grozav",
-			"description":"Descripție",
-			"method":{
-				"title":"Adaugă un skin...",
-				"search":"By searching the Web",
-				"pseudo":"De la un utilizator existent",
-				"url":"De pe un site, codul URL",
-				"cancel":"Revocare"
-			}
-		},
-		"urlSelect":{
-			"urlTitle":"Lipiţi sau tastaţi URL-ul skinului  aici (trebuie să fie un fişier PNG):",
-			"pseudoTitle":"Introduceţi numele de utilizator Minecraft aici (caz-senzitiv):",
-			"invalidUrl":"Acest URL nu este valid (TREBUIE să fie un fişier PNG)."
-		},
-		"search":{
-			"select":"Select this skin",
-			"searchHint":"Search on MC Network...",
-			"indicator":{
-				"searchResults":"Search Results for: %s",
-				"noResults":"No results for: %s",
-				"random":"Random Skins"
-			},
-			"error":{
-				"network":"Couldn't load your search results. Check your connexion, and retry later."
-			}
-		},
-		"process":{
-			"title":"Procesare...",
-			"progress":{
-				"initial":"Reticulating Splines...",
-				"skin":"Descărcare skin...",
-				"preview":"Descărcare vizualizarea skinului...",
-				"database":"Înregistrarea skinului în baza de date...",
-				"success":"Skinul a fost adăugat cu succes! :)",
-				"fail":"Eșec :("
-			},
-			"error":{
-				"skin":"Eroare la descărcarea skinului. Se abandonează.",
-				"preview":{
-					"title":"Eroare de reţea",
-					"message":"Eroare la descărcarea vizualizării. Nu vei putea sa vezi skinul acesta. Continui oricum?",
-					"cancel":"Revocare",
-					"ok":"Continuă"
-				}
-			},
-			"challenge":{
-				"title":"Confirmarea identitatii",
-				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
-				"cancel":"Revocare",
-				"continue":"Continuă",
-				"hint":"Raspuns"
-			}
-		},
-		"next":"Următorul"
-	},
-	"credits":{
-		"title":"Credite",
-		"developer":"Dezvoltator:",
-		"platform":"Platforma:",
-		"translators":"Traducători:",
-		"thanks":"Mulţumiri speciale pentru:",
-		"modules":"Module:"
-	},
-	"buttons":{
-		"edit":"Editare",
-		"done":"Gata",
-		"close":"Închide"
-	},
-	"editSkin":{
-		"short":"Editare",
-		"title":"Editaţi informaţiile skinului"
-	},
-	"restoreDatabase":{
-		"title":"Uh oh...",
-		"message":"Nu am reușit să accesăm fișierul cu skinurile tale, pentru un motiv oarecare. Din fericire, există o copie de rezervă la %s. doriţi să-l restabiliți?",
-		"no":"Nu, mulţumesc.",
-		"yes":"Hai s-o facem!"
-	}
+  "main":{
+    "skinList":"Lista skinurilor",
+    "addSkin":"Adauga un skin",
+    "editSettings":"Editați Setarile",
+    "skinDetails":{
+      "title":"Detaliile Skinurilor",
+      "description":"Descripție",
+      "creation":"Data creării",
+      "wear":"Poartă skinul",
+      "close":"Închide"
+    },
+    "noSelectedSkin":"Nici un skin selectat.",
+    "search":"Search in your skins...",
+    "tips":{
+      "wear":"Protip: To wear a skin, tap and hold its icon!"
+    },
+    "skinDelete":{
+      "title":"Confirma stergerea",
+      "message":"Chiar vrei sa stergi \"%s\"?",
+      "cancel":"Nuuuuuuu!",
+      "okay":"Desigur!"
+    },
+    "progressBar":{
+      "login":"În proces de autentificare...",
+      "upload":"Încărcare skin...",
+      "loginFail":"Autentificare eșuată",
+      "serverFail":"Could not reach",
+      "uploadFail":"Încărcare eșuată",
+      "challengeFail":"Provocarea a esuat",
+      "success":"Încărcare completă!"
+    },
+    "skinUpload":{
+      "confirm":{
+        "title":"Schimbați skinul?",
+        "message":"Chiar vrei sa îți schimbi skinul cu \"%s\"?",
+        "cancel":"Nu",
+        "okay":"Da"
+      },
+      "error":{
+        "title":"Eroare la încărcare",
+        "login":"Nu am putut să te autentificam pe minecraft.net. Te rugăm să verifici numele și parola în setări.",
+        "server":"Nu am putut să stabilim legătura cu minecraft.net. Site-ul ar putea fi la pământ. Verifică http:\/\/help.mojang.com și încearcă mai târziu.",
+        "upload":"Nu a putut încărca skinul de minecraft.net. Vă rugăm să încercați din nou mai târziu.",
+        "challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
+      }
+    }
+  },
+  "settings":{
+    "title":"Setări",
+    "username":"Nume de utilizator",
+    "password":"Parola",
+    "header":"Datele de autentificare de pe minecraft.net",
+    "footer":{
+      "migratedAccount":"În cazul în care contul dvs. a fost migrat la un cont Mojang, va trebui să utilizați adresa dvs. de e-mail în loc de numele dvs. de utilizator de Minecraft.",
+      "privacy":"Notă: Noi NU vom stoca NICIODATĂ informațiile dvs. de autentificare in scopuri proprii. Acestea sunt stocate in telefon."
+    }
+  },
+  "addProcess":{
+    "skinInfo":{
+      "title":"Informația skinului",
+      "shortTitle":"Informația skinului",
+      "name":"Numele skinului",
+      "nameHint":"Skinul meu grozav",
+      "description":"Descripție",
+      "method":{
+        "title":"Adaugă un skin...",
+        "search":"By searching the Web",
+        "pseudo":"De la un utilizator existent",
+        "url":"De pe un site, codul URL",
+        "cancel":"Revocare"
+      }
+    },
+    "urlSelect":{
+      "urlTitle":"Lipiţi sau tastaţi URL-ul skinului  aici (trebuie să fie un fişier PNG):",
+      "pseudoTitle":"Introduceţi numele de utilizator Minecraft aici (caz-senzitiv):",
+      "invalidUrl":"Acest URL nu este valid (TREBUIE să fie un fişier PNG)."
+    },
+    "search":{
+      "select":"Select this skin",
+      "searchHint":"Search on MC Network...",
+      "indicator":{
+        "searchResults":"Search Results for: %s",
+        "noResults":"No results for: %s",
+        "random":"Random Skins"
+      },
+      "error":{
+        "network":"Couldn't load your search results. Check your connexion, and retry later."
+      }
+    },
+    "process":{
+      "title":"Procesare...",
+      "progress":{
+        "initial":"Reticulating Splines...",
+        "skin":"Descărcare skin...",
+        "preview":"Descărcare vizualizarea skinului...",
+        "database":"Înregistrarea skinului în baza de date...",
+        "success":"Skinul a fost adăugat cu succes! :)",
+        "fail":"Eșec :("
+      },
+      "error":{
+        "skin":"Eroare la descărcarea skinului. Se abandonează.",
+        "preview":{
+          "title":"Eroare de reţea",
+          "message":"Eroare la descărcarea vizualizării. Nu vei putea sa vezi skinul acesta. Continui oricum?",
+          "cancel":"Revocare",
+          "ok":"Continuă"
+        }
+      },
+      "challenge":{
+        "title":"Confirmarea identitatii",
+        "help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+        "cancel":"Revocare",
+        "continue":"Continuă",
+        "hint":"Raspuns"
+      }
+    },
+    "next":"Următorul"
+  },
+  "credits":{
+    "title":"Credite",
+    "developer":"Dezvoltator:",
+    "platform":"Platforma:",
+    "translators":"Traducători:",
+    "thanks":"Mulţumiri speciale pentru:",
+    "modules":"Module:"
+  },
+  "buttons":{
+    "edit":"Editare",
+    "done":"Gata",
+    "close":"Închide"
+  },
+  "editSkin":{
+    "short":"Editare",
+    "title":"Editaţi informaţiile skinului"
+  },
+  "restoreDatabase":{
+    "title":"Uh oh...",
+    "message":"Nu am reușit să accesăm fișierul cu skinurile tale, pentru un motiv oarecare. Din fericire, există o copie de rezervă la %s. doriţi să-l restabiliți?",
+    "no":"Nu, mulţumesc.",
+    "yes":"Hai s-o facem!"
+  }
 }

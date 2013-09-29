@@ -1,142 +1,143 @@
 {
-	"main":{
-		"skinList":"Lijst met skins",
-		"addSkin":"Voeg een skin toe",
-		"editSettings":"Instellingen bewerken",
-		"skinDetails":{
-			"title":"Skin Details",
-			"description":"Beschrijving",
-			"creation":"Aanmaak Datum",
-			"wear":"Draag deze skin",
-			"close":"Sluit"
-		},
-		"noSelectedSkin":"Geen skin geselecteerd.",
-		"search":"Zoek tussen je skins...",
-		"tips":{
-			"wear":"Supertip: Om een skin te dragen, tik en houd het pictogram vast!"
-		},
-		"skinDelete":{
-			"title":"Bevestig verwijdering",
-			"message":"Weet je zeker dat je \"%s\" wilt verwijderen?",
-			"cancel":"Neeeeeeeee!",
-			"okay":"Zeker!"
-		},
-		"progressBar":{
-			"login":"Aanmelden...",
-			"upload":"Skin aan het uploaden...",
-			"loginFail":"Aanmelden mislukt",
-			"uploadFail":"Uploaden mislukt",
-			"challengeFail":"Opdracht mislukt",
-			"success":"Upload voltooid!"
-		},
-		"skinUpload":{
-			"confirm":{
-				"title":"Vervang skin?",
-				"message":"Wilt u echt uw skin veranderen in \"%s\"?",
-				"cancel":"Nee",
-				"okay":"Ja"
-			},
-			"error":{
-				"title":"Upload fout",
-				"login":"Kan niet inloggen op minecraft.net. Controleer uw gebruikersnaam en wachtwoord in de instellingen.",
-				"server":"Kan Minecraft.net niet bereiken. De site kan eruit liggen. Controleer http:\/\/help.mojang.com en probeer later opnieuw.",
-				"upload":"Kan de skin niet uploaden naar minecraft.net. Probeer later opnieuw.",
-				"challenge":"Je moet antwoord geven op de beveiliging's vraag om toegang te krijgen tot je account vanaf dit apparaat.\nJammer genoeg kon het niet geladen worden. Check je internet verbinding en probeer het later opnieuw."
-			}
-		}
-	},
-	"settings":{
-		"title":"Instellingen",
-		"username":"Gebruikersnaam",
-		"password":"Wachtwoord",
-		"header":"Minecraft.net Inloggegevens",
-		"footer":{
-			"migratedAccount":"Als uw account is gemigreerd naar een Mojang account, moet u uw e-mailadres gebruiken in plaats van de gebruikersnaam van uw Minecraft.",
-			"privacy":"Opmerking: We zullen nooit uw informatie voor iets anders gebruiken dan Minecraft skins veranderen. Uw accountinformatie wordt veilig opgeslagen in de iOS keychain."
-		}
-	},
-	"addProcess":{
-		"skinInfo":{
-			"title":"Skin informatie",
-			"shortTitle":"Skin informatie",
-			"name":"Skin naam",
-			"nameHint":"Mijn vette skin",
-			"description":"Omschrijving",
-			"method":{
-				"title":"Voeg de skin toe...",
-				"search":"Door op het web te zoeken",
-				"pseudo":"Van een bestaande gebruiker",
-				"url":"Vanaf een URL",
-				"cancel":"Annuleren"
-			}
-		},
-		"urlSelect":{
-			"urlTitle":"Plak op type hier de URL van de skin (moet een PNG-bstand zijn):",
-			"pseudoTitle":"Typ de gebruikersnaam van Minecraft hier (hoofdlettergevoelig):",
-			"invalidUrl":"Deze URL is ongeldig (moet een PNG-bestand zijn)."
-		},
-		"search":{
-			"select":"Selecteer deze skin",
-			"searchHint":"Zoek op MC Network...",
-			"indicator":{
-				"searchResults":"Zoek resultaten voor: %s",
-				"noResults":"Geen resultaten voor %s",
-				"random":"Willekeurige skins"
-			},
-			"error":{
-				"network":"Je zoekresultaten konden niet worden geladen. Check je connectie, en probeer het later nog een keer."
-			}
-		},
-		"process":{
-			"title":"Wordt verwerkt...",
-			"progress":{
-				"initial":"Reticulating Splines...",
-				"skin":"Skin aan het downloaden...",
-				"preview":"Voorbeeld van Downloading skin...",
-				"database":"Registreren van skin naar databank...",
-				"success":"de skin is toegevoegd met succes! :)",
-				"fail":"Mislukt :("
-			},
-			"error":{
-				"skin":"Fout tijdens het downloaden van de skin. Afbreken.",
-				"preview":{
-					"title":"Netwerk Fout",
-					"message":"Fout tijdens het downloaden van het voorbeeld. Er zal geen voorbeeld zijn voor deze skin. Toch doorgaan?",
-					"cancel":"Annuleren",
-					"ok":"verder gaan"
-				}
-			},
-			"challenge":{
-				"title":"Bevestig je identiteit",
-				"help":"Je moet deze vraag beantwoorden omdat je toegang probeert te krijgen tot je Mojang account via een andere locatie.\n\nAls je het antwoord bent vergeten, Kan je proberen om een andere vraag te beantwoorden door dit venster te sluiten en opnieuw te proberen (Het is willekeurig)\n\nAls je het nog steeds niet weet, Bezoek help.mojang.com voor instructies om je vragen te resetten.",
-				"cancel":"Annuleren",
-				"continue":"verder gaan",
-				"hint":"Antwoord"
-			}
-		},
-		"next":"Volgende"
-	},
-	"credits":{
-		"title":"Credits",
-		"developer":"Ontwikkelaar:",
-		"platform":"Platform:",
-		"translators":"Vertalers:",
-		"thanks":"Speciale dank aan:",
-		"modules":"Modules:"
-	},
-	"buttons":{
-		"edit":"Bewerken",
-		"done":"Klaar",
-		"close":"Sluiten"
-	},
-	"editSkin":{
-		"short":"Bewerken",
-		"title":"Skin informatie bewerken"
-	},
-	"restoreDatabase":{
-		"title":"Uh oh...",
-		"message":"We konden om één of andere reden uw bestand met skins niet openen. Gelukkig is er een backup van %s. Wilt u het herstellen?",
-		"no":"Nee dank je.",
-		"yes":"Laten we dit doen!"
-	}
+  "main":{
+    "skinList":"Lijst met skins",
+    "addSkin":"Voeg een skin toe",
+    "editSettings":"Instellingen bewerken",
+    "skinDetails":{
+      "title":"Skin Details",
+      "description":"Beschrijving",
+      "creation":"Aanmaak Datum",
+      "wear":"Draag deze skin",
+      "close":"Sluit"
+    },
+    "noSelectedSkin":"Geen skin geselecteerd.",
+    "search":"Zoek tussen je skins...",
+    "tips":{
+      "wear":"Supertip: Om een skin te dragen, tik en houd het pictogram vast!"
+    },
+    "skinDelete":{
+      "title":"Bevestig verwijdering",
+      "message":"Weet je zeker dat je \"%s\" wilt verwijderen?",
+      "cancel":"Neeeeeeeee!",
+      "okay":"Zeker!"
+    },
+    "progressBar":{
+      "login":"Aanmelden...",
+      "upload":"Skin aan het uploaden...",
+      "loginFail":"Aanmelden mislukt",
+      "serverFail":"Could not reach",
+      "uploadFail":"Uploaden mislukt",
+      "challengeFail":"Opdracht mislukt",
+      "success":"Upload voltooid!"
+    },
+    "skinUpload":{
+      "confirm":{
+        "title":"Vervang skin?",
+        "message":"Wilt u echt uw skin veranderen in \"%s\"?",
+        "cancel":"Nee",
+        "okay":"Ja"
+      },
+      "error":{
+        "title":"Upload fout",
+        "login":"Kan niet inloggen op minecraft.net. Controleer uw gebruikersnaam en wachtwoord in de instellingen.",
+        "server":"Kan Minecraft.net niet bereiken. De site kan eruit liggen. Controleer http:\/\/help.mojang.com en probeer later opnieuw.",
+        "upload":"Kan de skin niet uploaden naar minecraft.net. Probeer later opnieuw.",
+        "challenge":"Je moet antwoord geven op de beveiliging's vraag om toegang te krijgen tot je account vanaf dit apparaat.\nJammer genoeg kon het niet geladen worden. Check je internet verbinding en probeer het later opnieuw."
+      }
+    }
+  },
+  "settings":{
+    "title":"Instellingen",
+    "username":"Gebruikersnaam",
+    "password":"Wachtwoord",
+    "header":"Minecraft.net Inloggegevens",
+    "footer":{
+      "migratedAccount":"Als uw account is gemigreerd naar een Mojang account, moet u uw e-mailadres gebruiken in plaats van de gebruikersnaam van uw Minecraft.",
+      "privacy":"Opmerking: We zullen nooit uw informatie voor iets anders gebruiken dan Minecraft skins veranderen. Uw accountinformatie wordt veilig opgeslagen in de iOS keychain."
+    }
+  },
+  "addProcess":{
+    "skinInfo":{
+      "title":"Skin informatie",
+      "shortTitle":"Skin informatie",
+      "name":"Skin naam",
+      "nameHint":"Mijn vette skin",
+      "description":"Omschrijving",
+      "method":{
+        "title":"Voeg de skin toe...",
+        "search":"Door op het web te zoeken",
+        "pseudo":"Van een bestaande gebruiker",
+        "url":"Vanaf een URL",
+        "cancel":"Annuleren"
+      }
+    },
+    "urlSelect":{
+      "urlTitle":"Plak op type hier de URL van de skin (moet een PNG-bstand zijn):",
+      "pseudoTitle":"Typ de gebruikersnaam van Minecraft hier (hoofdlettergevoelig):",
+      "invalidUrl":"Deze URL is ongeldig (moet een PNG-bestand zijn)."
+    },
+    "search":{
+      "select":"Selecteer deze skin",
+      "searchHint":"Zoek op MC Network...",
+      "indicator":{
+        "searchResults":"Zoek resultaten voor: %s",
+        "noResults":"Geen resultaten voor %s",
+        "random":"Willekeurige skins"
+      },
+      "error":{
+        "network":"Je zoekresultaten konden niet worden geladen. Check je connectie, en probeer het later nog een keer."
+      }
+    },
+    "process":{
+      "title":"Wordt verwerkt...",
+      "progress":{
+        "initial":"Reticulating Splines...",
+        "skin":"Skin aan het downloaden...",
+        "preview":"Voorbeeld van Downloading skin...",
+        "database":"Registreren van skin naar databank...",
+        "success":"de skin is toegevoegd met succes! :)",
+        "fail":"Mislukt :("
+      },
+      "error":{
+        "skin":"Fout tijdens het downloaden van de skin. Afbreken.",
+        "preview":{
+          "title":"Netwerk Fout",
+          "message":"Fout tijdens het downloaden van het voorbeeld. Er zal geen voorbeeld zijn voor deze skin. Toch doorgaan?",
+          "cancel":"Annuleren",
+          "ok":"verder gaan"
+        }
+      },
+      "challenge":{
+        "title":"Bevestig je identiteit",
+        "help":"Je moet deze vraag beantwoorden omdat je toegang probeert te krijgen tot je Mojang account via een andere locatie.\n\nAls je het antwoord bent vergeten, Kan je proberen om een andere vraag te beantwoorden door dit venster te sluiten en opnieuw te proberen (Het is willekeurig)\n\nAls je het nog steeds niet weet, Bezoek help.mojang.com voor instructies om je vragen te resetten.",
+        "cancel":"Annuleren",
+        "continue":"verder gaan",
+        "hint":"Antwoord"
+      }
+    },
+    "next":"Volgende"
+  },
+  "credits":{
+    "title":"Credits",
+    "developer":"Ontwikkelaar:",
+    "platform":"Platform:",
+    "translators":"Vertalers:",
+    "thanks":"Speciale dank aan:",
+    "modules":"Modules:"
+  },
+  "buttons":{
+    "edit":"Bewerken",
+    "done":"Klaar",
+    "close":"Sluiten"
+  },
+  "editSkin":{
+    "short":"Bewerken",
+    "title":"Skin informatie bewerken"
+  },
+  "restoreDatabase":{
+    "title":"Uh oh...",
+    "message":"We konden om één of andere reden uw bestand met skins niet openen. Gelukkig is er een backup van %s. Wilt u het herstellen?",
+    "no":"Nee dank je.",
+    "yes":"Laten we dit doen!"
+  }
 }

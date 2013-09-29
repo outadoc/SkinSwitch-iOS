@@ -1,142 +1,143 @@
 {
-	"main":{
-		"skinList":"Liste des skins",
-		"addSkin":"Ajouter un skin",
-		"editSettings":"Modifier les réglages",
-		"skinDetails":{
-			"title":"Détails du skin",
-			"description":"Description",
-			"creation":"Date de création",
-			"wear":"Porter ce skin",
-			"close":"Fermer"
-		},
-		"noSelectedSkin":"Aucun skin sélectionné.",
-		"search":"Cherche dans tes skins...",
-		"tips":{
-			"wear":"Protip : Pour porter un skin, touchez et maintenez son icône !"
-		},
-		"skinDelete":{
-			"title":"Confirmer la suppression",
-			"message":"Voulez-vous vraiment supprimer \"%s\" ?",
-			"cancel":"Noooooon !",
-			"okay":"Bien sûr !"
-		},
-		"progressBar":{
-			"login":"Connexion...",
-			"upload":"Envoi du skin...",
-			"loginFail":"Échec de connexion",
-			"uploadFail":"Échec de l'envoi",
-			"challengeFail":"Échec identité",
-			"success":"Envoi terminé !"
-		},
-		"skinUpload":{
-			"confirm":{
-				"title":"Remplacer votre skin ?",
-				"message":"Voulez-vous vraiment remplacer votre skin par \"%s\" ?",
-				"cancel":"Non",
-				"okay":"Oui"
-			},
-			"error":{
-				"title":"Erreur d'envoi",
-				"login":"Échec lors de la connexion à minecraft.net. Vérifiez votre nom d'utilisateur et votre mot de passe dans les préférences.",
-				"server":"Impossible de contacter minecraft.net. Le site est peut-être temporairement indisponible. Vérifiez sur http:\/\/help.mojang.com et réessayez plus tard.",
-				"upload":"Échec lors de l'envoi du skin. Merci de réessayer plus tard.",
-				"challenge":"Vous devez répondre à une question de sécurité pour accéder à votre compte depuis cet appareil.\nMalheureusement, nous n'avons pas pu la charger. Vérifiez votre connexion et réessayez plus tard."
-			}
-		}
-	},
-	"settings":{
-		"title":"Préférences",
-		"username":"Utilisateur",
-		"password":"Mot de passe",
-		"header":"Identifiants minecraft.net",
-		"footer":{
-			"migratedAccount":"Si votre compte a été migré vers un compte Mojang, vous devez utiliser votre adresse email au lieu de votre pseudo Minecraft.",
-			"privacy":"Note: nous ne stockerons ou n'utiliserons AUCUNE de vos informations pour autre-chose que changer votre skin Minecraft. Les informations de votre compte sont stockées de façon sécurisée dans le trousseau d'iOS."
-		}
-	},
-	"addProcess":{
-		"skinInfo":{
-			"title":"Informations",
-			"shortTitle":"Info skin",
-			"name":"Nom du skin",
-			"nameHint":"Mon super skin",
-			"description":"Description",
-			"method":{
-				"title":"Ajouter le skin...",
-				"search":"En cherchant sur le web",
-				"pseudo":"Depuis un joueur existant",
-				"url":"Depuis une URL",
-				"cancel":"Annuler"
-			}
-		},
-		"urlSelect":{
-			"urlTitle":"Collez ou tapez l'URL du skin (doit être en PNG) :",
-			"pseudoTitle":"Tapez le pseudo Minecraft (sensible à la casse) :",
-			"invalidUrl":"Cette URL est invalide (DOIT être un fichier PNG)."
-		},
-		"search":{
-			"select":"Sélectionner ce skin",
-			"searchHint":"Chercher sur MC Network...",
-			"indicator":{
-				"searchResults":"Résultats pour : %s",
-				"noResults":"Pas de résultats pour : %s",
-				"random":"Skins aléatoires"
-			},
-			"error":{
-				"network":"Impossible de charger les résultats de votre recherche. Vérifiez votre connexion, et réessayez plus tard."
-			}
-		},
-		"process":{
-			"title":"Chargement...",
-			"progress":{
-				"initial":"Reticulating Splines...",
-				"skin":"Téléchargement du skin...",
-				"preview":"Téléchargement des aperçus...",
-				"database":"Ajout dans la base de données...",
-				"success":"Ajouté avec succès ! :)",
-				"fail":"Raté :("
-			},
-			"error":{
-				"skin":"Erreur lors du téléchargement du skin. Abandon.",
-				"preview":{
-					"title":"Erreur réseau",
-					"message":"Erreur lors du téléchargement de l'aperçu. Il n'y aura pas d'aperçu pour ce skin. Continuer quand même ?",
-					"cancel":"Annuler",
-					"ok":"Continuer"
-				}
-			},
-			"challenge":{
-				"title":"Confirmation d'identité",
-				"help":"Vous devez répondre à cette question car vous essayez d'accéder à votre compte Mojang depuis un lieu différent.\n\nSi vous avez oublié la réponse, vous pouvez essayer de répondre à une autre question en fermant cette fenêtre et en réessayant (c'est aléatoire).\n\nSi vous ne vous souvenez vraiment pas de la réponse, merci de visiter help.mojang.com pour des instructions sur la remise à zéro de vos questions.",
-				"cancel":"Annuler",
-				"continue":"Continuer",
-				"hint":"Réponse"
-			}
-		},
-		"next":"Suivant"
-	},
-	"credits":{
-		"title":"Crédits",
-		"developer":"Développeur :",
-		"platform":"Plateforme :",
-		"translators":"Traducteurs :",
-		"thanks":"Remerciements à :",
-		"modules":"Modules :"
-	},
-	"buttons":{
-		"edit":"Modifier",
-		"done":"Terminé",
-		"close":"Fermer"
-	},
-	"editSkin":{
-		"short":"Modifier",
-		"title":"Modifier les infos..."
-	},
-	"restoreDatabase":{
-		"title":"Erf...",
-		"message":"Nous n'avons pas réussi à ouvrir le fichier qui contient vos skins (%s).\nHeureusement, il existe une sauvegarde datant du %s.\nSouhaitez-vous la restaurer ?",
-		"no":"Non merci.",
-		"yes":"Allez hop !"
-	}
+  "main":{
+    "skinList":"Liste des skins",
+    "addSkin":"Ajouter un skin",
+    "editSettings":"Modifier les réglages",
+    "skinDetails":{
+      "title":"Détails du skin",
+      "description":"Description",
+      "creation":"Date de création",
+      "wear":"Porter ce skin",
+      "close":"Fermer"
+    },
+    "noSelectedSkin":"Aucun skin sélectionné.",
+    "search":"Cherche dans tes skins...",
+    "tips":{
+      "wear":"Protip : Pour porter un skin, touchez et maintenez son icône !"
+    },
+    "skinDelete":{
+      "title":"Confirmer la suppression",
+      "message":"Voulez-vous vraiment supprimer \"%s\" ?",
+      "cancel":"Noooooon !",
+      "okay":"Bien sûr !"
+    },
+    "progressBar":{
+      "login":"Connexion...",
+      "upload":"Envoi du skin...",
+      "loginFail":"Échec de connexion",
+      "serverFail":"Connexion impossible",
+      "uploadFail":"Échec de l'envoi",
+      "challengeFail":"Échec identité",
+      "success":"Envoi terminé !"
+    },
+    "skinUpload":{
+      "confirm":{
+        "title":"Remplacer votre skin ?",
+        "message":"Voulez-vous vraiment remplacer votre skin par \"%s\" ?",
+        "cancel":"Non",
+        "okay":"Oui"
+      },
+      "error":{
+        "title":"Erreur d'envoi",
+        "login":"Échec lors de la connexion à minecraft.net. Vérifiez votre nom d'utilisateur et votre mot de passe dans les préférences.",
+        "server":"Impossible de contacter minecraft.net. Le site est peut-être temporairement indisponible. Vérifiez sur http:\/\/help.mojang.com et réessayez plus tard.",
+        "upload":"Échec lors de l'envoi du skin. Merci de réessayer plus tard.",
+        "challenge":"Vous devez répondre à une question de sécurité pour accéder à votre compte depuis cet appareil.\nMalheureusement, nous n'avons pas pu la charger. Vérifiez votre connexion et réessayez plus tard."
+      }
+    }
+  },
+  "settings":{
+    "title":"Préférences",
+    "username":"Utilisateur",
+    "password":"Mot de passe",
+    "header":"Identifiants minecraft.net",
+    "footer":{
+      "migratedAccount":"Si votre compte a été migré vers un compte Mojang, vous devez utiliser votre adresse email au lieu de votre pseudo Minecraft.",
+      "privacy":"Note: nous ne stockerons ou n'utiliserons AUCUNE de vos informations pour autre-chose que changer votre skin Minecraft. Les informations de votre compte sont stockées de façon sécurisée dans le trousseau d'iOS."
+    }
+  },
+  "addProcess":{
+    "skinInfo":{
+      "title":"Informations",
+      "shortTitle":"Info skin",
+      "name":"Nom du skin",
+      "nameHint":"Mon super skin",
+      "description":"Description",
+      "method":{
+        "title":"Ajouter le skin...",
+        "search":"En cherchant sur le web",
+        "pseudo":"Depuis un joueur existant",
+        "url":"Depuis une URL",
+        "cancel":"Annuler"
+      }
+    },
+    "urlSelect":{
+      "urlTitle":"Collez ou tapez l'URL du skin (doit être en PNG) :",
+      "pseudoTitle":"Tapez le pseudo Minecraft (sensible à la casse) :",
+      "invalidUrl":"Cette URL est invalide (DOIT être un fichier PNG)."
+    },
+    "search":{
+      "select":"Sélectionner ce skin",
+      "searchHint":"Chercher sur MC Network...",
+      "indicator":{
+        "searchResults":"Résultats pour : %s",
+        "noResults":"Pas de résultats pour : %s",
+        "random":"Skins aléatoires"
+      },
+      "error":{
+        "network":"Impossible de charger les résultats de votre recherche. Vérifiez votre connexion, et réessayez plus tard."
+      }
+    },
+    "process":{
+      "title":"Chargement...",
+      "progress":{
+        "initial":"Reticulating Splines...",
+        "skin":"Téléchargement du skin...",
+        "preview":"Téléchargement des aperçus...",
+        "database":"Ajout dans la base de données...",
+        "success":"Ajouté avec succès ! :)",
+        "fail":"Raté :("
+      },
+      "error":{
+        "skin":"Erreur lors du téléchargement du skin. Abandon.",
+        "preview":{
+          "title":"Erreur réseau",
+          "message":"Erreur lors du téléchargement de l'aperçu. Il n'y aura pas d'aperçu pour ce skin. Continuer quand même ?",
+          "cancel":"Annuler",
+          "ok":"Continuer"
+        }
+      },
+      "challenge":{
+        "title":"Confirmation d'identité",
+        "help":"Vous devez répondre à cette question car vous essayez d'accéder à votre compte Mojang depuis un lieu différent.\n\nSi vous avez oublié la réponse, vous pouvez essayer de répondre à une autre question en fermant cette fenêtre et en réessayant (c'est aléatoire).\n\nSi vous ne vous souvenez vraiment pas de la réponse, merci de visiter help.mojang.com pour des instructions sur la remise à zéro de vos questions.",
+        "cancel":"Annuler",
+        "continue":"Continuer",
+        "hint":"Réponse"
+      }
+    },
+    "next":"Suivant"
+  },
+  "credits":{
+    "title":"Crédits",
+    "developer":"Développeur :",
+    "platform":"Plateforme :",
+    "translators":"Traducteurs :",
+    "thanks":"Remerciements à :",
+    "modules":"Modules :"
+  },
+  "buttons":{
+    "edit":"Modifier",
+    "done":"Terminé",
+    "close":"Fermer"
+  },
+  "editSkin":{
+    "short":"Modifier",
+    "title":"Modifier les infos..."
+  },
+  "restoreDatabase":{
+    "title":"Erf...",
+    "message":"Nous n'avons pas réussi à ouvrir le fichier qui contient vos skins (%s).\nHeureusement, il existe une sauvegarde datant du %s.\nSouhaitez-vous la restaurer ?",
+    "no":"Non merci.",
+    "yes":"Allez hop !"
+  }
 }

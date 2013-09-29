@@ -1,142 +1,143 @@
 {
-	"main":{
-		"skinList":"Skinliste",
-		"addSkin":"Legg til et skin",
-		"editSettings":"Rediger Innstillinger",
-		"skinDetails":{
-			"title":"Skin detaljer",
-			"description":"Beskrivelse",
-			"creation":"Opprettelsesdato",
-			"wear":"Bruk dette skinet",
-			"close":"Lukk"
-		},
-		"noSelectedSkin":"Ingen skin er valgt.",
-		"search":"Search in your skins...",
-		"tips":{
-			"wear":"Tips: får å ta på deg skinnet, trykk og hold på ikonet!"
-		},
-		"skinDelete":{
-			"title":"Bekreft sletting",
-			"message":"Vil du virkelig slette \"%s\"?",
-			"cancel":"Neeeeeei!",
-			"okay":"Sikkert!"
-		},
-		"progressBar":{
-			"login":"Logger på...",
-			"upload":"Laster opp skinet...",
-			"loginFail":"Påloggingen mislyktes",
-			"uploadFail":"Opplastingen mislyktes",
-			"challengeFail":"Oppdrag feilet",
-			"success":"Opplasting fullført!"
-		},
-		"skinUpload":{
-			"confirm":{
-				"title":"Erstatte skin?",
-				"message":"Vil du erstatte skinet ditt med \"%s\"?",
-				"cancel":"Nei",
-				"okay":"Ja"
-			},
-			"error":{
-				"title":"Feil ved opplastingen",
-				"login":"Kunne ikke logge på minecraft.net. Kontroller ditt brukernavn og passord i innstillingene.",
-				"server":"Kunne ikke nå minecraft.net. Nettstedet kan være nede. Sjekk http:\/\/help.mojang.com og prøv på nytt senere.",
-				"upload":"Kunne ikke laste opp skinet til minecraft.net. Prøv igjen senere.",
-				"challenge":"Du er påbudt å svare på er sikkerhet spørsmål får å få tilgang til din konto fra denne enheten.\nBeklagelig vis kunne vi ikke laste det inn. Vennligst se på din tilgang å prøv en gang til senere."
-			}
-		}
-	},
-	"settings":{
-		"title":"Innstillinger",
-		"username":"Brukernavn",
-		"password":"Passord",
-		"header":"Minecraft.net Innlogging Legitimasjon",
-		"footer":{
-			"migratedAccount":"Hvis kontoen din har blitt overført til en Mojang konto, må du bruke e-postadressen din i stedet for Minecraft-brukernavnet.",
-			"privacy":"Merk: vi vil ALDRI lagre eller bruke noen av din informasjon til noe annet enn å bytte ditt Minecraft skin. Din Kontoinformasjon er sikkert lagret på iOS keychain."
-		}
-	},
-	"addProcess":{
-		"skinInfo":{
-			"title":"Skin Informasjon",
-			"shortTitle":"Skin Info",
-			"name":"Skin navn",
-			"nameHint":"Mitt tøffe skin",
-			"description":"Beskrivelse",
-			"method":{
-				"title":"Legg til skinet...",
-				"search":"Ved å søke på Internett",
-				"pseudo":"Fra en eksisterende bruker",
-				"url":"Fra en URL-adresse",
-				"cancel":"Avbryt"
-			}
-		},
-		"urlSelect":{
-			"urlTitle":"Lim inn eller skriv inn skin URL-adressen her (må være en PNG-fil):",
-			"pseudoTitle":"Skriv inn Minecraft-brukernavnet her (skiller mellom små og store bokstaver):",
-			"invalidUrl":"Denne URL-adressen er ugyldig (MÅ være en PNG-fil)."
-		},
-		"search":{
-			"select":"Velg dette skinnet",
-			"searchHint":"Søk på MC nettverk...",
-			"indicator":{
-				"searchResults":"Resultater av søket: %s",
-				"noResults":"Ingen resultat for: %s",
-				"random":"Random skins"
-			},
-			"error":{
-				"network":"Kunne ikke laste søke resultatene. Sjekk tilkoblingen, og prøv igjen senere."
-			}
-		},
-		"process":{
-			"title":"Behandler...",
-			"progress":{
-				"initial":"Reticulating Splines...",
-				"skin":"Laster ned skinet...",
-				"preview":"Laster ned forhåndsvisning av skinet...",
-				"database":"Registrerer skinet til databasen...",
-				"success":"La til skinet! :)",
-				"fail":"Mislykkes :("
-			},
-			"error":{
-				"skin":"Feil under nedlasting av skinet. Avbryter.",
-				"preview":{
-					"title":"Nettverksfeil",
-					"message":"Feil under nedlasting av forhåndsvisningen. Det blir ingen forhåndsvisning for dette skinet. Fortsette likevel?",
-					"cancel":"Avbryt",
-					"ok":"Fortsett"
-				}
-			},
-			"challenge":{
-				"title":"Identitet bekreftelse",
-				"help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
-				"cancel":"Avbryt",
-				"continue":"Fortsett",
-				"hint":"Svar"
-			}
-		},
-		"next":"Neste"
-	},
-	"credits":{
-		"title":"Om",
-		"developer":"Utvikler:",
-		"platform":"Plattform:",
-		"translators":"Oversettere:",
-		"thanks":"Spesiell takk til:",
-		"modules":"Moduler:"
-	},
-	"buttons":{
-		"edit":"Rediger",
-		"done":"Ferdig",
-		"close":"Lukk"
-	},
-	"editSkin":{
-		"short":"Rediger",
-		"title":"Rediger skin Info"
-	},
-	"restoreDatabase":{
-		"title":"Uh oh...",
-		"message":"Vi kunne ikke åpne filen som inneholder dine skins, av en eller annen grunn. Heldigvis er det en sikkerhetskopi fra %s. Vil du gjenopprette den?",
-		"no":"Nei takk.",
-		"yes":"La oss gjøre dette!"
-	}
+  "main":{
+    "skinList":"Skinliste",
+    "addSkin":"Legg til et skin",
+    "editSettings":"Rediger Innstillinger",
+    "skinDetails":{
+      "title":"Skin detaljer",
+      "description":"Beskrivelse",
+      "creation":"Opprettelsesdato",
+      "wear":"Bruk dette skinet",
+      "close":"Lukk"
+    },
+    "noSelectedSkin":"Ingen skin er valgt.",
+    "search":"Search in your skins...",
+    "tips":{
+      "wear":"Tips: får å ta på deg skinnet, trykk og hold på ikonet!"
+    },
+    "skinDelete":{
+      "title":"Bekreft sletting",
+      "message":"Vil du virkelig slette \"%s\"?",
+      "cancel":"Neeeeeei!",
+      "okay":"Sikkert!"
+    },
+    "progressBar":{
+      "login":"Logger på...",
+      "upload":"Laster opp skinet...",
+      "loginFail":"Påloggingen mislyktes",
+      "serverFail":"Could not reach",
+      "uploadFail":"Opplastingen mislyktes",
+      "challengeFail":"Oppdrag feilet",
+      "success":"Opplasting fullført!"
+    },
+    "skinUpload":{
+      "confirm":{
+        "title":"Erstatte skin?",
+        "message":"Vil du erstatte skinet ditt med \"%s\"?",
+        "cancel":"Nei",
+        "okay":"Ja"
+      },
+      "error":{
+        "title":"Feil ved opplastingen",
+        "login":"Kunne ikke logge på minecraft.net. Kontroller ditt brukernavn og passord i innstillingene.",
+        "server":"Kunne ikke nå minecraft.net. Nettstedet kan være nede. Sjekk http:\/\/help.mojang.com og prøv på nytt senere.",
+        "upload":"Kunne ikke laste opp skinet til minecraft.net. Prøv igjen senere.",
+        "challenge":"Du er påbudt å svare på er sikkerhet spørsmål får å få tilgang til din konto fra denne enheten.\nBeklagelig vis kunne vi ikke laste det inn. Vennligst se på din tilgang å prøv en gang til senere."
+      }
+    }
+  },
+  "settings":{
+    "title":"Innstillinger",
+    "username":"Brukernavn",
+    "password":"Passord",
+    "header":"Minecraft.net Innlogging Legitimasjon",
+    "footer":{
+      "migratedAccount":"Hvis kontoen din har blitt overført til en Mojang konto, må du bruke e-postadressen din i stedet for Minecraft-brukernavnet.",
+      "privacy":"Merk: vi vil ALDRI lagre eller bruke noen av din informasjon til noe annet enn å bytte ditt Minecraft skin. Din Kontoinformasjon er sikkert lagret på iOS keychain."
+    }
+  },
+  "addProcess":{
+    "skinInfo":{
+      "title":"Skin Informasjon",
+      "shortTitle":"Skin Info",
+      "name":"Skin navn",
+      "nameHint":"Mitt tøffe skin",
+      "description":"Beskrivelse",
+      "method":{
+        "title":"Legg til skinet...",
+        "search":"Ved å søke på Internett",
+        "pseudo":"Fra en eksisterende bruker",
+        "url":"Fra en URL-adresse",
+        "cancel":"Avbryt"
+      }
+    },
+    "urlSelect":{
+      "urlTitle":"Lim inn eller skriv inn skin URL-adressen her (må være en PNG-fil):",
+      "pseudoTitle":"Skriv inn Minecraft-brukernavnet her (skiller mellom små og store bokstaver):",
+      "invalidUrl":"Denne URL-adressen er ugyldig (MÅ være en PNG-fil)."
+    },
+    "search":{
+      "select":"Velg dette skinnet",
+      "searchHint":"Søk på MC nettverk...",
+      "indicator":{
+        "searchResults":"Resultater av søket: %s",
+        "noResults":"Ingen resultat for: %s",
+        "random":"Random skins"
+      },
+      "error":{
+        "network":"Kunne ikke laste søke resultatene. Sjekk tilkoblingen, og prøv igjen senere."
+      }
+    },
+    "process":{
+      "title":"Behandler...",
+      "progress":{
+        "initial":"Reticulating Splines...",
+        "skin":"Laster ned skinet...",
+        "preview":"Laster ned forhåndsvisning av skinet...",
+        "database":"Registrerer skinet til databasen...",
+        "success":"La til skinet! :)",
+        "fail":"Mislykkes :("
+      },
+      "error":{
+        "skin":"Feil under nedlasting av skinet. Avbryter.",
+        "preview":{
+          "title":"Nettverksfeil",
+          "message":"Feil under nedlasting av forhåndsvisningen. Det blir ingen forhåndsvisning for dette skinet. Fortsette likevel?",
+          "cancel":"Avbryt",
+          "ok":"Fortsett"
+        }
+      },
+      "challenge":{
+        "title":"Identitet bekreftelse",
+        "help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+        "cancel":"Avbryt",
+        "continue":"Fortsett",
+        "hint":"Svar"
+      }
+    },
+    "next":"Neste"
+  },
+  "credits":{
+    "title":"Om",
+    "developer":"Utvikler:",
+    "platform":"Plattform:",
+    "translators":"Oversettere:",
+    "thanks":"Spesiell takk til:",
+    "modules":"Moduler:"
+  },
+  "buttons":{
+    "edit":"Rediger",
+    "done":"Ferdig",
+    "close":"Lukk"
+  },
+  "editSkin":{
+    "short":"Rediger",
+    "title":"Rediger skin Info"
+  },
+  "restoreDatabase":{
+    "title":"Uh oh...",
+    "message":"Vi kunne ikke åpne filen som inneholder dine skins, av en eller annen grunn. Heldigvis er det en sikkerhetskopi fra %s. Vil du gjenopprette den?",
+    "no":"Nei takk.",
+    "yes":"La oss gjøre dette!"
+  }
 }
