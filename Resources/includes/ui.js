@@ -142,15 +142,17 @@
 		
 		imageSize = tmp.toImage();
 		tmp = null;
-				
-		var croppedHead = source.imageAsCropped({
-			x: 1/4 * imageSize.width,
-			y: 0,
-			width: 1/2 * imageSize.width,
-			height: 1/2 * imageSize.width - 1,
-		});
 		
-		return croppedHead;
+		if(source != null) {
+			var croppedHead = source.imageAsCropped({
+				x: 1/4 * imageSize.width,
+				y: 0,
+				width: 1/2 * imageSize.width,
+				height: 1/2 * imageSize.width - 1,
+			});
+			
+			return croppedHead;	
+		}
 	};
 	
 	exports.createSkinsShowcaseView = function(skins, ipad_win, searchPattern) {
