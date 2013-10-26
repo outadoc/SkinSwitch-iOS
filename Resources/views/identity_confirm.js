@@ -94,7 +94,7 @@ b_continue.addEventListener('click', function() {
 	
 	b_continue.setEnabled(false);
 	
-	xhr_answer.open('POST', 'http://minecraft.net/challenge');
+	xhr_answer.open('POST', 'https://minecraft.net/challenge');
 	xhr_answer.send({
 		answer: txtfield_answer.getValue(),
 		questionId: win.questionID

@@ -101,7 +101,7 @@
 											autoRedirect: false
 										});
 										
-										xhr_challenge.open('GET', 'http://minecraft.net/challenge');
+										xhr_challenge.open('GET', 'https://minecraft.net/challenge');
 										xhr_challenge.send(null);
 									} else {
 										//no problem, conclude
@@ -122,7 +122,7 @@
 							prog_upload.setMessage(I('main.progressBar.upload'));
 							prog_upload.setValue(30);
 
-							xhr_skin.open('POST', 'http://minecraft.net/profile/skin');
+							xhr_skin.open('POST', 'https://minecraft.net/profile/skin');
 							xhr_skin.setRequestHeader('enctype', 'multipart/form-data');
 							xhr_skin.setRequestHeader('Content-Type', 'image/png');
 
