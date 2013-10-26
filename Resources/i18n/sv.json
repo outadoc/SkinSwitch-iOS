@@ -25,7 +25,7 @@
       "login":"Loggar in...",
       "upload":"Laddar upp...",
       "loginFail":"Inloggningen misslyckades",
-      "serverFail":"Could not reach",
+      "serverFail":"Kunde inte nå",
       "uploadFail":"Uppladdningen misslyckades",
       "challengeFail":"Utmaningen misslyckades",
       "success":"Uppladningen lyckades!"

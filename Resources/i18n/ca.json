@@ -11,9 +11,9 @@
       "close":"Tanca"
     },
     "noSelectedSkin":"Cap skin seleccionada.",
-    "search":"Search in your skins...",
+    "search":"Busca sobre les teves skins...",
     "tips":{
-      "wear":"Protip: To wear a skin, tap and hold its icon!"
+      "wear":"Protip: Per vestir una skin, mantén apretat la seva icona!"
     },
     "skinDelete":{
       "title":"Confirma l'eliminació",
@@ -25,9 +25,9 @@
       "login":"Connectant-se...",
       "upload":"Penjant skin...",
       "loginFail":"L'inici de sessió ha fallat",
-      "serverFail":"Could not reach",
+      "serverFail":"No s'ha pogut connectar",
       "uploadFail":"Ha fallat la càrrega",
-      "challengeFail":"Challenge failed",
+      "challengeFail":"Repte fallat",
       "success":"Càrrega completa!"
     },
     "skinUpload":{
@@ -42,7 +42,7 @@
         "login":"No s'ha pogut connectar a minecraft.net. Si us plau comprova les teves dades d'inici de sessió i contrasenya a la configuració.",
         "server":"No s'ha pogut connectar a minecraft.net. El lloc deu estar caigut. Comprova http:\/\/help.mojang.com i prova-ho més tard.",
         "upload":"No s'ha pogut pujar la skin a minecraft.net. Si us plau prova-ho més tard.",
-        "challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
+        "challenge":"Es requereix que responguis una pregunta de seguretat per accedir al teu compte des d'aquest dispositiu.\nDesafortunadament, no hem pogut carregar-la. Si us plau, comprova la teva connexió i prova-ho més tard."
       }
     }
   },
@@ -65,7 +65,7 @@
       "description":"Descripció",
       "method":{
         "title":"Afegir la skin...",
-        "search":"By searching the Web",
+        "search":"Consultant el web",
         "pseudo":"Des d'un usuari existent",
         "url":"Des d'una URL",
         "cancel":"Cancel·la"
@@ -77,15 +77,15 @@
       "invalidUrl":"Aquesta URL no és vàlida (ha de ser un arxiu PNG)."
     },
     "search":{
-      "select":"Select this skin",
-      "searchHint":"Search on MC Network...",
+      "select":"Sel·lecciona aquesta skin",
+      "searchHint":"Cerca a la xarxa MC...",
       "indicator":{
-        "searchResults":"Search Results for: %s",
-        "noResults":"No results for: %s",
-        "random":"Random Skins"
+        "searchResults":"Resultats de cerca per: %s",
+        "noResults":"No hi han resultats per: %s",
+        "random":"Skins aleatòries"
       },
       "error":{
-        "network":"Couldn't load your search results. Check your connexion, and retry later."
+        "network":"No s'ha pogut carregar els resultats de cerca. Comprova la teva connexió i intenta-ho més tard."
       }
     },
     "process":{
@@ -108,11 +108,11 @@
         }
       },
       "challenge":{
-        "title":"Identity Confirmation",
-        "help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+        "title":"Confirmació d'identitat",
+        "help":"Cal que responguis aquesta pregunta perquè estàs intentant accedir al teu compte Mojang des d'una ubicació diferent.\n\nSI has oblidat la pregunta, pots provar contestant una altra pregunta tancant aquesta finestra i provant de nou (és aleatòri).\n\nSi realment no ho recordes, si us plau, visita help.mojang.com per a instruccions sobre restablir les teves preguntes.",
         "cancel":"Cancel·la",
         "continue":"Continuar",
-        "hint":"Answer"
+        "hint":"Resposta"
       }
     },
     "next":"Següent"
