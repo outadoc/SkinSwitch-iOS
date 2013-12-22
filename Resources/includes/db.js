@@ -168,29 +168,20 @@
 					win_next.setUrl('add_process/url_select.js');
 					win_next.from = 'url';
 				} 
-				
-				container = Ti.UI.createWindow({
-					navBarHidden: true
-				}),
-			
-				navGroup = Ti.UI.iPhone.createNavigationGroup({
+
+				navGroup = Ti.UI.iOS.createNavigationWindow({
 					window: win_next,
 					tintColor: Utils.getBarTintColor()
 				});
-			
-				container.add(navGroup);
-				
-				container.addEventListener('close', function() {
+							
+				navGroup.addEventListener('close', function() {
 					updateSkinsList();
-					
-					container = null;
 					navGroup = null;
 				});
 			
 				win_next.navGroup = navGroup;
-				win_next.container = container;
 			
-				container.open({
+				navGroup.open({
 					modal: true,
 					modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
 				});

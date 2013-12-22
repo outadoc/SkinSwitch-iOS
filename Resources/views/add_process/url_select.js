@@ -45,11 +45,7 @@ var b_close = Ti.UI.createButton({
 });
 
 b_close.addEventListener('click', function(e) {
-	if(win.container != null) {
-		win.container.close();
-	} else {
-		win.close();
-	}
+	win.navGroup.close();
 });
 
 win.setLeftNavButton(b_close);
@@ -91,12 +87,11 @@ b_next.addEventListener('click', function(e) {
 			barColor: Utils.getNavColor(),
 			translucent: false,
 			defaultSkinName: (win.from == 'username') ? txtfield_url.getValue() : undefined,
-			skinUrl: url
+			skinUrl: url,
+			navGroup: win.navGroup
 		});
 		
-		win_info.container = win.container;
-		win_info.navGroup = win.navGroup;
-		win.navGroup.open(win_info);
+		win.navGroup.openWindow(win_info);
 	} else {
 		alert(I('addProcess.urlSelect.invalidUrl'));
 	}

@@ -17,7 +17,7 @@ b_credits.addEventListener('click', function() {
 		translucent: false
 	});
 	
-	win.navGroup.open(credits_win);
+	win.navGroup.openWindow(credits_win);
 });
 
 var b_close = Ti.UI.createButton({
@@ -26,7 +26,7 @@ var b_close = Ti.UI.createButton({
 });
 
 b_close.addEventListener('click', function() {
-	win.container.close();
+	win.navGroup.close();
 });
 
 win.setRightNavButton(b_credits);

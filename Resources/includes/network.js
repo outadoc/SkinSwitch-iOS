@@ -66,28 +66,19 @@
 														translucent: false
 													}),
 													
-													container = Ti.UI.createWindow({
-														navBarHidden: true
-													}),
-													
-													navGroup = Ti.UI.iPhone.createNavigationGroup({
+													navGroup = Ti.UI.iOS.createNavigationWindow({
 														window: win_answer,
 														tintColor: Utils.getBarTintColor()
 													});
-												
-													container.add(navGroup);
-													
-													container.addEventListener('close', function() {			
-														container = null;
+																									
+													navGroup.addEventListener('close', function() {			
 														navGroup = null;
 														win_answer = null;
 													});
-												
-													win_answer.container = container;
-												
+																								
 													win.setTitleControl(null);
 													
-													container.open({
+													navGroup.open({
 														modal: true,
 														modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
 													});

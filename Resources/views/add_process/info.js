@@ -46,25 +46,21 @@ b_next.addEventListener('click', function(e) {
 			backgroundImage: Utils.getModalBackgroundImage(),
 			barColor: Utils.getNavColor(),
 			translucent: false,
+			navGroup: win.navGroup,
 	
 			skinUrl: win.skinUrl,
 			skinName: tableView.data[0].rows[0].children[1].getValue(),
 			skinDesc: tableView.data[0].rows[1].children[1].getValue()
 		});
 			
-		win_process.container = win.container;
-		win.navGroup.open(win_process);
+		win.navGroup.openWindow(win_process);
 	} else {
 		//if we're only updating an existing skin, just update its info in db
 		var db = Database.getDatabaseHandle();
 		db.execute('UPDATE skins SET name=?, description=? WHERE id=?', tableView.data[0].rows[0].children[1].getValue(), tableView.data[0].rows[1].children[1].getValue(), win.skinIDToEdit);
 		db.close();
 		
-		if(win.container != null) {
-			win.container.close();
-		} else {
-			win.close();
-		}
+		win.navGroup.close();
 	}
 });
 
@@ -74,11 +70,7 @@ if(win.skinIDToEdit != null) {
 	});
 
 	b_close.addEventListener('click', function(e) {
-		if(win.container != null) {
-			win.container.close();
-		} else {
-			win.close();
-		}
+		win.navGroup.close();
 	});
 
 	win.setLeftNavButton(b_close);

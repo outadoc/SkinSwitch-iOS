@@ -82,7 +82,7 @@ searchBar.addEventListener('blur', function(e) {
 });
 
 b_close.addEventListener('click', function(e) {
-	win.container.close();
+	win.navGroup.close();
 });
 
 darkenView.addEventListener('click', function() {
@@ -225,13 +225,12 @@ function selectSkin(skinData) {
 		backgroundImage: Utils.getModalBackgroundImage(),
 		barColor: Utils.getNavColor(),
 		translucent: false,
+		navGroup: win.navGroup,
 
 		skinUrl: 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(skinData.id) + '&base64=false',
 		defaultSkinName: skinData.title,
 		defaultSkinDesc: skinData.description
 	});
 	
-	win_info.container = win.container;
-	win_info.navGroup = win.navGroup;
-	win.navGroup.open(win_info);
+	win.navGroup.openWindow(win_info);
 }

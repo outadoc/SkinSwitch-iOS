@@ -410,20 +410,16 @@
 				translucent: false
 			}),
 			
-			container = Ti.UI.createWindow({
-				navBarHidden: true
-			}),
-			
-			navGroup = Ti.UI.iPhone.createNavigationGroup({
+			navGroup = Ti.UI.iOS.createNavigationWindow({
 				window: edit_win,
 				tintColor: Utils.getBarTintColor()
 			});
 			
-			container.add(navGroup);
-			container.addEventListener('close', updateSkinsList);			
-			edit_win.container = container;
+			edit_win.navGroup = navGroup;
 			
-			container.open({
+			navGroup.addEventListener('close', updateSkinsList);			
+			
+			navGroup.open({
 				modal: true,
 				modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
 			});
@@ -569,23 +565,17 @@
 				translucent: false
 			}),
 			
-			container = Ti.UI.createWindow({
-				navBarHidden: true
-			}),
-			
-			navGroup = Ti.UI.iPhone.createNavigationGroup({
+			navGroup = Ti.UI.iOS.createNavigationWindow({
 				window: edit_win,
 				tintColor: Utils.getBarTintColor()
 			});
 			
-			container.add(navGroup);
+			edit_win.navGroup = navGroup;
 			
-			container.addEventListener('close', updateSkinsList);
+			navGroup.addEventListener('close', updateSkinsList);
 			Utils.closeiPadSkinDetails(win);
-			
-			edit_win.container = container;
-			
-			container.open({
+						
+			navGroup.open({
 				modal: true,
 				modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
 			});

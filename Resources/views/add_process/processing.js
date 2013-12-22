@@ -25,7 +25,7 @@ progBar.show();
 win.add(progBar);
 
 b_done.addEventListener('click', function(e) {
-	win.container.close();
+	win.navGroup.close();
 });
 
 Ti.Filesystem.getFile(Utils.getSkinsDir() + skinID).createDirectory();

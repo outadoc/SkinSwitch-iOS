@@ -86,27 +86,19 @@ b_settings.addEventListener('click', function() {
 		translucent: false
 	}),
 
-	container = Ti.UI.createWindow({
-		navBarHidden: true
-	}),
-	
-	navGroup = Ti.UI.iPhone.createNavigationGroup({
+	navGroup = Ti.UI.iOS.createNavigationWindow({
 		window: win_settings,
 		tintColor: Utils.getBarTintColor()
 	});
-
-	container.add(navGroup);
 	
-	container.addEventListener('close', function() {			
-		container = null;
+	navGroup.addEventListener('close', function() {			
 		navGroup = null;
 		win_settings = null;
 	});
 
 	win_settings.navGroup = navGroup;
-	win_settings.container = container;
 
-	container.open({
+	navGroup.open({
 		modal: true,
 		modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
 	});

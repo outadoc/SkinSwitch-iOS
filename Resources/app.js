@@ -63,11 +63,11 @@ function startApp() {
 		}),
 
 		splitWin = Ti.UI.iPad.createSplitWindow({
-			detailView: Ti.UI.iPhone.createNavigationGroup({
+			detailView: Ti.UI.iOS.createNavigationWindow({
 				window: detailWin,
 				tintColor: Utils.getBarTintColor()
 			}),
-			masterView: Ti.UI.iPhone.createNavigationGroup({
+			masterView: Ti.UI.iOS.createNavigationWindow({
 				window: masterWin,
 				tintColor: Utils.getBarTintColor()
 			}),
@@ -148,11 +148,11 @@ function startApp() {
 			statusBarStyle: (Utils.getMajorOsVersion() < 7) ? Ti.UI.iPhone.StatusBar.DEFAULT : undefined
 		}),
 
-		container = Ti.UI.iOS.createNavigationWindow({
+		navGroup = Ti.UI.iOS.createNavigationWindow({
 			window: mainWin,
 			tintColor: Utils.getBarTintColor()
 		});
 
-		container.open();
+		navGroup.open();
 	}
 }
