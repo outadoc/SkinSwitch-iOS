@@ -7,7 +7,7 @@
     <key>name</key>
     <string>Name</string>
     <key>date</key>
-    <string>Date of Creation</string>
+    <string>Data de creació</string>
     <key>icloud</key>
     <string>Sync to iCloud</string>
     <key>forceEn</key>
