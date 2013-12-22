@@ -7,7 +7,7 @@
       "title":"スキンの詳細",
       "description":"説明",
       "creation":"作成日",
-      "wear":"スキンを登録する",
+      "wear":"スキンを登録",
       "close":"キャンセル"
     },
     "noSelectedSkin":"スキンが選ばれていません。",
@@ -25,7 +25,7 @@
       "login":"ログイン中...",
       "upload":"スキンのアップロード中...",
       "loginFail":"ログインに失敗しました。",
-      "serverFail":"Could not reach",
+      "serverFail":"サーバーに接続出来ません",
       "uploadFail":"アップロードに失敗しました。",
       "challengeFail":"チャレンジに失敗しました。",
       "success":"アップロードが完了しました!"

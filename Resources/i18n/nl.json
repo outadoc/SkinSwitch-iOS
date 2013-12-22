@@ -25,7 +25,7 @@
       "login":"Aanmelden...",
       "upload":"Skin aan het uploaden...",
       "loginFail":"Aanmelden mislukt",
-      "serverFail":"Could not reach",
+      "serverFail":"Kon niet worden bereikt",
       "uploadFail":"Uploaden mislukt",
       "challengeFail":"Opdracht mislukt",
       "success":"Upload voltooid!"

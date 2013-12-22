@@ -1,143 +1,143 @@
 {
   "main":{
-    "skinList":"Skins List",
-    "addSkin":"Add a Skin",
-    "editSettings":"Edit Settings",
+    "skinList":"قائمة الأسكنات",
+    "addSkin":"أضافة اسكن",
+    "editSettings":"تعديل الإعدادات",
     "skinDetails":{
-      "title":"Skins Details",
-      "description":"Description",
-      "creation":"Date of Creation",
-      "wear":"Wear this skin",
-      "close":"Close"
+      "title":"تفاصيل الأسكنات",
+      "description":"الوصف",
+      "creation":"تاريخ الإنشاء",
+      "wear":"أرتداء اسكن",
+      "close":"اغلاق"
     },
-    "noSelectedSkin":"No skin selected.",
-    "search":"Search in your skins...",
+    "noSelectedSkin":"لا يوجد اسكن محدد.",
+    "search":"البحث في الأسكنات الخاصة بك...",
     "tips":{
-      "wear":"Protip: To wear a skin, tap and hold its icon!"
+      "wear":"معلومة مهمة: يمكنك ارتداء هذا الأسكن , بضغط باستمرار علي الرمز الخاص به!"
     },
     "skinDelete":{
-      "title":"Confirm Deletion",
-      "message":"Do you really want to delete \"%s\"?",
-      "cancel":"Nooooooo!",
-      "okay":"Sure!"
+      "title":"تأكيد عملية الحذف",
+      "message":"هل تريد حقاً حذف \"%S\" ؟",
+      "cancel":"لااااااااااااا!",
+      "okay":"بالتأكيد!"
     },
     "progressBar":{
-      "login":"Logging in...",
-      "upload":"Uploading skin...",
-      "loginFail":"Login failed",
-      "serverFail":"Could not reach",
-      "uploadFail":"Upload failed",
-      "challengeFail":"Challenge failed",
-      "success":"Upload complete!"
+      "login":"جاري تسجيل الدخول...",
+      "upload":"يتم رفع الأسكن...",
+      "loginFail":"فشل تسجيل الدخول",
+      "serverFail":"خطأ في الوصول",
+      "uploadFail":"فشلت عملية الرفع",
+      "challengeFail":"فشل التحدي",
+      "success":"تم الرفع!"
     },
     "skinUpload":{
       "confirm":{
-        "title":"Replace skin?",
-        "message":"Do you really want to replace your skin with \"%s\"?",
-        "cancel":"No",
-        "okay":"Yes"
+        "title":"إستبدال الأسكن؟",
+        "message":"هل تريد حقاً استبدال الأسكن الخاصة بك مع \"% s\"؟",
+        "cancel":"لا",
+        "okay":"نعم"
       },
       "error":{
-        "title":"Upload error",
-        "login":"Could not login to minecraft.net. Please check your login and password in the settings.",
-        "server":"Could not reach minecraft.net. The site may be down. Check http:\/\/help.mojang.com and retry later.",
-        "upload":"Could not upload the skin to minecraft.net. Please try again later.",
-        "challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
+        "title":"خطأ في الرفع",
+        "login":"تعذر تسجيل الدخول إلى minecraft.net الرجاء التحقق من اسم الدخول الخاص بك وكلمة المرور في الإعدادات.",
+        "server":"لا يمكن أن وصول إلى minecraft.net. قد يكون الموقع غير متوفر. تحقق من http:\/\/help.mojang.com وإعادة المحاولة في وقت لاحق.",
+        "upload":"×طا في رفع الأسكن إلى minecraft.net. الرجاء المحاولة مرة أخرى لاحقاً.",
+        "challenge":"يجب عليك الأجابة علي سؤال الأمن لدخول إلي حسابك من هذا الجهاز.\nللأسف, نحن لا نستطيع تحميله. الرجاء التحققمن اتصالك بالأنترنت و حاول مرة أخري لاحقا."
       }
     }
   },
   "settings":{
-    "title":"Settings",
-    "username":"Username",
-    "password":"Password",
-    "header":"Minecraft.net Login Credentials",
+    "title":"الأعدادات",
+    "username":"اسم المستخدم",
+    "password":"كلمة المرور",
+    "header":"بيانات اعتماد تسجيل الدخول Minecraft.net",
     "footer":{
-      "migratedAccount":"If your account has been migrated to a Mojang account, you have to use your email address instead of your Minecraft username.",
-      "privacy":"Note: we will NEVER store or use any of your informations for anything else than switching your Minecraft skins. Your account info is stored securely in the iOS keychain."
+      "migratedAccount":"تم دمج حسابك هنا مع حسابك في mojang , يجب عليك استخدام البريد الألكتروني بدال اسمك في minecraft.",
+      "privacy":"ملاحظة: أننا لن نخزن أو نستخدم أي من المعلومات الخاصة بك لأي شيء آخر غير تبديل الأسكنات  Minecraft الخاص بك. يتم تخزين معلومات الحساب الخاص بك بشكل أمن في IOS keychain."
     }
   },
   "addProcess":{
     "skinInfo":{
-      "title":"Skin Information",
-      "shortTitle":"Skin Info",
-      "name":"Skin Name",
-      "nameHint":"My Awesome Skin",
-      "description":"Description",
+      "title":"معلومات الأسكن",
+      "shortTitle":"معلومات الأسكن",
+      "name":"معلومات الأسكن",
+      "nameHint":"اسكني الرهيب",
+      "description":"الوصف",
       "method":{
-        "title":"Add the skin...",
-        "search":"By searching the Web",
-        "pseudo":"From an existing user",
-        "url":"From an URL",
-        "cancel":"Cancel"
+        "title":"إضافة اسكن...",
+        "search":"عن طريق البحث على شبكة الإنترنت",
+        "pseudo":"من مستخدم موجود",
+        "url":"من عنوان URL",
+        "cancel":"إلغاء الأمر"
       }
     },
     "urlSelect":{
-      "urlTitle":"Paste or type the skin URL here (must be a PNG file):",
-      "pseudoTitle":"Type the Minecraft username here (case-sensitive):",
-      "invalidUrl":"This URL is invalid (MUST be a PNG file)."
+      "urlTitle":"قم بلصق أو اكتب url الخاص بالسكن هنا (يجب أن يكون ملف PNG):",
+      "pseudoTitle":"اكتب اسم المستخدم Minecraft هنا (حساس لحالة الأحرف):",
+      "invalidUrl":"هذا العنوان غير صالح (يجب أن يكون ملف PNG)."
     },
     "search":{
-      "select":"Select this skin",
-      "searchHint":"Search on MC Network...",
+      "select":"حدد هذا الأسكن",
+      "searchHint":"البحث في شبكة MC...",
       "indicator":{
-        "searchResults":"Search Results for: %s",
-        "noResults":"No results for: %s",
-        "random":"Random Skins"
+        "searchResults":"نتائج البحث عن: % s",
+        "noResults":"لا يوجد نتائج ل: % s",
+        "random":"أسكن عشوائي"
       },
       "error":{
-        "network":"Couldn't load your search results. Check your connexion, and retry later."
+        "network":"لم نستطع تحميل نتائج البحث الخاصة بك. تحقق من وصولك الأنترنت، وإعد المحاولة في وقت لاحق."
       }
     },
     "process":{
-      "title":"Processing...",
+      "title":"تجهيز...",
       "progress":{
         "initial":"Reticulating Splines...",
-        "skin":"Downloading Skin...",
-        "preview":"Downloading skin preview...",
-        "database":"Registering skin to database...",
-        "success":"Successfully added the skin! :)",
-        "fail":"Fail :("
+        "skin":"تحميل الأسكن...",
+        "preview":"تحميل معاينة الأسكن...",
+        "database":"تسجيل الأسكن لقاعدة البيانات...",
+        "success":"تم أضافة الجدل بنجاح! :)",
+        "fail":"فشل:("
       },
       "error":{
-        "skin":"Error while downloading the skin. Aborting.",
+        "skin":"حدث خطأ أثناء تحميل الأسكن. إحباط.",
         "preview":{
-          "title":"Network Error",
-          "message":"Error while downloading the preview. There will be no preview for this skin. Continue anyway?",
-          "cancel":"Cancel",
-          "ok":"Continue"
+          "title":"خطأ بالشبكه",
+          "message":"حدث خطأ أثناء تحميل المعاينة. لن يكون هناك معاينة لهذا الأسكن. هل تريد المتابعة على أية حال؟",
+          "cancel":"إلغاء الأمر",
+          "ok":"استمرار"
         }
       },
       "challenge":{
-        "title":"Identity Confirmation",
-        "help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
-        "cancel":"Cancel",
-        "continue":"Continue",
-        "hint":"Answer"
+        "title":"تأكيد الهوية",
+        "help":"أنت بحاجة للأجابة علي السؤال لأنك تحاول الوصول إلي حسابك في Mojang  من مكان مختلف.\n لو كنت نسيت الأجابة, يمكنك محاولة الأجابة علي سؤال آخر باغلاق النافذة و المحاولة مرة اخري (عشوئي).\nلو كنت لا تستطيع الأجابة علي آي سؤال, الرجاء زيارة help.mojang.com للحصول علي الارشادات حول اعادة تعين الأسئلة الخاصة بك.",
+        "cancel":"إلغاء الأمر",
+        "continue":"استمرار",
+        "hint":"الجواب"
       }
     },
-    "next":"Next"
+    "next":"التالي"
   },
   "credits":{
-    "title":"Credits",
-    "developer":"Developer:",
-    "platform":"Platform:",
-    "translators":"Translators:",
-    "thanks":"Special thanks to:",
-    "modules":"Modules:"
+    "title":"العاملين",
+    "developer":"المطور:",
+    "platform":"المنصة:",
+    "translators":"المترجمين:",
+    "thanks":"شكر خاص إلى:",
+    "modules":"الوحدات النمطية:"
   },
   "buttons":{
-    "edit":"Edit",
-    "done":"Done",
-    "close":"Close"
+    "edit":"التعديل",
+    "done":"تم",
+    "close":"اغلاق"
   },
   "editSkin":{
-    "short":"Edit",
-    "title":"Edit Skin Info"
+    "short":"التعديل",
+    "title":"تعديل معلومات الأسكن"
   },
   "restoreDatabase":{
-    "title":"Uh oh...",
-    "message":"We were unable to open the file containing your skins, for some reason.\nFortunately, there's a backup from %s.\nWould you like to restore it?",
-    "no":"No, thanks.",
-    "yes":"Let's do this!"
+    "title":"آه يا...",
+    "message":"نحن غير قادرين على فتح الملف الذي يحتوي على الأسكنات الخاصة بك، لسبب من الأسباب. لحسن الحظ، هناك نسخة احتياطية من % s. هل ترغب في استعادته؟",
+    "no":"لا، شكراً.",
+    "yes":"دعونا نفعل ذلك!"
   }
 }

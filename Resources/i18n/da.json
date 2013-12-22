@@ -1,143 +1,143 @@
 {
   "main":{
-    "skinList":"Skins List",
-    "addSkin":"Add a Skin",
-    "editSettings":"Edit Settings",
+    "skinList":"Skin liste",
+    "addSkin":"Tilføj et Skin",
+    "editSettings":"Redigere indstillinger",
     "skinDetails":{
-      "title":"Skins Details",
-      "description":"Description",
-      "creation":"Date of Creation",
-      "wear":"Wear this skin",
-      "close":"Close"
+      "title":"Skin Detaljer",
+      "description":"Beskrivelse",
+      "creation":"Dato for oprettelse",
+      "wear":"Brug dette skin",
+      "close":"Luk"
     },
-    "noSelectedSkin":"No skin selected.",
-    "search":"Search in your skins...",
+    "noSelectedSkin":"Intet skin valgt.",
+    "search":"Søg i dine skins...",
     "tips":{
-      "wear":"Protip: To wear a skin, tap and hold its icon!"
+      "wear":"Protip: For at bære et skin, tryk og hold dens ikon!"
     },
     "skinDelete":{
-      "title":"Confirm Deletion",
-      "message":"Do you really want to delete \"%s\"?",
-      "cancel":"Nooooooo!",
-      "okay":"Sure!"
+      "title":"Bekræft sletning",
+      "message":"Vil du virkelig slette \"%s\"?",
+      "cancel":"Nej!",
+      "okay":"Sikker!"
     },
     "progressBar":{
-      "login":"Logging in...",
-      "upload":"Uploading skin...",
-      "loginFail":"Login failed",
-      "serverFail":"Could not reach",
-      "uploadFail":"Upload failed",
-      "challengeFail":"Challenge failed",
-      "success":"Upload complete!"
+      "login":"Logger ind...",
+      "upload":"Uploader skin...",
+      "loginFail":"Login mislykkedes",
+      "serverFail":"Kunne ikke nå",
+      "uploadFail":"Upload mislykkedes",
+      "challengeFail":"Udfordringen mislykkedes",
+      "success":"Upload komplet!"
     },
     "skinUpload":{
       "confirm":{
-        "title":"Replace skin?",
-        "message":"Do you really want to replace your skin with \"%s\"?",
-        "cancel":"No",
-        "okay":"Yes"
+        "title":"Erstat skin?",
+        "message":"Vil du virkelig erstatte dit skin med \"%s\"?",
+        "cancel":"Nej",
+        "okay":"Ja"
       },
       "error":{
-        "title":"Upload error",
-        "login":"Could not login to minecraft.net. Please check your login and password in the settings.",
-        "server":"Could not reach minecraft.net. The site may be down. Check http:\/\/help.mojang.com and retry later.",
-        "upload":"Could not upload the skin to minecraft.net. Please try again later.",
-        "challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
+        "title":"Upload fejl",
+        "login":"Kunne ikke logge ind på minecraft.net. Tjek venligst dit login og din adgangskode i indstillingerne.",
+        "server":"Ikke kunne nå minecraft.net. Siden kan muligvis være nede. Check http:\/\/help.mojang.com og prøve igen senere.",
+        "upload":"Kunne ikke uploade skindet til minecraft.net. Prøv igen senere.",
+        "challenge":"Du er forpligtet til at besvare et sikkerheds spørgsmålene for at få adgang til din konto fra denne enhed. Desværre, vi kunne ikke indlæse det. Kontroller venligst forbindelsen og prøve igen senere."
       }
     }
   },
   "settings":{
-    "title":"Settings",
-    "username":"Username",
-    "password":"Password",
-    "header":"Minecraft.net Login Credentials",
+    "title":"Indstillinger",
+    "username":"Brugernavn",
+    "password":"Kodeord",
+    "header":"Minecraft.net Login Anbefales",
     "footer":{
-      "migratedAccount":"If your account has been migrated to a Mojang account, you have to use your email address instead of your Minecraft username.",
-      "privacy":"Note: we will NEVER store or use any of your informations for anything else than switching your Minecraft skins. Your account info is stored securely in the iOS keychain."
+      "migratedAccount":"Hvis din konto er blevet overført til en Mojang konto, skal du bruge din e-mail-adresse i stedet for dit Minecraft Brugernavn.",
+      "privacy":"Bemærk: vi vil ALDRIG gemme eller bruge nogen af dine informationer til andet end skifte dine Minecraft skins. Dine kontooplysninger gemmes sikkert i iOS nøglering."
     }
   },
   "addProcess":{
     "skinInfo":{
-      "title":"Skin Information",
+      "title":"Skin Informationer",
       "shortTitle":"Skin Info",
-      "name":"Skin Name",
-      "nameHint":"My Awesome Skin",
-      "description":"Description",
+      "name":"Skin Navn",
+      "nameHint":"Mit Fantastiske Skin",
+      "description":"Beskrivelse",
       "method":{
-        "title":"Add the skin...",
-        "search":"By searching the Web",
-        "pseudo":"From an existing user",
-        "url":"From an URL",
-        "cancel":"Cancel"
+        "title":"Tilføj et skin...",
+        "search":"Ved at søge på nettet",
+        "pseudo":"Fra en eksisterende bruger",
+        "url":"Fra en URL",
+        "cancel":"Annuller"
       }
     },
     "urlSelect":{
-      "urlTitle":"Paste or type the skin URL here (must be a PNG file):",
-      "pseudoTitle":"Type the Minecraft username here (case-sensitive):",
-      "invalidUrl":"This URL is invalid (MUST be a PNG file)."
+      "urlTitle":"Indsæt eller skriv skin URL her (skal være en PNG fil):",
+      "pseudoTitle":"Skriv Minecraft brugernavnet her (store og små bogstaver):",
+      "invalidUrl":"Denne URL-adresse er ugyldig (SKAL være en PNG-fil)."
     },
     "search":{
-      "select":"Select this skin",
-      "searchHint":"Search on MC Network...",
+      "select":"Vælg dette skin",
+      "searchHint":"Søger på MC netværk...",
       "indicator":{
-        "searchResults":"Search Results for: %s",
-        "noResults":"No results for: %s",
-        "random":"Random Skins"
+        "searchResults":"Søge resultater for: %s",
+        "noResults":"Ingen resultater for: %s",
+        "random":"Tilfældige skins"
       },
       "error":{
-        "network":"Couldn't load your search results. Check your connexion, and retry later."
+        "network":"Kunne ikke indlæse dine søgeresultater. Tjek din forbindelse, og prøv igen senere."
       }
     },
     "process":{
-      "title":"Processing...",
+      "title":"Behandler...",
       "progress":{
         "initial":"Reticulating Splines...",
-        "skin":"Downloading Skin...",
-        "preview":"Downloading skin preview...",
-        "database":"Registering skin to database...",
-        "success":"Successfully added the skin! :)",
-        "fail":"Fail :("
+        "skin":"Downloader Skin...",
+        "preview":"Downloader skin forpremiere...",
+        "database":"Registrer skin til database...",
+        "success":"Succesfuld dit skin er tilføjet! :)",
+        "fail":"Fejl :("
       },
       "error":{
-        "skin":"Error while downloading the skin. Aborting.",
+        "skin":"Fejl under overførelsen af skin. Afbryder.",
         "preview":{
-          "title":"Network Error",
-          "message":"Error while downloading the preview. There will be no preview for this skin. Continue anyway?",
-          "cancel":"Cancel",
-          "ok":"Continue"
+          "title":"Netværk fejl",
+          "message":"Fejl mens du henter forpremiere. Der bliver ingen forpremiere for dette skin. Fortsæt alligevel?",
+          "cancel":"Annuller",
+          "ok":"Forsæt"
         }
       },
       "challenge":{
-        "title":"Identity Confirmation",
-        "help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
-        "cancel":"Cancel",
-        "continue":"Continue",
-        "hint":"Answer"
+        "title":"Bekræftelse af identitet",
+        "help":"Du skal besvare dette spørgsmål, fordi du forsøger at få adgang til din Mojang konto fra en anden placering.  \n\nHvis du har glemt svaret, kan du prøve at besvare et andet spørgsmålet ved at lukke dette vindue og prøve igen (det er tilfældigt).  \n\nHvis du virkelig ikke kan huske, bedes du besøge help.mojang.com for at få instruktioner så du nulstille dine spørgsmål.",
+        "cancel":"Annuller",
+        "continue":"Forsæt",
+        "hint":"Svar"
       }
     },
-    "next":"Next"
+    "next":"Næste"
   },
   "credits":{
-    "title":"Credits",
-    "developer":"Developer:",
-    "platform":"Platform:",
-    "translators":"Translators:",
-    "thanks":"Special thanks to:",
-    "modules":"Modules:"
+    "title":"Kredit",
+    "developer":"Udvikler:",
+    "platform":"Platfrom:",
+    "translators":"Oversættere:",
+    "thanks":"Specielt tak til:",
+    "modules":"Moduler:"
   },
   "buttons":{
-    "edit":"Edit",
-    "done":"Done",
-    "close":"Close"
+    "edit":"Redigere",
+    "done":"Færdig",
+    "close":"Luk"
   },
   "editSkin":{
-    "short":"Edit",
-    "title":"Edit Skin Info"
+    "short":"Redigere",
+    "title":"Redigér Skin Infomationer"
   },
   "restoreDatabase":{
     "title":"Uh oh...",
-    "message":"We were unable to open the file containing your skins, for some reason.\nFortunately, there's a backup from %s.\nWould you like to restore it?",
-    "no":"No, thanks.",
-    "yes":"Let's do this!"
+    "message":"Vi var ude af stand til at lukke denne fil op, der indeholder dine skins, af en eller anden årsag. Heldigvis er der en backup fra %s. \nVil du genoprette den?",
+    "no":"Nej, tak.",
+    "yes":"Lad os gøre det!"
   }
 }

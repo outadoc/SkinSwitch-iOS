@@ -85,7 +85,7 @@
         "random":"Random Skins"
       },
       "error":{
-        "network":"Couldn't load your search results. Check your connexion, and retry later."
+        "network":"Couldn't load your search results. Check your connection, and retry later."
       }
     },
     "process":{

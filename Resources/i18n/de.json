@@ -25,7 +25,7 @@
       "login":"Einloggen...",
       "upload":"Hochladen Skin...",
       "loginFail":"Fehler bei der Einloggund",
-      "serverFail":"Could not reach",
+      "serverFail":"Konnte nicht erreichen",
       "uploadFail":"Hochladen fehlgeschlagen",
       "challengeFail":"Herausforderung fehlgeschlagen",
       "success":"Hochladen fertig!"
