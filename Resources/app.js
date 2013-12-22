@@ -26,7 +26,7 @@ try {
 } catch(e) {
 	//if we catch any error, check if there's a backup and ask the user if he wants to restore it
 	if(Database.getDatabaseBackupFile().exists()) {
-		Database.askForDatabaseRestore(e, function() {
+		Database.askForDatabaseRestore(function() {
 			startApp();
 		});
 	} else {
