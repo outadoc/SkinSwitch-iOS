@@ -70,6 +70,8 @@
 														window: win_answer,
 														tintColor: Utils.getBarTintColor()
 													});
+													
+													win_answer.navGroup = navGroup;
 																									
 													navGroup.addEventListener('close', function() {			
 														navGroup = null;
