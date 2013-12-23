@@ -81,7 +81,9 @@ b_continue.addEventListener('click', function() {
 			
 			if(responseObj.error != null) {
 				//oh noes, an error!
-				alert(responseObj.error);
+				//strip HTML tags
+				var error = Ti.XML.parseString("<div>" + responseObj.error + "</div>");
+				alert(error.getElementsByTagName("div").item(0).textContent);
 			}
 			
 			win.navGroup.close();
