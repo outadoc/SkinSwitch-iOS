@@ -3,13 +3,13 @@
 <plist version="1.0">
   <dict>
     <key>orderSkinsBy</key>
-    <string>Order Skins By</string>
+    <string>作成者:</string>
     <key>name</key>
-    <string>Name</string>
+    <string>名前</string>
     <key>date</key>
     <string>作成日</string>
     <key>icloud</key>
-    <string>Sync to iCloud</string>
+    <string>iCloudに同期</string>
     <key>forceEn</key>
     <string>Force English</string>
   </dict>
