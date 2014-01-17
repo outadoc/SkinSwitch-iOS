@@ -417,7 +417,9 @@
 			
 			edit_win.navGroup = navGroup;
 			
-			navGroup.addEventListener('close', updateSkinsList);			
+			navGroup.addEventListener('close', function() {
+				Ti.App.fireEvent('reloadSkins', {});
+			});			
 			
 			navGroup.open({
 				modal: true,
@@ -572,7 +574,10 @@
 			
 			edit_win.navGroup = navGroup;
 			
-			navGroup.addEventListener('close', updateSkinsList);
+			navGroup.addEventListener('close', function() {
+				Ti.App.fireEvent('reloadSkins', {});
+			});
+			
 			Utils.closeiPadSkinDetails(win);
 						
 			navGroup.open({
