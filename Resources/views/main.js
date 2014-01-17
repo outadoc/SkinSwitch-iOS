@@ -62,6 +62,8 @@ function updateSkinsList() {
 	});
 }
 
+Ti.App.addEventListener('reloadSkins', updateSkinsList);
+
 var b_add = Ti.UI.createButton({
 	systemButton: Ti.UI.iPhone.SystemButton.ADD
 });
@@ -108,7 +110,6 @@ win.setLeftNavButton(b_settings);
 win.setRightNavButton(b_add);
 
 updateSkinsList();
-
 
 Ti.App.addEventListener('resumed', function() {
 	Utils.addSkinFromParams(Ti.App.getArguments());

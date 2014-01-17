@@ -175,7 +175,7 @@
 				});
 							
 				navGroup.addEventListener('close', function() {
-					updateSkinsList();
+					Ti.App.fireEvent('reloadSkins', {});
 					navGroup = null;
 				});
 			

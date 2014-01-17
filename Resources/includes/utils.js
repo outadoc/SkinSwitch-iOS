@@ -256,7 +256,7 @@
 					navGroup = null;
 					win_info = null;
 					
-					updateSkinsList();
+					Ti.App.fireEvent('reloadSkins', {});
 				});
 				
 				win_info.navGroup = navGroup;
