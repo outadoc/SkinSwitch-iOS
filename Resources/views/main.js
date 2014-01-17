@@ -109,6 +109,11 @@ win.setRightNavButton(b_add);
 
 updateSkinsList();
 
+
+Ti.App.addEventListener('resumed', function() {
+	Utils.addSkinFromParams(Ti.App.getArguments());
+});
+
 searchBar.addEventListener('return', function(e) {
 	updateSkinsList();
 	e.source.blur();

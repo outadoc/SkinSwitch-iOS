@@ -52,7 +52,7 @@ b_next.addEventListener('click', function(e) {
 			skinName: tableView.data[0].rows[0].children[1].getValue(),
 			skinDesc: tableView.data[0].rows[1].children[1].getValue()
 		});
-			
+		
 		win.navGroup.openWindow(win_process);
 	} else {
 		//if we're only updating an existing skin, just update its info in db
@@ -64,7 +64,7 @@ b_next.addEventListener('click', function(e) {
 	}
 });
 
-if(win.skinIDToEdit != null) {
+if(win.skinIDToEdit != null || win.forceShowCancelButton === true) {
 	var b_close = Ti.UI.createButton({
 		title: I('buttons.close')
 	});

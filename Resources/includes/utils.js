@@ -1,4 +1,6 @@
 (function() {
+	
+	var Database = require('/includes/db');
 
 	exports.getRandomID = function() {
 		return String(Math.floor(Math.random() * 98765862));
@@ -217,6 +219,56 @@
 			duration: 300,
 			curve: Ti.UI.ANIMATION_CURVE_EASE_IN
 		});
+	};
+	
+	exports.getParameterByName = function(params, name) {
+	    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	        results = regex.exec(params);
+	    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	};
+	
+	exports.addSkinFromParams = function(params) {
+		if(params != null && params.url != null) {
+			var skinName = exports.getParameterByName(params.url, 'name'),
+				skinDesc = exports.getParameterByName(params.url, 'desc'),
+				skinUrl = exports.getParameterByName(params.url, 'url');
+				
+			if(skinUrl != null && skinUrl.match(/https?:\/\/(.)+.png/) != null) {
+				var win_info = Ti.UI.createWindow({
+					title: I('addProcess.skinInfo.title'),
+					url: '/views/add_process/info.js',
+					backgroundImage: exports.getModalBackgroundImage(),
+					barColor: exports.getNavColor(),
+					translucent: false,
+					forceShowCancelButton: true,
+					defaultSkinName: skinName,
+					defaultSkinDesc: skinDesc,
+					skinUrl: skinUrl
+				});
+				
+				navGroup = Ti.UI.iOS.createNavigationWindow({
+					window: win_info,
+					tintColor: Utils.getBarTintColor()
+				});
+				
+				navGroup.addEventListener('close', function() {			
+					navGroup = null;
+					win_info = null;
+					
+					updateSkinsList();
+				});
+				
+				win_info.navGroup = navGroup;
+				
+				navGroup.open({
+					modal: true,
+					modalStyle: Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
+				});
+			} else {
+				alert(I('addProcess.urlSelect.invalidUrl'));
+			}
+		}
 	};
 	
 })();
