@@ -175,8 +175,10 @@
 				});
 							
 				navGroup.addEventListener('close', function() {
-					Ti.App.fireEvent('reloadSkins', {});
+					win_next = null;
 					navGroup = null;
+					
+					Ti.App.fireEvent('reloadSkins', {});
 				});
 			
 				win_next.navGroup = navGroup;
