@@ -6,7 +6,6 @@ var Database = require('/includes/db'),
 	Network = require('/includes/network'),
 
 win = Ti.UI.currentWindow,
-loadingWin = Ui.createLoadingWindow(),
 
 adLoaded = false,
 
@@ -26,39 +25,35 @@ skinsShowcase = Ti.UI.createScrollView({
 });
 
 win.add(searchBar);
-
 win.add(skinsShowcase);
-loadingWin.open();
 
-function updateSkinsList() {
-	loadingWin.open();
+function updateSkinsList() {	
+	var previousShowcase = skinsShowcase.children[0],
+		searchPattern = (searchBar.value != null) ? searchBar.value : '',
+		newShowcase = Ui.createSkinsShowcaseView(Database.getSkins(searchPattern), win, searchPattern);
+		
+	newShowcase.setOpacity(0);
+	skinsShowcase.add(newShowcase);
 	
-	skinsShowcase.animate({
-		opacity: 0,
-		duration: 100,
-		curve: Ti.UI.ANIMATION_CURVE_EASE_OUT
-	}, function() {
-		var view = skinsShowcase.children[0],
-			searchPattern = (searchBar.value != null) ? searchBar.value : '';
-		
-		if(view != null) {
-			skinsShowcase.remove(view);
-			view = null;
-		}
-
-		if(adLoaded && !Utils.isiPad()) {
-			skinsShowcase.setBottom(50);
-		}
-		
-		skinsShowcase.add(Ui.createSkinsShowcaseView(Database.getSkins(searchPattern), win, searchPattern));
-		
-		skinsShowcase.animate({
-			opacity: 1,
-			duration: 100,
-			curve: Ti.UI.ANIMATION_CURVE_EASE_OUT
+	if(adLoaded && !Utils.isiPad()) {
+		skinsShowcase.setBottom(50);
+	}
+	
+	if(previousShowcase != null) {
+		previousShowcase.animate({
+			opacity: 0,
+			duration: 200,
+			curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
+		}, function() {
+			skinsShowcase.remove(previousShowcase);
+			previousShowcase = null;
 		});
-		
-		loadingWin.close();
+	}
+	
+	newShowcase.animate({
+		opacity: 1,
+		duration: 200,
+		curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT
 	});
 }
 
