@@ -60,7 +60,7 @@ function getPreviewFromSkin(path, side, zoom) {
 	
 	img_orig.addEventListener('error', function(e) {
 		Ti.App.fireEvent('skinPreviewFailed', {});
-	})
+	});
 }
 
 function allPixelsAreSameColor(image) {
