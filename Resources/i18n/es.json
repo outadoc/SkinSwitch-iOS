@@ -2,16 +2,16 @@
   "main":{
     "skinList":"Lista de skins",
     "addSkin":"Añadir una Skin",
-    "editSettings":"Ajustar",
+    "editSettings":"Editar la configuración ",
     "skinDetails":{
       "title":"Detalles del skin",
       "description":"Descripción",
-      "creation":"Fetcha de creación",
+      "creation":"Fecha de creación ",
       "wear":"Usar este skin",
       "close":"Cerrar"
     },
     "noSelectedSkin":"No skin seleccionado.",
-    "search":"Search in your skins...",
+    "search":"Buscar en tus skins...",
     "tips":{
       "wear":"Protip: ¡Para usar este skin, toca y mantenga su icono!"
     },
@@ -22,10 +22,10 @@
       "okay":"¡Seguro!"
     },
     "progressBar":{
-      "login":"Conexión...",
+      "login":"Iniciando la sesión...",
       "upload":"Subiendo skin...",
-      "loginFail":"Error de inicio",
-      "serverFail":"Could not reach",
+      "loginFail":"Error al iniciar sesión",
+      "serverFail":"Error de conexión",
       "uploadFail":"Envío imposible",
       "challengeFail":"Desafío fallado",
       "success":"¡Envío completo!"
@@ -35,7 +35,7 @@
         "title":"¿Reemplazar tu skin?",
         "message":"¿Realmente quieres reemplazar tu skin con \"%s\"?",
         "cancel":"No",
-        "okay":"Si"
+        "okay":"Sí"
       },
       "error":{
         "title":"Error de envío",
@@ -89,14 +89,14 @@
       }
     },
     "process":{
-      "title":"Tratamiento...",
+      "title":"Cargando...",
       "progress":{
         "initial":"Reticulating Splines...",
-        "skin":"Cargando el skin...",
-        "preview":"Cargando la previa del skin...",
+        "skin":"Descargando el skin...",
+        "preview":"Descargando vista previa del skin...",
         "database":"Registrando el skin en la base de datos...",
         "success":"¡Añadido el skin con éxito! :)",
-        "fail":"Fail :("
+        "fail":"Error :("
       },
       "error":{
         "skin":"Error descargando el skin. Abortando.",
@@ -120,14 +120,14 @@
   "credits":{
     "title":"Créditos",
     "developer":"Desarrollador:",
-    "platform":"plataforma:",
+    "platform":"Plataforma:",
     "translators":"Traductores:",
     "thanks":"Muchas gracias a:",
     "modules":"Módulos:"
   },
   "buttons":{
     "edit":"Editar",
-    "done":"OK",
+    "done":"Aceptar",
     "close":"Cerrar"
   },
   "editSkin":{

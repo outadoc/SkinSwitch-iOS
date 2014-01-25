@@ -11,7 +11,7 @@
       "close":"Lukk"
     },
     "noSelectedSkin":"Ingen skin er valgt.",
-    "search":"Search in your skins...",
+    "search":"Søk i dine skins...",
     "tips":{
       "wear":"Tips: får å ta på deg skinnet, trykk og hold på ikonet!"
     },
@@ -25,7 +25,7 @@
       "login":"Logger på...",
       "upload":"Laster opp skinet...",
       "loginFail":"Påloggingen mislyktes",
-      "serverFail":"Could not reach",
+      "serverFail":"Kunne ikke nå",
       "uploadFail":"Opplastingen mislyktes",
       "challengeFail":"Oppdrag feilet",
       "success":"Opplasting fullført!"
@@ -109,7 +109,7 @@
       },
       "challenge":{
         "title":"Identitet bekreftelse",
-        "help":"You need to answer this question because you are trying to access your Mojang account from a different location.\n\nIf you forgot the answer, you can try answering another question by closing this window and trying again (it's random).\n\nIf you really can't remember, please visit help.mojang.com for instructions on resetting your questions.",
+        "help":"Du må savre på dette spørsmålet fordi du prøver å få tilgang til din Mojang konto fra en annen posisjon.\n\nOm du ikke husker svaret kan du prøve å besvare et nytt spørsmål ved å lukke dette vinduet og prøve på nytt i et nytt vindu (det er tilfeldig).\n\nOm du virkelig ikke kan huske svaret, venligst besøk help.mojang.com for intsuksjoner på hvordan du kan tilbakestille spørsmålet ditt.",
         "cancel":"Avbryt",
         "continue":"Fortsett",
         "hint":"Svar"

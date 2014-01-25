@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>orderSkinsBy</key>
-    <string>Order Skins By</string>
+    <string>Sort Skins By</string>
     <key>name</key>
     <string>Name</string>
     <key>date</key>

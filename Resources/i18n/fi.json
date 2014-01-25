@@ -1,14 +1,14 @@
 {
   "main":{
-    "skinList":"Skins List",
-    "addSkin":"Add a Skin",
-    "editSettings":"Edit Settings",
+    "skinList":"Skini Lista",
+    "addSkin":"Lisää Skini",
+    "editSettings":"Muokkaa Asetuksia",
     "skinDetails":{
-      "title":"Skins Details",
-      "description":"Description",
-      "creation":"Date of Creation",
-      "wear":"Wear this skin",
-      "close":"Close"
+      "title":"Skinin Tiedot",
+      "description":"Kuvaus",
+      "creation":"Luontipäivämäärä",
+      "wear":"Pue tämä skini",
+      "close":"Sulje"
     },
     "noSelectedSkin":"No skin selected.",
     "search":"Search in your skins...",
@@ -16,38 +16,38 @@
       "wear":"Protip: To wear a skin, tap and hold its icon!"
     },
     "skinDelete":{
-      "title":"Confirm Deletion",
-      "message":"Do you really want to delete \"%s\"?",
-      "cancel":"Nooooooo!",
-      "okay":"Sure!"
+      "title":"Vahvista poisto",
+      "message":"Haluatko todella poistaa \"%s\"?",
+      "cancel":"Eiii!",
+      "okay":"Varma!"
     },
     "progressBar":{
-      "login":"Logging in...",
+      "login":"Kirjaudutaan sisään...",
       "upload":"Uploading skin...",
-      "loginFail":"Login failed",
-      "serverFail":"Could not reach",
-      "uploadFail":"Upload failed",
-      "challengeFail":"Challenge failed",
-      "success":"Upload complete!"
+      "loginFail":"Kirjautuminen epäonnistui",
+      "serverFail":"Ei päässyt",
+      "uploadFail":"Lataus epäonnistui",
+      "challengeFail":"Haaste epäonnistui",
+      "success":"Lataus Onnistui :)"
     },
     "skinUpload":{
       "confirm":{
-        "title":"Replace skin?",
+        "title":"Korvataanko Skini?",
         "message":"Do you really want to replace your skin with \"%s\"?",
-        "cancel":"No",
-        "okay":"Yes"
+        "cancel":"Ei",
+        "okay":"Kyllä"
       },
       "error":{
-        "title":"Upload error",
-        "login":"Could not login to minecraft.net. Please check your login and password in the settings.",
-        "server":"Could not reach minecraft.net. The site may be down. Check http:\/\/help.mojang.com and retry later.",
-        "upload":"Could not upload the skin to minecraft.net. Please try again later.",
-        "challenge":"You are required to answer a security question to access your account from this device.\nUnfortunately, we couldn't load it. Please check your connection and try again later."
+        "title":"Lataus virhe",
+        "login":"Minecraft.net ei voi kirjautua. Tarkista käyttäjätunnus ja salasana asetukset.",
+        "server":"Ei päässyt minecraft.net. Sivusto voi olla alas. Tarkista http:\/\/help.mojang.com ja yritä myöhemmin uudelleen.",
+        "upload":"Skiniä ei voitu ladata minecraft.net. Yritä myöhemmin uudelleen.",
+        "challenge":"Tarvitset turvallisuus kysymykseen tiliäsi laitteesta. Valitettavasti ei voinut ladata se. Tarkista yhteys ja yritä myöhemmin uudelleen."
       }
     }
   },
   "settings":{
-    "title":"Settings",
+    "title":"Asetukset",
     "username":"Username",
     "password":"Password",
     "header":"Minecraft.net Login Credentials",
@@ -62,19 +62,19 @@
       "shortTitle":"Skin Info",
       "name":"Skin Name",
       "nameHint":"My Awesome Skin",
-      "description":"Description",
+      "description":"Kuvaus",
       "method":{
         "title":"Add the skin...",
-        "search":"By searching the Web",
+        "search":"Etsimällä Netistä",
         "pseudo":"From an existing user",
-        "url":"From an URL",
+        "url":"Osoitteesta",
         "cancel":"Cancel"
       }
     },
     "urlSelect":{
       "urlTitle":"Paste or type the skin URL here (must be a PNG file):",
-      "pseudoTitle":"Type the Minecraft username here (case-sensitive):",
-      "invalidUrl":"This URL is invalid (MUST be a PNG file)."
+      "pseudoTitle":"Kirjoita Minecraft käyttäjänimi täällä (tunnistaa kirjainkoon):",
+      "invalidUrl":"Tämä URL-osoite ei kelpaa (täytyy olla PNG-tiedosto)."
     },
     "search":{
       "select":"Select this skin",
@@ -128,7 +128,7 @@
   "buttons":{
     "edit":"Edit",
     "done":"Done",
-    "close":"Close"
+    "close":"Sulje"
   },
   "editSkin":{
     "short":"Edit",
