@@ -106,6 +106,8 @@ win.setRightNavButton(b_add);
 
 updateSkinsList();
 
+Utils.addSkinFromParams(Ti.App.getArguments());
+
 Ti.App.addEventListener('resumed', function() {
 	Utils.addSkinFromParams(Ti.App.getArguments());
 });
