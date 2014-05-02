@@ -1,5 +1,7 @@
 Ti.include('/includes/lib/json.i18n.js');
 
+var BASE_URL = "http://skin.outadoc.fr/json/";
+
 var win = Ti.UI.currentWindow,
 	Utils = require('/includes/utils'),
 	Ui = require('/includes/ui'),
@@ -176,7 +178,7 @@ function getRequestResults(params) {
 		}
 	});
 	
-	xhr.open('POST', 'http://skinmanager.fr.nf/json/');
+	xhr.open('POST', BASE_URL);
 	loadingWin.open();
 	xhr.send(params);
 }
@@ -213,7 +215,7 @@ function loadSkinPreview(e) {
 			cache: true
 		});
 		
-		xhr_front.open('GET', 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=true');
+		xhr_front.open('GET', BASE_URL + '?method=getSkin&id=' + parseInt(e.view.skinData.id) + '&base64=true');
 		xhr_front.send();
 	}
 }
@@ -227,7 +229,7 @@ function selectSkin(skinData) {
 		translucent: false,
 		navGroup: win.navGroup,
 
-		skinUrl: 'http://skinmanager.fr.nf/json/?method=getSkin&id=' + parseInt(skinData.id) + '&base64=false',
+		skinUrl: BASE_URL + '?method=getSkin&id=' + parseInt(skinData.id) + '&base64=false',
 		defaultSkinName: skinData.title,
 		defaultSkinDesc: skinData.description
 	});
