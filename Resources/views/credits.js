@@ -75,7 +75,7 @@ img_outadev = Ti.UI.createImageView({
 });
 
 lbl_skinmanager.addEventListener('click', function(e) {
-	Ti.Platform.openURL('http://skinmanager.fr.nf/');
+	Ti.Platform.openURL('http://skin.outadoc.fr/');
 });
 
 img_outadev.addEventListener('click', function(e) {
