@@ -1,16 +1,16 @@
 {
   "main":{
-    "skinList":"Skins List",
-    "addSkin":"Add a Skin",
-    "editSettings":"Edit Settings",
+    "skinList":"Giydirme Listesi",
+    "addSkin":"giydirme Ekle",
+    "editSettings":"Ayarları Düzenle",
     "skinDetails":{
-      "title":"Skins Details",
-      "description":"Description",
-      "creation":"Date of Creation",
-      "wear":"Wear this skin",
-      "close":"Close"
+      "title":"giydirme detayları",
+      "description":"Açıklama",
+      "creation":"Oluşturma tarihi",
+      "wear":"giydirmeyi kullan",
+      "close":"Kapat"
     },
-    "noSelectedSkin":"No skin selected.",
+    "noSelectedSkin":"giydirme secilmedi.",
     "search":"Search in your skins...",
     "tips":{
       "wear":"Protip: To wear a skin, tap and hold its icon!"
@@ -19,14 +19,14 @@
       "title":"Confirm Deletion",
       "message":"Do you really want to delete \"%s\"?",
       "cancel":"Nooooooo!",
-      "okay":"Sure!"
+      "okay":"Emin misin!"
     },
     "progressBar":{
       "login":"Logging in...",
       "upload":"Uploading skin...",
-      "loginFail":"Login failed",
+      "loginFail":"Giriş başarısız",
       "serverFail":"Could not reach",
-      "uploadFail":"Upload failed",
+      "uploadFail":"Yükleme başarısız",
       "challengeFail":"Challenge failed",
       "success":"Upload complete!"
     },
@@ -34,8 +34,8 @@
       "confirm":{
         "title":"Replace skin?",
         "message":"Do you really want to replace your skin with \"%s\"?",
-        "cancel":"No",
-        "okay":"Yes"
+        "cancel":"Hayır",
+        "okay":"Evet"
       },
       "error":{
         "title":"Upload error",
@@ -62,7 +62,7 @@
       "shortTitle":"Skin Info",
       "name":"Skin Name",
       "nameHint":"My Awesome Skin",
-      "description":"Description",
+      "description":"Açıklama",
       "method":{
         "title":"Add the skin...",
         "search":"By searching the Web",
@@ -118,7 +118,7 @@
     "next":"Next"
   },
   "credits":{
-    "title":"Credits",
+    "title":"Emeği Geçenler",
     "developer":"Developer:",
     "platform":"Platform:",
     "translators":"Translators:",
@@ -126,18 +126,18 @@
     "modules":"Modules:"
   },
   "buttons":{
-    "edit":"Edit",
+    "edit":"Düzenle",
     "done":"Done",
-    "close":"Close"
+    "close":"Kapat"
   },
   "editSkin":{
-    "short":"Edit",
+    "short":"Düzenle",
     "title":"Edit Skin Info"
   },
   "restoreDatabase":{
     "title":"Uh oh...",
     "message":"We were unable to open the file containing your skins, for some reason.\nFortunately, there's a backup from %s.\nWould you like to restore it?",
     "no":"No, thanks.",
-    "yes":"Let's do this!"
+    "yes":"Başlayalım!"
   }
 }

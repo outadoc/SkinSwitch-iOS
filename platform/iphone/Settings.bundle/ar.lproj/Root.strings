@@ -3,13 +3,13 @@
 <plist version="1.0">
   <dict>
     <key>orderSkinsBy</key>
-    <string>Order Skins By</string>
+    <string>ترتيب الأسكن علي حسب</string>
     <key>name</key>
-    <string>Name</string>
+    <string>الاسم</string>
     <key>date</key>
     <string>تاريخ الإنشاء</string>
     <key>icloud</key>
-    <string>Sync to iCloud</string>
+    <string>مزامنة إلى [اي كلوود]</string>
     <key>forceEn</key>
     <string>Force English</string>
   </dict>
