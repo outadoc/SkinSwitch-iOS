@@ -133,7 +133,7 @@ function getRequestResults(params) {
 			try {
 				resultArray = JSON.parse(this.responseText);
 			} catch(e) {
-				alert(I('addProcess.search.indicator.error.network'));
+				alert(I('addProcess.search.error.network'));
 			}
 			
 			if(resultArray.error != null) {
